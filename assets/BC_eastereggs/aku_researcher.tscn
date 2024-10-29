@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://jlite52v6y5r"]
+
+[ext_resource type="Texture2D" uid="uid://bshwbhb1k4dcn" path="res://assets/images/battle_cats/aku_researcher.png" id="1_ccx7w"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q3tbd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehjm0"]
+transparency = 1
+albedo_texture = ExtResource("1_ccx7w")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_24pgm"]
+points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
+
+[node name="AkuResearcher" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
+mesh = SubResource("PlaneMesh_q3tbd")
+surface_material_override/0 = SubResource("StandardMaterial3D_ehjm0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_24pgm")

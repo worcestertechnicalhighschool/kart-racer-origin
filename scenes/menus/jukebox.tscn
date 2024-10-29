@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck1om1dv1vcl7"]
+
+[ext_resource type="Script" path="res://scripts/jukebox_buttons/music_player.gd" id="1_nqt33"]
+[ext_resource type="AudioStream" uid="uid://1nwdmko044nj" path="res://assets/sounds/music/sng_garden.mp3" id="2_ylnu8"]
+
+[node name="Jukebox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="sky_garden" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "GBA Sky Garden"
+script = ExtResource("1_nqt33")
+
+[node name="music" type="AudioStreamPlayer" parent="HBoxContainer/sky_garden"]
+stream = ExtResource("2_ylnu8")
+
+[node name="donut_plains" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "SNES Donut Plains"
+
+[node name="luna_ascension" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Luna Ascension"
+
+[node name="filibuster_invasion" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Filibuster Invasion"
+
+[node name="psychomon" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Psychomon
+"
+
+[node name="2player_vs" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "2-Player VS
+"
+
+[connection signal="pressed" from="HBoxContainer/sky_garden" to="HBoxContainer/sky_garden" method="_on_pressed"]

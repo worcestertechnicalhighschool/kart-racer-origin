@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2xy16lnhbjm1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qr41o"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_bebuy"]
+sky_material = SubResource("ProceduralSkyMaterial_qr41o")
+
+[sub_resource type="Environment" id="Environment_wxknj"]
+background_mode = 2
+sky = SubResource("Sky_bebuy")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8fyox"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxcpu"]
+albedo_color = Color(0.158472, 0.158472, 0.158472, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_elm5v"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.390646, 2.22742, -16.8368, 0, 0, 0, 0, 0, 0, 1.30537, 2.29541, -18.275, 0, 0, 0, 0, 0, 0, 2.11005, 2.42297, -18.6759, 0, 0, 0, 0, 0, 0, 3.21294, 2.61143, -18.7893, 0, 0, 0, 0, 0, 0, 4.25363, 2.65222, -19.3309, 0, 0, 0, 0, 0, 0, 4.85371, 2.83911, -20.7185, 0, 0, 0, 0, 0, 0, 4.02103, 2.98181, -22.0363, 0, 0, 0, 0, 0, 0, 3.32231, 3.42168, -22.9649, 0, 0, 0, 0, 0, 0, 2.52939, 3.60623, -23.5957, 0, 0, 0, 0, 0, 0, 0.850027, 3.46409, -24.0128, 0, 0, 0, 0, 0, 0, -0.279951, 3.23328, -23.6979, 0, 0, 0, 0, 0, 0, -0.853328, 3.10415, -22.8957, 0, 0, 0, 0, 0, 0, -0.350263, 3.05322, -21.9612, 0, 0, 0, 0, 0, 0, 0.196965, 3.01575, -21.5523, 0, 0, 0, 0, 0, 0, 1.1391, 3.02942, -21.7825, 0, 0, 0, 0, 0, 0, 1.99707, 2.78728, -22.0978, 0, 0, 0, 0, 0, 0, 2.42671, 2.80001, -23.1665, 0, 0, 0, 0, 0, 0, 1.53005, 3.06069, -24.5066, 0, 0, 0, 0, 0, 0, -0.0744734, 3.47454, -25.2351, 0, 0, 0, 0, 0, 0, -1.86535, 3.46775, -25.2828, 0, 0, 0, 0, 0, 0, -3.14623, 3.427, -25.2159, 0, 0, 0, 0, 0, 0, -3.15368, 3.28086, -23.9735, 0, 0, 0, 0, 0, 0, -2.95809, 2.87988, -22.1316, 0, 0, 0, 0, 0, 0, -3.50968, 2.63183, -19.3017, 0, 0, 0, 0, 0, 0, -4.40996, 2.30566, -17.5494, 0, 0, 0, 0, 0, 0, -2.54455, 2.17989, -15.9675, 0, 0, 0, 0, 0, 0, -0.608274, 2.22745, -16.1026, 0, 0, 0, 0, 0, 0, 0.390646, 2.22742, -16.8368),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 28
+
+[node name="TrkFinance" type="Node3D"]
+
+[node name="Enviornment" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Enviornment"]
+environment = SubResource("Environment_wxknj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Enviornment"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, -19.7735)
+visible = false
+mesh = SubResource("PlaneMesh_8fyox")
+surface_material_override/0 = SubResource("StandardMaterial3D_kxcpu")
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_elm5v")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
+polygon = PackedVector2Array(0, 0, 0, 0.1, 0.1, 0.1, 0.1, 0)
+mode = 2
+path_node = NodePath("../Path3D")
+path_interval_type = 0
+path_interval = 0.1
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

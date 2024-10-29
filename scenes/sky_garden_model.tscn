@@ -1,0 +1,153 @@
+[gd_scene load_steps=42 format=3 uid="uid://ch3s87vw72b6t"]
+
+[ext_resource type="ArrayMesh" uid="uid://d0e0y0k6kqsej" path="res://assets/tracks/Sky_Garden/old_sky_agb.obj" id="1_uvhbf"]
+[ext_resource type="Texture2D" uid="uid://bs21jaw7cb14e" path="res://assets/tracks/Sky_Garden/sky_tuta1.png" id="2_rktye"]
+[ext_resource type="Texture2D" uid="uid://c261h21eofrwl" path="res://assets/tracks/Sky_Garden/sky_sky1.png" id="3_op7xr"]
+[ext_resource type="Texture2D" uid="uid://dcppqntvkc4np" path="res://assets/tracks/Sky_Garden/sky_cloud1.png" id="4_bfxq4"]
+[ext_resource type="Texture2D" uid="uid://bcj46j4tergex" path="res://assets/tracks/Sky_Garden/sky_jump1.png" id="5_ekpvx"]
+[ext_resource type="Texture2D" uid="uid://n2lyp28k7dub" path="res://assets/tracks/Sky_Garden/sky_dashJ.png" id="6_sp2hj"]
+[ext_resource type="Texture2D" uid="uid://bas2r2omjrgff" path="res://assets/tracks/Sky_Garden/sky_bridge1.png" id="7_entnt"]
+[ext_resource type="Texture2D" uid="uid://c3jwfepccpqks" path="res://assets/tracks/Sky_Garden/sky_StartLine.png" id="8_c85hf"]
+[ext_resource type="Texture2D" uid="uid://bn3rspcrq6ed1" path="res://assets/tracks/Sky_Garden/agb_block.png" id="9_h1kh4"]
+[ext_resource type="Texture2D" uid="uid://ba5jjt3ee2yjr" path="res://assets/tracks/Sky_Garden/sky_dirt1.png" id="10_18j23"]
+[ext_resource type="Texture2D" uid="uid://do42qaf6osoe6" path="res://assets/tracks/Sky_Garden/sky_road1.png" id="11_dnv1q"]
+[ext_resource type="AudioStream" uid="uid://1nwdmko044nj" path="res://assets/sounds/music/sng_garden.mp3" id="12_splgy"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_01cyh"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_7frhr"]
+sky_material = SubResource("ProceduralSkyMaterial_01cyh")
+
+[sub_resource type="Environment" id="Environment_srr35"]
+background_mode = 2
+sky = SubResource("Sky_7frhr")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7ndj"]
+albedo_texture = ExtResource("2_rktye")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fhn6x"]
+albedo_texture = ExtResource("2_rktye")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_alhjb"]
+albedo_texture = ExtResource("2_rktye")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nlsiq"]
+albedo_texture = ExtResource("2_rktye")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8o4sb"]
+albedo_texture = ExtResource("2_rktye")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5yva3"]
+albedo_texture = ExtResource("2_rktye")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_afrx5"]
+albedo_texture = ExtResource("3_op7xr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_540lt"]
+albedo_texture = ExtResource("2_rktye")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3so04"]
+albedo_texture = ExtResource("4_bfxq4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1opeq"]
+albedo_texture = ExtResource("2_rktye")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rhj4y"]
+albedo_texture = ExtResource("2_rktye")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m08jd"]
+albedo_texture = ExtResource("2_rktye")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h5ua1"]
+albedo_texture = ExtResource("2_rktye")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hfy35"]
+albedo_texture = ExtResource("2_rktye")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trtm1"]
+albedo_texture = ExtResource("2_rktye")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4d80t"]
+albedo_texture = ExtResource("2_rktye")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1a771"]
+albedo_texture = ExtResource("2_rktye")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0d5e"]
+albedo_texture = ExtResource("5_ekpvx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_alcu4"]
+albedo_texture = ExtResource("6_sp2hj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yaped"]
+albedo_texture = ExtResource("7_entnt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pincn"]
+albedo_texture = ExtResource("8_c85hf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lpjy3"]
+albedo_texture = ExtResource("9_h1kh4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5wlj"]
+albedo_texture = ExtResource("10_18j23")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glpqk"]
+albedo_texture = ExtResource("11_dnv1q")
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2vt6c"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_do7lr"]
+
+[node name="SkyGardenModel" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_srr35")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.374864, 0.263295, 0.888905, 0.780688, 0.606775, 0.149499, -0.500003, 0.749999, -0.43301, 0, 125.555, 0)
+shadow_enabled = true
+
+[node name="Track" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 2.91068, 60)
+mesh = ExtResource("1_uvhbf")
+surface_material_override/0 = SubResource("StandardMaterial3D_o7ndj")
+surface_material_override/1 = SubResource("StandardMaterial3D_fhn6x")
+surface_material_override/2 = SubResource("StandardMaterial3D_alhjb")
+surface_material_override/3 = SubResource("StandardMaterial3D_nlsiq")
+surface_material_override/4 = SubResource("StandardMaterial3D_8o4sb")
+surface_material_override/5 = SubResource("StandardMaterial3D_5yva3")
+surface_material_override/6 = SubResource("StandardMaterial3D_afrx5")
+surface_material_override/7 = SubResource("StandardMaterial3D_540lt")
+surface_material_override/8 = SubResource("StandardMaterial3D_3so04")
+surface_material_override/9 = SubResource("StandardMaterial3D_1opeq")
+surface_material_override/10 = SubResource("StandardMaterial3D_rhj4y")
+surface_material_override/11 = SubResource("StandardMaterial3D_m08jd")
+surface_material_override/12 = SubResource("StandardMaterial3D_h5ua1")
+surface_material_override/13 = SubResource("StandardMaterial3D_hfy35")
+surface_material_override/14 = SubResource("StandardMaterial3D_trtm1")
+surface_material_override/15 = SubResource("StandardMaterial3D_4d80t")
+surface_material_override/16 = SubResource("StandardMaterial3D_1a771")
+surface_material_override/17 = SubResource("StandardMaterial3D_b0d5e")
+surface_material_override/18 = SubResource("StandardMaterial3D_alcu4")
+surface_material_override/19 = SubResource("StandardMaterial3D_yaped")
+surface_material_override/20 = SubResource("StandardMaterial3D_pincn")
+surface_material_override/21 = SubResource("StandardMaterial3D_lpjy3")
+surface_material_override/22 = SubResource("StandardMaterial3D_b5wlj")
+surface_material_override/23 = SubResource("StandardMaterial3D_glpqk")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.716, 33.7521, 0.763626)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("WorldBoundaryShape3D_2vt6c")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 19.8129, 0.423996, 0)
+mesh = SubResource("PlaneMesh_do7lr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_splgy")

@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://bl7yp56hkp8e6"]
+
+[ext_resource type="Texture2D" uid="uid://dqud4svtuhpo3" path="res://assets/images/itembox_placeholder.png" id="1_ikstd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4oaxx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcbnn"]
+albedo_texture = ExtResource("1_ikstd")
+texture_filter = 0
+
+[sub_resource type="Animation" id="Animation_0a4xj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D/CSGBox3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.000542301, -1.56998, 0.00144156)]
+}
+
+[sub_resource type="Animation" id="Animation_b5s1b"]
+resource_name = "spin"
+length = 8.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D/CSGBox3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.533333, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.000542301, -1.56998, 0.00144156), Vector3(0.000542301, -1.30818, 0.00144156), Vector3(0.000542301, -1.04638, 0.00144156), Vector3(0.000542301, -0.784577, 0.00144156), Vector3(0.000542301, -0.522777, 0.00144156), Vector3(0.000542301, -0.260978, 0.00144156), Vector3(0.000542301, 0.000821345, 0.00144156), Vector3(0.000542301, 0.262621, 0.00144156), Vector3(0.000542301, 0.52442, 0.00144156), Vector3(0.000542301, 0.786219, 0.00144156), Vector3(0.000542301, 1.04802, 0.00144156), Vector3(0.000542302, 1.30982, 0.00144156), Vector3(0.000542302, 1.57162, 0.00144156), Vector3(0.000542302, 1.83342, 0.00144156), Vector3(0.000542302, 2.09522, 0.00144156), Vector3(0.000542302, 2.35702, 0.00144156), Vector3(0.000542302, 2.61881, 0.00144156), Vector3(0.000542302, 2.88061, 0.00144156)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y1f6k"]
+_data = {
+"RESET": SubResource("Animation_0a4xj"),
+"spin": SubResource("Animation_b5s1b")
+}
+
+[node name="ItemBox" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_4oaxx")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
+transform = Transform3D(0.000815519, -0.000543477, -1, 0.00144156, 0.999999, -0.000542301, 0.999999, -0.00144112, 0.000816302, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_pcbnn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_y1f6k")
+}

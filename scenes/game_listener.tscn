@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cu6oq4whbnukt"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.270588)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -611.0
+offset_top = -36.0
+offset_right = 7.0
+offset_bottom = 183.0
+grow_horizontal = 0
+rotation = 0.156194
+theme_override_font_sizes/font_size = 160
+text = "PAUSED"
+
+[node name="Resume" type="Button" parent="."]
+layout_mode = 1
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 80
+text = "Resume"
+
+[node name="Settings" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_right = 70.0
+offset_bottom = 15.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "Settings"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 70.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 80
+text = "Quit"

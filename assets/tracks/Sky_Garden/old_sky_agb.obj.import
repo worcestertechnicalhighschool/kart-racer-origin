@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d0e0y0k6kqsej"
+path="res://.godot/imported/old_sky_agb.obj-8fd3fb7a0049ea2c257a03b158fb4c1d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/old_sky_agb.obj-8fd3fb7a0049ea2c257a03b158fb4c1d.mesh"]
+
+source_file="res://assets/tracks/Sky_Garden/old_sky_agb.obj"
+dest_files=["res://.godot/imported/old_sky_agb.obj-8fd3fb7a0049ea2c257a03b158fb4c1d.mesh", "res://.godot/imported/old_sky_agb.obj-8fd3fb7a0049ea2c257a03b158fb4c1d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

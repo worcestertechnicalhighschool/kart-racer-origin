@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr2rd64geeyag"]
+
+[ext_resource type="Texture2D" uid="uid://b48ebmxj72tou" path="res://assets/images/battle_cats/lil_island_cat.png" id="1_vahe5"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_omhwb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_801ej"]
+transparency = 1
+albedo_texture = ExtResource("1_vahe5")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pax3t"]
+points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
+
+[node name="LilIslandCat" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
+mesh = SubResource("PlaneMesh_omhwb")
+surface_material_override/0 = SubResource("StandardMaterial3D_801ej")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_pax3t")

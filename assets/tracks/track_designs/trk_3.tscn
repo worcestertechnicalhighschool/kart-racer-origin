@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxdb8tckt84vl"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vnwgk"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_0yhbq"]
+sky_material = SubResource("ProceduralSkyMaterial_vnwgk")
+
+[sub_resource type="Environment" id="Environment_yqg16"]
+background_mode = 2
+sky = SubResource("Sky_0yhbq")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_isrd7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3scqb"]
+albedo_color = Color(0.113049, 0.113049, 0.113049, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_8rvdi"]
+
+[node name="Trk3" type="Node3D"]
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D"]
+environment = SubResource("Environment_yqg16")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_isrd7")
+surface_material_override/0 = SubResource("StandardMaterial3D_3scqb")
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_8rvdi")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

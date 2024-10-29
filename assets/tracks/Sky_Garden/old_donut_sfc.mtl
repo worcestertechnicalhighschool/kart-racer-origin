@@ -1,0 +1,64 @@
+newmtl bridge
+Ka 0 0 0
+Kd 0.7843137 0.7843137 0.7843137
+d 1
+Tr 1
+map_Ka bridge.png
+map_Kd bridge.png
+map_d bridge.png
+newmtl brock_2
+Ka 0 0 0
+Kd 0.7843137 0.7843137 0.7843137
+d 1
+Tr 1
+map_Ka brock_2.png
+map_Kd brock_2.png
+map_d brock_2.png
+newmtl brock_s
+Ka 0 0 0
+Kd 0.7843137 0.7843137 0.7843137
+d 1
+Tr 1
+map_Ka brock_s.png
+map_Kd brock_s.png
+map_d brock_s.png
+newmtl grass_01
+Ka 0 0 0
+Kd 0.7843137 0.7843137 0.7843137
+d 1
+Tr 1
+map_Ka grass_01.png
+map_Kd grass_01.png
+map_d grass_01.png
+newmtl lambert210
+Ka 0 0 0
+Kd 0.7843137 0.7843137 0.7843137
+d 1
+Tr 1
+map_Ka lambert210.png
+map_Kd lambert210.png
+map_d lambert210.png
+newmtl ro01
+Ka 0 0 0
+Kd 0.7843137 0.7843137 0.7843137
+d 1
+Tr 1
+map_Ka ro01.png
+map_Kd ro01.png
+map_d ro01.png
+newmtl ro02
+Ka 0 0 0
+Kd 0.7843137 0.7843137 0.7843137
+d 1
+Tr 1
+map_Ka ro02.png
+map_Kd ro02.png
+map_d ro02.png
+newmtl sea1
+Ka 0 0 0
+Kd 0.7843137 0.7843137 0.7843137
+d 1
+Tr 1
+map_Ka sea1.png
+map_Kd sea1.png
+map_d sea1.png
