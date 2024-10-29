@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://carm88pw5xfdy"]
+
+[ext_resource type="Texture2D" path="res://assets/images/maxresdefault.jpg" id="1_pw8h3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymfeq"]
+albedo_texture = ExtResource("1_pw8h3")
+
+[sub_resource type="BoxMesh" id="BoxMesh_qa0bn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x4mro"]
+
+[node name="BoostPad" type="StaticBody3D"]
+collision_layer = 2
+
+[node name="MeshInstance3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(22.4, 0, 0, 0, 0.141, 0, 0, 0, 12, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ymfeq")
+mesh = SubResource("BoxMesh_qa0bn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(22.4, 0, 0, 0, 0.4, 0, 0, 0, 12, 0, 0, 0)
+shape = SubResource("BoxShape3D_x4mro")
