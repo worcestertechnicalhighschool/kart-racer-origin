@@ -39,7 +39,7 @@ var axis
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	
+	#print(linear_velocity)
 	if ray.is_colliding():
 		if "BoostPad" in ray.get_collider().name:
 			if rotation_degrees.x > rotation_degrees.z:
@@ -78,6 +78,9 @@ func _physics_process(delta: float) -> void:
 	if !drift:
 		engine_force = Input.get_axis("backward","forward") * ENGINE_POWER
 		steering = move_toward(steering, Input.get_axis("right","left") * MAX_STEER, delta * 10)
+	if drift:
+		engine_force = Input.get_axis("backward","forward") * ENGINE_POWER
+		steering = move_toward(steering, axis * MAX_STEER, delta * 10)
 		
 func _on_camera_timer_timeout() -> void:
 	var fov_in_tween = get_tree().create_tween()
@@ -95,12 +98,12 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 		flwheel.wheel_friction_slip = 5.5
 		frwheel.wheel_friction_slip = 5.5
 		#Keeps the linear velocity at the same from the drifts start to end
-		linear_velocity.z = old_velocity.z
+		linear_velocity.z = clamp(linear_velocity.z,old_velocity.z,old_velocity.z-10)
 		#Checks if the direction your pressing is the same as the directions from the start of the drift 
 		if axis == Input.get_axis("right","left"):
 			#Tight drift 
-			apply_torque_impulse(Vector3(0,10*axis,0))
-			apply_central_impulse(Vector3(0,0,10))
+			#apply_central_force(Vector3(10*axis,0,10))
+			#apply_central_impulse(Vector3(0,0,o))
 			#Locks the axis to the start position and the given angle
 			global_rotation_degrees.y = clamp(global_rotation_degrees.y,[old_rotation.y+75*axis,old_rotation.y].min(),[old_rotation.y+75*axis,old_rotation.y].max())
 		elif Input.get_axis("right","left") == 0:
@@ -112,4 +115,3 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 			global_rotation_degrees.y = clamp(global_rotation_degrees.y,[old_rotation.y+45*axis,old_rotation.y].min(),[old_rotation.y+45*axis,old_rotation.y].max())
 	rotation_degrees.x = clamp(rotation_degrees.x,-5,5)
 	rotation_degrees.z = clamp(rotation_degrees.z,-5,5)
-	print(rotation_degrees)
