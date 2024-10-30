@@ -94,13 +94,7 @@ target_position = Vector3(0, -2, 0)
 collision_mask = 2
 debug_shape_thickness = 5
 
-[node name="CameraTimer" type="Timer" parent="."]
-wait_time = 2.5
-one_shot = true
-
 [node name="Ui" parent="." instance=ExtResource("2_1w8et")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_8ffs4")]
 visible = false
-
-[connection signal="timeout" from="CameraTimer" to="." method="_on_camera_timer_timeout"]

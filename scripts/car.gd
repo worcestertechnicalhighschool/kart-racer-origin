@@ -40,21 +40,6 @@ var axis
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	#print(linear_velocity)
-	if ray.is_colliding():
-		if "BoostPad" in ray.get_collider().name:
-			if rotation_degrees.x > rotation_degrees.z:
-				apply_central_force(Vector3(100 * sign(rotation_degrees.x), 0, 0)) 
-			elif rotation_degrees.x < rotation_degrees.z:
-				apply_central_force(Vector3(0, 0, 100 * sign(rotation_degrees.z))) 
-			
-			var fov_out_tween = get_tree().create_tween()
-			fov_out_tween.tween_property(camera, "fov", 115, 0.3)
-			
-			var center_of_mass_rotation_tween = get_tree().create_tween()
-			center_of_mass_rotation_tween.tween_property(com, "rotation_degrees", Vector3(10, 0, 0), 0.3)
-			
-			$CameraTimer.start()
-	
 	#print(rotation_degrees,rotation)
 	#print(linear_velocity)
 	if Input.is_action_pressed("drift") and Input.get_axis("right","left") != 0 and !drift:
@@ -81,13 +66,6 @@ func _physics_process(delta: float) -> void:
 	if drift:
 		engine_force = ENGINE_POWER
 		steering = move_toward(steering, axis * MAX_STEER, delta * 10)
-		
-func _on_camera_timer_timeout() -> void:
-	var fov_in_tween = get_tree().create_tween()
-	fov_in_tween.tween_property(camera, "fov", 75, 0.3)
-
-	var center_of_mass_reversion_tween = get_tree().create_tween()
-	center_of_mass_reversion_tween.tween_property(com, "rotation_degrees", Vector3(0, 0, 0), 0.3)
 
 
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
