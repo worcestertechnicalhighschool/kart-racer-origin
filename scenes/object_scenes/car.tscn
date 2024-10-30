@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dkuwcntbn4jl2"]
 
-[ext_resource type="Script" path="res://scripts/car2.gd" id="1_318nw"]
+[ext_resource type="Script" path="res://scripts/car.gd" id="1_318nw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ibdse"]
 
