@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://ftfjb2juk3gv"]
 
-[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_udsx1"]
-[ext_resource type="Texture2D" uid="uid://pmrgd74p8b1e" path="res://assets/images/battle_cats/cat_kart.png" id="3_6nrp0"]
-[ext_resource type="Texture2D" uid="uid://wf1olbqmhl2a" path="res://assets/images/racing_flags.png" id="3_snkco"]
-[ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/fade_in.tscn" id="5_6uh75"]
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_wep01"]
+[ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/object_scenes/fade_in.tscn" id="2_hrswe"]
+[ext_resource type="Texture2D" uid="uid://pmrgd74p8b1e" path="res://assets/images/battle_cats/cat_kart.png" id="3_2d2xj"]
+[ext_resource type="Texture2D" uid="uid://wf1olbqmhl2a" path="res://assets/images/racing_flags.png" id="4_tjyxy"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -12,9 +12,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_udsx1")
+script = ExtResource("1_wep01")
 
-[node name="FadeIn" parent="." instance=ExtResource("5_6uh75")]
+[node name="FadeIn" parent="." instance=ExtResource("2_hrswe")]
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -75,13 +75,13 @@ text = "Credits"
 
 [node name="CatKart" type="Sprite2D" parent="."]
 position = Vector2(1035, 549)
-texture = ExtResource("3_6nrp0")
+texture = ExtResource("3_2d2xj")
 
 [node name="RacingFlags" type="Sprite2D" parent="."]
 light_mask = 2
 visibility_layer = 2
 position = Vector2(925, 110)
 scale = Vector2(0.416222, 0.402555)
-texture = ExtResource("3_snkco")
+texture = ExtResource("4_tjyxy")
 
 [connection signal="pressed" from="text and buttons/Single_Player" to="." method="_on_single_player_pressed"]

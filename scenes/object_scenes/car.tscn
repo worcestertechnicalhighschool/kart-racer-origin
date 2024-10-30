@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkuwcntbn4jl2"]
+[gd_scene load_steps=8 format=3 uid="uid://dkuwcntbn4jl2"]
 
-[ext_resource type="Script" path="res://scripts/car2.gd" id="1_318nw"]
+[ext_resource type="Script" path="res://scripts/car.gd" id="1_318nw"]
+[ext_resource type="PackedScene" uid="uid://bmwh6n8gr4wvd" path="res://scenes/ui_scenes/car_ui.tscn" id="2_1w8et"]
+[ext_resource type="PackedScene" uid="uid://cu6oq4whbnukt" path="res://scenes/ui_scenes/pause_menu.tscn" id="3_8ffs4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ibdse"]
 
@@ -95,5 +97,10 @@ debug_shape_thickness = 5
 [node name="CameraTimer" type="Timer" parent="."]
 wait_time = 2.5
 one_shot = true
+
+[node name="Ui" parent="." instance=ExtResource("2_1w8et")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_8ffs4")]
+visible = false
 
 [connection signal="timeout" from="CameraTimer" to="." method="_on_camera_timer_timeout"]
