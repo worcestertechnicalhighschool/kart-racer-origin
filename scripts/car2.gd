@@ -79,7 +79,7 @@ func _physics_process(delta: float) -> void:
 		engine_force = Input.get_axis("backward","forward") * ENGINE_POWER
 		steering = move_toward(steering, Input.get_axis("right","left") * MAX_STEER, delta * 10)
 	if drift:
-		engine_force = Input.get_axis("backward","forward") * ENGINE_POWER
+		engine_force = ENGINE_POWER
 		steering = move_toward(steering, axis * MAX_STEER, delta * 10)
 		
 func _on_camera_timer_timeout() -> void:
@@ -100,18 +100,21 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 		#Keeps the linear velocity at the same from the drifts start to end
 		linear_velocity.z = clamp(linear_velocity.z,old_velocity.z,old_velocity.z-10)
 		#Checks if the direction your pressing is the same as the directions from the start of the drift 
-		if axis == Input.get_axis("right","left"):
-			#Tight drift 
+		if axis == -Input.get_axis("right","left"):
+			#Wide drift 
 			#apply_central_force(Vector3(10*axis,0,10))
-			#apply_central_impulse(Vector3(0,0,o))
+			#apply_central_impulse(Vector3(3*axis,0,0))
 			#Locks the axis to the start position and the given angle
-			global_rotation_degrees.y = clamp(global_rotation_degrees.y,[old_rotation.y+75*axis,old_rotation.y].min(),[old_rotation.y+75*axis,old_rotation.y].max())
+			apply_torque(Vector3(0,-2*axis,0))
+			global_rotation_degrees.y = clamp(global_rotation_degrees.y,[global_rotation_degrees.y,old_rotation.y].min(),[global_rotation_degrees.y,old_rotation.y].max())
 		elif Input.get_axis("right","left") == 0:
 			#Middle drift 
-			global_rotation_degrees.y = clamp(global_rotation_degrees.y,[old_rotation.y+75*axis,old_rotation.y+45*axis].min(),[old_rotation.y+75*axis,old_rotation.y+45*axis].max())
-		elif axis == -Input.get_axis("right","left"):
-			#Wide drift 
-			apply_torque_impulse(Vector3(0,5*axis,0))
-			global_rotation_degrees.y = clamp(global_rotation_degrees.y,[old_rotation.y+45*axis,old_rotation.y].min(),[old_rotation.y+45*axis,old_rotation.y].max())
+			global_rotation_degrees.y = global_rotation_degrees.y
+		elif axis == Input.get_axis("right","left"):
+			#Tight drift 
+			apply_torque(Vector3(0,2*axis,0))
+			pass
+			#apply_torque_impulse(Vector3(0,0*axis,0))
+			#global_rotation_degrees.y = clamp(global_rotation_degrees.y,[old_rotation.y+45*axis,old_rotation.y].min(),[old_rotation.y+45*axis,old_rotation.y].max())
 	rotation_degrees.x = clamp(rotation_degrees.x,-5,5)
 	rotation_degrees.z = clamp(rotation_degrees.z,-5,5)

@@ -27,8 +27,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	print(1)
-	if body is VehicleBody3D:
+	if body is VehicleBody3D and $Timer.is_stopped():
 		car = body
 		car_parts = body.get_children()
 		for node in car_parts:
