@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbq6dgmwt0u82"]
+[gd_scene load_steps=10 format=3 uid="uid://cbq6dgmwt0u82"]
 
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_rflty"]
 [ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_tl23f"]
+[ext_resource type="PackedScene" uid="uid://bgfoxm83j36w0" path="res://scenes/oil.tscn" id="3_85lhp"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tl4ks"]
 panorama = ExtResource("1_tl23f")
@@ -102,3 +103,8 @@ shape = SubResource("WorldBoundaryShape3D_lac0i")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 341.663, 25.3107, 238.765)
 mass = 100.0
 gravity_scale = 1.5
+
+[node name="Obstacles" type="Node3D" parent="."]
+
+[node name="Oil" parent="Obstacles" instance=ExtResource("3_85lhp")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 330.275, 17.0421, 203.032)
