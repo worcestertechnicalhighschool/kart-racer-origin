@@ -1,5 +1,7 @@
 extends Area3D
 
+@export var USES = 1
+
 var car
 var original = []
 var original_rotation
@@ -7,8 +9,8 @@ var original_position
 var car_parts
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	if USES == 0:
+		queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -28,6 +30,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is VehicleBody3D and $Timer.is_stopped():
+		USES -= 1
 		car = body
 		car_parts = body.get_children()
 		for node in car_parts:
@@ -59,4 +62,5 @@ func _on_timer_timeout() -> void:
 			node.transparency = 0
 		if node is VehicleWheel3D:
 			node.get_child(0).transparency = 0
-	queue_free()
+	if USES <= 0:
+		queue_free()

@@ -39,6 +39,10 @@ var axis
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	#apply_impulse(Vector3(0,0,10),Vector3(0,0,0))
+	print(global_rotation_degrees)
+	apply_central_impulse(Vector3(0,0,10))
+	
 	#print(linear_velocity)
 	if ray.is_colliding():
 		if "BoostPad" in ray.get_collider().name:
