@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cbq6dgmwt0u82"]
 
-[ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/models/car.tscn" id="1_rflty"]
+[ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_rflty"]
 [ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_tl23f"]
 [ext_resource type="PackedScene" uid="uid://bgfoxm83j36w0" path="res://scenes/oil.tscn" id="3_85lhp"]
 
