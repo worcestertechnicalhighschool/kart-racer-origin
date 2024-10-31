@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://y4vk4rpotb7l"
-path="res://.godot/imported/sng_welding_alt.mp3-1cd62f2818a3c45752e7c2989c03d2c4.mp3str"
+path="res://.godot/imported/sng_welding_alt.mp3-b76e9b689324a06521242a236add5b66.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/music/alden/sng_welding_alt.mp3"
-dest_files=["res://.godot/imported/sng_welding_alt.mp3-1cd62f2818a3c45752e7c2989c03d2c4.mp3str"]
+source_file="res://assets/sounds/music/alden/welding/sng_welding_alt.mp3"
+dest_files=["res://.godot/imported/sng_welding_alt.mp3-b76e9b689324a06521242a236add5b66.mp3str"]
 
 [params]
 

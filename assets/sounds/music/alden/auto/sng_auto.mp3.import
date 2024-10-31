@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://uu7ovclr6wyg"
-path="res://.godot/imported/sng_auto.mp3-c4a3e73c7e856f90821bd100012f0e05.mp3str"
+path="res://.godot/imported/sng_auto.mp3-d01f274accb9023de09197264ba0f753.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/music/alden/sng_auto.mp3"
-dest_files=["res://.godot/imported/sng_auto.mp3-c4a3e73c7e856f90821bd100012f0e05.mp3str"]
+source_file="res://assets/sounds/music/alden/auto/sng_auto.mp3"
+dest_files=["res://.godot/imported/sng_auto.mp3-d01f274accb9023de09197264ba0f753.mp3str"]
 
 [params]
 
