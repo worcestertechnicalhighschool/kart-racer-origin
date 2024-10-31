@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7a4gqd1y421i"]
+
+[ext_resource type="Script" path="res://scripts/area_3d.gd" id="1_ed5h2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d1v83"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pa7ds"]
+
+[node name="trip" type="Area3D"]
+script = ExtResource("1_ed5h2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_d1v83")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_pa7ds")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
