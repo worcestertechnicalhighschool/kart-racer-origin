@@ -24,8 +24,7 @@ extends VehicleBody3D
 @onready var brwheel = $BackRightWheel
 @onready var flwheel = $FrontLeftWheel
 @onready var frwheel = $FrontRightWheel
-@onready var com: Node3D = $CenterOfMass
-@onready var camera = $CenterOfMass/Cameras/FrontCamera
+@onready var camera = $Cameras/FrontCamera
 @export var MAX_STEER = 0.9
 @export var ENGINE_POWER = 500
 @onready var ray: RayCast3D = $RayCast3D
