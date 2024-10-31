@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbq6dgmwt0u82"]
+[gd_scene load_steps=11 format=3 uid="uid://cbq6dgmwt0u82"]
 
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_rflty"]
 [ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_tl23f"]
 [ext_resource type="PackedScene" uid="uid://bgfoxm83j36w0" path="res://scenes/oil.tscn" id="3_85lhp"]
+[ext_resource type="PackedScene" uid="uid://carm88pw5xfdy" path="res://scenes/object_scenes/boost_pad.tscn" id="4_0rsgp"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tl4ks"]
 panorama = ExtResource("1_tl23f")
@@ -100,7 +101,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.2032, 0)
 shape = SubResource("WorldBoundaryShape3D_lac0i")
 
 [node name="Car" parent="." instance=ExtResource("1_rflty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 341.663, 25.3107, 238.765)
+transform = Transform3D(-0.933799, 0, -0.357798, 0, 1, 0, 0.357798, 0, -0.933799, 346.556, 19.2852, 253.088)
 mass = 100.0
 gravity_scale = 1.5
 
@@ -108,3 +109,6 @@ gravity_scale = 1.5
 
 [node name="Oil" parent="Obstacles" instance=ExtResource("3_85lhp")]
 transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 330.275, 17.0421, 203.032)
+
+[node name="BoostPad" parent="." instance=ExtResource("4_0rsgp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.855, 16.9775, 260.383)

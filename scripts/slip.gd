@@ -37,7 +37,7 @@ func _on_body_entered(body: Node3D) -> void:
 			if node is VehicleWheel3D:
 				original.append(node.wheel_friction_slip)
 				node.wheel_friction_slip = 0
-			if node.name == "CenterOfMass":
+			if node.name == "Cameras":
 				original_rotation = node.rotation_degrees
 				original_position = node.position
 				node.top_level = true
@@ -54,7 +54,7 @@ func _on_timer_timeout() -> void:
 	for node in car_parts:
 		if node is VehicleWheel3D:
 			node.wheel_friction_slip = original[i]
-		if node.name == "CenterOfMass":
+		if node.name == "Cameras":
 			node.top_level = false
 			node.rotation_degrees = original_rotation
 			node.position = original_position
