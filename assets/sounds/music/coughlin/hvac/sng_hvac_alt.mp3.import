@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://wq1n72m4ahjt"
-path="res://.godot/imported/sng_hvac_alt.mp3-b0f9b094643a4d9c64058fb465fc4958.mp3str"
+path="res://.godot/imported/sng_hvac_alt.mp3-850da9d9b18b2c9e09a89a54e9147a5d.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/music/coughlin/sng_hvac_alt.mp3"
-dest_files=["res://.godot/imported/sng_hvac_alt.mp3-b0f9b094643a4d9c64058fb465fc4958.mp3str"]
+source_file="res://assets/sounds/music/coughlin/hvac/sng_hvac_alt.mp3"
+dest_files=["res://.godot/imported/sng_hvac_alt.mp3-850da9d9b18b2c9e09a89a54e9147a5d.mp3str"]
 
 [params]
 

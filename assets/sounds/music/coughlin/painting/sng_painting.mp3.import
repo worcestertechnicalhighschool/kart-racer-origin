@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dfr8bmjk125w3"
-path="res://.godot/imported/sng_painting.mp3-4345c6e4dd00df7900c737a99a4260f5.mp3str"
+path="res://.godot/imported/sng_painting.mp3-9982b7d8a23ae725ae004d2537fbdf68.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/music/coughlin/sng_painting.mp3"
-dest_files=["res://.godot/imported/sng_painting.mp3-4345c6e4dd00df7900c737a99a4260f5.mp3str"]
+source_file="res://assets/sounds/music/coughlin/painting/sng_painting.mp3"
+dest_files=["res://.godot/imported/sng_painting.mp3-9982b7d8a23ae725ae004d2537fbdf68.mp3str"]
 
 [params]
 

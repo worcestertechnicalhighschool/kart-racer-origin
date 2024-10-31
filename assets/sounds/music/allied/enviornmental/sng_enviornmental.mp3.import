@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://pushtnxtycwy"
-path="res://.godot/imported/sng_enviornmental.mp3-f73bf2fb17b449e4eae32dd0c20d6713.mp3str"
+path="res://.godot/imported/sng_enviornmental.mp3-99bb704250d78534cd912dbad953fcd2.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/music/allied/sng_enviornmental.mp3"
-dest_files=["res://.godot/imported/sng_enviornmental.mp3-f73bf2fb17b449e4eae32dd0c20d6713.mp3str"]
+source_file="res://assets/sounds/music/allied/enviornmental/sng_enviornmental.mp3"
+dest_files=["res://.godot/imported/sng_enviornmental.mp3-99bb704250d78534cd912dbad953fcd2.mp3str"]
 
 [params]
 
