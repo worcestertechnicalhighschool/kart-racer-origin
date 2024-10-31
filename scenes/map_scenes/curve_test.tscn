@@ -100,7 +100,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.2032, 0)
 shape = SubResource("WorldBoundaryShape3D_lac0i")
 
 [node name="Car" parent="." instance=ExtResource("1_rflty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 341.663, 25.3107, 238.765)
+transform = Transform3D(-0.933799, 0, -0.357798, 0, 1, 0, 0.357798, 0, -0.933799, 346.556, 19.2852, 253.088)
 mass = 100.0
 gravity_scale = 1.5
 
