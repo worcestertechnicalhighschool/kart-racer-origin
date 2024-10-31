@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbq6dgmwt0u82"]
+[gd_scene load_steps=13 format=3 uid="uid://cbq6dgmwt0u82"]
 
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_rflty"]
 [ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_tl23f"]
@@ -27,6 +27,15 @@ point_count = 16
 albedo_color = Color(0.325441, 0.325441, 0.325441, 1)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_lac0i"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lmvoh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hyfmd"]
+albedo_color = Color(0.114897, 0.114897, 0.114897, 1)
+metallic = 0.47
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_x5nv1"]
+points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
 
 [node name="CurveTest" type="Node3D"]
 
@@ -92,6 +101,7 @@ path_joined = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 autoplay = true
 mix_target = 1
+bus = &"Music"
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.2032, 0)
@@ -100,11 +110,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.2032, 0)
 shape = SubResource("WorldBoundaryShape3D_lac0i")
 
 [node name="Car" parent="." instance=ExtResource("1_rflty")]
-transform = Transform3D(-0.933799, 0, -0.357798, 0, 1, 0, 0.357798, 0, -0.933799, 346.556, 19.2852, 253.088)
+transform = Transform3D(-0.933799, 0, -0.357798, 0, 1, 0, 0.357798, 0, -0.933799, 353.664, 19.2852, 283.364)
 mass = 100.0
 gravity_scale = 1.5
 
 [node name="Obstacles" type="Node3D" parent="."]
 
 [node name="Oil" parent="Obstacles" instance=ExtResource("3_85lhp")]
-transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 330.275, 17.0421, 203.032)
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 323.1, 17.0421, 197.287)
+
+[node name="Start Line" type="RigidBody3D" parent="."]
+transform = Transform3D(0.924626, 0, 0.380877, 0, 1, 0, -0.380877, 0, 0.924626, 370.894, -0.0969887, 284.317)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Start Line"]
+transform = Transform3D(8, 0, -1.32455e-08, 0, 1, 0, 2.11928e-07, 0, 0.5, -15.561, 17.1795, -11.5886)
+mesh = SubResource("PlaneMesh_lmvoh")
+surface_material_override/0 = SubResource("StandardMaterial3D_hyfmd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Start Line"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7655, 17.1795, -2.10855)
+shape = SubResource("ConvexPolygonShape3D_x5nv1")

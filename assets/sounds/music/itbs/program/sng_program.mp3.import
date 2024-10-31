@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://ct2ksdllk1drd"
-path="res://.godot/imported/sng_program.mp3-b7387d880ebf3e81976a5bb27668cc52.mp3str"
+path="res://.godot/imported/sng_program.mp3-6c4b57cc6bbf83393eaba665211b101c.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/music/itbs/sng_program.mp3"
-dest_files=["res://.godot/imported/sng_program.mp3-b7387d880ebf3e81976a5bb27668cc52.mp3str"]
+source_file="res://assets/sounds/music/itbs/program/sng_program.mp3"
+dest_files=["res://.godot/imported/sng_program.mp3-6c4b57cc6bbf83393eaba665211b101c.mp3str"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bacas3uocdtcf"
-path="res://.godot/imported/sng_hvac_alt_bbm.mp3-ee9085ce3fdf5a77df1d029f869ff449.mp3str"
+path="res://.godot/imported/sng_hvac_alt_bbm.mp3-b86f59904b874f568502a16a1460ead3.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/music/coughlin/sng_hvac_alt_bbm.mp3"
-dest_files=["res://.godot/imported/sng_hvac_alt_bbm.mp3-ee9085ce3fdf5a77df1d029f869ff449.mp3str"]
+source_file="res://assets/sounds/music/coughlin/hvac/sng_hvac_alt_bbm.mp3"
+dest_files=["res://.godot/imported/sng_hvac_alt_bbm.mp3-b86f59904b874f568502a16a1460ead3.mp3str"]
 
 [params]
 

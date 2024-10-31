@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dww2nkvr1tac7"
-path="res://.godot/imported/sng_manufacturing.mp3-f4659b84ff1207d8227130f3bbc81817.mp3str"
+path="res://.godot/imported/sng_manufacturing.mp3-c7170e1544064dd97830fb33e213461d.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/music/alden/sng_manufacturing.mp3"
-dest_files=["res://.godot/imported/sng_manufacturing.mp3-f4659b84ff1207d8227130f3bbc81817.mp3str"]
+source_file="res://assets/sounds/music/alden/manufacturing/sng_manufacturing.mp3"
+dest_files=["res://.godot/imported/sng_manufacturing.mp3-c7170e1544064dd97830fb33e213461d.mp3str"]
 
 [params]
 
