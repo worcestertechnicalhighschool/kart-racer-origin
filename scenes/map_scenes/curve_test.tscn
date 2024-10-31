@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 [gd_scene load_steps=13 format=3 uid="uid://cbq6dgmwt0u82"]
+=======
+[gd_scene load_steps=11 format=3 uid="uid://cbq6dgmwt0u82"]
+>>>>>>> refs/remotes/origin/main
 
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_rflty"]
 [ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_tl23f"]
 [ext_resource type="PackedScene" uid="uid://bgfoxm83j36w0" path="res://scenes/oil.tscn" id="3_85lhp"]
+[ext_resource type="PackedScene" uid="uid://carm88pw5xfdy" path="res://scenes/object_scenes/boost_pad.tscn" id="4_0rsgp"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tl4ks"]
 panorama = ExtResource("1_tl23f")
@@ -117,6 +122,7 @@ gravity_scale = 1.5
 [node name="Obstacles" type="Node3D" parent="."]
 
 [node name="Oil" parent="Obstacles" instance=ExtResource("3_85lhp")]
+<<<<<<< HEAD
 transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 323.1, 17.0421, 197.287)
 
 [node name="Start Line" type="RigidBody3D" parent="."]
@@ -130,3 +136,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_hyfmd")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Start Line"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7655, 17.1795, -2.10855)
 shape = SubResource("ConvexPolygonShape3D_x5nv1")
+=======
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 330.275, 17.0421, 203.032)
+
+[node name="BoostPad" parent="." instance=ExtResource("4_0rsgp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.855, 16.9775, 260.383)
+>>>>>>> refs/remotes/origin/main
