@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://ftfjb2juk3gv"]
+
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_rtajm"]
+[ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/object_scenes/fade_in.tscn" id="2_gm7xs"]
+[ext_resource type="Texture2D" uid="uid://pmrgd74p8b1e" path="res://assets/images/battle_cats/cat_kart.png" id="3_o2xdh"]
+[ext_resource type="Texture2D" uid="uid://wf1olbqmhl2a" path="res://assets/images/racing_flags.png" id="4_3ugb0"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rtajm")
+
+[node name="FadeIn" parent="." instance=ExtResource("2_gm7xs")]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.255341, 0.630284, 0.522835, 1)
+
+[node name="text and buttons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="text and buttons"]
+layout_mode = 1
+offset_right = 804.0
+offset_bottom = 219.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 160
+text = "Kart Racer"
+horizontal_alignment = 1
+
+[node name="Single_Player" type="Button" parent="text and buttons"]
+layout_mode = 2
+offset_left = 68.0
+offset_top = 207.0
+offset_right = 470.0
+offset_bottom = 303.0
+theme_override_font_sizes/font_size = 64
+text = "Single Player"
+
+[node name="Multiplayer" type="Button" parent="text and buttons"]
+layout_mode = 2
+offset_left = 93.0
+offset_top = 334.093
+offset_right = 455.0
+offset_bottom = 430.093
+theme_override_font_sizes/font_size = 64
+text = "Multiplayer"
+
+[node name="Controls" type="Button" parent="text and buttons"]
+layout_mode = 2
+offset_left = 129.0
+offset_top = 461.185
+offset_right = 398.0
+offset_bottom = 557.185
+theme_override_font_sizes/font_size = 64
+text = "Controls"
+
+[node name="Credits" type="Button" parent="text and buttons"]
+layout_mode = 2
+offset_left = 153.0
+offset_top = 588.278
+offset_right = 380.0
+offset_bottom = 684.278
+theme_override_font_sizes/font_size = 64
+text = "Credits"
+
+[node name="CatKart" type="Sprite2D" parent="."]
+position = Vector2(1035, 549)
+texture = ExtResource("3_o2xdh")
+
+[node name="RacingFlags" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(925, 110)
+scale = Vector2(0.416222, 0.402555)
+texture = ExtResource("4_3ugb0")
+
+[connection signal="pressed" from="text and buttons/Single_Player" to="." method="_on_single_player_pressed"]
