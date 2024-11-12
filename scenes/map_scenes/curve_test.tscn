@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bydtpyflateb5"]
+[gd_scene load_steps=15 format=3 uid="uid://bydtpyflateb5"]
 
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_rflty"]
 [ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_tl23f"]
 [ext_resource type="PackedScene" uid="uid://bgfoxm83j36w0" path="res://scenes/object_scenes/oil.tscn" id="3_85lhp"]
-[ext_resource type="PackedScene" uid="uid://bl7yp56hkp8e6" path="res://scenes/object_scenes/item_box.tscn" id="4_1yaqc"]
+[ext_resource type="PackedScene" uid="uid://4k54hc70v833" path="res://scenes/object_scenes/test_block.tscn" id="4_vwy1j"]
+[ext_resource type="PackedScene" uid="uid://bl7yp56hkp8e6" path="res://scenes/object_scenes/item_box.tscn" id="5_vu073"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tl4ks"]
 panorama = ExtResource("1_tl23f")
@@ -132,4 +133,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_hyfmd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7655, 17.1795, -2.10855)
 shape = SubResource("ConvexPolygonShape3D_x5nv1")
 
-[node name="ItemBox" parent="." instance=ExtResource("4_1yaqc")]
+[node name="StaticBody3D" parent="." instance=ExtResource("4_vwy1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 337.405, 18.7653, 231.962)
+
+[node name="ItemBox" parent="." instance=ExtResource("5_vu073")]
