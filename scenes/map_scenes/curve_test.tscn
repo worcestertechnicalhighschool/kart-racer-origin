@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bydtpyflateb5"]
+[gd_scene load_steps=14 format=3 uid="uid://reojy8we20ey"]
 
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_rflty"]
 [ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_tl23f"]
 [ext_resource type="PackedScene" uid="uid://bgfoxm83j36w0" path="res://scenes/oil.tscn" id="3_85lhp"]
+[ext_resource type="PackedScene" uid="uid://c7a4gqd1y421i" path="res://scenes/object_scenes/shell.tscn" id="4_jpeqr"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tl4ks"]
 panorama = ExtResource("1_tl23f")
@@ -130,3 +131,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_hyfmd")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Start Line"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7655, 17.1795, -2.10855)
 shape = SubResource("ConvexPolygonShape3D_x5nv1")
+
+[node name="shell" parent="." instance=ExtResource("4_jpeqr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 349.397, 17.521, 270.495)
