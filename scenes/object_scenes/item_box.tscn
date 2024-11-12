@@ -72,7 +72,7 @@ _data = {
 }
 
 [node name="ItemBox" type="Node3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("1_a8dgl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -91,6 +91,5 @@ shape = SubResource("BoxShape3D_4oaxx")
 libraries = {
 "": SubResource("AnimationLibrary_y1f6k")
 }
-autoplay = "spin"
 
 [connection signal="body_entered" from="StaticBody3D/Area3D" to="." method="_on_area_3d_body_entered"]
