@@ -27,13 +27,20 @@ extends VehicleBody3D
 @onready var camera = $Cameras/FrontCamera
 @export var MAX_STEER = 0.9
 @export var ENGINE_POWER = 500
-
+@onready var ray: RayCast3D = $RayCast3D
+@onready var ui = $Ui
+@onready var pausemenu = $PauseMenu
 @export var DRIFT = 1
+
 var drift
 var old_rotation
 var old_position
 var old_velocity
 var axis
+	
+func _ready() -> void:
+	ui.visible = true
+	pausemenu.visible = false
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -68,6 +75,9 @@ func _physics_process(delta: float) -> void:
 	if drift:
 		engine_force = ENGINE_POWER
 		steering = move_toward(steering, axis * MAX_STEER, delta * 10)
+	
+	# listens for pause button
+	pause_listen()
 
 
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
@@ -98,3 +108,9 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 			#global_rotation_degrees.y = clamp(global_rotation_degrees.y,[old_rotation.y+45*axis,old_rotation.y].min(),[old_rotation.y+45*axis,old_rotation.y].max())
 	rotation_degrees.x = clamp(rotation_degrees.x,-5,5)
 	rotation_degrees.z = clamp(rotation_degrees.z,-5,5)
+
+func pause_listen():
+	if Input.is_action_just_pressed("pause"):
+		ui.visible = not $Ui.visible
+		pausemenu.visible = not $PauseMenu.visible
+		
