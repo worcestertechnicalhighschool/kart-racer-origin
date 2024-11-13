@@ -14,12 +14,11 @@
 [ext_resource type="AudioStream" uid="uid://1nwdmko044nj" path="res://assets/sounds/music/sng_garden.mp3" id="12_splgy"]
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="13_y8hcn"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_01cyh"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_quw34"]
+panorama = ExtResource("3_op7xr")
 
 [sub_resource type="Sky" id="Sky_7frhr"]
-sky_material = SubResource("ProceduralSkyMaterial_01cyh")
+sky_material = SubResource("PanoramaSkyMaterial_quw34")
 
 [sub_resource type="Environment" id="Environment_srr35"]
 background_mode = 2
