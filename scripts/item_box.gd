@@ -8,7 +8,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	
 	queue_free()
 
-func _process(_float) -> void:
+func _process(_delta: float) -> void:
 	if not tween_playing:
 		_start_tween()
 
