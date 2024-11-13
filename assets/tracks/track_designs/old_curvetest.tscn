@@ -1,0 +1,109 @@
+[gd_scene load_steps=10 format=3 uid="uid://bipq4y1kincch"]
+
+[ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_hbn7v"]
+[ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_x1y6x"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_w8v81"]
+panorama = ExtResource("1_x1y6x")
+
+[sub_resource type="Sky" id="Sky_vh5u8"]
+sky_material = SubResource("PanoramaSkyMaterial_w8v81")
+
+[sub_resource type="Environment" id="Environment_lg41c"]
+background_mode = 2
+background_color = Color(0.122252, 0.122252, 0.122252, 1)
+sky = SubResource("Sky_vh5u8")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mwbrp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8i0qs"]
+albedo_color = Color(0.142256, 0.142256, 0.142256, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_rivu5"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.00959258, -3.3237e-10, 0.417476, 0, 0, 0, 0, 0, 0, -0.788293, 0.0121955, 0.424833, 0, 0, 0, 0, 0, 0, -1.07467, -0.0382955, 0.365203, 0, 0, 0, 0, 0, 0, -0.98057, 0, -0.540471, 0, 0, 0, 0, 0, 0, -0.866684, 0, -0.665938, 0, 0, 0, 0, 0, 0, -0.562775, 3.46857e-09, -0.660927, 0, 0, 0, 0, 0, 0, -0.486424, -0.207268, 0.623472, 0, 0, 0, 0, 0, 0, 0.45361, -0.196973, 0.60803, 0, 0, 0, 0, 0, 0, 0.37843, 4.71625e-09, -0.659603, 0, 0, 0, 0, 0, 0, 0.289538, 0, -0.797195, 0, 0, 0, 0, 0, 0, 0.0887916, 0, -0.882127, 0, 0, 0, 0, 0, 0, 0.0366777, -4.72519e-09, -1.14055, 0, 0, 0, 0, 0, 0, 0.22391, 0, -1.30292, 0, 0, 0, 0, 0, 0, 0.476773, 0, -1.3145, 0, 0, 0, 0, 0, 0, 0.636984, 0, -1.27783, 0, 0, 0, 0, 0, 0, 0.722514, 3.15391e-09, -1.1376, 0, 0, 0, 0, 0, 0, 0.712548, -2.47979e-11, -0.967183, 0, 0, 0, 0, 0, 0, 0.629263, 0, -0.835801, 0, 0, 0, 0, 0, 0, 0.592588, 0, -0.692962, 0, 0, 0, 0, 0, 0, 0.692962, 0, -0.492215, 0, 0, 0, 0, 0, 0, 0.839661, 0, -0.525029, 0, 0, 0, 0, 0, 0, 0.814634, 4.7191e-09, -1.29717, 0, 0, 0, 0, 0, 0, 1.0848, 0, -1.28555, 0, 0, 0, 0, 0, 0, 1.08821, -4.85365e-09, -0.193682, 0, 0, 0, 0, 0, 0, 0.934243, 0, 0.272166, 0, 0, 0, 0, 0, 0, 0.648566, 0, 0.399563, 0, 0, 0, 0, 0, 0, 0.00959258, -3.3237e-10, 0.417476),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 27
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7o04e"]
+albedo_color = Color(0.325441, 0.325441, 0.325441, 1)
+
+[node name="Trk2" type="Node3D"]
+
+[node name="Enviornment" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Enviornment"]
+transform = Transform3D(-0.944376, -0.328867, -3.88712e-08, -0.146226, 0.419903, 0.895712, -0.29457, 0.845889, -0.444635, 0, 207.172, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Enviornment"]
+environment = SubResource("Environment_lg41c")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.04951)
+visible = false
+mesh = SubResource("PlaneMesh_mwbrp")
+surface_material_override/0 = SubResource("StandardMaterial3D_8i0qs")
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(-17, 2.56693e-06, 0, -2.56693e-06, -17, 0, 0, 0, 17, 0, 0, 0)
+curve = SubResource("Curve3D_rivu5")
+
+[node name="Track" type="CSGPolygon3D" parent="."]
+transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_7o04e")
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 0.1, 0.1, 0.1, 0.1, 0)
+mode = 2
+path_node = NodePath("../Path3D")
+path_interval_type = 0
+path_interval = 0.1
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = true
+
+[node name="Outer Edge" type="CSGPolygon3D" parent="."]
+transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 0, 0.640671, 0)
+use_collision = true
+polygon = PackedVector2Array(-0.004, 0, -0.003, 0.015, 0.007, 0.015, 0.008, 0)
+mode = 2
+path_node = NodePath("../Path3D")
+path_interval_type = 0
+path_interval = 0.1
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = true
+
+[node name="Inner Edge" type="CSGPolygon3D" parent="."]
+transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 0, 0.9, 0)
+use_collision = true
+polygon = PackedVector2Array(0.1, 0, 0.1, 0.014, 0.107, 0.014, 0.107, 0)
+mode = 2
+path_node = NodePath("../Path3D")
+path_interval_type = 0
+path_interval = 0.1
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+mix_target = 1
+bus = &"Music"
+
+[node name="Car" parent="." instance=ExtResource("1_hbn7v")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -296.42, -0.406718, -160.212)
+mass = 100.0
+gravity_scale = 3.0

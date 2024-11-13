@@ -28,13 +28,19 @@ extends VehicleBody3D
 @export var MAX_STEER = 0.9
 @export var ENGINE_POWER = 500
 @onready var ray: RayCast3D = $RayCast3D
-
+@onready var ui = $Ui
+@onready var pausemenu = $PauseMenu
 @export var DRIFT = 1
+
 var drift
 var old_rotation
 var old_position
 var old_velocity
 var axis
+	
+func _ready() -> void:
+	ui.visible = true
+	pausemenu.visible = false
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -68,7 +74,10 @@ func _physics_process(delta: float) -> void:
 		steering = move_toward(steering, Input.get_axis("right","left") * MAX_STEER, delta * 10)
 	if drift:
 		engine_force = ENGINE_POWER
-		steering = move_toward(steering, Input.get_axis("right","left") * MAX_STEER, delta * 10)
+		steering = move_toward(steering, axis * MAX_STEER, delta * 10)
+	
+	# listens for pause button
+	pause_listen()
 
 
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
@@ -90,16 +99,3 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 		#if axis == -Input.get_axis("right","left"):
 			##Wide drift 
 			#apply_central_force(Vector3(10*axis,0,10))
-			##apply_central_impulse(Vector3(3*axis,0,0))
-			##Locks the axis to the start position and the given angle
-			#apply_torque(Vector3(0,2*axis,0))
-			#global_rotation_degrees.y = clamp(global_rotation_degrees.y,[global_rotation_degrees.y,old_rotation.y].min(),[global_rotation_degrees.y,old_rotation.y].max())
-		#elif Input.get_axis("right","left") == 0:
-			##Middle drift 
-			#global_rotation_degrees.y = global_rotation_degrees.y
-		#elif axis == Input.get_axis("right","left"):
-			##Tight drift 
-			#apply_torque(Vector3(0,2*axis,0))
-			#pass
-			##apply_torque_impulse(Vector3(0,0*axis,0))
-			##global_rotation_degrees.y = clamp(global_rotation_degrees.y,[old_rotation.y+45*axis,old_rotation.y].min(),[old_rotation.y+45*axis,old_rotation.y].max())

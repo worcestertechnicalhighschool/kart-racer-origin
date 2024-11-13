@@ -6,6 +6,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_801ej"]
 transparency = 1
+cull_mode = 2
 albedo_texture = ExtResource("1_vahe5")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pax3t"]
