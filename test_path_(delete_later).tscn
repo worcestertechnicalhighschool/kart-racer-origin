@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://j6dwjtmhpnwb"]
+
+[ext_resource type="Script" path="res://scripts/track.gd" id="1_i6g8y"]
+
+[sub_resource type="Curve3D" id="Curve3D_evi3v"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.60524, 0.183058, -1.07936, 0, 0, 0, 0, 0, 0, 2.3913, -0.270482, 1.52019, 0, 0, 0, 0, 0, 0, -1.00362, -0.276278, 1.60677, 0, 0, 0, 0, 0, 0, -1.18784, 0.170016, -0.960485, 0, 0, 0, 0, 0, 0, 1.60524, 0.183058, -1.07936),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="Test Path (Delete Later)" type="Node3D"]
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0)
+curve = SubResource("Curve3D_evi3v")
+script = ExtResource("1_i6g8y")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.957183, 0.0476761, -0.285484, 1.86262e-09, 0.986334, 0.164718, 0.289436, 0.157668, -0.944114, 2.20258, -0.161593, 0.896069)
+progress = 2.09188
