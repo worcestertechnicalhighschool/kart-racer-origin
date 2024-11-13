@@ -92,6 +92,9 @@ transform = Transform3D(1, -2.26267e-08, 1.71867e-07, -2.26267e-08, 0.965926, 0.
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_8ffs4")]
 
+
 [node name="PauseCooldownTimer" type="Timer" parent="."]
 
 [node name="Inventory" parent="." instance=ExtResource("4_3gxtt")]
+
+[node name="PauseCooldownTimer" type="Timer" parent="."]
