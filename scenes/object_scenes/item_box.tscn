@@ -9,12 +9,12 @@ texture_filter = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4oaxx"]
 
-[sub_resource type="Animation" id="Animation_0a4xj"]
+[sub_resource type="Animation" id="Animation_je3f3"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -23,73 +23,47 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
 
-[sub_resource type="Animation" id="Animation_b5s1b"]
-resource_name = "spin"
-length = 2.0
+[sub_resource type="Animation" id="Animation_ebcok"]
+resource_name = "item_box_animation"
+length = 3.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0.5, 0), Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2),
+"times": PackedFloat32Array(0, 1.5, 3.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 3.14159, 0), Vector3(0, 6.28319, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_y1f6k"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qejuv"]
 _data = {
-"RESET": SubResource("Animation_0a4xj"),
-"spin": SubResource("Animation_b5s1b")
+"RESET": SubResource("Animation_je3f3"),
+"item_box_animation": SubResource("Animation_ebcok")
 }
 
-[node name="ItemBox" type="Node3D"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+[node name="ItemBox" type="StaticBody3D"]
 script = ExtResource("1_a8dgl")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_pcbnn")
 
-[node name="Area3D" type="Area3D" parent="StaticBody3D"]
+[node name="Area3D" type="Area3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_4oaxx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_y1f6k")
+"": SubResource("AnimationLibrary_qejuv")
 }
+autoplay = "item_box_animation"
 
-[connection signal="body_entered" from="StaticBody3D/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

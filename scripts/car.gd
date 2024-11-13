@@ -27,7 +27,6 @@ extends VehicleBody3D
 @onready var camera = $Cameras/FrontCamera
 @export var MAX_STEER = 0.9
 @export var ENGINE_POWER = 500
-@onready var ray: RayCast3D = $RayCast3D
 @onready var ui = $Ui
 @onready var pausemenu = $PauseMenu
 @export var DRIFT = 1
