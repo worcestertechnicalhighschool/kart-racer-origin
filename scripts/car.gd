@@ -81,35 +81,20 @@ func _physics_process(delta: float) -> void:
 
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	if drift:
-		#When the car is drifting reduces the friction on the cars wheels
-		blwheel.wheel_friction_slip = 2.5
-		brwheel.wheel_friction_slip = 2.5
+		linear_velocity.z = clamp(linear_velocity.z,old_velocity.z,old_velocity.z-10)
+		blwheel.wheel_friction_slip = 0
+		brwheel.wheel_friction_slip = 0
 		flwheel.wheel_friction_slip = 5.5
 		frwheel.wheel_friction_slip = 5.5
-		#Keeps the linear velocity at the same from the drifts start to end
-		linear_velocity.z = clamp(linear_velocity.z,old_velocity.z,old_velocity.z-10)
-		#Checks if the direction your pressing is the same as the directions from the start of the drift 
-		if axis == -Input.get_axis("right","left"):
-			#Wide drift 
-			#apply_central_force(Vector3(10*axis,0,10))
-			#apply_central_impulse(Vector3(3*axis,0,0))
-			#Locks the axis to the start position and the given angle
-			apply_torque(Vector3(0,-2*axis,0))
-			global_rotation_degrees.y = clamp(global_rotation_degrees.y,[global_rotation_degrees.y,old_rotation.y].min(),[global_rotation_degrees.y,old_rotation.y].max())
-		elif Input.get_axis("right","left") == 0:
-			#Middle drift 
-			global_rotation_degrees.y = global_rotation_degrees.y
-		elif axis == Input.get_axis("right","left"):
-			#Tight drift 
-			apply_torque(Vector3(0,2*axis,0))
-			pass
-			#apply_torque_impulse(Vector3(0,0*axis,0))
-			#global_rotation_degrees.y = clamp(global_rotation_degrees.y,[old_rotation.y+45*axis,old_rotation.y].min(),[old_rotation.y+45*axis,old_rotation.y].max())
-	rotation_degrees.x = clamp(rotation_degrees.x,-5,5)
-	rotation_degrees.z = clamp(rotation_degrees.z,-5,5)
-
-func pause_listen():
-	if Input.is_action_just_pressed("pause"):
-		ui.visible = not $Ui.visible
-		pausemenu.visible = not $PauseMenu.visible
+		#rotation_degrees.x = clamp(rotation_degrees.x,-5,5)
+		#rotation_degrees.z = clamp(rotation_degrees.z,-5,5)
 		
+		
+		
+		
+		##When the car is drifting reduces the friction on the cars wheels
+		##Keeps the linear velocity at the same from the drifts start to end
+		##Checks if the direction your pressing is the same as the directions from the start of the drift 
+		#if axis == -Input.get_axis("right","left"):
+			##Wide drift 
+			#apply_central_force(Vector3(10*axis,0,10))
