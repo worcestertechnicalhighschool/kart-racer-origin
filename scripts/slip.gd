@@ -13,7 +13,7 @@ func _ready() -> void:
 		queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if $Timer.time_left > 0:
 		for node in car_parts:
 			if node is MeshInstance3D:

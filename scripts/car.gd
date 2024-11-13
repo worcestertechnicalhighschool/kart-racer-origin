@@ -76,10 +76,10 @@ func _physics_process(delta: float) -> void:
 		steering = move_toward(steering, axis * MAX_STEER, delta * 10)
 	
 	# listens for pause button
-	pause_listen()
+	#pause_listen()
 
 
-func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
+func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 	if drift:
 		linear_velocity.z = clamp(linear_velocity.z,old_velocity.z,old_velocity.z-10)
 		blwheel.wheel_friction_slip = 0
