@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://reojy8we20ey"]
+[gd_scene load_steps=15 format=3 uid="uid://reojy8we20ey"]
 
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_rflty"]
 [ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_tl23f"]
-[ext_resource type="PackedScene" uid="uid://bgfoxm83j36w0" path="res://scenes/oil.tscn" id="3_85lhp"]
+[ext_resource type="PackedScene" uid="uid://bgfoxm83j36w0" path="res://scenes/object_scenes/oil.tscn" id="3_85lhp"]
 [ext_resource type="PackedScene" uid="uid://c7a4gqd1y421i" path="res://scenes/object_scenes/shell.tscn" id="4_jpeqr"]
+[ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/checkpoint.tscn" id="5_dtauj"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tl4ks"]
 panorama = ExtResource("1_tl23f")
@@ -134,3 +135,12 @@ shape = SubResource("ConvexPolygonShape3D_x5nv1")
 
 [node name="shell" parent="." instance=ExtResource("4_jpeqr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 349.397, 17.521, 270.495)
+
+[node name="Checkpoints" type="Node3D" parent="."]
+
+[node name="checkpoint" parent="Checkpoints" instance=ExtResource("5_dtauj")]
+transform = Transform3D(18.6876, 0, 0.356281, 0, 5, 0, -7.12563, 0, 0.934379, 349.868, 18.2281, 279.631)
+START_OR_FINISH_LINE = true
+
+[node name="checkpoint2" parent="Checkpoints" instance=ExtResource("5_dtauj")]
+transform = Transform3D(20, 0, 0, 0, 5, 0, 0, 0, 1, 343.232, 16.9726, 248.579)
