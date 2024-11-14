@@ -1,8 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cpyib23l6r8wp"]
+[gd_scene load_steps=10 format=3 uid="uid://cpyib23l6r8wp"]
 
 [ext_resource type="Script" path="res://scripts/bomb.gd" id="1_f6s3l"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_cp6ia"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_so8qk"]
 
@@ -19,16 +17,15 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_04qsb"]
 albedo_color = Color(0, 0, 0, 1)
 
-[node name="bomb" type="Area3D"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_cp6ia"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_j1jhg"]
+
+[node name="bomb" type="RigidBody3D"]
 script = ExtResource("1_f6s3l")
-FUSE = 5
+FUSE = 10
 LINGER = 2
 ONE_USE = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
-shape = SubResource("SphereShape3D_cp6ia")
-disabled = true
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -51,5 +48,15 @@ transform = Transform3D(0.1, 0, 0, 0, 0.5, 0, 0, 0, 0.1, 0, 0.2, 0)
 mesh = SubResource("CylinderMesh_3m2gw")
 surface_material_override/0 = SubResource("StandardMaterial3D_04qsb")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("SphereShape3D_cp6ia")
+disabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_j1jhg")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
