@@ -1,4 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
-map_scenes
+/map_scenes/
