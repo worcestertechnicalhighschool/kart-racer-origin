@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://46f5221jq06n"]
+[gd_scene load_steps=4 format=3 uid="uid://46f5221jq06n"]
 
 [ext_resource type="Script" path="res://scripts/inventory.gd" id="1_tggrm"]
-
-[sub_resource type="Theme" id="Theme_4iqr8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hon7w"]
 bg_color = Color(0, 0, 0, 0.329412)
@@ -17,23 +15,19 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="Theme" id="Theme_q2twt"]
+[sub_resource type="Theme" id="Theme_qkp7c"]
 Panel/styles/panel = SubResource("StyleBoxFlat_hon7w")
 
-[node name="Inventory" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_4iqr8")
+[node name="Inventory" type="Panel"]
+offset_right = 200.0
+offset_bottom = 200.0
+theme = SubResource("Theme_qkp7c")
 script = ExtResource("1_tggrm")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1080.0
-offset_top = 520.0
-offset_right = 1280.0
-offset_bottom = 720.0
-theme = SubResource("Theme_q2twt")
+offset_left = 6.0
+offset_top = 34.0
+offset_right = 196.0
+offset_bottom = 168.0
+autowrap_mode = 1

@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bmwh6n8gr4wvd"]
+[gd_scene load_steps=2 format=3 uid="uid://bmwh6n8gr4wvd"]
+
+[ext_resource type="PackedScene" uid="uid://46f5221jq06n" path="res://scenes/ui_scenes/inventory.tscn" id="1_s61gj"]
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -7,13 +9,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Item" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 32
-text = "Item"
 
 [node name="Lap" type="Label" parent="."]
 layout_mode = 1
@@ -62,3 +57,6 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "Map"
+
+[node name="Inventory" parent="." instance=ExtResource("1_s61gj")]
+layout_mode = 0
