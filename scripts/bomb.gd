@@ -14,9 +14,13 @@ func _process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	if !exploded:
 		$BombMesh.visible = false
-		$CollisionShape3D.disabled = false
+		$CollisionShape3D.disabled = true
 		$Explosion.visible = true
-		exploded = true
+		$Area3D/CollisionShape3D.disabled = false
+		exploded = true 
 		$Timer.start(LINGER)
+		axis_lock_linear_y = true
+		axis_lock_linear_x = true
+		axis_lock_linear_z = true
 	else:
 		queue_free()
