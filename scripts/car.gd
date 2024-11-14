@@ -81,25 +81,8 @@ func _physics_process(delta: float) -> void:
 	pause_listen()
 
 func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
-	if drift:
-		linear_velocity.z = clamp(linear_velocity.z,old_velocity.z,old_velocity.z-10)
-		blwheel.wheel_friction_slip = 0
-		brwheel.wheel_friction_slip = 0
-		flwheel.wheel_friction_slip = 5.5
-		frwheel.wheel_friction_slip = 5.5
-		#rotation_degrees.x = clamp(rotation_degrees.x,-5,5)
-		#rotation_degrees.z = clamp(rotation_degrees.z,-5,5)
-		
-		
-		
-		
-		##When the car is drifting reduces the friction on the cars wheels
-		##Keeps the linear velocity at the same from the drifts start to end
-		##Checks if the direction your pressing is the same as the directions from the start of the drift 
-		#if axis == -Input.get_axis("right","left"):
-			##Wide drift 
-			#apply_central_force(Vector3(10*axis,0,10))
-
+	pass
+	
 func pause_listen():
 	if Input.is_action_just_pressed("pause"):
 		ui.visible = not $Ui.visible
