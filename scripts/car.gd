@@ -76,8 +76,8 @@ func _physics_process(delta: float) -> void:
 		steering = move_toward(steering, axis * MAX_STEER, delta * 10)
 	
 	# listens for pause button
-	#pause_listen()
-
+	
+	pause_listen()
 
 func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 	if drift:
@@ -98,3 +98,8 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 		#if axis == -Input.get_axis("right","left"):
 			##Wide drift 
 			#apply_central_force(Vector3(10*axis,0,10))
+
+func pause_listen():
+	if Input.is_action_just_pressed("pause"):
+		ui.visible = not $Ui.visible
+		pausemenu.visible = not $PauseMenu.visible
