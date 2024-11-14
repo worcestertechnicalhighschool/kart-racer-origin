@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/car.gd" id="1_318nw"]
 [ext_resource type="PackedScene" uid="uid://bmwh6n8gr4wvd" path="res://scenes/ui_scenes/car_ui.tscn" id="2_1w8et"]
 [ext_resource type="PackedScene" uid="uid://cu6oq4whbnukt" path="res://scenes/ui_scenes/menus/pause_menu.tscn" id="3_8ffs4"]
-[ext_resource type="PackedScene" path="res://scenes/ui_scenes/inventory.tscn" id="4_3gxtt"]
+[ext_resource type="PackedScene" uid="uid://46f5221jq06n" path="res://scenes/ui_scenes/inventory.tscn" id="4_3gxtt"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ibdse"]
 
@@ -33,7 +33,6 @@ shape = SubResource("BoxShape3D_cw1sq")
 [node name="FrontLeftWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1.1538)
 use_as_steering = true
-wheel_roll_influence = 0.3
 suspension_stiffness = 50.0
 damping_compression = 3.0
 damping_relaxation = 5.0
@@ -45,7 +44,6 @@ mesh = SubResource("CylinderMesh_i3uql")
 [node name="BackLeftWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.154)
 use_as_traction = true
-wheel_roll_influence = 0.3
 suspension_stiffness = 50.0
 damping_compression = 3.0
 damping_relaxation = 5.0
@@ -57,7 +55,6 @@ mesh = SubResource("CylinderMesh_i3uql")
 [node name="FrontRightWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1.1538)
 use_as_steering = true
-wheel_roll_influence = 0.3
 suspension_stiffness = 50.0
 damping_compression = 3.0
 damping_relaxation = 5.0
@@ -69,7 +66,6 @@ mesh = SubResource("CylinderMesh_i3uql")
 [node name="BackRightWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.154)
 use_as_traction = true
-wheel_roll_influence = 0.3
 suspension_stiffness = 50.0
 damping_compression = 3.0
 damping_relaxation = 5.0
