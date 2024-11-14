@@ -133,4 +133,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7655, 17.1795, -2.10855)
 shape = SubResource("ConvexPolygonShape3D_x5nv1")
 
 [node name="ItemBox" parent="." instance=ExtResource("5_vu073")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.981, 18.7061, 263.661)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.555, 17.9494, 263.94)

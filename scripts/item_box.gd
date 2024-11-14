@@ -4,9 +4,12 @@ extends Node3D
 var tween_playing = false
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	var inventory = body.find_child("Inventory")
+	if body is VehicleBody3D:
+		var inventory = body.inventory
+		
+		print(inventory)
 	
-	queue_free()
+		queue_free()
 
 func _process(_delta: float) -> void:
 	if not tween_playing:
