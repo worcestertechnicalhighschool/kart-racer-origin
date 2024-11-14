@@ -1,10 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://reojy8we20ey"]
+[gd_scene load_steps=13 format=3 uid="uid://reojy8we20ey"]
 
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_rflty"]
 [ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_tl23f"]
-[ext_resource type="PackedScene" uid="uid://bgfoxm83j36w0" path="res://scenes/object_scenes/oil.tscn" id="3_85lhp"]
-[ext_resource type="PackedScene" uid="uid://bf3fqtxll42pt" path="res://scenes/object_scenes/bomb.tscn" id="4_uocss"]
-[ext_resource type="PackedScene" uid="uid://bl7yp56hkp8e6" path="res://scenes/object_scenes/item_box.tscn" id="5_vu073"]
+[ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/checkpoint.tscn" id="3_4kmce"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tl4ks"]
 panorama = ExtResource("1_tl23f")
@@ -118,13 +116,6 @@ gravity_scale = 1.5
 
 [node name="Obstacles" type="Node3D" parent="."]
 
-[node name="Oil" parent="Obstacles" instance=ExtResource("3_85lhp")]
-transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 323.1, 17.0421, 197.287)
-
-[node name="bomb" parent="Obstacles" instance=ExtResource("4_uocss")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 351.363, 16.9246, 271.526)
-TTB = 1
-
 [node name="Start Line" type="RigidBody3D" parent="."]
 transform = Transform3D(0.924626, 0, 0.380877, 0, 1, 0, -0.380877, 0, 0.924626, 370.894, -0.0969887, 284.317)
 
@@ -137,5 +128,32 @@ surface_material_override/0 = SubResource("StandardMaterial3D_hyfmd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7655, 17.1795, -2.10855)
 shape = SubResource("ConvexPolygonShape3D_x5nv1")
 
-[node name="ItemBox" parent="." instance=ExtResource("5_vu073")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.555, 17.9494, 263.94)
+[node name="Checkpoints" type="Node3D" parent="."]
+
+[node name="checkpoint2" parent="Checkpoints" instance=ExtResource("3_4kmce")]
+transform = Transform3D(1, -8.74228e-07, -5.28196e-07, -8.74228e-08, -10, 0, -2.98023e-08, 2.6054e-14, -17.7233, 187.807, 16.799, 72.4981)
+
+[node name="checkpoint3" parent="Checkpoints" instance=ExtResource("3_4kmce")]
+transform = Transform3D(1, 0, 5.56246e-07, 0, 10, 0, -2.98023e-08, 0, 18.6645, -116.804, 16.6278, 78.8338)
+
+[node name="checkpoint4" parent="Checkpoints" instance=ExtResource("3_4kmce")]
+transform = Transform3D(1, 0, 5.11956e-07, 0, 10, 0, -2.98023e-08, 0, 17.1784, -127.77, 16.5547, 344.393)
+
+[node name="checkpoint5" parent="Checkpoints" instance=ExtResource("3_4kmce")]
+transform = Transform3D(1, -0.000218749, -0.00544753, 0, 9.94522, -2.73596, 0.000209272, 1.04528, 26.0309, 30.8615, 50.2065, 26.6852)
+
+[node name="checkpoint6" parent="Checkpoints" instance=ExtResource("3_4kmce")]
+transform = Transform3D(18.0168, -0.879944, 0.0714156, 1.60721, 9.96048, -0.0057196, -1.28465, 0.120484, 0.994424, 160.324, 39.6707, 165.262)
+
+[node name="checkpoint" parent="Checkpoints" instance=ExtResource("3_4kmce")]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 18.8794, 140.55, 20.0661, 469.575)
+
+[node name="checkpoint7" parent="Checkpoints" instance=ExtResource("3_4kmce")]
+transform = Transform3D(1, 0, 0, 0, 9.98601, -0.974408, 0, 0.528763, 18.4023, 238.218, 22.3877, 297.384)
+
+[node name="checkpoint8" parent="Checkpoints" instance=ExtResource("3_4kmce")]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 18.0595, 324.23, 17.0912, 477.231)
+
+[node name="start_line" parent="Checkpoints" instance=ExtResource("3_4kmce")]
+transform = Transform3D(16.6533, 0, 0.379521, 0, 1, 0, -6.83138, 0, 0.925183, 351.933, 16.9868, 279.573)
+START_OR_FINISH_LINE = true
