@@ -37,6 +37,7 @@ var old_rotation
 var old_position
 var old_velocity
 var axis
+var respawn
 	
 func _ready() -> void:
 	ui.visible = true
