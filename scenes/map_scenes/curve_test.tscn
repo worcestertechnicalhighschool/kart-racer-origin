@@ -1,11 +1,11 @@
-
-[gd_scene load_steps=14 format=3 uid="uid://reojy8we20ey"]
+[gd_scene load_steps=13 format=3 uid="uid://reojy8we20ey"]
 
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_rflty"]
 [ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_tl23f"]
 [ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/checkpoint.tscn" id="3_4kmce"]
-
-[ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/death_box.tscn" id="4_1odja"]
+[ext_resource type="PackedScene" uid="uid://bgfoxm83j36w0" path="res://scenes/object_scenes/oil.tscn" id="3_85lhp"]
+[ext_resource type="PackedScene" uid="uid://cpyib23l6r8wp" path="res://scenes/object_scenes/bomb.tscn" id="4_uocss"]
+[ext_resource type="PackedScene" uid="uid://bl7yp56hkp8e6" path="res://scenes/object_scenes/item_box.tscn" id="5_vu073"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tl4ks"]
 panorama = ExtResource("1_tl23f")
@@ -123,7 +123,7 @@ gravity_scale = 1.5
 transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 323.1, 17.0421, 197.287)
 
 [node name="bomb" parent="Obstacles" instance=ExtResource("4_uocss")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 351.363, 19.4388, 271.526)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 351.363, 16.9246, 271.526)
 
 [node name="Start Line" type="RigidBody3D" parent="."]
 transform = Transform3D(0.924626, 0, 0.380877, 0, 1, 0, -0.380877, 0, 0.924626, 370.894, -0.0969887, 284.317)
@@ -166,6 +166,3 @@ transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 18.0595, 324.23, 17.0912, 477.2
 [node name="start_line" parent="Checkpoints" instance=ExtResource("3_4kmce")]
 transform = Transform3D(16.6533, 0, 0.379521, 0, 1, 0, -6.83138, 0, 0.925183, 351.933, 16.9868, 279.573)
 START_OR_FINISH_LINE = true
-
-[node name="DeathBox" parent="." instance=ExtResource("4_1odja")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.3817, 0)
