@@ -1,5 +1,7 @@
 extends RigidBody3D
 @export var ONE_USE = true
+@export var THROWN_FORWARD = true
+
 var hit = false
 var cars_collided = []
 # Called when the node enters the scene tree for the first time.

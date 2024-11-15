@@ -12,6 +12,9 @@ albedo_color = Color(0.112011, 0.455738, 0.0874185, 1)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4xkdj"]
 
 [node name="shell" type="RigidBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 script = ExtResource("1_ed5h2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
