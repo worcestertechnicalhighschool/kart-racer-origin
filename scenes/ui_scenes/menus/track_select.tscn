@@ -69,11 +69,6 @@ offset_bottom = 720.0
 theme_override_font_sizes/font_size = 32
 text = "Go Back"
 
-[node name="TextureButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [connection signal="pressed" from="curve_test/curve_test_button" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="donut_test/donut_test_button" to="." method="_on_donut_test_button_pressed"]
 [connection signal="pressed" from="Go back" to="." method="_on_button_pressed"]

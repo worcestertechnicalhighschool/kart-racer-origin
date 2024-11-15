@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmwh6n8gr4wvd"]
+[gd_scene load_steps=3 format=3 uid="uid://bmwh6n8gr4wvd"]
 
+[ext_resource type="Script" path="res://scripts/car_ui.gd" id="1_m1xia"]
 [ext_resource type="PackedScene" uid="uid://46f5221jq06n" path="res://scenes/ui_scenes/inventory.tscn" id="1_s61gj"]
 
 [node name="Ui" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_m1xia")
 
 [node name="Lap" type="Label" parent="."]
 layout_mode = 1
@@ -42,7 +44,9 @@ offset_left = -109.0
 offset_bottom = 45.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 32
-text = "00:00.000"
+text = "00:00:000"
+
+[node name="Timer" type="Timer" parent="."]
 
 [node name="Map" type="Label" parent="."]
 layout_mode = 1
@@ -60,3 +64,5 @@ text = "Map"
 
 [node name="Inventory" parent="." instance=ExtResource("1_s61gj")]
 layout_mode = 0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

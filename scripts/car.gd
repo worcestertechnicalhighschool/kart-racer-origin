@@ -20,16 +20,18 @@
 
 
 extends VehicleBody3D
+
 @onready var blwheel = $BackLeftWheel
 @onready var brwheel = $BackRightWheel
 @onready var flwheel = $FrontLeftWheel
 @onready var frwheel = $FrontRightWheel
 @onready var camera = $Cameras/FrontCamera
+@onready var ui = $Ui
+@onready var pausemenu = $PauseMenu
+
 @export var inventory = []
 @export var MAX_STEER = 0.9
 @export var ENGINE_POWER = 500
-@onready var ui = $Ui
-@onready var pausemenu = $PauseMenu
 @export var DRIFT = 1
 
 var drift
