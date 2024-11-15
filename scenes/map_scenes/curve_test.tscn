@@ -1,8 +1,10 @@
+
 [gd_scene load_steps=14 format=3 uid="uid://reojy8we20ey"]
 
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_rflty"]
 [ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_tl23f"]
 [ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/checkpoint.tscn" id="3_4kmce"]
+
 [ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/death_box.tscn" id="4_1odja"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tl4ks"]
@@ -116,6 +118,12 @@ mass = 100.0
 gravity_scale = 1.5
 
 [node name="Obstacles" type="Node3D" parent="."]
+
+[node name="Oil" parent="Obstacles" instance=ExtResource("3_85lhp")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 323.1, 17.0421, 197.287)
+
+[node name="bomb" parent="Obstacles" instance=ExtResource("4_uocss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 351.363, 19.4388, 271.526)
 
 [node name="Start Line" type="RigidBody3D" parent="."]
 transform = Transform3D(0.924626, 0, 0.380877, 0, 1, 0, -0.380877, 0, 0.924626, 370.894, -0.0969887, 284.317)
