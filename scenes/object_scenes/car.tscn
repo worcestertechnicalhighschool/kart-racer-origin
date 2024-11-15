@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/car.gd" id="1_318nw"]
 [ext_resource type="PackedScene" uid="uid://bmwh6n8gr4wvd" path="res://scenes/ui_scenes/car_ui.tscn" id="2_1w8et"]
 [ext_resource type="PackedScene" uid="uid://cu6oq4whbnukt" path="res://scenes/ui_scenes/menus/pause_menu.tscn" id="3_8ffs4"]
+[ext_resource type="PackedScene" path="res://scenes/ui_scenes/inventory.tscn" id="4_3gxtt"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ibdse"]
 
