@@ -170,7 +170,6 @@ START_OR_FINISH_LINE = true
 
 [node name="ItemBox" parent="." instance=ExtResource("6_ca5mw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.731, 18.1979, 260.598)
-one_use = false
 
 [node name="BoostPad" parent="." instance=ExtResource("7_xo5dg")]
 transform = Transform3D(0.961994, 0, 0.273069, 0, 1, 0, -0.273069, 0, 0.961994, 343.081, 16.9717, 247.423)

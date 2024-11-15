@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var one_use = true
+@export var ONE_USE = true
 
 @onready var original_position = position
 var list_of_throwables = ["shell", "bomb"]
@@ -12,13 +12,13 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		
 		var random_number = RNG.randi_range(0, len(list_of_throwables) - 1)
 		
-		if body.inventory[0]:
-			if not body.inventory[1]:
-				body.inventory[1] = list_of_throwables[random_number]
+		if body.INVENTORY[0]:
+			if not body.INVENTORY[1]:
+				body.INVENTORY[1] = list_of_throwables[random_number]
 		else:
-			body.inventory[0] = list_of_throwables[random_number]
+			body.INVENTORY[0] = list_of_throwables[random_number]
 		
-		if one_use:
+		if ONE_USE:
 			queue_free()
 
 func _process(_delta: float) -> void:

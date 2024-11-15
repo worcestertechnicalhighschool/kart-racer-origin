@@ -25,7 +25,7 @@ extends VehicleBody3D
 @onready var flwheel = $FrontLeftWheel
 @onready var frwheel = $FrontRightWheel
 @onready var camera = $Cameras/FrontCamera
-@export var inventory = ["", ""]
+@export var INVENTORY = ["", ""]
 @export var MAX_STEER = 0.9
 @export var ENGINE_POWER = 500
 @onready var ui = $Ui
