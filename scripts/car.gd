@@ -29,7 +29,7 @@ extends VehicleBody3D
 @onready var ui = $Ui
 @onready var pausemenu = $PauseMenu
 
-@export var inventory = []
+@export var INVENTORY = ["", ""]
 @export var MAX_STEER = 0.9
 @export var ENGINE_POWER = 500
 @export var DRIFT = 1
