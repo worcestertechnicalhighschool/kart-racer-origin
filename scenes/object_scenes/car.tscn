@@ -91,4 +91,4 @@ transform = Transform3D(1, -2.26267e-08, 1.71867e-07, -2.26267e-08, 0.965926, 0.
 
 [node name="PauseCooldownTimer2" type="Timer" parent="."]
 
-[node name="ThrownObjects" type="Node" parent="."]
+[node name="ThrownObjects" type="Node3D" parent="."]
