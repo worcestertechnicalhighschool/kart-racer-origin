@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cmwn78o1aco74"]
 
-[ext_resource type="Script" path="res://scenes/ui_scenes/transitions/fade_in.gd" id="1_hfmha"]
+[ext_resource type="Script" path="res://scripts/fade_in.gd" id="1_hfmha"]
 
 [sub_resource type="Animation" id="Animation_bf85i"]
 length = 0.001
