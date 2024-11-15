@@ -84,4 +84,14 @@ position = Vector2(925, 110)
 scale = Vector2(0.416222, 0.402555)
 texture = ExtResource("4_tjyxy")
 
+[node name="Build Date text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 667.0
+offset_right = 770.0
+offset_bottom = 712.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Build date 11152024"
+
 [connection signal="pressed" from="text and buttons/Single_Player" to="." method="_on_single_player_pressed"]
