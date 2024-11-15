@@ -1,5 +1,7 @@
 extends Node3D
 
+@export var one_use = true
+
 @onready var original_position = position
 var list_of_throwables = ["shell", "bomb"]
 var RNG = RandomNumberGenerator.new()
@@ -9,9 +11,15 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is VehicleBody3D:
 		
 		var random_number = RNG.randi_range(0, len(list_of_throwables) - 1)
-		body.inventory = [list_of_throwables[random_number]]
 		
-		queue_free()
+		if body.inventory[0]:
+			if not body.inventory[1]:
+				body.inventory[1] = list_of_throwables[random_number]
+		else:
+			body.inventory[0] = list_of_throwables[random_number]
+		
+		if one_use:
+			queue_free()
 
 func _process(_delta: float) -> void:
 	if not tween_playing:

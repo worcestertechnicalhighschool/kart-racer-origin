@@ -23,8 +23,6 @@ albedo_color = Color(0, 0, 0, 1)
 
 [node name="bomb" type="RigidBody3D"]
 script = ExtResource("1_f6s3l")
-FUSE = 10
-LINGER = 2
 ONE_USE = false
 
 [node name="Timer" type="Timer" parent="."]
