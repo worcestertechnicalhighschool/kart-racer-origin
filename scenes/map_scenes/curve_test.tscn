@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_rflty"]
 [ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_tl23f"]
 [ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/checkpoint.tscn" id="3_4kmce"]
-[ext_resource type="PackedScene" uid="uid://bgfoxm83j36w0" path="res://scenes/object_scenes/oil.tscn" id="3_85lhp"]
-[ext_resource type="PackedScene" uid="uid://cpyib23l6r8wp" path="res://scenes/object_scenes/bomb.tscn" id="4_uocss"]
+[ext_resource type="PackedScene" uid="uid://bgfoxm83j36w0" path="res://scenes/object_scenes/obstacles/oil.tscn" id="3_85lhp"]
+[ext_resource type="PackedScene" uid="uid://cpyib23l6r8wp" path="res://scenes/object_scenes/obstacles/bomb.tscn" id="4_uocss"]
 [ext_resource type="PackedScene" uid="uid://bl7yp56hkp8e6" path="res://scenes/object_scenes/item_box.tscn" id="6_ca5mw"]
 [ext_resource type="PackedScene" uid="uid://carm88pw5xfdy" path="res://scenes/object_scenes/boost_pad.tscn" id="7_xo5dg"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bl7yp56hkp8e6"]
 
-[ext_resource type="Script" path="res://scripts/item_box.gd" id="1_a8dgl"]
+[ext_resource type="Script" path="res://scripts/objects/item_box.gd" id="1_a8dgl"]
 [ext_resource type="Texture2D" uid="uid://dqud4svtuhpo3" path="res://assets/images/itembox_placeholder.png" id="1_ikstd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcbnn"]
