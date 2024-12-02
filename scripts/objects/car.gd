@@ -29,6 +29,8 @@ extends VehicleBody3D
 @onready var ui = $Ui
 @onready var pausemenu = $PauseMenu
 
+@onready var debug = $"."
+
 @export var INVENTORY = ["", ""]
 @export var MAX_STEER = 0.9
 @export var ENGINE_POWER = 500
@@ -90,3 +92,8 @@ func pause_listen():
 	if Input.is_action_just_pressed("pause"):
 		ui.visible = not $Ui.visible
 		pausemenu.visible = not $PauseMenu.visible
+
+func debug_listen():
+		if Input.is_action_just_pressed("open_debug"):
+			debug.visible = not $Ui.visible
+			pausemenu.visible = not $PauseMenu.visible
