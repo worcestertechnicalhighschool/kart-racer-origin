@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4n6tar772y13"]
+
+[ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_aomea"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cm7ld"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_8or8i"]
+sky_material = SubResource("ProceduralSkyMaterial_cm7ld")
+
+[sub_resource type="Environment" id="Environment_hfgsx"]
+background_mode = 2
+sky = SubResource("Sky_8or8i")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Curve3D" id="Curve3D_2ep38"]
+_data = {
+"points": PackedVector3Array(-1.0429, 0, 0.219911, 1.0429, 0, -0.219911, 0.483684, 0, 0.518964, 0.790289, 0, 0.53709, -0.790289, 0, -0.53709, 0.867319, 0, -1.25343, 0.721234, 0, -0.421999, -0.721234, 0, 0.421999, -1.14584, 0, -0.498321, -0.345272, 0, -0.184145, 0.345272, 0, 0.184145, -2.07032, 0, 1.70978, -1.66272, 0, -1.17721, 1.66272, 0, 1.17721, -0.515393, 0, 1.65857, 0.69928, 0, 0.288268, -0.69928, 0, -0.288268, 0.32262, 0.107838, 1.74503, 0.590798, 0, 0.675198, -0.590798, 0, -0.675198, 0.544425, 0.239964, 0.204945, 0.246083, 0, -0.472214, -0.246083, 0, 0.472214, -0.846241, 0, 0.0943105, -1.0429, 0, 0.219911, 1.0429, 0, -0.219911, 0.483684, 0, 0.518964),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0.31866, 0.277722, 0, 0)
+}
+point_count = 9
+
+[node name="TrkSimple" type="Node3D"]
+
+[node name="Enviornment" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Enviornment"]
+environment = SubResource("Environment_hfgsx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Enviornment"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(55, 0, 0, 0, 55, 0, 0, 0, 55, 0, 0, 0)
+curve = SubResource("Curve3D_2ep38")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
+use_collision = true
+polygon = PackedVector2Array(0, 0.1, 0, 0.1, 0.1, 0.1, 0.1, 0, 0, 0)
+mode = 2
+path_node = NodePath("../Path3D")
+path_interval_type = 0
+path_interval = 0.1
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = true
+
+[node name="Car" parent="." instance=ExtResource("1_aomea")]
+transform = Transform3D(0.389413, 0, 0.921063, 0, 1, 0, -0.921063, 0, 0.389413, -51.2395, 6.02968, 79.8748)
