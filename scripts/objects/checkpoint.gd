@@ -1,8 +1,11 @@
 extends Area3D
+
 @export var START_OR_FINISH_LINE :bool = false
 @export var MAX_LAP:int = 3
+
 var lap = 1
 var cars_entered = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if START_OR_FINISH_LINE:
@@ -35,5 +38,6 @@ func _on_body_entered(body: Node3D) -> void:
 					checkpoints.cars_entered.erase(body)
 				cars_entered.append(body)
 			body.get_node("Ui").get_node("Lap").text = "Lap " + str(lap) + "/" + str(MAX_LAP)
-			
+			if lap + 1 > MAX_LAP:
+				get_tree().change_scene_to_file("res://assets/tracks/track_designs/donut_test.tscn")
 		
