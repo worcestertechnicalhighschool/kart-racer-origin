@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/objects/car.gd" id="1_318nw"]
 [ext_resource type="PackedScene" uid="uid://bmwh6n8gr4wvd" path="res://scenes/ui_scenes/car_ui.tscn" id="2_1w8et"]
 [ext_resource type="PackedScene" uid="uid://cu6oq4whbnukt" path="res://scenes/ui_scenes/menus/pause_menu.tscn" id="3_8ffs4"]
-[ext_resource type="PackedScene" path="res://scenes/ui_scenes/menus/debugmenu.tscn" id="4_fyfyg"]
+[ext_resource type="PackedScene" uid="uid://cu2cgwvc0rov5" path="res://scenes/ui_scenes/menus/debugmenu.tscn" id="4_t2vcb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ibdse"]
 
@@ -92,6 +92,6 @@ transform = Transform3D(1, -2.26267e-08, 1.71867e-07, -2.26267e-08, 0.965926, 0.
 
 [node name="PauseCooldownTimer2" type="Timer" parent="."]
 
-[node name="ThrownObjects" type="Node" parent="."]
+[node name="ThrownObjects" type="Node3D" parent="."]
 
-[node name="Debugmenu" parent="." instance=ExtResource("4_fyfyg")]
+[node name="Debugmenu" parent="." instance=ExtResource("4_t2vcb")]

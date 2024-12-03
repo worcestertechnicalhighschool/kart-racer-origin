@@ -1,6 +1,7 @@
 extends RigidBody3D
 @export var ONE_USE = true
 @export var THROWN_FORWARD = true
+@export var CUSTOM_ANIMATION = false
 
 var hit = false
 var cars_collided = []
