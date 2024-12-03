@@ -1,13 +1,94 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwatj2d6r6oql"]
+[gd_scene load_steps=9 format=3 uid="uid://cwatj2d6r6oql"]
 
 [ext_resource type="Script" path="res://scripts/objects/checkpoint.gd" id="1_pvsk4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m25o4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_e6qer"]
+
+[sub_resource type="Skin" id="Skin_jxm5b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uth7q"]
+transparency = 1
+depth_draw_mode = 1
+
+[sub_resource type="PrismMesh" id="PrismMesh_8uqus"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5p2d2"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nehj4"]
 
 [node name="checkpoint" type="Area3D"]
 script = ExtResource("1_pvsk4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_m25o4")
+
+[node name="texture" type="Node3D" parent="."]
+
+[node name="Label3D" type="Label3D" parent="texture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.51)
+modulate = Color(0, 0, 0, 1)
+text = "FRONT"
+
+[node name="Label3D2" type="Label3D" parent="texture"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.51)
+modulate = Color(0, 0, 0, 1)
+text = "BACK"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="texture"]
+mesh = SubResource("BoxMesh_e6qer")
+skin = SubResource("Skin_jxm5b")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_uth7q")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="texture"]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.01, 0, 0.5, -4.37114e-10, 0, 0.5, 0.206693)
+mesh = SubResource("PrismMesh_8uqus")
+skeleton = NodePath("../MeshInstance3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_5p2d2")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="texture"]
+transform = Transform3D(0.2, 0, 0, 0, -2.18557e-08, -0.01, 0, 0.5, -4.37114e-10, 0, 0.5, -0.197525)
+mesh = SubResource("BoxMesh_nehj4")
+skeleton = NodePath(".")
+surface_material_override/0 = SubResource("StandardMaterial3D_5p2d2")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="texture"]
+transform = Transform3D(9.55343e-16, 2.18557e-08, 0.01, 0.5, -2.18557e-08, 0, 2.18557e-08, 0.5, -4.37114e-10, 0.5, 0.1, 0.206693)
+mesh = SubResource("PrismMesh_8uqus")
+skeleton = NodePath("../MeshInstance3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_5p2d2")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="texture"]
+transform = Transform3D(3.82137e-16, 2.18557e-08, 0.01, 0.2, -2.18557e-08, 0, 8.74228e-09, 0.5, -4.37114e-10, 0.5, 0.1, -0.197525)
+mesh = SubResource("BoxMesh_nehj4")
+skeleton = NodePath("../MeshInstance3D2")
+surface_material_override/0 = SubResource("StandardMaterial3D_5p2d2")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="texture"]
+transform = Transform3D(9.55343e-16, 2.18557e-08, 0.01, 0.5, -2.18557e-08, 0, 2.18557e-08, 0.5, -4.37114e-10, -0.5, 0.1, 0.206693)
+mesh = SubResource("PrismMesh_8uqus")
+skeleton = NodePath("../MeshInstance3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_5p2d2")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="texture"]
+transform = Transform3D(3.82137e-16, 2.18557e-08, 0.01, 0.2, -2.18557e-08, 0, 8.74228e-09, 0.5, -4.37114e-10, -0.5, 0.1, -0.197525)
+mesh = SubResource("BoxMesh_nehj4")
+skeleton = NodePath("../MeshInstance3D2")
+surface_material_override/0 = SubResource("StandardMaterial3D_5p2d2")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="texture"]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.01, 0, 0.5, -4.37114e-10, 0, -0.5, 0.206693)
+mesh = SubResource("PrismMesh_8uqus")
+skeleton = NodePath("../MeshInstance3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_5p2d2")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="texture"]
+transform = Transform3D(0.2, 0, 0, 0, -2.18557e-08, -0.01, 0, 0.5, -4.37114e-10, 0, -0.5, -0.197525)
+mesh = SubResource("BoxMesh_nehj4")
+skeleton = NodePath("../MeshInstance3D2")
+surface_material_override/0 = SubResource("StandardMaterial3D_5p2d2")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

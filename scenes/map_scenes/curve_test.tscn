@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://reojy8we20ey"]
+[gd_scene load_steps=18 format=3 uid="uid://reojy8we20ey"]
 
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_rflty"]
 [ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_tl23f"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bgfoxm83j36w0" path="res://scenes/object_scenes/obstacles/oil.tscn" id="3_85lhp"]
 [ext_resource type="PackedScene" uid="uid://cpyib23l6r8wp" path="res://scenes/object_scenes/obstacles/bomb.tscn" id="4_uocss"]
 [ext_resource type="PackedScene" uid="uid://bl7yp56hkp8e6" path="res://scenes/object_scenes/item_box.tscn" id="6_ca5mw"]
+[ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/death_box.tscn" id="6_utm8d"]
 [ext_resource type="PackedScene" uid="uid://carm88pw5xfdy" path="res://scenes/object_scenes/boost_pad.tscn" id="7_xo5dg"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tl4ks"]
@@ -141,32 +142,35 @@ shape = SubResource("ConvexPolygonShape3D_x5nv1")
 [node name="Checkpoints" type="Node3D" parent="."]
 
 [node name="checkpoint2" parent="Checkpoints" instance=ExtResource("3_4kmce")]
-transform = Transform3D(1, -8.74228e-07, -5.28196e-07, -8.74228e-08, -10, 0, -2.98023e-08, 2.6054e-14, -17.7233, 187.807, 16.799, 72.4981)
+transform = Transform3D(-0.428099, 3.80242e-08, -0.999683, -2.56693e-06, -10, 1.77654e-16, -16.9946, 1.50948e-06, 0.0251823, 187.807, 16.799, 72.4981)
 
 [node name="checkpoint3" parent="Checkpoints" instance=ExtResource("3_4kmce")]
 transform = Transform3D(1, 0, 5.56246e-07, 0, 10, 0, -2.98023e-08, 0, 18.6645, -116.804, 16.6278, 78.8338)
 
 [node name="checkpoint4" parent="Checkpoints" instance=ExtResource("3_4kmce")]
-transform = Transform3D(1, 0, 5.11956e-07, 0, 10, 0, -2.98023e-08, 0, 17.1784, -127.77, 16.5547, 344.393)
+transform = Transform3D(-3.19918, 0, 0.982133, 0, 10, 0, -16.6963, 0, -0.188187, -127.77, 16.5547, 344.393)
 
 [node name="checkpoint5" parent="Checkpoints" instance=ExtResource("3_4kmce")]
-transform = Transform3D(1, -0.000218749, -0.00544753, 0, 9.94522, -2.73596, 0.000209272, 1.04528, 26.0309, 30.8615, 50.2065, 26.6852)
+transform = Transform3D(-0.0869367, 1.04527, 0.994509, -2.65064e-11, 9.94522, -0.104528, -16.9998, -0.00534563, -0.00508591, 30.8615, 50.2065, 24.3736)
 
 [node name="checkpoint6" parent="Checkpoints" instance=ExtResource("3_4kmce")]
 transform = Transform3D(18.0168, -0.879944, 0.0714156, 1.60721, 9.96048, -0.0057196, -1.28465, 0.120484, 0.994424, 160.324, 39.6707, 165.262)
 
 [node name="checkpoint" parent="Checkpoints" instance=ExtResource("3_4kmce")]
-transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 18.8794, 140.55, 20.0661, 469.575)
+transform = Transform3D(-1.80324, 0, 0.994358, 0, 10, 0, -16.9041, 0, -0.106073, 140.55, 20.0661, 469.575)
 
 [node name="checkpoint7" parent="Checkpoints" instance=ExtResource("3_4kmce")]
-transform = Transform3D(1, 0, 0, 0, 9.98601, -0.974408, 0, 0.528763, 18.4023, 238.218, 22.3877, 297.384)
+transform = Transform3D(2.62832, 0.522405, 0.986594, 0, 9.98601, -0.0528763, -16.7956, 0.0817504, 0.154391, 238.218, 22.3877, 297.384)
 
 [node name="checkpoint8" parent="Checkpoints" instance=ExtResource("3_4kmce")]
-transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 18.0595, 324.23, 17.0912, 477.231)
+transform = Transform3D(-1.36427, 0, 0.996775, 0, 10, 0, -16.9452, 0, -0.0802511, 324.23, 20.9112, 477.231)
 
 [node name="start_line" parent="Checkpoints" instance=ExtResource("3_4kmce")]
-transform = Transform3D(16.6533, 0, 0.379521, 0, 1, 0, -6.83138, 0, 0.925183, 351.933, 16.9868, 279.573)
+transform = Transform3D(-16.9037, 0, -0.34366, 0, 3, 0, 6.18587, 0, -0.939094, 351.933, 18.3197, 279.573)
 START_OR_FINISH_LINE = true
+
+[node name="DeathBox" parent="." instance=ExtResource("6_utm8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 362.847, 0.0167418, 260.604)
 
 [node name="ItemBox" parent="." instance=ExtResource("6_ca5mw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.731, 18.1979, 260.598)

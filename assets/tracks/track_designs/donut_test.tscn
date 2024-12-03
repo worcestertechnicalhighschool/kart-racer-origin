@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxdb8tckt84vl"]
+[gd_scene load_steps=11 format=3 uid="uid://bm8rihnjad7li"]
 
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_wxd4t"]
 [ext_resource type="PackedScene" uid="uid://jlite52v6y5r" path="res://assets/BC_eastereggs/aku_researcher.tscn" id="2_v4pwy"]

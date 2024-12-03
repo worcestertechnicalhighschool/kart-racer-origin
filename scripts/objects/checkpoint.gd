@@ -8,6 +8,7 @@ var cars_entered = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$texture.queue_free()
 	if START_OR_FINISH_LINE:
 		get_parent().get_parent().get_node("Car").get_node("Ui").get_node("Lap").text = "Lap 1/" + str(MAX_LAP)
 	else:
