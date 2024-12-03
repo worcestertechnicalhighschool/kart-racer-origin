@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmdbm048xrpmm"]
+[gd_scene load_steps=3 format=3 uid="uid://bmdbm048xrpmm"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ub0t8"]
+[ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_ub0t8"]
+[ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/fade_in.tscn" id="2_ief3h"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -62,5 +63,8 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "Go Back"
 
+[node name="FadeIn" parent="." instance=ExtResource("2_ief3h")]
+
 [connection signal="pressed" from="Single Player" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="Go Back" to="." method="_on_go_back_pressed"]
+[connection signal="animation_end" from="FadeIn" to="." method="_on_fade_in_animation_end"]
