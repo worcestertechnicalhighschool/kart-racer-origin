@@ -21,6 +21,8 @@ func _process(_delta: float) -> void:
 			instance = MUSHROOM.instantiate()
 	
 		if instance:
+			var thrown_objects = Car.find_child("ThrownObjects")
+			
 			if not instance.CUSTOM_ANIMATION:
 				var car_lin_vel = Car.linear_velocity
 				var throw_direction
@@ -30,11 +32,10 @@ func _process(_delta: float) -> void:
 				else:
 					throw_direction = -2
 				
-				print("c")
-				instance.position = Vector3(Car.position.x, Car.position.y + 1, Car.position.z)
-				instance.linear_velocity = Vector3(car_lin_vel.x * throw_direction, 0, car_lin_vel.z * throw_direction)
+				instance.position = Vector3(thrown_objects.position.x, thrown_objects.position.y + 1, thrown_objects.position.z)
+				instance.linear_velocity = Vector3(car_lin_vel.x * throw_direction, 3, car_lin_vel.z * throw_direction)
 			
-			Car.find_child("ThrownObjects").add_child(instance)
+			thrown_objects.add_child(instance)
 		
 		Car.INVENTORY[0] = Car.INVENTORY[1]
 		Car.INVENTORY[1] = ""

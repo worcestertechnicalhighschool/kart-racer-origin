@@ -9,11 +9,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	print(position)
-
+	pass
 
 func _on_timer_timeout() -> void:
-	if !exploded:
+	if not exploded:
 		$BombMesh.visible = false
 		$CollisionShape3D.disabled = true
 		$Explosion.visible = true

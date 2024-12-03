@@ -23,6 +23,7 @@ albedo_color = Color(0, 0, 0, 1)
 
 [node name="bomb" type="RigidBody3D"]
 script = ExtResource("1_k28ce")
+THROWN_FORWARD = false
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
