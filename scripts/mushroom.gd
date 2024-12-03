@@ -5,4 +5,4 @@ extends RigidBody3D
 func _process(_delta: float) -> void:
 	var parent = $".."
 	
-	position = Vector3(parent.position.x, parent.position.y + 0.5, parent.position.z)
+	position = Vector3(parent.position.x, parent.position.y + 1, parent.position.z)
