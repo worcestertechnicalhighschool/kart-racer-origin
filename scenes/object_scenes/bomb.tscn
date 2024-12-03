@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dtaqnvs4pa48j"]
 
-[ext_resource type="Script" path="res://scripts/bomb.gd" id="1_f6s3l"]
+[ext_resource type="Script" path="res://scripts/objects/bomb.gd" id="1_k28ce"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_so8qk"]
 
@@ -22,8 +22,7 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="SphereShape3D" id="SphereShape3D_j1jhg"]
 
 [node name="bomb" type="RigidBody3D"]
-script = ExtResource("1_f6s3l")
-ONE_USE = false
+script = ExtResource("1_k28ce")
 THROWN_FORWARD = false
 
 [node name="Timer" type="Timer" parent="."]

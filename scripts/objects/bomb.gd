@@ -11,9 +11,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-
 func _on_timer_timeout() -> void:
-	if !exploded:
+	if not exploded:
 		$BombMesh.visible = false
 		$CollisionShape3D.disabled = true
 		$Explosion.visible = true
