@@ -9,7 +9,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		front_camera_parent = body.find_child("Cameras")
 		front_camera = front_camera_parent.find_child("FrontCamera")
 		
-		if body.rotation_degrees.x > body.rotation_degrees.z:
+		if body.rotation_degrees.x >= body.rotation_degrees.z:
 			body.apply_central_force(Vector3(100 * sign(rotation_degrees.x), 0, 0)) 
 		elif body.rotation_degrees.x < body.rotation_degrees.z:
 			body.apply_central_force(Vector3(0, 0, 100 * sign(rotation_degrees.z))) 
