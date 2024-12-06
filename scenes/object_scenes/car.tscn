@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cu6oq4whbnukt" path="res://scenes/ui_scenes/menus/pause_menu.tscn" id="3_8ffs4"]
 [ext_resource type="PackedScene" uid="uid://cu2cgwvc0rov5" path="res://scenes/ui_scenes/menus/debugmenu.tscn" id="4_t2vcb"]
 
-
 [sub_resource type="BoxMesh" id="BoxMesh_ibdse"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cw1sq"]
