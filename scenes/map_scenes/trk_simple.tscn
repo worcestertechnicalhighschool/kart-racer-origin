@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4n6tar772y13"]
+[gd_scene load_steps=8 format=3 uid="uid://c4n6tar772y13"]
 
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_aomea"]
+[ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/checkpoint.tscn" id="2_qt14n"]
+[ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/death_box.tscn" id="3_rnxo7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cm7ld"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -17,7 +19,7 @@ glow_enabled = true
 
 [sub_resource type="Curve3D" id="Curve3D_2ep38"]
 _data = {
-"points": PackedVector3Array(-1.0429, 0, 0.219911, 1.0429, 0, -0.219911, 0.483684, 0, 0.518964, 0.790289, 0, 0.53709, -0.790289, 0, -0.53709, 0.867319, 0, -1.25343, 0.721234, 0, -0.421999, -0.721234, 0, 0.421999, -1.14584, 0, -0.498321, -0.345272, 0, -0.184145, 0.345272, 0, 0.184145, -2.07032, 0, 1.70978, -1.66272, 0, -1.17721, 1.66272, 0, 1.17721, -0.515393, 0, 1.65857, 0.69928, 0, 0.288268, -0.69928, 0, -0.288268, 0.32262, 0.107838, 1.74503, 0.590798, 0, 0.675198, -0.590798, 0, -0.675198, 0.544425, 0.239964, 0.204945, 0.246083, 0, -0.472214, -0.246083, 0, 0.472214, -0.846241, 0, 0.0943105, -1.0429, 0, 0.219911, 1.0429, 0, -0.219911, 0.483684, 0, 0.518964),
+"points": PackedVector3Array(-1.0429, 0, 0.219911, 1.0429, 0, -0.219911, 0.483684, 0, 0.518964, 0.790289, 0, 0.53709, -0.790289, 0, -0.53709, 0.867319, 0, -1.25343, 0.721234, 0, -0.421999, -0.721234, 0, 0.421999, -1.14584, 0, -0.498321, -0.345272, 0, -0.184145, 0.345272, 0, 0.184145, -2.07032, 0, 1.70978, -1.66272, 0, -1.17721, 1.66272, 0, 1.17721, -0.515393, 0, 1.65857, 0.437681, -0.0748901, 0.533839, -0.437681, 0.0748901, -0.533839, 0.368538, 0.15529, 1.52359, 0.492741, 0.00586066, 0.675199, -0.492741, -0.00586066, -0.675199, 0.503833, 0.188256, 0.204945, 0.246083, 0, -0.472214, -0.246083, 0, 0.472214, -0.846241, 0, 0.0943105, -1.0429, 0, 0.219911, 1.0429, 0, -0.219911, 0.483684, 0, 0.518964),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0.31866, 0.277722, 0, 0)
 }
 point_count = 9
@@ -34,7 +36,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(55, 0, 0, 0, 55, 0, 0, 0, 55, 0, 0, 0)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 curve = SubResource("Curve3D_2ep38")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
@@ -52,4 +54,31 @@ path_u_distance = 1.0
 path_joined = true
 
 [node name="Car" parent="." instance=ExtResource("1_aomea")]
-transform = Transform3D(0.389413, 0, 0.921063, 0, 1, 0, -0.921063, 0, 0.389413, -51.2395, 6.02968, 79.8748)
+transform = Transform3D(0.389413, 0, 0.921063, 0, 1, 0, -0.921063, 0, 0.389413, -109.6, 11.8785, 135.505)
+
+[node name="Checkpoints" type="Node3D" parent="."]
+
+[node name="checkpoint" parent="Checkpoints" instance=ExtResource("2_qt14n")]
+transform = Transform3D(6.30005, 0, 0.96637, 0, 2.52861, 0, -9.73318, 0, 0.625508, -95.1765, 10.2417, 144.069)
+START_OR_FINISH_LINE = true
+
+[node name="checkpoint2" parent="Checkpoints" instance=ExtResource("2_qt14n")]
+transform = Transform3D(6.30005, 2.83824e-08, 0.96637, -0.836456, 2.51926, 0.0537552, -9.69718, -0.217305, 0.623193, 27.9235, 11.2483, 222.459)
+
+[node name="checkpoint3" parent="Checkpoints" instance=ExtResource("2_qt14n")]
+transform = Transform3D(-11.0321, 0, 0.354079, 0, 2.52861, 0, -3.56625, 0, -1.09533, 35.8629, 30.1757, 113.443)
+
+[node name="checkpoint4" parent="Checkpoints" instance=ExtResource("2_qt14n")]
+transform = Transform3D(0.0487719, 0, -1.15113, 0, 2.52861, 0, 11.5941, 0, 0.00484235, -22.7157, 20.9735, -32.3181)
+
+[node name="checkpoint5" parent="Checkpoints" instance=ExtResource("2_qt14n")]
+transform = Transform3D(-0.0487709, 0, 1.15113, 0, 2.52861, 0, -11.5941, 0, -0.00484225, -18.5809, 10.8926, 65.855)
+
+[node name="checkpoint6" parent="Checkpoints" instance=ExtResource("2_qt14n")]
+transform = Transform3D(-5.75481, 0, -0.999331, 0, 2.52861, 0, 10.0652, 0, -0.571373, 78.5354, 10.8926, -135.625)
+
+[node name="checkpoint7" parent="Checkpoints" instance=ExtResource("2_qt14n")]
+transform = Transform3D(11.1991, 0, -0.297938, 0, 2.52861, 0, 3.0008, 0, 1.11192, -180.623, 10.6767, 15.7874)
+
+[node name="DeathBox" parent="." instance=ExtResource("3_rnxo7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.951959, 0)

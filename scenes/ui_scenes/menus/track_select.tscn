@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2isvpt74ea7f"]
+[gd_scene load_steps=6 format=3 uid="uid://d2isvpt74ea7f"]
 
 [ext_resource type="Script" path="res://scripts/menus/track_select.gd" id="1_pxu2p"]
 [ext_resource type="Texture2D" uid="uid://dd1t5v6ddjhjx" path="res://assets/images/track_previews/curve_test.png" id="2_i2ugi"]
+[ext_resource type="Script" path="res://scripts/ui/curve_test_button.gd" id="3_c81um"]
 [ext_resource type="Texture2D" uid="uid://cwm06g85ijsa8" path="res://assets/images/track_previews/donut_test.png" id="3_nfp05"]
+[ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/fade_in.tscn" id="4_bl7co"]
 
 [node name="TrackSelect" type="Control"]
 layout_mode = 3
@@ -39,6 +41,7 @@ theme_override_font_sizes/font_size = 32
 text = "
 
 curve_test"
+script = ExtResource("3_c81um")
 
 [node name="donut_test" type="TextureRect" parent="."]
 layout_mode = 0
@@ -63,12 +66,16 @@ donut_test
 
 [node name="Go back" type="Button" parent="."]
 layout_mode = 0
+offset_left = 1147.0
 offset_top = 667.0
-offset_right = 133.0
+offset_right = 1280.0
 offset_bottom = 720.0
 theme_override_font_sizes/font_size = 32
 text = "Go Back"
 
+[node name="FadeIn" parent="." instance=ExtResource("4_bl7co")]
+
 [connection signal="pressed" from="curve_test/curve_test_button" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="donut_test/donut_test_button" to="." method="_on_donut_test_button_pressed"]
-[connection signal="pressed" from="Go back" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Go back" to="." method="_on_go_back_pressed"]
+[connection signal="animation_end" from="FadeIn" to="." method="_on_fade_in_animation_end"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ftfjb2juk3gv"]
+[gd_scene load_steps=6 format=3 uid="uid://ftfjb2juk3gv"]
 
 [ext_resource type="Script" path="res://scripts/menus/title_screen.gd" id="1_wep01"]
 [ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/fade_in.tscn" id="2_hrswe"]
+[ext_resource type="Script" path="res://scripts/ui/title_screen/single_player.gd" id="2_k4055"]
 [ext_resource type="Texture2D" uid="uid://pmrgd74p8b1e" path="res://assets/images/battle_cats/cat_kart.png" id="3_2d2xj"]
 [ext_resource type="Texture2D" uid="uid://wf1olbqmhl2a" path="res://assets/images/racing_flags.png" id="4_tjyxy"]
 
@@ -42,6 +43,7 @@ offset_right = 470.0
 offset_bottom = 303.0
 theme_override_font_sizes/font_size = 64
 text = "Single Player"
+script = ExtResource("2_k4055")
 
 [node name="Multiplayer" type="Button" parent="text and buttons"]
 layout_mode = 2
@@ -89,7 +91,7 @@ offset_right = 770.0
 offset_bottom = 712.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "Build date 12022024"
+text = "Build date 12/19/24"
 
 [node name="FadeIn" parent="." instance=ExtResource("2_hrswe")]
 
