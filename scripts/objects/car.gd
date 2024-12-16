@@ -92,5 +92,3 @@ func pause_listen():
 		pausemenu.visible = not $PauseMenu.visible
 		
 		#get_tree().paused = true
-
-#print("x")
