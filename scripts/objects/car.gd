@@ -28,7 +28,6 @@ extends VehicleBody3D
 @onready var camera = $Cameras/FrontCamera
 @onready var ui = $Ui
 @onready var pausemenu = $PauseMenu
-@onready var debugmenu = $Debugmenu
 
 @export var INVENTORY = ["", ""]
 @export var MAX_STEER = 0.9
@@ -83,7 +82,6 @@ func _physics_process(delta: float) -> void:
 	# listens for pause button
 	
 	pause_listen()
-	debug_listen()
 
 func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 	pass
@@ -92,8 +90,5 @@ func pause_listen():
 	if Input.is_action_just_pressed("pause"):
 		ui.visible = not $Ui.visible
 		pausemenu.visible = not $PauseMenu.visible
-
-func debug_listen():
-		if Input.is_action_just_pressed("open_debug"):
-			ui.visible = not $Ui.visible
-			debugmenu.visible = not $Debugmenu.visible
+		
+		#get_tree().paused = true

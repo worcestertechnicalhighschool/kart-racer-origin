@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu6oq4whbnukt"]
+[gd_scene load_steps=3 format=3 uid="uid://cu6oq4whbnukt"]
 
 [ext_resource type="Script" path="res://scripts/menus/pause_menu.gd" id="1_g7bl1"]
+[ext_resource type="Script" path="res://scripts/ui/resume.gd" id="2_2xpcw"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -40,6 +41,7 @@ offset_right = 8.0
 offset_bottom = 8.0
 theme_override_font_sizes/font_size = 80
 text = "Resume"
+script = ExtResource("2_2xpcw")
 
 [node name="Settings" type="Button" parent="."]
 layout_mode = 1

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmdbm048xrpmm"]
+[gd_scene load_steps=4 format=3 uid="uid://bmdbm048xrpmm"]
 
 [ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_ub0t8"]
 [ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/fade_in.tscn" id="2_ief3h"]
+[ext_resource type="Script" path="res://scripts/ui/single_player.gd" id="2_s5xjw"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -24,6 +25,7 @@ offset_right = 107.0
 offset_bottom = 31.0
 theme_override_font_sizes/font_size = 64
 text = "Single Player"
+script = ExtResource("2_s5xjw")
 
 [node name="Time Trials" type="Button" parent="."]
 layout_mode = 1
