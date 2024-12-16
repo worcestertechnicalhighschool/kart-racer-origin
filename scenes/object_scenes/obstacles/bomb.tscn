@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cpyib23l6r8wp"]
 
-[ext_resource type="Script" path="res://scripts/objects/bomb.gd" id="1_f6s3l"]
+[ext_resource type="Script" path="res://scripts/obstacles/bomb.gd" id="1_f6s3l"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_so8qk"]
 

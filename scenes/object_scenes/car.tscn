@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkuwcntbn4jl2"]
+[gd_scene load_steps=10 format=3 uid="uid://dkuwcntbn4jl2"]
 
-[ext_resource type="Script" path="res://scripts/objects/car.gd" id="1_318nw"]
+[ext_resource type="Script" path="res://scripts/car.gd" id="1_1bc64"]
 [ext_resource type="PackedScene" uid="uid://bmwh6n8gr4wvd" path="res://scenes/ui_scenes/car_ui.tscn" id="2_1w8et"]
 [ext_resource type="PackedScene" uid="uid://cu6oq4whbnukt" path="res://scenes/ui_scenes/menus/pause_menu.tscn" id="3_8ffs4"]
 
@@ -27,7 +27,7 @@ material = SubResource("StandardMaterial3D_5mxmk")
 mass = 50.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0, 0.3)
-script = ExtResource("1_318nw")
+script = ExtResource("1_1bc64")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 0.5, 0, 0, 0, 3.9, 0, 0, 0)

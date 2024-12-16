@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dojfn07gt2s6o"]
 
-[ext_resource type="Script" path="res://scripts/mushroom.gd" id="1_111ra"]
+[ext_resource type="Script" path="res://scripts/obstacles/mushroom.gd" id="1_i3eyu"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_omqy3"]
 
@@ -9,6 +9,21 @@ albedo_color = Color(0.814524, 0.998956, 0.792885, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qx1ah"]
 albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_mcu5r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_24hgy"]
 resource_name = "rotation"
@@ -26,21 +41,6 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_mcu5r"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2kwq0"]
 _data = {
 "RESET": SubResource("Animation_mcu5r"),
@@ -51,7 +51,7 @@ _data = {
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
-script = ExtResource("1_111ra")
+script = ExtResource("1_i3eyu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.7, 0, 0, 0, 0.395979, 0, 0, 0, 0.7, 0, 0, 0)

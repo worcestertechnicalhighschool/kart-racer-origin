@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6rhtpwrdsxjh"]
+[gd_scene load_steps=7 format=3 uid="uid://56v5b52o3p4"]
 
-[ext_resource type="Script" path="res://scripts/trip.gd" id="1_ed5h2"]
+[ext_resource type="Script" path="res://scripts/obstacles/trip.gd" id="1_rl6hs"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0nm6o"]
 friction = 0.0
@@ -19,7 +19,7 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 physics_material_override = SubResource("PhysicsMaterial_0nm6o")
-script = ExtResource("1_ed5h2")
+script = ExtResource("1_rl6hs")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)

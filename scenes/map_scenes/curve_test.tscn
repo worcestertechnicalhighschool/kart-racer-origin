@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_rflty"]
 [ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_tl23f"]
-[ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/checkpoint.tscn" id="3_4kmce"]
+[ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/track_features/checkpoint.tscn" id="3_4kmce"]
 [ext_resource type="PackedScene" uid="uid://bgfoxm83j36w0" path="res://scenes/object_scenes/obstacles/oil.tscn" id="3_85lhp"]
-[ext_resource type="PackedScene" uid="uid://bl7yp56hkp8e6" path="res://scenes/object_scenes/item_box.tscn" id="6_ca5mw"]
-[ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/death_box.tscn" id="6_utm8d"]
-[ext_resource type="PackedScene" uid="uid://carm88pw5xfdy" path="res://scenes/object_scenes/boost_pad.tscn" id="7_xo5dg"]
+[ext_resource type="PackedScene" uid="uid://bl7yp56hkp8e6" path="res://scenes/object_scenes/track_features/item_box.tscn" id="6_ca5mw"]
+[ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/track_features/death_box.tscn" id="6_utm8d"]
+[ext_resource type="PackedScene" uid="uid://carm88pw5xfdy" path="res://scenes/object_scenes/track_features/boost_pad.tscn" id="7_xo5dg"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tl4ks"]
 panorama = ExtResource("1_tl23f")
@@ -43,12 +43,12 @@ points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.
 
 [node name="CurveTest" type="Node3D"]
 
-[node name="Enviornment" type="Node3D" parent="."]
+[node name="Environment" type="Node3D" parent="."]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Enviornment"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
 environment = SubResource("Environment_hb0ru")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Enviornment"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
@@ -113,11 +113,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.2032, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("WorldBoundaryShape3D_lac0i")
 
-[node name="Car" parent="." instance=ExtResource("1_rflty")]
-transform = Transform3D(-0.933799, 0, -0.357798, 0, 1, 0, 0.357798, 0, -0.933799, 353.664, 19.2852, 283.364)
-mass = 100.0
-gravity_scale = 1.5
-
 [node name="Obstacles" type="Node3D" parent="."]
 
 [node name="Oil" parent="Obstacles" instance=ExtResource("3_85lhp")]
@@ -173,3 +168,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.731, 18.1979, 260.598)
 
 [node name="BoostPad" parent="." instance=ExtResource("7_xo5dg")]
 transform = Transform3D(0.961994, 0, 0.273069, 0, 1, 0, -0.273069, 0, 0.961994, 343.081, 16.9717, 247.423)
+
+[node name="Car" parent="." instance=ExtResource("1_rflty")]
+transform = Transform3D(-0.933799, 0, -0.357798, 0, 1, 0, 0.357798, 0, -0.933799, 353.664, 19.2852, 283.364)
+mass = 100.0
+gravity_scale = 1.5

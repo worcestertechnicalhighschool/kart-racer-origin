@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://xr1wvceq4fjd"]
 
-[ext_resource type="Script" path="res://scripts/deathbox.gd" id="1_yxllu"]
+[ext_resource type="Script" path="res://scripts/track_features/deathbox.gd" id="1_yxllu"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_n210m"]
 

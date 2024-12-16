@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ck1om1dv1vcl7"]
 
-[ext_resource type="Script" path="res://scripts/menus/jukebox.gd" id="1_p1kga"]
+[ext_resource type="Script" path="res://scripts/ui/menus/jukebox.gd" id="1_p1kga"]
 
 [node name="Jukebox" type="Control"]
 layout_mode = 3
