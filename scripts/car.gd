@@ -48,8 +48,6 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	print(linear_velocity)
-	
 	#apply_impulse(Vector3(0,0,10),Vector3(0,0,0))
 	#print(global_rotation_degrees)
 	#apply_central_impulse(Vector3(0,0,10))
