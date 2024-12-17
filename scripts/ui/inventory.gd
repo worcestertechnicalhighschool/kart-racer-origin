@@ -2,13 +2,13 @@ extends Control
 
 const BOMB = preload("res://scenes/object_scenes/obstacles/bomb.tscn")
 const SHELL = preload("res://scenes/object_scenes/obstacles/shell.tscn")
-const MUSHROOM = preload("res://scenes/object_scenes/mushroom.tscn")
+const MUSHROOM = preload("res://scenes/object_scenes/obstacles/mushroom.tscn")
 
 func _process(_delta: float) -> void:
 	var Car = $"../.."
 	
-	$"./Slot1/Label".text = Car.INVENTORY[0]
-	$"./Slot2/Label".text = Car.INVENTORY[1]
+	$"Slot2/Label".text = Car.INVENTORY[1]
+	$"Slot1/Label".text = Car.INVENTORY[0]
 	
 	if Input.is_action_just_pressed("throw_item"):
 		var instance

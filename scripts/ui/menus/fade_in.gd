@@ -20,6 +20,6 @@ func transition_titlescreen():
 	color_rect.visible = true
 	animation_player.play("fade_to_normal_titlescreen")
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	animation_end.emit()
 	queue_free()
