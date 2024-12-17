@@ -13,6 +13,7 @@ func _process(_delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	if not exploded:
+		#$AudioStreamPlayer3D.play()
 		$BombMesh.visible = false
 		$CollisionShape3D.disabled = true
 		$Explosion.visible = true

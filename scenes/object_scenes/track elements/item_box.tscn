@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://bl7yp56hkp8e6"]
+
+[ext_resource type="Script" path="res://scripts/objects/item_box.gd" id="1_a8dgl"]
+[ext_resource type="Texture2D" uid="uid://dqud4svtuhpo3" path="res://assets/images/itembox_placeholder.png" id="1_ikstd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcbnn"]
+albedo_texture = ExtResource("1_ikstd")
+texture_filter = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4oaxx"]
+
+[sub_resource type="Animation" id="Animation_je3f3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ebcok"]
+resource_name = "item_box_animation"
+length = 3.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 3.14159, 0), Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qejuv"]
+_data = {
+"RESET": SubResource("Animation_je3f3"),
+"item_box_animation": SubResource("Animation_ebcok")
+}
+
+[node name="ItemBox" type="StaticBody3D"]
+script = ExtResource("1_a8dgl")
+ONE_USE = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_pcbnn")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.54429, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_4oaxx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qejuv")
+}
+autoplay = "item_box_animation"
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

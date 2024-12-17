@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://c4n6tar772y13"]
 
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_aomea"]
-[ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/checkpoint.tscn" id="2_qt14n"]
-[ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/death_box.tscn" id="3_rnxo7"]
+[ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/track elements/checkpoint.tscn" id="2_qt14n"]
+[ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/track elements/death_box.tscn" id="3_rnxo7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cm7ld"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

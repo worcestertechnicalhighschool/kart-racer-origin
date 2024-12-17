@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cpyib23l6r8wp"]
+[gd_scene load_steps=11 format=3 uid="uid://cpyib23l6r8wp"]
 
 [ext_resource type="Script" path="res://scripts/objects/bomb.gd" id="1_f6s3l"]
+[ext_resource type="AudioStream" uid="uid://c1bqc86ug6idl" path="res://assets/sounds/sfx/sfx_bombexplode.mp3" id="2_vqx86"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_so8qk"]
 
@@ -56,6 +57,10 @@ disabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_j1jhg")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_vqx86")
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

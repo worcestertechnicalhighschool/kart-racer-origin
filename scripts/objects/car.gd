@@ -40,6 +40,7 @@ var old_position
 var old_velocity
 var axis
 var respawn
+var paused = false
 	
 func _ready() -> void:
 	ui.visible = true
@@ -81,14 +82,21 @@ func _physics_process(delta: float) -> void:
 	
 	# listens for pause button
 	
-	pause_listen()
+	if Input.is_action_just_pressed("pause"):
+		open_pause()
 
 func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 	pass
 	
-func pause_listen():
-	if Input.is_action_just_pressed("pause"):
-		ui.visible = not $Ui.visible
-		pausemenu.visible = not $PauseMenu.visible
-		
-		#get_tree().paused = true
+
+func open_pause():
+	# unpauses if already paused
+	if paused:
+		pausemenu.hide()
+		Engine.time_scale = 1
+	# pauses if not paused
+	else:
+		pausemenu.show()
+		Engine.time_scale = 0
+	
+	paused = not paused

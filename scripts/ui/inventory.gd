@@ -1,7 +1,7 @@
 extends Control
 
-const BOMB = preload("res://scenes/object_scenes/bomb.tscn")
-const SHELL = preload("res://scenes/object_scenes/shell.tscn")
+const BOMB = preload("res://scenes/object_scenes/obstacles/bomb.tscn")
+const SHELL = preload("res://scenes/object_scenes/obstacles/shell.tscn")
 const MUSHROOM = preload("res://scenes/object_scenes/mushroom.tscn")
 
 func _process(_delta: float) -> void:
