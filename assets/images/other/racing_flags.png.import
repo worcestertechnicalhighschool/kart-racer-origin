@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd3wxqh7l3lrp"
-path="res://.godot/imported/arrow_placeholder.png-3a69799b6b712c5e54eb5e35718a9c80.ctex"
+uid="uid://wf1olbqmhl2a"
+path="res://.godot/imported/racing_flags.png-066f0cfca3dac3779498895e4ac33406.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/arrow_placeholder.png"
-dest_files=["res://.godot/imported/arrow_placeholder.png-3a69799b6b712c5e54eb5e35718a9c80.ctex"]
+source_file="res://assets/images/other/racing_flags.png"
+dest_files=["res://.godot/imported/racing_flags.png-066f0cfca3dac3779498895e4ac33406.ctex"]
 
 [params]
 
