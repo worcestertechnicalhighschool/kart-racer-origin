@@ -41,7 +41,7 @@ func _ready() -> void:
 		0.1
 	)
 
-func _process(_delta: float) -> void:
+func _integrate_forces(_state: PhysicsDirectBodyState3D):
 	position = Vector3(ThrownObjects.position.x, ThrownObjects.position.y + 1.25, ThrownObjects.position.z)
 	
 	if not tween_playing:
@@ -54,9 +54,9 @@ func _apply_effects():
 	front_camera = front_camera_parent.find_child("FrontCamera")
 	
 	if Car.rotation_degrees.x >= Car.rotation_degrees.z:
-		Car.apply_central_force(Vector3(500000 * sign(rotation_degrees.x), 0, 0)) 
+		Car.linear_velocity += (Vector3(10 * sign(rotation_degrees.x), 0, 0)) 
 	elif Car.rotation_degrees.x < Car.rotation_degrees.z:
-		Car.apply_central_force(Vector3(0, 0, 500000 * sign(rotation_degrees.z))) 
+		Car.linear_velocity += (Vector3(0, 0, 10 * sign(rotation_degrees.x))) 
 	
 	var fov_out_tween = get_tree().create_tween()
 	fov_out_tween.tween_property(front_camera, "fov", 115, 0.3)

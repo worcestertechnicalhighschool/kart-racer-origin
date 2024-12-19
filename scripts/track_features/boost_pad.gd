@@ -10,9 +10,9 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		front_camera = front_camera_parent.find_child("FrontCamera")
 		
 		if body.rotation_degrees.x >= body.rotation_degrees.z:
-			body.apply_central_force(Vector3(100 * sign(rotation_degrees.x), 0, 0)) 
+			body.apply_central_impulse(Vector3(100 * sign(rotation_degrees.x), 0, 0)) 
 		elif body.rotation_degrees.x < body.rotation_degrees.z:
-			body.apply_central_force(Vector3(0, 0, 100 * sign(rotation_degrees.z))) 
+			body.apply_central_impulse(Vector3(0, 0, 100 * sign(rotation_degrees.z))) 
 		
 		var fov_out_tween = get_tree().create_tween()
 		fov_out_tween.tween_property(front_camera, "fov", 115, 0.3)

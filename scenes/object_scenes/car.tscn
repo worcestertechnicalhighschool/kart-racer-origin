@@ -42,6 +42,7 @@ use_as_steering = true
 suspension_stiffness = 50.0
 damping_compression = 3.0
 damping_relaxation = 5.0
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FrontLeftWheel"]
 transform = Transform3D(2.98023e-08, 1, 0, -1, 2.98023e-08, 0, 0, 0, 1, 0, 0, 0)
@@ -53,6 +54,7 @@ use_as_traction = true
 suspension_stiffness = 50.0
 damping_compression = 3.0
 damping_relaxation = 5.0
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BackLeftWheel"]
 transform = Transform3D(2.98023e-08, 1, 0, -1, 2.98023e-08, 0, 0, 0, 1, 0, 0, 0)
@@ -64,6 +66,7 @@ use_as_steering = true
 suspension_stiffness = 50.0
 damping_compression = 3.0
 damping_relaxation = 5.0
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FrontRightWheel"]
 transform = Transform3D(2.98023e-08, 1, 0, -1, 2.98023e-08, 0, 0, 0, 1, 0, 0, 0)
@@ -75,6 +78,7 @@ use_as_traction = true
 suspension_stiffness = 50.0
 damping_compression = 3.0
 damping_relaxation = 5.0
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BackRightWheel"]
 transform = Transform3D(2.98023e-08, 1, 0, -1, 2.98023e-08, 0, 0, 0, 1, 0, 0, 0)
