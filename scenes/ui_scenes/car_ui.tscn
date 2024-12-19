@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmwh6n8gr4wvd"]
+[gd_scene load_steps=4 format=3 uid="uid://bmwh6n8gr4wvd"]
 
 [ext_resource type="Script" path="res://scripts/ui/car_ui.gd" id="1_m1xia"]
 [ext_resource type="PackedScene" uid="uid://46f5221jq06n" path="res://scenes/ui_scenes/inventory.tscn" id="1_s61gj"]
+[ext_resource type="Script" path="res://scripts/ui/fps.gd" id="2_olduw"]
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -46,6 +47,21 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 32
 text = "00:00:00
 "
+
+[node name="fps" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -960.0
+offset_top = 17.0
+offset_right = -833.0
+offset_bottom = 62.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "
+"
+script = ExtResource("2_olduw")
 
 [node name="Timer" type="Timer" parent="."]
 

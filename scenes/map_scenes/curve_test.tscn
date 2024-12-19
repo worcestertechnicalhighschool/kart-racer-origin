@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://reojy8we20ey"]
+[gd_scene load_steps=18 format=3 uid="uid://reojy8we20ey"]
 
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_rflty"]
 [ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_tl23f"]
+[ext_resource type="Texture2D" uid="uid://bv8udm5cmjk8d" path="res://assets/images/textures/roadtexture.jpg" id="2_i1x80"]
 [ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/track_features/checkpoint.tscn" id="3_4kmce"]
 [ext_resource type="PackedScene" uid="uid://bgfoxm83j36w0" path="res://scenes/object_scenes/obstacles/oil.tscn" id="3_85lhp"]
 [ext_resource type="PackedScene" uid="uid://bl7yp56hkp8e6" path="res://scenes/object_scenes/track_features/item_box.tscn" id="6_ca5mw"]
@@ -27,8 +28,8 @@ _data = {
 }
 point_count = 16
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d8482"]
-albedo_color = Color(0.325441, 0.325441, 0.325441, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tytiv"]
+albedo_texture = ExtResource("2_i1x80")
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_lac0i"]
 
@@ -49,7 +50,7 @@ points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.
 environment = SubResource("Environment_hb0ru")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(-0.623942, -0.257956, 0.737669, 0.510544, 0.5801, 0.634688, -0.591643, 0.772621, -0.230251, 82.7543, 107.965, 208.016)
 shadow_enabled = true
 
 [node name="Path3D" type="Path3D" parent="."]
@@ -58,7 +59,7 @@ curve = SubResource("Curve3D_d6dn7")
 
 [node name="Track" type="CSGPolygon3D" parent="."]
 transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_d8482")
+material_override = SubResource("StandardMaterial3D_tytiv")
 use_collision = true
 polygon = PackedVector2Array(0, 0, 0, 0.1, 0.1, 0.1, 0.1, 0)
 mode = 2
@@ -133,16 +134,16 @@ shape = SubResource("ConvexPolygonShape3D_x5nv1")
 [node name="Checkpoints" type="Node3D" parent="."]
 
 [node name="checkpoint2" parent="Checkpoints" instance=ExtResource("3_4kmce")]
-transform = Transform3D(-0.428099, 3.80242e-08, -0.999683, -2.56693e-06, -10, 1.77654e-16, -16.9946, 1.50948e-06, 0.0251823, 187.807, 16.799, 72.4981)
+transform = Transform3D(-0.428099, 1.52097e-08, -0.999683, 4.05265e-06, 4, -2.20151e-09, 16.9946, -9.53483e-07, -0.0251823, 187.807, 18.3113, 72.4981)
 
 [node name="checkpoint3" parent="Checkpoints" instance=ExtResource("3_4kmce")]
-transform = Transform3D(1, 0, 5.56246e-07, 0, 10, 0, -2.98023e-08, 0, 18.6645, -116.804, 16.6278, 78.8338)
+transform = Transform3D(-2.32282e-07, 0, -0.746579, 0, 5, 0, 16.7, 0, -1.03842e-08, -116.804, 18.4065, 78.8338)
 
 [node name="checkpoint4" parent="Checkpoints" instance=ExtResource("3_4kmce")]
-transform = Transform3D(-3.19918, 0, 0.982133, 0, 10, 0, -16.6963, 0, -0.188187, -127.77, 16.5547, 344.393)
+transform = Transform3D(-3.19918, 0, 0.982133, 0.490656, 3.99827, 0.00553027, -16.6891, 0.117548, -0.188106, -127.77, 17.8756, 344.393)
 
 [node name="checkpoint5" parent="Checkpoints" instance=ExtResource("3_4kmce")]
-transform = Transform3D(-0.0869367, 1.04527, 0.994509, -2.65064e-11, 9.94522, -0.104528, -16.9998, -0.00534563, -0.00508591, 30.8615, 50.2065, 24.3736)
+transform = Transform3D(-0.043224, 0.525554, 1.0465, 1.84851, 4.97035, -0.10906, -16.8992, 0.542336, -0.0146062, 30.8615, 51.5827, 24.3736)
 
 [node name="checkpoint6" parent="Checkpoints" instance=ExtResource("3_4kmce")]
 transform = Transform3D(18.0168, -0.879944, 0.0714156, 1.60721, 9.96048, -0.0057196, -1.28465, 0.120484, 0.994424, 160.324, 39.6707, 165.262)
@@ -163,11 +164,61 @@ START_OR_FINISH_LINE = true
 [node name="DeathBox" parent="." instance=ExtResource("6_utm8d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 362.847, 0.0167418, 260.604)
 
-[node name="ItemBox" parent="." instance=ExtResource("6_ca5mw")]
+[node name="BoostPad" parent="." instance=ExtResource("7_xo5dg")]
+transform = Transform3D(0.804801, 0, 0.025387, 0, 1, 0, -0.0257134, 0, 0.794586, 378.206, 17.0668, 414.86)
+
+[node name="BoostPad2" parent="." instance=ExtResource("7_xo5dg")]
+transform = Transform3D(0.339108, 0, 0.198797, 0, 1, 0, -0.113062, 0, 0.596252, 319.42, 17.0668, 184.97)
+
+[node name="BoostPad3" parent="." instance=ExtResource("7_xo5dg")]
+transform = Transform3D(0.339392, -0.133951, 0.178426, 0.0610558, 0.979234, -0.0686403, -0.0941403, 0.152178, 0.59874, 155.354, 45.0789, 129.592)
+
+[node name="Item Boxes" type="Node3D" parent="."]
+
+[node name="ItemBox" parent="Item Boxes" instance=ExtResource("6_ca5mw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.731, 18.1979, 260.598)
 
-[node name="BoostPad" parent="." instance=ExtResource("7_xo5dg")]
-transform = Transform3D(0.961994, 0, 0.273069, 0, 1, 0, -0.273069, 0, 0.961994, 343.081, 16.9717, 247.423)
+[node name="ItemBox2" parent="Item Boxes" instance=ExtResource("6_ca5mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 341.118, 18.1979, 260.954)
+
+[node name="ItemBox3" parent="Item Boxes" instance=ExtResource("6_ca5mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 352.08, 18.1979, 260.279)
+
+[node name="ItemBox7" parent="Item Boxes" instance=ExtResource("6_ca5mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -193.642, 18.1979, 105.869)
+
+[node name="ItemBox8" parent="Item Boxes" instance=ExtResource("6_ca5mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189.049, 18.1979, 109.115)
+
+[node name="ItemBox9" parent="Item Boxes" instance=ExtResource("6_ca5mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -198.007, 18.1979, 102.761)
+
+[node name="ItemBox10" parent="Item Boxes" instance=ExtResource("6_ca5mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.8944, 17.642, 330.77)
+
+[node name="ItemBox11" parent="Item Boxes" instance=ExtResource("6_ca5mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.3014, 17.642, 334.016)
+
+[node name="ItemBox12" parent="Item Boxes" instance=ExtResource("6_ca5mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.2594, 17.642, 327.662)
+
+[node name="ItemBox13" parent="Item Boxes" instance=ExtResource("6_ca5mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.17871, 51.5424, 25.7821)
+
+[node name="ItemBox14" parent="Item Boxes" instance=ExtResource("6_ca5mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.13118, 51.0854, 31.3063)
+
+[node name="ItemBox15" parent="Item Boxes" instance=ExtResource("6_ca5mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.28988, 51.9782, 20.5159)
+
+[node name="ItemBox16" parent="Item Boxes" instance=ExtResource("6_ca5mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.6521, 19.9774, 380.371)
+
+[node name="ItemBox17" parent="Item Boxes" instance=ExtResource("6_ca5mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.9295, 20.1462, 382.308)
+
+[node name="ItemBox18" parent="Item Boxes" instance=ExtResource("6_ca5mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.6306, 19.8176, 378.508)
 
 [node name="Car" parent="." instance=ExtResource("1_rflty")]
 transform = Transform3D(-0.933799, 0, -0.357798, 0, 1, 0, 0.357798, 0, -0.933799, 353.664, 19.2852, 283.364)
