@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dojfn07gt2s6o"]
 
-[ext_resource type="Script" path="res://scripts/obstacles/mushroom.gd" id="1_i3eyu"]
+[ext_resource type="Script" path="res://scripts/items/mushroom.gd" id="1_i3eyu"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_omqy3"]
 

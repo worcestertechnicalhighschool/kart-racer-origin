@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxsdvosl0qecw"
-path.s3tc="res://.godot/imported/webdev_logo.png-5971a9d84a1f54f5ea2cdd4b891de8f0.s3tc.ctex"
+uid="uid://bv8udm5cmjk8d"
+path.s3tc="res://.godot/imported/roadtexture.jpg-a61603b7e74e468158fb678a3e84d72f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/images/webdev_logo.png"
-dest_files=["res://.godot/imported/webdev_logo.png-5971a9d84a1f54f5ea2cdd4b891de8f0.s3tc.ctex"]
+source_file="res://assets/images/textures/roadtexture.jpg"
+dest_files=["res://.godot/imported/roadtexture.jpg-a61603b7e74e468158fb678a3e84d72f.s3tc.ctex"]
 
 [params]
 

@@ -41,6 +41,7 @@ var old_velocity
 var axis
 var respawn
 var paused = false
+var prior
 	
 func _ready() -> void:
 	ui.visible = true
@@ -48,6 +49,9 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	var current = Vector2(linear_velocity.x, linear_velocity.z)
+	
+	print(current)
 	#apply_impulse(Vector3(0,0,10),Vector3(0,0,0))
 	#print(global_rotation_degrees)
 	#apply_central_impulse(Vector3(0,0,10))
@@ -93,10 +97,13 @@ func open_pause():
 	# unpauses if already paused
 	if paused:
 		pausemenu.hide()
+		ui.show()
 		Engine.time_scale = 1
+		
 	# pauses if not paused
 	else:
 		pausemenu.show()
+		ui.hide()
 		Engine.time_scale = 0
 	
 	paused = not paused

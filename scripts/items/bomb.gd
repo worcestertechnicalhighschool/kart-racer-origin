@@ -1,4 +1,4 @@
-extends "res://scripts/obstacles/trip.gd"
+extends "res://scripts/items/trip.gd"
 @export var FUSE = 2
 @export var LINGER = 1
 

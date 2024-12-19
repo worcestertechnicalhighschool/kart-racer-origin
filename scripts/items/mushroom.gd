@@ -54,9 +54,9 @@ func _apply_effects():
 	front_camera = front_camera_parent.find_child("FrontCamera")
 	
 	if Car.rotation_degrees.x >= Car.rotation_degrees.z:
-		Car.apply_central_force(Vector3(500000 * sign(rotation_degrees.x), 0, 0)) 
+		Car.apply_central_force(Vector3(100 * sign(rotation_degrees.x), 0, 0)) 
 	elif Car.rotation_degrees.x < Car.rotation_degrees.z:
-		Car.apply_central_force(Vector3(0, 0, 500000 * sign(rotation_degrees.z))) 
+		Car.apply_central_force(Vector3(0, 0, 100 * sign(rotation_degrees.z))) 
 	
 	var fov_out_tween = get_tree().create_tween()
 	fov_out_tween.tween_property(front_camera, "fov", 115, 0.3)
