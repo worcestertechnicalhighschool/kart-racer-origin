@@ -21,6 +21,7 @@ albedo_color = Color(0, 0, 0, 1)
 
 [node name="checkpoint" type="Area3D"]
 script = ExtResource("1_pvsk4")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_m25o4")

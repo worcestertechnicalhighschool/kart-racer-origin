@@ -75,6 +75,7 @@ func _physics_process(delta: float) -> void:
 		drift = false
 		angular_velocity.y = 0
 		global_rotation_degrees.y = 0
+	
 		linear_velocity.z = old_velocity.z
 		
 	if !drift:

@@ -6,6 +6,7 @@
 
 [node name="DeathBox" type="Area3D"]
 script = ExtResource("1_yxllu")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("WorldBoundaryShape3D_n210m")
