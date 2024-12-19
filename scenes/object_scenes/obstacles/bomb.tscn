@@ -26,7 +26,6 @@ albedo_color = Color(0, 0, 0, 1)
 script = ExtResource("1_f6s3l")
 ONE_USE = false
 THROWN_FORWARD = false
-metadata/_edit_group_ = true
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
