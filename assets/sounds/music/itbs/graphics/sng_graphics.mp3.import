@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/sng_graphics.mp3-ca37a304ff2b2a95b3d13a0c4346
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
