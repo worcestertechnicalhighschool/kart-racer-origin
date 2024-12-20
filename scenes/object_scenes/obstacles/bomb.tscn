@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cpyib23l6r8wp"]
 
-[ext_resource type="AudioStream" uid="uid://c1bqc86ug6idl" path="res://assets/sounds/sfx/sfx_bombexplode.mp3" id="2_vqx86"]
 [ext_resource type="Script" path="res://scripts/items/bomb.gd" id="1_f6s3l"]
+[ext_resource type="AudioStream" uid="uid://c1bqc86ug6idl" path="res://assets/sounds/sfx/sfx_bombexplode.mp3" id="2_vqx86"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_so8qk"]
 
