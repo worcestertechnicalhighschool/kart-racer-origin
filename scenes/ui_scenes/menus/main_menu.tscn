@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmdbm048xrpmm"]
+[gd_scene load_steps=6 format=3 uid="uid://bmdbm048xrpmm"]
 
 [ext_resource type="Script" path="res://scripts/ui/menus/main_menu.gd" id="1_ub0t8"]
 [ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/transitions/fade_in.tscn" id="2_ief3h"]
 [ext_resource type="Script" path="res://scripts/ui/menus/single_player.gd" id="2_s5xjw"]
 [ext_resource type="AudioStream" uid="uid://cdsqyk0a6o6ka" path="res://assets/sounds/music/sng_menu.mp3" id="4_rt2x3"]
+[ext_resource type="AudioStream" uid="uid://d14nfwmrlpndm" path="res://assets/sounds/sfx/sfx_bloop.mp3" id="5_pnvet"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -15,38 +16,46 @@ grow_vertical = 2
 script = ExtResource("1_ub0t8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.255341, 0.630284, 0.522835, 1)
 
 [node name="Single Player" type="Button" parent="."]
 layout_mode = 1
-offset_right = 107.0
-offset_bottom = 31.0
+anchors_preset = -1
+anchor_right = 0.314
+anchor_bottom = 0.133
+offset_right = -294.92
+offset_bottom = -64.76
 theme_override_font_sizes/font_size = 64
 text = "Single Player"
 script = ExtResource("2_s5xjw")
 
 [node name="Time Trials" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -48.0
-offset_right = 402.0
-offset_bottom = 48.0
+anchors_preset = -1
+anchor_top = 0.433
+anchor_right = 0.314
+anchor_bottom = 0.567
+offset_top = 0.23999
+offset_right = 0.0799866
+offset_bottom = -0.240021
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
 text = "Time Trials"
 
 [node name="placeholder" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = -1
+anchor_top = 0.867
+anchor_right = 0.493
 anchor_bottom = 1.0
-offset_top = -96.0
-offset_right = 402.0
+offset_top = -0.240051
+offset_right = -229.04
 grow_vertical = 0
 theme_override_font_sizes/font_size = 64
 text = "placeholder or smth
@@ -54,13 +63,13 @@ text = "placeholder or smth
 
 [node name="Go Back" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
+anchors_preset = -1
+anchor_left = 0.896
+anchor_top = 0.926
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -71.0
-offset_top = -31.0
+offset_left = 62.12
+offset_top = 22.28
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
@@ -71,6 +80,11 @@ text = "Go Back"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_rt2x3")
 autoplay = true
+bus = &"Music"
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_pnvet")
+bus = &"SFX"
 
 [connection signal="pressed" from="Single Player" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="Go Back" to="." method="_on_go_back_pressed"]

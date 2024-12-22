@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cbqico0v11ulu"
+path="res://.godot/imported/Chemical Plant (Day) (Edit).wav-0397ed606f5c3f0d986600ec6a68c4a7.sample"
+
+[deps]
+
+source_file="res://assets/sounds/music/dreadful/Chemical Plant (Day) (Edit).wav"
+dest_files=["res://.godot/imported/Chemical Plant (Day) (Edit).wav-0397ed606f5c3f0d986600ec6a68c4a7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

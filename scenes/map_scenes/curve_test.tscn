@@ -199,13 +199,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.3014, 17.642, 334.016)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.2594, 17.642, 327.662)
 
 [node name="ItemBox13" parent="Item Boxes" instance=ExtResource("6_ca5mw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.17871, 51.5424, 25.7821)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.17871, 51.0262, 25.783)
 
 [node name="ItemBox14" parent="Item Boxes" instance=ExtResource("6_ca5mw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.13118, 51.0854, 31.3063)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.13118, 50.1069, 31.2493)
 
 [node name="ItemBox15" parent="Item Boxes" instance=ExtResource("6_ca5mw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.28988, 51.9782, 20.5159)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.28988, 51.9027, 20.572)
 
 [node name="ItemBox16" parent="Item Boxes" instance=ExtResource("6_ca5mw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.6521, 19.9774, 380.371)
@@ -224,3 +224,4 @@ gravity_scale = 1.5
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_y2xi4")
 autoplay = true
+bus = &"Music"

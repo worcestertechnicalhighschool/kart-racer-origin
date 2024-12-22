@@ -17,26 +17,37 @@ grow_vertical = 2
 script = ExtResource("1_pxu2p")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.255341, 0.630284, 0.522835, 1)
 
 [node name="curve_test" type="TextureRect" parent="."]
 visibility_layer = 2
-layout_mode = 0
-offset_left = 61.0
-offset_top = 55.0
-offset_right = 1338.0
-offset_bottom = 767.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.048
+anchor_top = 0.076
+anchor_right = 0.247
+anchor_bottom = 0.274
+offset_left = -0.440002
+offset_top = 0.279995
+offset_right = 1021.84
+offset_bottom = 569.72
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_i2ugi")
 
 [node name="curve_test_button" type="Button" parent="curve_test"]
 show_behind_parent = true
-layout_mode = 0
-offset_right = 182.45
-offset_bottom = 212.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 2.084
+offset_right = -1094.55
+offset_bottom = -1271.81
 scale = Vector2(7, 7)
 theme_override_font_sizes/font_size = 32
 text = "
@@ -45,19 +56,27 @@ curve_test"
 script = ExtResource("3_c81um")
 
 [node name="donut_test" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 362.0
-offset_top = 55.0
-offset_right = 1639.0
-offset_bottom = 767.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.283
+anchor_top = 0.076
+anchor_right = 0.483
+anchor_bottom = 0.276
+offset_left = -0.240021
+offset_top = 0.279995
+offset_right = 1020.76
+offset_bottom = 568.28
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_nfp05")
 
 [node name="donut_test_button" type="Button" parent="donut_test"]
 show_behind_parent = true
-layout_mode = 0
-offset_right = 183.0
-offset_bottom = 210.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.002
+anchor_bottom = 2.047
+offset_right = -1098.56
+offset_bottom = -1259.75
 scale = Vector2(7, 7)
 theme_override_font_sizes/font_size = 32
 text = "
@@ -66,11 +85,16 @@ donut_test
 "
 
 [node name="Go back" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1147.0
-offset_top = 667.0
-offset_right = 1280.0
-offset_bottom = 720.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.896
+anchor_top = 0.926
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.119995
+offset_top = 0.279968
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "Go Back"
 
@@ -79,6 +103,7 @@ text = "Go Back"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_amqif")
 autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="curve_test/curve_test_button" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="donut_test/donut_test_button" to="." method="_on_donut_test_button_pressed"]

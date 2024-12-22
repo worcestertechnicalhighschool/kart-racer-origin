@@ -51,7 +51,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var current = Vector2(linear_velocity.x, linear_velocity.z)
 	
-	print(current)
+	#print(current)
+	
 	#apply_impulse(Vector3(0,0,10),Vector3(0,0,0))
 	#print(global_rotation_degrees)
 	#apply_central_impulse(Vector3(0,0,10))

@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://ftfjb2juk3gv"]
+[gd_scene load_steps=8 format=3 uid="uid://ftfjb2juk3gv"]
 
 [ext_resource type="Script" path="res://scripts/ui/menus/title_screen.gd" id="1_wep01"]
 [ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/transitions/fade_in.tscn" id="2_hrswe"]
 [ext_resource type="Script" path="res://scripts/ui/menus/single_player.gd" id="2_k4055"]
 [ext_resource type="Texture2D" uid="uid://pmrgd74p8b1e" path="res://assets/images/battle_cats/cat_kart.png" id="3_2d2xj"]
-[ext_resource type="Texture2D" uid="uid://wf1olbqmhl2a" path="res://assets/images/other/racing_flags.png" id="4_tjyxy"]
+[ext_resource type="Texture2D" uid="uid://wf1olbqmhl2a" path="res://assets/images/textures/racing_flags.png" id="4_tjyxy"]
 [ext_resource type="AudioStream" uid="uid://cdsqyk0a6o6ka" path="res://assets/sounds/music/sng_menu.mp3" id="6_rp7fr"]
+[ext_resource type="AudioStream" uid="uid://d14nfwmrlpndm" path="res://assets/sounds/sfx/sfx_bloop.mp3" id="7_t76wy"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -77,7 +78,7 @@ theme_override_font_sizes/font_size = 64
 text = "Multiplayer"
 metadata/_edit_use_anchors_ = true
 
-[node name="Controls" type="Button" parent="text and buttons"]
+[node name="Settings" type="Button" parent="text and buttons"]
 layout_mode = 2
 anchor_left = 0.101
 anchor_top = 0.641
@@ -88,10 +89,10 @@ offset_top = -0.335022
 offset_right = -0.0800171
 offset_bottom = -0.0950317
 theme_override_font_sizes/font_size = 64
-text = "Controls"
+text = "Settings"
 metadata/_edit_use_anchors_ = true
 
-[node name="Credits" type="Button" parent="text and buttons"]
+[node name="Quit" type="Button" parent="text and buttons"]
 layout_mode = 2
 anchor_left = 0.12
 anchor_top = 0.817
@@ -102,17 +103,17 @@ offset_top = 0.0379639
 offset_right = -0.160034
 offset_bottom = 0.277954
 theme_override_font_sizes/font_size = 64
-text = "Credits"
+text = "Quit"
 metadata/_edit_use_anchors_ = true
 
 [node name="CatKart" type="Sprite2D" parent="."]
-position = Vector2(1035, 549)
+position = Vector2(1594, 866)
 texture = ExtResource("3_2d2xj")
 
 [node name="RacingFlags" type="Sprite2D" parent="."]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(925, 110)
+position = Vector2(1210, 171)
 scale = Vector2(0.416222, 0.402555)
 texture = ExtResource("4_tjyxy")
 
@@ -133,8 +134,15 @@ text = "Build date 12/19/24"
 
 [node name="FadeIn" parent="." instance=ExtResource("2_hrswe")]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Menu Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_rp7fr")
 autoplay = true
+bus = &"Music"
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_t76wy")
+bus = &"SFX"
 
 [connection signal="pressed" from="text and buttons/Single_Player" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="text and buttons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="text and buttons/Quit" to="." method="_on_quit_pressed"]

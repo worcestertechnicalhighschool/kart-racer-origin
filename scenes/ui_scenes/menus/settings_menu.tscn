@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0h1gpcxum57s"]
+
+[ext_resource type="Script" path="res://scripts/ui/menus/settings_menu.gd" id="1_4p3hg"]
+[ext_resource type="AudioStream" uid="uid://cdsqyk0a6o6ka" path="res://assets/sounds/music/sng_menu.mp3" id="2_16dnu"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4p3hg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.255341, 0.630284, 0.522835, 1)
+
+[node name="Music Volume" type="HSlider" parent="."]
+layout_mode = 2
+anchor_left = 0.0125
+anchor_top = 0.0986111
+anchor_right = 0.457812
+anchor_bottom = 0.141667
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Music Volume"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00350877
+anchor_top = -1.54839
+anchor_right = 0.375439
+anchor_bottom = -0.0967742
+theme_override_font_sizes/font_size = 32
+text = "Music Volume"
+metadata/_edit_use_anchors_ = true
+
+[node name="Go back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.896094
+anchor_top = 0.926389
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Go Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_16dnu")
+autoplay = true
+bus = &"Music"
+
+[connection signal="value_changed" from="Music Volume" to="." method="_on_music_volume_value_changed"]
+[connection signal="pressed" from="Go back" to="." method="_on_go_back_pressed"]
