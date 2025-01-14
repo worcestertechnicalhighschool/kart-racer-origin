@@ -1,24 +1,3 @@
-#Old Car Code
-#
-#var max_rpm = 500
-#var max_torque = 200
-#
-#func _physics_process(delta: float) -> void:
-	#if Input.get_axis("backward", "forward"):
-		#$BackLeftWheel.wheel_friction_slip = 10
-		#$BackRightWheel.wheel_friction_slip = 10
-	#else:
-		#$BackLeftWheel.wheel_friction_slip = 3
-		#$BackRightWheel.wheel_friction_slip = 3
-	#
-	#steering = lerp(steering, Input.get_axis("right", "left") * 0.4, 5 * delta)
-	#var acceleration = Input.get_axis("backward", "forward")
-	#var rpm = $BackLeftWheel.get_rpm()
-	#$BackLeftWheel.engine_force = acceleration * max_torque * (1 - rpm / max_rpm) * 2
-	#rpm = $BackRightWheel.get_rpm()
-	#$BackRightWheel.engine_force = acceleration * max_torque * (1 - rpm / max_rpm) * 2
-
-
 extends VehicleBody3D
 
 @onready var blwheel = $BackLeftWheel
@@ -33,6 +12,7 @@ extends VehicleBody3D
 @export var MAX_STEER = 0.9
 @export var ENGINE_POWER = 500
 @export var DRIFT = 1
+@export var ZOOM_DURATION = 0
 
 var drift
 var old_rotation
@@ -46,10 +26,9 @@ var prior
 func _ready() -> void:
 	ui.visible = true
 	pausemenu.visible = false
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _physics_process(delta: float) -> void:
-	var current = Vector2(linear_velocity.x, linear_velocity.z)
+	#var current = Vector2(linear_velocity.x, linear_velocity.z)
 	
 	#print(current)
 	
@@ -90,10 +69,6 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("pause"):
 		open_pause()
-
-func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
-	pass
-	
 
 func open_pause():
 	# unpauses if already paused
