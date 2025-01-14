@@ -4,6 +4,13 @@ func _on_texture_button_pressed() -> void:
 	$AudioStreamPlayer.stop()
 	get_tree().change_scene_to_file("res://scenes/map_scenes/curve_test.tscn")
 
+func _on_trk_2_button_pressed() -> void:
+	$AudioStreamPlayer.stop()
+	get_tree().change_scene_to_file("res://scenes/map_scenes/trk_2.tscn")
+
+func _on_trk_3_button_pressed() -> void:
+	$AudioStreamPlayer.stop()
+	get_tree().change_scene_to_file("res://scenes/map_scenes/trk_3.tscn")
 
 func _on_donut_test_button_pressed() -> void:
 	$AudioStreamPlayer.stop()

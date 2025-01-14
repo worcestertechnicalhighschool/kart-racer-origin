@@ -37,7 +37,8 @@ albedo_color = Color(0.741176, 0.792157, 0, 0.34902)
 material = SubResource("StandardMaterial3D_5mxmk")
 
 [node name="Car" type="VehicleBody3D"]
-mass = 50.0
+mass = 100.0
+gravity_scale = 1.5
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0, 0.3)
 script = ExtResource("1_1bc64")
