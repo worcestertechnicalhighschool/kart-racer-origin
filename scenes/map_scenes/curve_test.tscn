@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://reojy8we20ey"]
+[gd_scene load_steps=19 format=3 uid="uid://reojy8we20ey"]
 
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_rflty"]
 [ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_tl23f"]
@@ -223,7 +223,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.6306, 19.8176, 378.508)
 [node name="Car" parent="." instance=ExtResource("1_rflty")]
 transform = Transform3D(-0.933799, 0, -0.357798, 0, 1, 0, 0.357798, 0, -0.933799, 353.664, 19.2852, 283.364)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_y2xi4")
 autoplay = true
 bus = &"Music"

@@ -3,7 +3,7 @@ extends Node3D
 @export var ONE_USE = true
 
 @onready var original_position = position
-var list_of_throwables = ["mushroom"]
+var list_of_throwables = ["shell", "bomb", "mushroom"]
 var rng = RandomNumberGenerator.new()
 var tween_playing = false
 
