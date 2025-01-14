@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1q5syf11vtun"
+path="res://.godot/imported/sng_biotech.mp3-af38ab98f37f8d091f71722efa5405e9.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/music/health services/sng_biotech.mp3"
+dest_files=["res://.godot/imported/sng_biotech.mp3-af38ab98f37f8d091f71722efa5405e9.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

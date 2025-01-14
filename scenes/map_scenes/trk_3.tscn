@@ -1,0 +1,92 @@
+[gd_scene load_steps=11 format=3 uid="uid://dpak0q636d2dy"]
+
+[ext_resource type="Texture2D" uid="uid://c7c5fn2n1ph36" path="res://assets/images/skyboxes/sky_and_clouds.png" id="1_c6a7v"]
+[ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_r5l0k"]
+[ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/track_features/checkpoint.tscn" id="2_c8w8y"]
+[ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/track_features/death_box.tscn" id="3_m518d"]
+[ext_resource type="AudioStream" uid="uid://pushtnxtycwy" path="res://assets/sounds/music/health services/sng_enviornmental.mp3" id="5_w8mqi"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_c6or0"]
+panorama = ExtResource("1_c6a7v")
+
+[sub_resource type="Sky" id="Sky_d0in4"]
+sky_material = SubResource("PanoramaSkyMaterial_c6or0")
+
+[sub_resource type="Environment" id="Environment_iraju"]
+background_mode = 2
+sky = SubResource("Sky_d0in4")
+tonemap_exposure = 1.3
+
+[sub_resource type="Curve3D" id="Curve3D_0vy7v"]
+_data = {
+"points": PackedVector3Array(-2.84617, 0, 1.26477, 2.84617, 0, -1.26477, 0.350462, 0, -0.360245, 0, 0, 0, 0, 0, 0, 2.47266, 0, 0.0603086, -0.56027, 0, -0.115611, 0.56027, 0, 0.115611, 2.99735, 0, 1.05634, -0.160078, 0, 0.222329, 0.160078, 0, -0.222329, 4.02007, 0, 0.460502, -1.28062, 0, -0.0355727, 1.28062, 0, 0.0355727, 4.68706, 0, -0.464389, 0.551377, 0, -1.52073, -0.551377, 0, 1.52073, 4.19793, 0, -1.74501, 0.506911, 0, 0.106718, -0.506911, 0, -0.106718, 1.12979, 0, -2.32306, -0.00889301, 0, -0.0266795, 0.00889301, 0, 0.0266795, 0.225707, 0, -2.30838, 0, 0, 0, 0, 0, 0, 0.237417, 0, -0.496785),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 9
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxjap"]
+albedo_color = Color(0.133333, 0.545098, 0.133333, 1)
+
+[node name="Trk3" type="Node3D"]
+
+[node name="Envionrment" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 113.243, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Envionrment"]
+environment = SubResource("Environment_iraju")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Envionrment"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(-4.37114e-06, 0, 100, 0, 100, 0, -100, 0, -4.37114e-06, 104.239, 0, 242.613)
+curve = SubResource("Curve3D_0vy7v")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
+use_collision = true
+polygon = PackedVector2Array(0, 0.1, 0, 0.1, 0.1, 0.1, 0.1, 0, 0, 0)
+mode = 2
+path_node = NodePath("../Path3D")
+path_interval_type = 0
+path_interval = 0.1
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = true
+material = SubResource("StandardMaterial3D_vxjap")
+
+[node name="Car" parent="." instance=ExtResource("1_r5l0k")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -64.6991, 10.7197, 224.836)
+
+[node name="Checkpoints" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 104.239, 0, 242.613)
+
+[node name="checkpoint" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
+transform = Transform3D(10.1153, 0, 0, 0, 2.42703, 0, 0, 0, 1, 18.5452, 10.9847, -144.879)
+START_OR_FINISH_LINE = true
+
+[node name="checkpoint2" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
+transform = Transform3D(-4.82565, 0, 1.22411, 0, 2.42703, 0, -12.2031, 0, -0.484067, 67.9156, 10.9847, -44.5497)
+
+[node name="checkpoint3" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
+transform = Transform3D(12.8863, 0, -0.248712, 0, 2.42703, 0, 2.4794, 0, 1.29264, 243.411, 10.9847, 4.9866)
+
+[node name="checkpoint4" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
+transform = Transform3D(-12.6177, -4.78925e-08, -0.36162, 4.92004e-08, 2.42703, -1.11829e-07, 3.60498, -2.00752e-07, -1.2657, 405.432, 10.9847, 18.8314)
+
+[node name="checkpoint5" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
+transform = Transform3D(-12.6177, -4.78925e-08, -0.36162, 4.92004e-08, 2.42703, -1.11829e-07, 3.60498, -2.00752e-07, -1.2657, 510.056, 10.9847, -184.789)
+
+[node name="checkpoint6" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
+transform = Transform3D(-8.45364, -1.51839e-07, -1.00681, 4.92003e-08, 2.42703, -1.11829e-07, 10.0369, -1.39785e-07, -0.847996, 237.12, 10.9847, -162.825)
+
+[node name="DeathBox" parent="." instance=ExtResource("3_m518d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.00655, -64.432)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_w8mqi")
+autoplay = true
+bus = &"Music"

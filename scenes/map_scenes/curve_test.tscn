@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bv8udm5cmjk8d" path="res://assets/images/textures/roadtexture.jpg" id="2_i1x80"]
 [ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/track_features/checkpoint.tscn" id="3_4kmce"]
 [ext_resource type="PackedScene" uid="uid://bgfoxm83j36w0" path="res://scenes/object_scenes/obstacles/oil.tscn" id="3_85lhp"]
-[ext_resource type="AudioStream" uid="uid://d1ys17l4mkl5v" path="res://assets/sounds/music/itbs/finance/sng_finance.mp3" id="3_y2xi4"]
+[ext_resource type="AudioStream" uid="uid://d1ys17l4mkl5v" path="res://assets/sounds/music/itbs/sng_finance.mp3" id="3_y2xi4"]
 [ext_resource type="PackedScene" uid="uid://bl7yp56hkp8e6" path="res://scenes/object_scenes/track_features/item_box.tscn" id="6_ca5mw"]
 [ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/track_features/death_box.tscn" id="6_utm8d"]
 [ext_resource type="PackedScene" uid="uid://carm88pw5xfdy" path="res://scenes/object_scenes/track_features/boost_pad.tscn" id="7_xo5dg"]
@@ -19,8 +19,7 @@ sky_material = SubResource("PanoramaSkyMaterial_tl4ks")
 [sub_resource type="Environment" id="Environment_hb0ru"]
 background_mode = 2
 sky = SubResource("Sky_vb2v6")
-tonemap_mode = 2
-glow_enabled = true
+tonemap_exposure = 1.3
 
 [sub_resource type="Curve3D" id="Curve3D_d6dn7"]
 _data = {
@@ -218,8 +217,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.6306, 19.8176, 378.508)
 
 [node name="Car" parent="." instance=ExtResource("1_rflty")]
 transform = Transform3D(-0.933799, 0, -0.357798, 0, 1, 0, 0.357798, 0, -0.933799, 353.664, 19.2852, 283.364)
-mass = 100.0
-gravity_scale = 1.5
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_y2xi4")
