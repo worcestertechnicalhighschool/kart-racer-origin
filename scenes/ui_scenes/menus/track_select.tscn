@@ -55,6 +55,64 @@ text = "
 curve_test"
 script = ExtResource("3_c81um")
 
+[node name="trk_2" type="TextureRect" parent="."]
+visibility_layer = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.510937
+anchor_top = 0.0763889
+anchor_right = 0.710469
+anchor_bottom = 0.274167
+offset_right = 1021.6
+offset_bottom = 569.6
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_i2ugi")
+metadata/_edit_use_anchors_ = true
+
+[node name="trk_2_button" type="Button" parent="trk_2"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.00012
+anchor_bottom = 2.08425
+offset_right = -1094.7
+offset_bottom = -1271.99
+scale = Vector2(7, 7)
+theme_override_font_sizes/font_size = 32
+text = "
+
+trk_2"
+metadata/_edit_use_anchors_ = true
+
+[node name="trk_3" type="TextureRect" parent="."]
+visibility_layer = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.748438
+anchor_top = 0.0763889
+anchor_right = 0.947969
+anchor_bottom = 0.274167
+offset_right = 1021.6
+offset_bottom = 569.6
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_i2ugi")
+metadata/_edit_use_anchors_ = true
+
+[node name="trk_3_button" type="Button" parent="trk_3"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.00012
+anchor_bottom = 2.08425
+offset_right = -1094.7
+offset_bottom = -1271.99
+scale = Vector2(7, 7)
+theme_override_font_sizes/font_size = 32
+text = "
+
+trk_3"
+metadata/_edit_use_anchors_ = true
+
 [node name="donut_test" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -99,6 +157,7 @@ theme_override_font_sizes/font_size = 32
 text = "Go Back"
 
 [node name="FadeIn" parent="." instance=ExtResource("4_bl7co")]
+visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_amqif")
@@ -106,6 +165,8 @@ autoplay = true
 bus = &"Music"
 
 [connection signal="pressed" from="curve_test/curve_test_button" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="trk_2/trk_2_button" to="." method="_on_trk_2_button_pressed"]
+[connection signal="pressed" from="trk_3/trk_3_button" to="." method="_on_trk_3_button_pressed"]
 [connection signal="pressed" from="donut_test/donut_test_button" to="." method="_on_donut_test_button_pressed"]
 [connection signal="pressed" from="Go back" to="." method="_on_go_back_pressed"]
 [connection signal="animation_end" from="FadeIn" to="." method="_on_fade_in_animation_end"]

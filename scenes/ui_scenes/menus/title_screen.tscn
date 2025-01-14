@@ -40,14 +40,15 @@ metadata/_edit_use_anchors_ = true
 [node name="Title" type="Label" parent="text and buttons"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.628
-anchor_bottom = 0.304
-offset_right = 0.159973
-offset_bottom = 0.11998
+anchor_right = 0.894531
+anchor_bottom = 0.304167
+offset_right = -341.0
+offset_bottom = -3.05176e-05
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 160
-text = "Kart Racer"
+text = "Skyline Drivers"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Single_Player" type="Button" parent="text and buttons"]
 layout_mode = 2
@@ -113,7 +114,7 @@ texture = ExtResource("3_2d2xj")
 [node name="RacingFlags" type="Sprite2D" parent="."]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(1210, 171)
+position = Vector2(1383, 171)
 scale = Vector2(0.416222, 0.402555)
 texture = ExtResource("4_tjyxy")
 
@@ -130,7 +131,7 @@ offset_right = -0.560059
 offset_bottom = -0.0800171
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "Build date 12/19/24"
+text = "Build date 1/14/25"
 
 [node name="FadeIn" parent="." instance=ExtResource("2_hrswe")]
 
