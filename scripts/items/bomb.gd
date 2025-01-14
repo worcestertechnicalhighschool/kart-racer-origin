@@ -3,13 +3,8 @@ extends "res://scripts/items/trip.gd"
 @export var LINGER = 1
 
 var exploded = false
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Timer.start(FUSE)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
 
 func _on_timer_timeout() -> void:
 	if not exploded:

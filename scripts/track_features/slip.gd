@@ -41,12 +41,12 @@ func _on_body_entered(body: Node3D) -> void:
 				original_rotation = node.rotation_degrees
 				original_position = node.position
 				node.top_level = true
+				
+		
 		body.linear_velocity.x = body.linear_velocity.x/5
 		body.linear_velocity.z = body.linear_velocity.z/5
 		body.angular_velocity.y = 10
 		$Timer.start()
-	
-
 
 func _on_timer_timeout() -> void:
 	$Timer.stop()

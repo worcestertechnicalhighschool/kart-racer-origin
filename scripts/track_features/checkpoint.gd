@@ -6,7 +6,6 @@ extends Area3D
 var lap = 1
 var cars_entered = []
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$texture.queue_free()
 	if START_OR_FINISH_LINE:
@@ -15,14 +14,6 @@ func _ready() -> void:
 		for checkpoints in get_parent().get_children():
 			if checkpoints.START_OR_FINISH_LINE:
 				set("MAX_LAP", checkpoints.MAX_LAP)
-
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-	
-
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is VehicleBody3D:

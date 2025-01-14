@@ -79,9 +79,9 @@ autoplay = "rotation"
 [node name="CameraTimer" type="Timer" parent="."]
 wait_time = 2.5
 
-[node name="Placeholder" type="Timer" parent="."]
+[node name="DestroyTimer" type="Timer" parent="."]
 wait_time = 0.1
 
 [connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]
 [connection signal="timeout" from="CameraTimer" to="." method="_on_camera_timer_timeout"]
-[connection signal="timeout" from="Placeholder" to="." method="_on_placeholder_timeout"]
+[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]
