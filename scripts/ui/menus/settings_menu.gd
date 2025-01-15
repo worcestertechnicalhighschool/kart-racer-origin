@@ -10,9 +10,11 @@ func _ready() -> void:
 
 func _on_music_volume_value_changed(value: float) -> void:
 	if value == 0:
-		AudioServer.set_bus_volume_db(1, -72)
+		# if the slider is 0, mute, which can be done at -72 db
+		AudioServer.set_bus_volume_db(1, -72) 
 	else:
-		AudioServer.set_bus_volume_db(1, value - 11)
+		# otherwise we simply set it to what the user picked
+		AudioServer.set_bus_volume_db(1, value - 11) # -11 as the starting point is 11, which we want to be 0 db
 
 func _on_go_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/ui_scenes/menus/title_screen.tscn")
