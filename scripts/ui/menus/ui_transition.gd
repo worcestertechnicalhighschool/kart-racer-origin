@@ -8,17 +8,17 @@ signal animation_end
 func _ready():
 	color_rect.visible = false
 
-func transition_toblack():
+func _fade_out():
 	color_rect.visible = true
-	animation_player.play("fade_to_black")
+	animation_player.play("fade_out")
 	
-func transition_tonormal():
+func _fade_in():
 	color_rect.visible = true
-	animation_player.play("fade_to_normal")
+	animation_player.play("fade_in")
 	
-func transition_titlescreen():
+func _fade_in_title_screen():
 	color_rect.visible = true
-	animation_player.play("fade_to_normal_titlescreen")
+	animation_player.play("fade_in_title_screen")
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	animation_end.emit()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ftfjb2juk3gv"]
 
 [ext_resource type="Script" path="res://scripts/ui/menus/title_screen.gd" id="1_wep01"]
-[ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/transitions/fade_in.tscn" id="2_hrswe"]
+[ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/transitions/ui_transition.tscn" id="2_hrswe"]
 [ext_resource type="Script" path="res://scripts/ui/menus/single_player.gd" id="2_k4055"]
 [ext_resource type="Texture2D" uid="uid://pmrgd74p8b1e" path="res://assets/images/battle_cats/cat_kart.png" id="3_2d2xj"]
 [ext_resource type="Texture2D" uid="uid://wf1olbqmhl2a" path="res://assets/images/textures/racing_flags.png" id="4_tjyxy"]
@@ -133,7 +133,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Build date 1/14/25"
 
-[node name="FadeIn" parent="." instance=ExtResource("2_hrswe")]
+[node name="UITransition" parent="." instance=ExtResource("2_hrswe")]
 
 [node name="Menu Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_rp7fr")

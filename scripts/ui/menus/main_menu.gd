@@ -2,7 +2,7 @@ extends Control
 
 
 #func _ready() -> void:
-	#$FadeIn.transition_titlescreen()
+	#$UITransition._fade_in_title_screen()
 
 func _on_single_player_pressed() -> void:
 	$SFX.play()
@@ -10,7 +10,7 @@ func _on_single_player_pressed() -> void:
 
 func _on_go_back_pressed() -> void:
 	$SFX.play()
-	$FadeIn.transition_toblack()
+	$UITransition._fade_out()
 	
 func _on_fade_in_animation_end() -> void:
 	get_tree().change_scene_to_file("res://scenes/ui_scenes/menus/title_screen.tscn")

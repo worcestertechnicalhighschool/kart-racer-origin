@@ -1,7 +1,7 @@
 extends Control
 
 func _ready() -> void:
-	$FadeIn.transition_titlescreen()
+	$UITransition._fade_in_title_screen()
 	#MusicPlayer.play_music_level()
 
 func _on_single_player_pressed() -> void:
