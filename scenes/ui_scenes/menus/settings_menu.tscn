@@ -27,6 +27,8 @@ anchor_left = 0.0125
 anchor_top = 0.0986111
 anchor_right = 0.457812
 anchor_bottom = 0.141667
+max_value = 22.0
+value = 11.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Music Volume"]
