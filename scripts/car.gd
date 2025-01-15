@@ -13,17 +13,18 @@ extends VehicleBody3D
 @export var ENGINE_POWER = 500
 @export var DRIFT = 1
 @export var ZOOM_DURATION = 0
+@export var respawn = []
 
 var drift
 var old_rotation
 var old_position
 var old_velocity
 var axis
-var respawn
 var paused = false
 var prior
 	
 func _ready() -> void:
+	respawn = [position, global_rotation_degrees]
 	ui.visible = true
 	pausemenu.visible = false
 

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmwh6n8gr4wvd"]
+[gd_scene load_steps=6 format=3 uid="uid://bmwh6n8gr4wvd"]
 
 [ext_resource type="Script" path="res://scripts/ui/car_ui.gd" id="1_m1xia"]
 [ext_resource type="PackedScene" uid="uid://46f5221jq06n" path="res://scenes/ui_scenes/inventory.tscn" id="1_s61gj"]
 [ext_resource type="Script" path="res://scripts/ui/fps.gd" id="2_olduw"]
+[ext_resource type="Script" path="res://scripts/ui/rotation.gd" id="3_th531"]
+[ext_resource type="Script" path="res://scripts/ui/velocity.gd" id="4_4pn8s"]
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -59,9 +61,35 @@ offset_right = -833.0
 offset_bottom = 62.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 32
+script = ExtResource("2_olduw")
+
+[node name="rotation" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0046875
+anchor_top = 0.776389
+anchor_right = 0.220313
+anchor_bottom = 0.838889
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
 text = "
 "
-script = ExtResource("2_olduw")
+script = ExtResource("3_th531")
+metadata/_edit_use_anchors_ = true
+
+[node name="velocity" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00546875
+anchor_top = 0.841667
+anchor_right = 0.227344
+anchor_bottom = 0.904167
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "
+"
+script = ExtResource("4_4pn8s")
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="."]
 
