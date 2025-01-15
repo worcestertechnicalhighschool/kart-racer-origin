@@ -88,4 +88,4 @@ bus = &"SFX"
 
 [connection signal="pressed" from="Single Player" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="Go Back" to="." method="_on_go_back_pressed"]
-[connection signal="animation_end" from="UITransition" to="." method="_on_fade_in_animation_end"]
+[connection signal="animation_end" from="UITransition" to="." method="_on_ui_transition_animation_end"]

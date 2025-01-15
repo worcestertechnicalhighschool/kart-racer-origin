@@ -19,6 +19,6 @@ func _on_donut_test_button_pressed() -> void:
 # goes to previous screen, with fade out
 func _on_go_back_pressed() -> void:
 	$UITransition._fade_out()
-	
-func _on_fade_in_animation_end() -> void:
+
+func _on_ui_transition_animation_end() -> void:
 	get_tree().change_scene_to_file("res://scenes/ui_scenes/menus/main_menu.tscn")
