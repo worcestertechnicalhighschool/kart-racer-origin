@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bm8rihnjad7li"]
+[gd_scene load_steps=12 format=3 uid="uid://r10yldf4ecc"]
 
 [ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/track_features/death_box.tscn" id="1_8rhty"]
 [ext_resource type="Texture2D" uid="uid://rcdigwuwesgu" path="res://assets/images/textures/donuttexture.jpg" id="1_efi5x"]
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_wxd4t"]
-[ext_resource type="AudioStream" uid="uid://b5jcr4f1issjx" path="res://assets/sounds/music/health services/biotech/sng_biotech_alt.mp3" id="5_hwaov"]
 [ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/track_features/checkpoint.tscn" id="7_cxyou"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vnwgk"]
@@ -27,6 +26,8 @@ size = Vector3(1, 0.15625, 1)
 albedo_texture = ExtResource("1_efi5x")
 
 [sub_resource type="BoxMesh" id="BoxMesh_dm5w4"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_8agxa"]
 
 [node name="Trk3" type="Node3D"]
 
@@ -52,8 +53,6 @@ mesh = SubResource("BoxMesh_dm5w4")
 
 [node name="Car" parent="." instance=ExtResource("1_wxd4t")]
 transform = Transform3D(-0.933799, 0, -0.357798, 0, 1, 0, 0.357798, 0, -0.933799, 37.1989, 12.5409, 16.1528)
-mass = 100.0
-gravity_scale = 1.5
 
 [node name="DeathBox" parent="." instance=ExtResource("1_8rhty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.252, 0)
@@ -68,6 +67,11 @@ START_OR_FINISH_LINE = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.4909, 11.7188, -7.75974)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_hwaov")
 autoplay = true
 bus = &"Music"
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(97.3, 0, 0, 0, 1, 0, 0, 0, 80.91, 0, 11.512, 0)
+shape = SubResource("WorldBoundaryShape3D_8agxa")
