@@ -25,7 +25,7 @@ func _ready() -> void:
 		self, "position", Vector3(thrown_objects.position.x, thrown_objects.position.y + 1.25, thrown_objects.position.z), 0.1
 	)
 
-func _process(_delta: float) -> void:
+func _integrate_forces(_state) -> void:
 	position = Vector3(thrown_objects.position.x, thrown_objects.position.y + 1.25, thrown_objects.position.z)
 	
 	if not tween_playing:
@@ -50,6 +50,12 @@ func _process(_delta: float) -> void:
 		$CameraTimer.start()
 		$AnimationTimer.start()
 
+func _apply_effects():
+	if abs(car.rotation_degrees.x) >= abs(car.rotation_degrees.z):
+		car.linear_velocity += (Vector3(0, 0, 25 * -1))
+	elif abs(car.rotation_degrees.x) < abs(car.rotation_degrees.z):
+		car.linear_velocity += (Vector3(25 * -1, 0, 0))
+
 func _visibility():
 	visible = not forcefield.visible
 	
@@ -58,12 +64,6 @@ func _reset():
 	forcefield.visible = false
 	
 	$DestroyTimer.start()
-
-func _apply_effects():
-	if abs(car.rotation_degrees.x) >= abs(car.rotation_degrees.z):
-		car.apply_central_impulse(Vector3(100 * sign(rotation_degrees.x), 0, 0)) 
-	elif abs(car.rotation_degrees.x) < abs(car.rotation_degrees.z):
-		car.apply_central_impulse(Vector3(0, 0, 100 * sign(rotation_degrees.z))) 
 
 func _on_camera_timer_timeout() -> void:
 	car.ZOOM_DURATION -= 2.5
