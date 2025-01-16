@@ -52,10 +52,11 @@ scale = Vector2(7, 7)
 theme_override_font_sizes/font_size = 32
 text = "
 
-curve_test"
+Curve Test
+"
 script = ExtResource("3_47jlh")
 
-[node name="Trk2" type="TextureRect" parent="."]
+[node name="SteamyScrapyard" type="TextureRect" parent="."]
 visibility_layer = 2
 layout_mode = 1
 anchors_preset = -1
@@ -69,7 +70,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_i2ugi")
 metadata/_edit_use_anchors_ = true
 
-[node name="Trk2Button" type="Button" parent="Trk2"]
+[node name="SteamyScrapyardButton" type="Button" parent="SteamyScrapyard"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -81,10 +82,11 @@ scale = Vector2(7, 7)
 theme_override_font_sizes/font_size = 32
 text = "
 
-trk_2"
+Steamy Scrapyard"
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Trk3" type="TextureRect" parent="."]
+[node name="SparklingBeach" type="TextureRect" parent="."]
 visibility_layer = 2
 layout_mode = 1
 anchors_preset = -1
@@ -98,7 +100,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_i2ugi")
 metadata/_edit_use_anchors_ = true
 
-[node name="Trk3Button" type="Button" parent="Trk3"]
+[node name="SparklingBeachButton" type="Button" parent="SparklingBeach"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -110,7 +112,8 @@ scale = Vector2(7, 7)
 theme_override_font_sizes/font_size = 32
 text = "
 
-trk_3"
+Sparkling Beach"
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="DonutTest" type="TextureRect" parent="."]
@@ -139,8 +142,7 @@ scale = Vector2(7, 7)
 theme_override_font_sizes/font_size = 32
 text = "
 
-donut_test
-"
+Donut Test"
 
 [node name="GoBack" type="Button" parent="."]
 layout_mode = 1
@@ -164,8 +166,8 @@ autoplay = true
 bus = &"Music"
 
 [connection signal="pressed" from="CurveTest/CurveTestButton" to="." method="_on_curve_test_button_pressed"]
-[connection signal="pressed" from="Trk2/Trk2Button" to="." method="_on_trk_2_button_pressed"]
-[connection signal="pressed" from="Trk3/Trk3Button" to="." method="_on_trk_3_button_pressed"]
+[connection signal="pressed" from="SteamyScrapyard/SteamyScrapyardButton" to="." method="_on_steamy_scrapyard_button_pressed"]
+[connection signal="pressed" from="SparklingBeach/SparklingBeachButton" to="." method="_on_sparkling_beach_button_pressed"]
 [connection signal="pressed" from="DonutTest/DonutTestButton" to="." method="_on_donut_test_button_pressed"]
 [connection signal="pressed" from="GoBack" to="." method="_on_go_back_pressed"]
 [connection signal="animation_end" from="UITransition" to="." method="_on_ui_transition_animation_end"]
