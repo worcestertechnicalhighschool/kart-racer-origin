@@ -1,14 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://c4n6tar772y13"]
+[gd_scene load_steps=19 format=3 uid="uid://c4n6tar772y13"]
 
-[ext_resource type="Texture2D" uid="uid://cyi52yohdxveg" path="res://assets/images/skyboxes/scrapbrainbg.webp" id="1_m1lr4"]
-[ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/track_features/checkpoint.tscn" id="2_cawu8"]
-[ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car/car.tscn" id="3_cx7rd"]
-[ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/track_features/death_box.tscn" id="4_ucsgq"]
-[ext_resource type="AudioStream" uid="uid://c61rd3uostnyk" path="res://assets/sounds/music/alden/sng_manufacturing.mp3" id="5_v4p1r"]
-[ext_resource type="Texture2D" uid="uid://b3kapuvtcm0ll" path="res://assets/images/textures/finishline.bmp" id="6_401h6"]
+[ext_resource type="Texture2D" uid="uid://cyi52yohdxveg" path="res://assets/images/skyboxes/scrapbrainbg.webp" id="1_kdil0"]
+[ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/track_features/checkpoint.tscn" id="2_mcx6r"]
+[ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car/car.tscn" id="3_gqadj"]
+[ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/track_features/death_box.tscn" id="4_swnmr"]
+[ext_resource type="AudioStream" uid="uid://c61rd3uostnyk" path="res://assets/sounds/music/alden/sng_manufacturing.mp3" id="5_e5psg"]
+[ext_resource type="Texture2D" uid="uid://b3kapuvtcm0ll" path="res://assets/images/textures/finishline.bmp" id="6_i5p3x"]
+[ext_resource type="PackedScene" uid="uid://bl7yp56hkp8e6" path="res://scenes/object_scenes/track_features/item_box.tscn" id="7_carag"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p13po"]
-panorama = ExtResource("1_m1lr4")
+panorama = ExtResource("1_kdil0")
 energy_multiplier = 1.2
 
 [sub_resource type="Sky" id="Sky_20a7y"]
@@ -19,10 +20,15 @@ background_mode = 2
 sky = SubResource("Sky_20a7y")
 tonemap_exposure = 1.3
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_g3xah"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6w0js"]
+albedo_color = Color(2.88785e-07, 0.0262653, 0.142085, 1)
+
 [sub_resource type="Curve3D" id="Curve3D_2ep38"]
 _data = {
-"points": PackedVector3Array(-1.0429, 0, 0.219911, 1.0429, 0, -0.219911, 0.483684, 0, 0.518964, 0.790289, 0, 0.53709, -0.790289, 0, -0.53709, 0.867319, 0, -1.25343, 0.721234, 0, -0.421999, -0.721234, 0, 0.421999, -1.14584, 0, -0.498321, -0.345272, 0, -0.184145, 0.345272, 0, 0.184145, -2.07032, 0, 1.70978, -1.66272, 0, -1.17721, 1.66272, 0, 1.17721, -0.515393, 0, 1.65857, 0.437681, -0.0748901, 0.533839, -0.437681, 0.0748901, -0.533839, 0.368538, 0.15529, 1.52359, 0.492741, 0.00586066, 0.675199, -0.492741, -0.00586066, -0.675199, 0.503833, 0.188256, 0.204945, 0.246083, 0, -0.472214, -0.246083, 0, 0.472214, -0.846241, 0, 0.0943105, -1.0429, 0, 0.219911, 1.0429, 0, -0.219911, 0.483684, 0, 0.518964),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0.31866, 0.277722, 0, 0)
+"points": PackedVector3Array(0.00982004, 0, 1.02534, -0.00982004, 0, -1.02534, 0.483684, 0, 0.518964, 0.25944, 0, 0.688815, -0.25944, 0, -0.688815, 0.613648, 0, -0.640791, 0.494937, 0, -0.786613, -0.494937, 0, 0.786613, -0.849093, 0, -0.160093, -0.0930377, 0, -0.652645, 0.0930377, 0, 0.652645, -1.78314, 0, 0.663188, -0.59499, 0, -0.0207037, 0.59499, 0, 0.0207037, -0.611118, 0, 1.4735, -0.430734, -0.0748904, 0.401451, 0.430734, 0.0748904, -0.401451, 0.0622184, 0.15529, 1.35129, 0.702327, 0.00586103, 0.424619, -0.702327, -0.00586103, -0.424619, 0.259734, 0.188256, 0.319815, 0.02483, 0, -0.503345, -0.02483, 0, 0.503345, -0.472914, 0, 0.36234, -1.0429, 0, 0.219911, 1.0429, 0, -0.219911, 0.483684, 0, 0.518964),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0.31866, 0.277722, -0.185838, 0)
 }
 point_count = 9
 
@@ -32,7 +38,7 @@ metallic = 1.0
 metallic_specular = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2p27u"]
-albedo_texture = ExtResource("6_401h6")
+albedo_texture = ExtResource("6_i5p3x")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rg8qs"]
 
@@ -55,8 +61,17 @@ environment = SubResource("Environment_hfgsx")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
+[node name="Set Pieces" type="Node3D" parent="."]
+transform = Transform3D(1, -3.7817e-16, 2.77556e-17, -1.35308e-16, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="Set Pieces"]
+transform = Transform3D(350, 0, 0, 1.35525e-20, 350, 0, 0, 0, 350, -83.706, 1.92565, 57.8965)
+mesh = SubResource("PlaneMesh_g3xah")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_6w0js")
+
 [node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, 0, 0, 0)
+transform = Transform3D(200, 0, 0, 0, 150, 0, 0, 0, 150, 0, 0, 0)
 curve = SubResource("Curve3D_2ep38")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
@@ -77,7 +92,7 @@ path_joined = true
 [node name="Checkpoints" type="Node3D" parent="."]
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("2_cawu8")]
-transform = Transform3D(9.63433, 0, 0.915493, 0, 2.52861, 0, -14.8844, 0, 0.592577, -87.8769, 15.9859, 250.892)
+transform = Transform3D(0.901374, 0, 1.08913, 0, 2.52861, 0, -17.7074, 0, 0.0554402, -145.667, 16.0904, 227.831)
 START_OR_FINISH_LINE = true
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("2_cawu8")]
@@ -95,19 +110,19 @@ transform = Transform3D(0.201283, 0, -1.15616, 0, 2.52861, 0, 15.5816, 0, 0.0149
 [node name="Checkpoint6" parent="Checkpoints" instance=ExtResource("2_cawu8")]
 transform = Transform3D(16.4128, -0.160907, -0.431758, 1.1835, 2.52313, -0.0129707, 8.16788, -0.042263, 0.869468, -264.814, 16.4675, 12.6903)
 
-[node name="Car" parent="." instance=ExtResource("3_cx7rd")]
-transform = Transform3D(0.389413, 0, 0.921063, 0, 1, 0, -0.921063, 0, 0.389413, -172.003, 15.4037, 203.429)
+[node name="Car" parent="." instance=ExtResource("3_gqadj")]
+transform = Transform3D(0.389413, 0, 0.921063, 0, 1, 0, -0.921063, 0, 0.389413, -172.003, 15.4037, 224.816)
 
-[node name="DeathBox" parent="." instance=ExtResource("4_ucsgq")]
+[node name="DeathBox" parent="." instance=ExtResource("4_swnmr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.951959, 0)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_v4p1r")
+stream = ExtResource("5_e5psg")
 autoplay = true
 bus = &"Music"
 
 [node name="StartLine" type="RigidBody3D" parent="."]
-transform = Transform3D(0.642788, 0, 0.766045, 0, 1, 0, -0.766045, 0, 0.642788, -71.8698, -2.36725, 243.766)
+transform = Transform3D(0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, 0.173648, -135.368, -2.15, 213.656)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StartLine"]
 transform = Transform3D(8, 0, -1.32455e-08, 0, 1, 0, 2.11928e-07, 0, 0.5, -15.561, 17.1795, -11.5886)
@@ -118,3 +133,24 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0vljc")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StartLine"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7655, 17.1795, -2.10855)
 shape = SubResource("ConvexPolygonShape3D_wcnlu")
+
+[node name="Item Boxes" type="Node3D" parent="."]
+
+[node name="Group1" type="Node3D" parent="Item Boxes"]
+
+[node name="ItemBox" parent="Item Boxes/Group1" instance=ExtResource("7_carag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7494, 34.3727, 220.911)
+
+[node name="ItemBox2" parent="Item Boxes/Group1" instance=ExtResource("7_carag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7405, 34.9193, 222.959)
+
+[node name="ItemBox3" parent="Item Boxes/Group1" instance=ExtResource("7_carag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2821, 35.6527, 225.391)
+
+[node name="ItemBox4" parent="Item Boxes/Group1" instance=ExtResource("7_carag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1637, 36.4898, 227.911)
+
+[node name="ItemBox5" parent="Item Boxes/Group1" instance=ExtResource("7_carag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.02226, 36.6862, 230.148)
+
+[node name="Group2" type="Node3D" parent="Item Boxes"]
