@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://587xh6uwj6v1"]
 
-[ext_resource type="Script" path="res://scripts/ui/music_player.gd" id="1_fpfhi"]
+[ext_resource type="Script" path="res://scripts/ui/misc/music_player.gd" id="1_fpfhi"]
 
 [node name="MusicPlayer" type="AudioStreamPlayer"]
 bus = &"Music"

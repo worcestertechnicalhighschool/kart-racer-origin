@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://46f5221jq06n"]
 
 [ext_resource type="Theme" uid="uid://duf7yxuysg78p" path="res://assets/themes/inventory.tres" id="1_h1nb1"]
-[ext_resource type="Script" path="res://scripts/ui/inventory.gd" id="1_tggrm"]
+[ext_resource type="Script" path="res://scripts/ui/car_ui/inventory.gd" id="1_tggrm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_duiib"]
 bg_color = Color(0, 0, 0, 0.329412)

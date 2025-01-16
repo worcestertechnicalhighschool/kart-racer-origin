@@ -1,31 +1,32 @@
 extends VehicleBody3D
 
-@onready var blwheel = $BackLeftWheel
-@onready var brwheel = $BackRightWheel
-@onready var flwheel = $FrontLeftWheel
-@onready var frwheel = $FrontRightWheel
+@onready var bl_wheel = $BackLeftWheel
+@onready var br_wheel = $BackRightWheel
+@onready var fl_wheel = $FrontLeftWheel
+@onready var fr_wheel = $FrontRightWheel
 @onready var camera = $Cameras/FrontCamera
 @onready var ui = $Ui
-@onready var pausemenu = $PauseMenu
+@onready var pause_menu = $PauseMenu
 
 @export var INVENTORY = ["", ""]
 @export var MAX_STEER = 0.9
 @export var ENGINE_POWER = 500
 @export var DRIFT = 1
 @export var ZOOM_DURATION = 0
+@export var respawn = []
 
 var drift
 var old_rotation
 var old_position
 var old_velocity
 var axis
-var respawn
 var paused = false
 var prior
 	
 func _ready() -> void:
+	respawn = [position, global_rotation_degrees]
 	ui.visible = true
-	pausemenu.visible = false
+	pause_menu.visible = false
 
 func _physics_process(delta: float) -> void:
 	#var current = Vector2(linear_velocity.x, linear_velocity.z)
@@ -48,10 +49,10 @@ func _physics_process(delta: float) -> void:
 		old_position = position
 		old_velocity = linear_velocity
 	if Input.is_action_just_released("drift"):
-		blwheel.wheel_friction_slip = 10.5
-		brwheel.wheel_friction_slip = 10.5
-		flwheel.wheel_friction_slip = 10.5
-		frwheel.wheel_friction_slip = 10.5
+		bl_wheel.wheel_friction_slip = 10.5
+		br_wheel.wheel_friction_slip = 10.5
+		fl_wheel.wheel_friction_slip = 10.5
+		fr_wheel.wheel_friction_slip = 10.5
 		drift = false
 		angular_velocity.y = 0
 		global_rotation_degrees.y = 0
@@ -73,13 +74,13 @@ func _physics_process(delta: float) -> void:
 func open_pause():
 	# unpauses if already paused
 	if paused:
-		pausemenu.hide()
+		pause_menu.hide()
 		ui.show()
 		Engine.time_scale = 1
 		
 	# pauses if not paused
 	else:
-		pausemenu.show()
+		pause_menu.show()
 		ui.hide()
 		Engine.time_scale = 0
 	
