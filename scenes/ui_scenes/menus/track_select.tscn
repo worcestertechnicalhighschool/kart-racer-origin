@@ -163,7 +163,7 @@ stream = ExtResource("6_amqif")
 autoplay = true
 bus = &"Music"
 
-[connection signal="pressed" from="curve_test/curve_test_button" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="curve_test/curve_test_button" to="." method="_on_curve_test_button_pressed"]
 [connection signal="pressed" from="trk_2/trk_2_button" to="." method="_on_trk_2_button_pressed"]
 [connection signal="pressed" from="trk_3/trk_3_button" to="." method="_on_trk_3_button_pressed"]
 [connection signal="pressed" from="donut_test/donut_test_button" to="." method="_on_donut_test_button_pressed"]

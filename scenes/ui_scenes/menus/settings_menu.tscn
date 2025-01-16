@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0h1gpcxum57s"]
+[gd_scene load_steps=4 format=3 uid="uid://b0h1gpcxum57s"]
 
 [ext_resource type="Script" path="res://scripts/ui/menus/settings_menu.gd" id="1_4p3hg"]
 [ext_resource type="AudioStream" uid="uid://cdsqyk0a6o6ka" path="res://assets/sounds/music/sng_menu.mp3" id="2_16dnu"]
+[ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/transitions/ui_transition.tscn" id="3_ly3hw"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -60,5 +61,8 @@ stream = ExtResource("2_16dnu")
 autoplay = true
 bus = &"Music"
 
+[node name="UITransition" parent="." instance=ExtResource("3_ly3hw")]
+
 [connection signal="value_changed" from="Music Volume" to="." method="_on_music_volume_value_changed"]
 [connection signal="pressed" from="Go back" to="." method="_on_go_back_pressed"]
+[connection signal="animation_end" from="UITransition" to="." method="_on_ui_transition_animation_end"]
