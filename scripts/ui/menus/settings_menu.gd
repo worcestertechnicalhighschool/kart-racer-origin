@@ -8,7 +8,7 @@ func _ready() -> void:
 	if user_volume == -72: # this only happens when the slider should be on 0
 		user_volume = -11 # add 11 to counteract the -11 to get 0
 	
-	$"./Music Volume".value = user_volume + 11 # add 11 as that is the start
+	$MusicVolume.value = user_volume + 11 # add 11 as that is the start
 
 	$UITransition._fade_in()
 

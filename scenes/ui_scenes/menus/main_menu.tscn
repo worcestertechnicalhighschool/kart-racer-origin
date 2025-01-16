@@ -24,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.255341, 0.630284, 0.522835, 1)
 
-[node name="Single Player" type="Button" parent="."]
+[node name="SinglePlayer" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.314
@@ -86,6 +86,6 @@ bus = &"Music"
 stream = ExtResource("5_pnvet")
 bus = &"SFX"
 
-[connection signal="pressed" from="Single Player" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="SinglePlayer" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="Go Back" to="." method="_on_go_back_pressed"]
 [connection signal="animation_end" from="UITransition" to="." method="_on_ui_transition_animation_end"]

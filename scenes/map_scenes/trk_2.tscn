@@ -106,15 +106,15 @@ stream = ExtResource("5_v4p1r")
 autoplay = true
 bus = &"Music"
 
-[node name="Start Line" type="RigidBody3D" parent="."]
+[node name="StartLine" type="RigidBody3D" parent="."]
 transform = Transform3D(0.642788, 0, 0.766045, 0, 1, 0, -0.766045, 0, 0.642788, -71.8698, -2.36725, 243.766)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Start Line"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StartLine"]
 transform = Transform3D(8, 0, -1.32455e-08, 0, 1, 0, 2.11928e-07, 0, 0.5, -15.561, 17.1795, -11.5886)
 material_override = SubResource("StandardMaterial3D_2p27u")
 mesh = SubResource("PlaneMesh_rg8qs")
 surface_material_override/0 = SubResource("StandardMaterial3D_0vljc")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Start Line"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StartLine"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7655, 17.1795, -2.10855)
 shape = SubResource("ConvexPolygonShape3D_wcnlu")

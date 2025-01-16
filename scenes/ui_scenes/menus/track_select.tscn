@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.255341, 0.630284, 0.522835, 1)
 
-[node name="curve_test" type="TextureRect" parent="."]
+[node name="CurveTest" type="TextureRect" parent="."]
 visibility_layer = 2
 layout_mode = 1
 anchors_preset = -1
@@ -40,7 +40,7 @@ offset_bottom = 569.72
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_i2ugi")
 
-[node name="curve_test_button" type="Button" parent="curve_test"]
+[node name="CurveTestButton" type="Button" parent="CurveTest"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -55,7 +55,7 @@ text = "
 curve_test"
 script = ExtResource("3_c81um")
 
-[node name="trk_2" type="TextureRect" parent="."]
+[node name="Trk2" type="TextureRect" parent="."]
 visibility_layer = 2
 layout_mode = 1
 anchors_preset = -1
@@ -69,7 +69,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_i2ugi")
 metadata/_edit_use_anchors_ = true
 
-[node name="trk_2_button" type="Button" parent="trk_2"]
+[node name="Trk2Button" type="Button" parent="Trk2"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -84,7 +84,7 @@ text = "
 trk_2"
 metadata/_edit_use_anchors_ = true
 
-[node name="trk_3" type="TextureRect" parent="."]
+[node name="Trk3" type="TextureRect" parent="."]
 visibility_layer = 2
 layout_mode = 1
 anchors_preset = -1
@@ -98,7 +98,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_i2ugi")
 metadata/_edit_use_anchors_ = true
 
-[node name="trk_3_button" type="Button" parent="trk_3"]
+[node name="Trk3Button" type="Button" parent="Trk3"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -113,7 +113,7 @@ text = "
 trk_3"
 metadata/_edit_use_anchors_ = true
 
-[node name="donut_test" type="TextureRect" parent="."]
+[node name="DonutTest" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.283
@@ -127,7 +127,7 @@ offset_bottom = 568.28
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_nfp05")
 
-[node name="donut_test_button" type="Button" parent="donut_test"]
+[node name="DonutTestButton" type="Button" parent="DonutTest"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -142,7 +142,7 @@ text = "
 donut_test
 "
 
-[node name="Go back" type="Button" parent="."]
+[node name="GoBack" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.896
@@ -163,9 +163,9 @@ stream = ExtResource("6_amqif")
 autoplay = true
 bus = &"Music"
 
-[connection signal="pressed" from="curve_test/curve_test_button" to="." method="_on_curve_test_button_pressed"]
-[connection signal="pressed" from="trk_2/trk_2_button" to="." method="_on_trk_2_button_pressed"]
-[connection signal="pressed" from="trk_3/trk_3_button" to="." method="_on_trk_3_button_pressed"]
-[connection signal="pressed" from="donut_test/donut_test_button" to="." method="_on_donut_test_button_pressed"]
-[connection signal="pressed" from="Go back" to="." method="_on_go_back_pressed"]
+[connection signal="pressed" from="CurveTest/CurveTestButton" to="." method="_on_curve_test_button_pressed"]
+[connection signal="pressed" from="Trk2/Trk2Button" to="." method="_on_trk_2_button_pressed"]
+[connection signal="pressed" from="Trk3/Trk3Button" to="." method="_on_trk_3_button_pressed"]
+[connection signal="pressed" from="DonutTest/DonutTestButton" to="." method="_on_donut_test_button_pressed"]
+[connection signal="pressed" from="GoBack" to="." method="_on_go_back_pressed"]
 [connection signal="animation_end" from="UITransition" to="." method="_on_ui_transition_animation_end"]

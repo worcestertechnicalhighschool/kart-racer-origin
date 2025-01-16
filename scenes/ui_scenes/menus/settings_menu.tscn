@@ -22,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.255341, 0.630284, 0.522835, 1)
 
-[node name="Music Volume" type="HSlider" parent="."]
+[node name="MusicVolume" type="HSlider" parent="."]
 layout_mode = 2
 anchor_left = 0.0125
 anchor_top = 0.0986111
@@ -32,7 +32,7 @@ max_value = 22.0
 value = 11.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Music Volume"]
+[node name="Label" type="Label" parent="MusicVolume"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.00350877
@@ -63,6 +63,6 @@ bus = &"Music"
 
 [node name="UITransition" parent="." instance=ExtResource("3_ly3hw")]
 
-[connection signal="value_changed" from="Music Volume" to="." method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="MusicVolume" to="." method="_on_music_volume_value_changed"]
 [connection signal="pressed" from="Go back" to="." method="_on_go_back_pressed"]
 [connection signal="animation_end" from="UITransition" to="." method="_on_ui_transition_animation_end"]
