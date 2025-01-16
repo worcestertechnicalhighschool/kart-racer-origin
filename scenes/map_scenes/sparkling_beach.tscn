@@ -33,7 +33,7 @@ point_count = 10
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxjap"]
 albedo_color = Color(0.133333, 0.545098, 0.133333, 1)
 
-[node name="Trk3" type="Node3D"]
+[node name="SparklingBeach" type="Node3D"]
 transform = Transform3D(1, 5.4255e-09, -3.38017e-10, -5.4255e-09, 0.992267, -0.124121, -3.38017e-10, 0.124121, 0.992267, 0, 0, 0)
 
 [node name="Envionrment" type="Node3D" parent="."]
