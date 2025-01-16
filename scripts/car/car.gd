@@ -60,7 +60,8 @@ func _physics_process(delta: float) -> void:
 		linear_velocity.z = old_velocity.z
 		
 	if !drift:
-		engine_force = Input.get_axis("backward","forward") * ENGINE_POWER
+		if engine_force < 1500:
+			engine_force = Input.get_axis("backward","forward") * ENGINE_POWER
 		steering = Input.get_axis("right","left") ** 3 * MAX_STEER
 		
 		if steering != 0 and engine_force != 0:

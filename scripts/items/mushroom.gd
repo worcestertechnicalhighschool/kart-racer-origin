@@ -51,7 +51,7 @@ func _integrate_forces(_state) -> void:
 		$AnimationTimer.start()
 
 func _apply_effects():
-	car.engine_force += 1000000
+	car.engine_force += 0
 
 func _visibility():
 	visible = not forcefield.visible
