@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cyi52yohdxveg" path="res://assets/images/skyboxes/scrapbrainbg.webp" id="1_m1lr4"]
 [ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/track_features/checkpoint.tscn" id="2_cawu8"]
-[ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="3_cx7rd"]
+[ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car/car.tscn" id="3_cx7rd"]
 [ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/track_features/death_box.tscn" id="4_ucsgq"]
 [ext_resource type="AudioStream" uid="uid://c61rd3uostnyk" path="res://assets/sounds/music/alden/sng_manufacturing.mp3" id="5_v4p1r"]
 [ext_resource type="Texture2D" uid="uid://b3kapuvtcm0ll" path="res://assets/images/textures/finishline.bmp" id="6_401h6"]

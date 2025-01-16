@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/ui/menus/title_screen.gd" id="1_wep01"]
 [ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/transitions/ui_transition.tscn" id="2_hrswe"]
-[ext_resource type="Script" path="res://scripts/ui/menus/single_player.gd" id="2_k4055"]
+[ext_resource type="Script" path="res://scripts/ui/buttons/single_player.gd" id="2_k4055"]
 [ext_resource type="Texture2D" uid="uid://pmrgd74p8b1e" path="res://assets/images/battle_cats/cat_kart.png" id="3_2d2xj"]
 [ext_resource type="Texture2D" uid="uid://wf1olbqmhl2a" path="res://assets/images/textures/racing_flags.png" id="4_tjyxy"]
 [ext_resource type="AudioStream" uid="uid://cdsqyk0a6o6ka" path="res://assets/sounds/music/sng_menu.mp3" id="6_rp7fr"]
