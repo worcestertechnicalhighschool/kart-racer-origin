@@ -51,10 +51,7 @@ func _integrate_forces(_state) -> void:
 		$AnimationTimer.start()
 
 func _apply_effects():
-	if abs(car.rotation_degrees.x) >= abs(car.rotation_degrees.z):
-		car.linear_velocity += (Vector3(0, 0, 25 * -1))
-	elif abs(car.rotation_degrees.x) < abs(car.rotation_degrees.z):
-		car.linear_velocity += (Vector3(25 * -1, 0, 0))
+	car.engine_force += 1000000
 
 func _visibility():
 	visible = not forcefield.visible

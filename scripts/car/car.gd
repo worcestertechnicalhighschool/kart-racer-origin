@@ -62,6 +62,9 @@ func _physics_process(delta: float) -> void:
 	if !drift:
 		engine_force = Input.get_axis("backward","forward") * ENGINE_POWER
 		steering = Input.get_axis("right","left") ** 3 * MAX_STEER
+		
+		if steering != 0 and engine_force != 0:
+			engine_force += 500
 	if drift:
 		engine_force = ENGINE_POWER
 		steering = move_toward(steering, axis * MAX_STEER, delta * 10)
