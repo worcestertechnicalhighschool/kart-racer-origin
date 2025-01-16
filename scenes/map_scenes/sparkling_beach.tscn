@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dpak0q636d2dy"]
 
 [ext_resource type="Texture2D" uid="uid://c7c5fn2n1ph36" path="res://assets/images/skyboxes/sky_and_clouds.png" id="1_c6a7v"]
-[ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car.tscn" id="1_r5l0k"]
+[ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car/car.tscn" id="1_r5l0k"]
 [ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/track_features/checkpoint.tscn" id="2_c8w8y"]
 [ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/track_features/death_box.tscn" id="3_m518d"]
 [ext_resource type="AudioStream" uid="uid://pushtnxtycwy" path="res://assets/sounds/music/health services/sng_enviornmental.mp3" id="5_w8mqi"]
@@ -80,23 +80,23 @@ transform = Transform3D(-4.37114e-08, -2.6229e-15, 1, 0, 1, 0, -1, 0, -4.37114e-
 [node name="Checkpoints" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 104.239, 0, 242.613)
 
-[node name="checkpoint" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
 transform = Transform3D(15.3321, 0.251071, 0, -1.61147, 2.38878, 0, 2.27374e-13, -1.9984e-15, 1, 30.2775, 51.5674, -144.879)
 START_OR_FINISH_LINE = true
 
-[node name="checkpoint2" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
+[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
 transform = Transform3D(-4.82565, 0, 1.22411, -2.38419e-07, 2.42703, 5.96046e-08, -12.2031, -7.10543e-15, -0.484067, 85.8704, 44.8309, -39.8419)
 
-[node name="checkpoint3" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
+[node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
 transform = Transform3D(1.06279, 0.334462, 1.29942, 0.124767, 2.40335, -0.182999, -13.079, 0.0501051, 0.103846, 329.962, 17.7193, -75.2823)
 
-[node name="checkpoint4" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
+[node name="Checkpoint4" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
 transform = Transform3D(5.34577, 0.465562, 1.17535, -0.122982, 2.3749, -0.271094, -11.9837, 0.183308, 0.52709, 422.737, 7.22895, 103.099)
 
-[node name="checkpoint5" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
+[node name="Checkpoint5" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
 transform = Transform3D(-12.6177, -5.96046e-08, -0.36162, 0, 2.42703, -1.11759e-07, 3.60498, -2.00752e-07, -1.2657, 778.801, -22.6322, -98.2962)
 
-[node name="checkpoint6" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
+[node name="Checkpoint6" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
 transform = Transform3D(-8.45364, -1.49012e-07, -1.00681, 0, 2.42703, -1.19209e-07, 10.0369, -1.39785e-07, -0.847996, 399.348, -9.30808, -175.751)
 
 [node name="DeathBox" parent="." instance=ExtResource("3_m518d")]

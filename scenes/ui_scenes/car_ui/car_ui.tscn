@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmwh6n8gr4wvd"]
+[gd_scene load_steps=6 format=3 uid="uid://bmwh6n8gr4wvd"]
 
-[ext_resource type="Script" path="res://scripts/ui/car_ui.gd" id="1_m1xia"]
-[ext_resource type="PackedScene" uid="uid://46f5221jq06n" path="res://scenes/ui_scenes/inventory.tscn" id="1_s61gj"]
-[ext_resource type="Script" path="res://scripts/ui/fps.gd" id="2_olduw"]
+[ext_resource type="Script" path="res://scripts/ui/car_ui/car_ui.gd" id="1_bp4j0"]
+[ext_resource type="Script" path="res://scripts/ui/car_ui/fps.gd" id="2_adh1s"]
+[ext_resource type="Script" path="res://scripts/ui/car_ui/rotation.gd" id="3_nj7bc"]
+[ext_resource type="Script" path="res://scripts/ui/car_ui/velocity.gd" id="4_t7fv5"]
+[ext_resource type="PackedScene" uid="uid://46f5221jq06n" path="res://scenes/ui_scenes/car_ui/inventory.tscn" id="5_svgju"]
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -11,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_m1xia")
+script = ExtResource("1_bp4j0")
 
 [node name="Lap" type="Label" parent="."]
 layout_mode = 1
@@ -48,7 +50,7 @@ theme_override_font_sizes/font_size = 32
 text = "00:00:00
 "
 
-[node name="fps" type="Label" parent="."]
+[node name="FPS" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -59,9 +61,35 @@ offset_right = -833.0
 offset_bottom = 62.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 32
+script = ExtResource("2_adh1s")
+
+[node name="Rotation" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0046875
+anchor_top = 0.776389
+anchor_right = 0.220313
+anchor_bottom = 0.838889
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
 text = "
 "
-script = ExtResource("2_olduw")
+script = ExtResource("3_nj7bc")
+metadata/_edit_use_anchors_ = true
+
+[node name="Velocity" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00546875
+anchor_top = 0.841667
+anchor_right = 0.227344
+anchor_bottom = 0.904167
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "
+"
+script = ExtResource("4_t7fv5")
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -79,7 +107,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "Map"
 
-[node name="Inventory" parent="." instance=ExtResource("1_s61gj")]
+[node name="Inventory" parent="." instance=ExtResource("5_svgju")]
 layout_mode = 0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

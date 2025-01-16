@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ck1om1dv1vcl7"]
 
-[ext_resource type="Script" path="res://scripts/ui/menus/jukebox.gd" id="1_p1kga"]
+[ext_resource type="Script" path="res://scripts/ui/misc/jukebox.gd" id="1_p1kga"]
 
 [node name="Jukebox" type="Control"]
 layout_mode = 3
@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p1kga")
 
-[node name="Go Back" type="Button" parent="."]
+[node name="GoBack" type="Button" parent="."]
 layout_mode = 0
 offset_top = 624.0
 offset_right = 258.0
@@ -19,4 +19,4 @@ offset_bottom = 720.0
 theme_override_font_sizes/font_size = 64
 text = "Go Back"
 
-[connection signal="pressed" from="Go Back" to="." method="_on_go_back_pressed"]
+[connection signal="pressed" from="GoBack" to="." method="_on_go_back_pressed"]
