@@ -76,23 +76,23 @@ path_joined = true
 
 [node name="Checkpoints" type="Node3D" parent="."]
 
-[node name="checkpoint" parent="Checkpoints" instance=ExtResource("2_cawu8")]
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource("2_cawu8")]
 transform = Transform3D(9.63433, 0, 0.915493, 0, 2.52861, 0, -14.8844, 0, 0.592577, -87.8769, 15.9859, 250.892)
 START_OR_FINISH_LINE = true
 
-[node name="checkpoint2" parent="Checkpoints" instance=ExtResource("2_cawu8")]
+[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("2_cawu8")]
 transform = Transform3D(-12.2134, -0.240574, -0.543945, -1.73449, 2.65255, -0.0236263, 12.7663, 0.130232, -0.523598, 56.5511, 40.757, 220.06)
 
-[node name="checkpoint4" parent="Checkpoints" instance=ExtResource("2_cawu8")]
+[node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("2_cawu8")]
 transform = Transform3D(0.0769757, 0, -1.15393, 0, 2.52861, 0, 18.2987, 0, 0.00485413, -22.7157, 32.3088, -46.8169)
 
-[node name="checkpoint5" parent="Checkpoints" instance=ExtResource("2_cawu8")]
+[node name="Checkpoint4" parent="Checkpoints" instance=ExtResource("2_cawu8")]
 transform = Transform3D(-0.0760174, 0, 1.15384, 0, 2.52861, 0, -18.0713, 0, -0.00485363, -18.5809, 15.7821, 98.6775)
 
-[node name="checkpoint6" parent="Checkpoints" instance=ExtResource("2_cawu8")]
+[node name="Checkpoint5" parent="Checkpoints" instance=ExtResource("2_cawu8")]
 transform = Transform3D(0.201283, 0, -1.15616, 0, 2.52861, 0, 15.5816, 0, 0.0149332, 38.6544, 15.7509, -219.402)
 
-[node name="checkpoint7" parent="Checkpoints" instance=ExtResource("2_cawu8")]
+[node name="Checkpoint6" parent="Checkpoints" instance=ExtResource("2_cawu8")]
 transform = Transform3D(16.4128, -0.160907, -0.431758, 1.1835, 2.52313, -0.0129707, 8.16788, -0.042263, 0.869468, -264.814, 16.4675, 12.6903)
 
 [node name="Car" parent="." instance=ExtResource("3_cx7rd")]

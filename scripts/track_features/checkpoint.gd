@@ -1,7 +1,7 @@
 extends Area3D
 
-@export var START_OR_FINISH_LINE :bool = false
-@export var MAX_LAP:int = 3
+@export var START_OR_FINISH_LINE: bool = false
+@export var MAX_LAP: int = 3
 
 var lap = 1
 var cars_entered = []

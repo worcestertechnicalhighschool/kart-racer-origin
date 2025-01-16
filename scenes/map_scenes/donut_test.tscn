@@ -59,11 +59,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.252, 0)
 
 [node name="Checkpoints" type="Node3D" parent="."]
 
-[node name="checkpoint" parent="Checkpoints" instance=ExtResource("7_cxyou")]
+[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("7_cxyou")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6063, 11.7188, -7.69023)
 START_OR_FINISH_LINE = true
 
-[node name="checkpoint2" parent="Checkpoints" instance=ExtResource("7_cxyou")]
+[node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("7_cxyou")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.4909, 11.7188, -7.75974)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
