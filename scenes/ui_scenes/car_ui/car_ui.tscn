@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmwh6n8gr4wvd"]
+[gd_scene load_steps=7 format=3 uid="uid://bmwh6n8gr4wvd"]
 
 [ext_resource type="Script" path="res://scripts/ui/car_ui/car_ui.gd" id="1_bp4j0"]
 [ext_resource type="Script" path="res://scripts/ui/car_ui/fps.gd" id="2_adh1s"]
 [ext_resource type="Script" path="res://scripts/ui/car_ui/rotation.gd" id="3_nj7bc"]
+[ext_resource type="Script" path="res://scripts/ui/car_ui/steering.gd" id="4_grrjn"]
 [ext_resource type="Script" path="res://scripts/ui/car_ui/velocity.gd" id="4_t7fv5"]
 [ext_resource type="PackedScene" uid="uid://46f5221jq06n" path="res://scenes/ui_scenes/car_ui/inventory.tscn" id="5_svgju"]
 
@@ -75,6 +76,20 @@ theme_override_font_sizes/font_size = 32
 text = "
 "
 script = ExtResource("3_nj7bc")
+metadata/_edit_use_anchors_ = true
+
+[node name="Steering" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00546875
+anchor_top = 0.690278
+anchor_right = 0.221094
+anchor_bottom = 0.752778
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "
+"
+script = ExtResource("4_grrjn")
 metadata/_edit_use_anchors_ = true
 
 [node name="Velocity" type="Label" parent="."]
