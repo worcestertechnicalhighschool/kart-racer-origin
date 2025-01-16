@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-signal animation_end
+signal animation_end(is_fade_out: bool)
 
 @onready var color_rect = $ColorRect
 @onready var animation_player = $AnimationPlayer

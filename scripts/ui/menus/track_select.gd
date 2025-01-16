@@ -26,20 +26,17 @@ func _on_donut_test_button_pressed() -> void:
 func _on_go_back_pressed() -> void:
 	_trigger_animation("back")
 
-func _on_ui_transition_animation_end(is_fade_out) -> void:
+func _on_ui_transition_animation_end(is_fade_out: bool) -> void:
 	if is_fade_out:
 
-		if button_pressed == "back":
-			get_tree().change_scene_to_file("res://scenes/ui_scenes/menus/main_menu.tscn")
-			
-		elif button_pressed == "curve_test_button":
-			get_tree().change_scene_to_file("res://scenes/map_scenes/curve_test.tscn")
-		
-		elif button_pressed == "trk_2_button":
-			get_tree().change_scene_to_file("res://scenes/map_scenes/trk_2.tscn")
-		
-		elif button_pressed == "trk_3_button":
-			get_tree().change_scene_to_file("res://scenes/map_scenes/trk_3.tscn")
-		
-		elif button_pressed == "donut_button":
-			get_tree().change_scene_to_file("res://scenes/map_scenes/donut_test.tscn")
+		match button_pressed:
+			"back":
+				get_tree().change_scene_to_file("res://scenes/ui_scenes/menus/main_menu.tscn")
+			"curve_test_button":
+				get_tree().change_scene_to_file("res://scenes/map_scenes/curve_test.tscn")
+			"trk_2_button":
+				get_tree().change_scene_to_file("res://scenes/map_scenes/trk_2.tscn")
+			"trk_3_button":
+				get_tree().change_scene_to_file("res://scenes/map_scenes/trk_3.tscn")
+			"donut_button":
+				get_tree().change_scene_to_file("res://scenes/map_scenes/donut_test.tscn")
