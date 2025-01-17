@@ -12,10 +12,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		front_camera_parent = car.find_child("Cameras")
 		front_camera = front_camera_parent.find_child("FrontCamera")
 		
-		if abs(car.rotation_degrees.x) >= abs(car.rotation_degrees.z):
-			car.apply_central_impulse(Vector3(100 * sign(rotation_degrees.x), 0, 0)) 
-		elif abs(car.rotation_degrees.x) < abs(car.rotation_degrees.z):
-			car.apply_central_impulse(Vector3(0, 0, 100 * sign(rotation_degrees.z))) 
+		car.SPEED_BOOST = true
 		
 		var fov_out_tween = get_tree().create_tween()
 		var center_of_mass_rotation_tween = get_tree().create_tween()

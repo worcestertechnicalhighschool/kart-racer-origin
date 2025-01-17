@@ -14,7 +14,7 @@ extends VehicleBody3D
 @export var DRIFT = 1
 @export var ZOOM_DURATION = 0
 @export var respawn = []
-@export var MUSHROOM_APPLIED = false
+@export var SPEED_BOOST = false
 
 var drift
 var old_rotation
@@ -70,7 +70,7 @@ func _physics_process(delta: float) -> void:
 		#br_wheel.wheel_roll_influence = 1
 		#fr_wheel.wheel_roll_influence = 1
 		
-		if MUSHROOM_APPLIED:
+		if SPEED_BOOST:
 			engine_force = 1000
 		else:
 			engine_force = Input.get_axis("backward","forward") * ENGINE_POWER

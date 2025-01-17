@@ -92,5 +92,5 @@ func _on_animation_timer_timeout() -> void:
 	position_tween_down.tween_callback(_visibility)
 
 func _on_destroy_timer_timeout() -> void:
-	car.MUSHROOM_APPLIED = false
+	car.SPEED_BOOST = false
 	queue_free()
