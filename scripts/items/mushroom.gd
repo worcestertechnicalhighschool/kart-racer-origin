@@ -59,8 +59,6 @@ func _visibility():
 func _reset():
 	forcefield.mesh.material.albedo_color = original_color
 	forcefield.visible = false
-	
-	$DestroyTimer.start()
 
 func _on_camera_timer_timeout() -> void:
 	car.ZOOM_DURATION -= 2.5
@@ -80,6 +78,8 @@ func _on_camera_timer_timeout() -> void:
 	)
 
 	forcefield_visibility_tween.tween_callback(_reset)
+	
+	$DestroyTimer.start()
 
 func _on_animation_timer_timeout() -> void:
 	var position_tween_down = create_tween()
@@ -92,4 +92,5 @@ func _on_animation_timer_timeout() -> void:
 	position_tween_down.tween_callback(_visibility)
 
 func _on_destroy_timer_timeout() -> void:
+	car.MUSHROOM_APPLIED = false
 	queue_free()

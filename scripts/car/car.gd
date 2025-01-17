@@ -79,9 +79,7 @@ func _physics_process(delta: float) -> void:
 		
 		if steering != 0 and engine_force != 0:
 			engine_force += 500
-			
-		print(bl_wheel.wheel_friction_slip)
-			
+		
 	if drift:
 		engine_force = ENGINE_POWER
 		steering = move_toward(steering, axis * MAX_STEER, delta * 10)
