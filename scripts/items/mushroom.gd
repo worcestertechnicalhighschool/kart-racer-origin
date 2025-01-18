@@ -59,6 +59,8 @@ func _visibility():
 func _reset():
 	forcefield.mesh.material.albedo_color = original_color
 	forcefield.visible = false
+	
+	car.SPEED_BOOST = false
 
 func _on_camera_timer_timeout() -> void:
 	car.ZOOM_DURATION -= 2.5
@@ -92,5 +94,4 @@ func _on_animation_timer_timeout() -> void:
 	position_tween_down.tween_callback(_visibility)
 
 func _on_destroy_timer_timeout() -> void:
-	car.SPEED_BOOST = false
 	queue_free()

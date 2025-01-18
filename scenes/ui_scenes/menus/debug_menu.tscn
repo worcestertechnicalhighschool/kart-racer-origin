@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckfukjwbf37mo"]
+[gd_scene load_steps=3 format=3 uid="uid://ckfukjwbf37mo"]
 
 [ext_resource type="Script" path="res://scripts/ui/menus/debug_menu.gd" id="1_lwjdu"]
+[ext_resource type="PackedScene" uid="uid://di004u4rnno6x" path="res://scenes/ui_scenes/menus/console.tscn" id="2_b4bx5"]
 
 [node name="DebugMenu" type="Control"]
 layout_mode = 3
@@ -140,6 +141,9 @@ theme_override_font_sizes/font_size = 50
 action_mode = 0
 text = "Console"
 metadata/_edit_use_anchors_ = true
+
+[node name="Console" parent="." instance=ExtResource("2_b4bx5")]
+layout_mode = 1
 
 [connection signal="text_submitted" from="ColorRect/MapEdit" to="." method="_on_map_edit_text_submitted"]
 [connection signal="pressed" from="NextCheckpointButton" to="." method="_on_next_checkpoint_button_pressed"]

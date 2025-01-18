@@ -74,14 +74,15 @@ func _physics_process(delta: float) -> void:
 		#fr_wheel.wheel_roll_influence = 1
 		
 		if SPEED_BOOST:
-			engine_force = 1000
-		else:
-			engine_force = Input.get_axis("backward","forward") * ENGINE_POWER
+			ENGINE_POWER *= 2
 		
+		engine_force = Input.get_axis("backward","forward") * ENGINE_POWER
 		steering = Input.get_axis("right","left") ** 3 * MAX_STEER
 		
-		if steering != 0 and engine_force != 0:
-			engine_force += 500
+		ENGINE_POWER = 500
+		
+		#if 
+			#engine_force += 500 * engine_force / ENGINE_POWER
 		
 	if drift:
 		engine_force = ENGINE_POWER

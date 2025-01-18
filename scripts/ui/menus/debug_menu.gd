@@ -1,8 +1,13 @@
 extends Control
 
 @onready var car = $".."
+@onready var console = $Console
 
 var maps = ["curve_test", "donut_test", "steamy_scrapyard", "sparkling_beach"]
+var console_open = false
+
+func _ready():
+	console.visible = false
 
 func _on_map_edit_text_submitted(new_text: String) -> void:
 	if new_text in maps:
@@ -22,4 +27,9 @@ func _on_respawn_button_pressed() -> void:
 	car.rotation = car.RESPAWN[1]
 
 func _on_console_button_pressed() -> void:
-	print("console")
+	console_open = not console_open
+	
+	if console_open:
+		console.show()
+	else:
+		console.hide()
