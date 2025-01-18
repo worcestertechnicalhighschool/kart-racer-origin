@@ -7,19 +7,15 @@ func _ready() -> void:
 
 func _on_single_player_pressed() -> void:
 	$SFX.play()
-	button_pressed = "single_player"
+	button_pressed = "track_select"
 	$UITransition._fade_out()
 
 func _on_go_back_pressed() -> void:
 	$SFX.play()
-	button_pressed = "back"
+	button_pressed = "title_screen"
 	$UITransition._fade_out()
 	
 func _on_ui_transition_animation_end(is_fade_out: bool) -> void:
 	if is_fade_out:
 		
-		match button_pressed:
-			"back":
-				get_tree().change_scene_to_file("res://scenes/ui_scenes/menus/title_screen.tscn")
-			"single_player":
-				get_tree().change_scene_to_file("res://scenes/ui_scenes/menus/track_select.tscn")
+		get_tree().change_scene_to_file("res://scenes/ui_scenes/menus/" + button_pressed + ".tscn")
