@@ -22,12 +22,12 @@ func _on_body_entered(body: Node3D) -> void:
 			body.RESPAWN = [position,rotation]
 		if START_OR_FINISH_LINE:
 			var i = 0
-			for checkpoints in get_parent().get_children():
-				i += int(body in checkpoints.cars_entered)
+			for checkpoint in get_parent().get_children():
+				i += int(body in checkpoint.cars_entered)
 			if i == len(get_parent().get_children()):
 				lap += 1
-				for checkpoints in get_parent().get_children():
-					checkpoints.cars_entered.erase(body)
+				for checkpoint in get_parent().get_children():
+					checkpoint.cars_entered.erase(body)
 				cars_entered.append(body)
 			body.get_node("Ui").get_node("Lap").text = "Lap " + str(lap) + "/" + str(MAX_LAP)
 			if lap + 1 > MAX_LAP:

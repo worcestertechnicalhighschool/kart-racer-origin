@@ -34,3 +34,5 @@ func _on_camera_timer_timeout() -> void:
 	if car.ZOOM_DURATION == 0:
 		fov_in_tween.tween_property(front_camera, "fov", 75, 0.3)
 		center_of_mass_reversion_tween.tween_property(front_camera_parent, "rotation_degrees", Vector3(0, 0, 0), 0.3)
+	
+	car.SPEED_BOOST = false

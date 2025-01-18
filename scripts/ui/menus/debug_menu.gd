@@ -1,6 +1,6 @@
 extends Control
 
-@onready var car = ".."
+@onready var car = $".."
 
 var maps = ["curve_test", "donut_test", "steamy_scrapyard", "sparkling_beach"]
 
