@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0h1gpcxum57s"]
+[gd_scene load_steps=5 format=3 uid="uid://b0h1gpcxum57s"]
 
 [ext_resource type="Script" path="res://scripts/ui/menus/settings_menu.gd" id="1_4p3hg"]
 [ext_resource type="AudioStream" uid="uid://cdsqyk0a6o6ka" path="res://assets/sounds/music/sng_menu.mp3" id="2_16dnu"]
+[ext_resource type="Script" path="res://scripts/ui/buttons/grab_focus.gd" id="2_eh8x4"]
 [ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/transitions/ui_transition.tscn" id="3_ly3hw"]
 
 [node name="SettingsMenu" type="Control"]
@@ -30,6 +31,7 @@ anchor_right = 0.457812
 anchor_bottom = 0.141667
 max_value = 22.0
 value = 11.0
+script = ExtResource("2_eh8x4")
 metadata/_edit_use_anchors_ = true
 metadata/_edit_group_ = true
 
