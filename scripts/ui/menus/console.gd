@@ -13,7 +13,7 @@ func _render_to_console(output, command=""):
 func _on_line_edit_text_submitted(command: String) -> void:
 	commands.insert(0, command)
 	
-	command = command.to_lower().strip_edges(true, true)
+	command = command.strip_edges(true, true)
 	
 	if command == "clear":
 		%RichTextLabel.text = _render_to_console("Console successfully cleared", "clear")

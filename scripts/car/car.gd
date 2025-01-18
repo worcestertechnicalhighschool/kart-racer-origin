@@ -33,6 +33,9 @@ func _ready() -> void:
 	debug_menu.visible = false
 
 func _physics_process(delta: float) -> void:
+	
+	#print(ZOOM_DURATION)
+	
 	#var current = Vector2(linear_velocity.x, linear_velocity.z)
 	
 	#print(current)
