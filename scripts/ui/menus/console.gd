@@ -7,14 +7,16 @@ var commands_index = 0
 var commands = []
 var render_zero = true
 
-func _render_to_console(output):
-	%RichTextLabel.text += "\n" + str(output)
+func _render_to_console(output, command=""):
+	%RichTextLabel.text += "\n" + str(command) + ": " + str(output)
 
 func _on_line_edit_text_submitted(command: String) -> void:
 	commands.insert(0, command)
 	
+	command = command.to_lower().strip_edges(true, true)
+	
 	if command == "clear":
-		%RichTextLabel.text = ""
+		%RichTextLabel.text = _render_to_console("Console successfully cleared", "clear")
 	else:
 		var error = expression.parse(command)
 		
@@ -24,9 +26,9 @@ func _on_line_edit_text_submitted(command: String) -> void:
 			
 		var result = expression.execute([], $"../..")
 		if not expression.has_execute_failed():
-			_render_to_console(result)
+			_render_to_console(result, command)
 		else:
-			_render_to_console(expression.get_error_text())
+			_render_to_console(expression.get_error_text(), command)
 			
 	line_edit.text = ""
 
