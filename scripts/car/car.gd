@@ -7,6 +7,7 @@ extends VehicleBody3D
 @onready var camera = $Cameras/FrontCamera
 @onready var ui = $Ui
 @onready var pause_menu = $PauseMenu
+@onready var debug_menu = $DebugMenu
 
 @export var INVENTORY = ["", ""]
 @export var MAX_STEER = 0.9
@@ -22,12 +23,14 @@ var old_position
 var old_velocity
 var axis
 var paused = false
+var debug_open = false
 var prior
 	
 func _ready() -> void:
 	respawn = [position, global_rotation_degrees]
 	ui.visible = true
 	pause_menu.visible = false
+	debug_menu.visible = false
 
 func _physics_process(delta: float) -> void:
 	#var current = Vector2(linear_velocity.x, linear_velocity.z)
@@ -88,6 +91,9 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("pause"):
 		open_pause()
+	elif Input.is_action_just_pressed("debug"):
+		open_debug()
+	
 
 func open_pause():
 	# unpauses if already paused
@@ -99,7 +105,22 @@ func open_pause():
 	# pauses if not paused
 	else:
 		pause_menu.show()
+		pause_menu.find_child("Resume").grab_focus()
+		
 		ui.hide()
 		Engine.time_scale = 0
 	
 	paused = not paused
+	
+func open_debug():
+	debug_open = not debug_open
+	
+	if debug_open:
+		debug_menu.show()
+		pause_menu.find_child("MapEdit").grab_focus()
+		Engine.time_scale = 0
+		
+	else:
+		debug_menu.hide()
+		Engine.time_scale = 1
+	

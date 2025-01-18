@@ -1,0 +1,135 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckfukjwbf37mo"]
+
+[ext_resource type="Script" path="res://scripts/ui/menus/debug_menu.gd" id="1_lwjdu"]
+
+[node name="DebugMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lwjdu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_left = 0.667188
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.226707, 0.226707, 0.226707, 0.482353)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0352113
+anchor_top = 0.0194444
+anchor_right = 0.974178
+anchor_bottom = 0.144444
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 65
+text = "Debug Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="MapEdit" type="LineEdit" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0469484
+anchor_top = 0.255556
+anchor_right = 0.950704
+anchor_bottom = 0.377778
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Map"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="ColorRect/MapEdit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.342857
+anchor_top = -1.04545
+anchor_right = 0.716883
+anchor_bottom = -0.0227273
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 65
+text = "Map"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0892019
+anchor_top = 0.370833
+anchor_right = 0.920188
+anchor_bottom = 0.495833
+offset_right = 3.05176e-05
+offset_bottom = 6.10352e-05
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 65
+text = "Checkpoint"
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckpointRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.804688
+anchor_top = 0.506944
+anchor_right = 0.871094
+anchor_bottom = 0.631944
+color = Color(0, 0, 0, 0.337255)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="Label4" type="Label" parent="CheckpointRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 65
+text = "0"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="NextCheckpointButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.88125
+anchor_top = 0.506945
+anchor_right = 0.922663
+anchor_bottom = 0.63194
+offset_bottom = 3.05176e-05
+theme_override_font_sizes/font_size = 50
+action_mode = 0
+text = ">"
+metadata/_edit_use_anchors_ = true
+
+[node name="PreviousCheckpointButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.754687
+anchor_top = 0.506945
+anchor_right = 0.796093
+anchor_bottom = 0.63194
+offset_bottom = 3.05176e-05
+theme_override_font_sizes/font_size = 50
+action_mode = 0
+text = "<
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="RespawnButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.716406
+anchor_top = 0.819444
+anchor_right = 0.952344
+anchor_bottom = 0.944444
+theme_override_font_sizes/font_size = 50
+action_mode = 0
+text = "Respawn"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="text_submitted" from="ColorRect/MapEdit" to="." method="_on_map_edit_text_submitted"]
+[connection signal="pressed" from="NextCheckpointButton" to="." method="_on_next_checkpoint_button_pressed"]
+[connection signal="pressed" from="PreviousCheckpointButton" to="." method="_on_previous_checkpoint_button_pressed"]
+[connection signal="pressed" from="RespawnButton" to="." method="_on_respawn_button_pressed"]
