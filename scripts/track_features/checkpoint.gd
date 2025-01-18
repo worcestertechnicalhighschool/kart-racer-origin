@@ -19,7 +19,7 @@ func _on_body_entered(body: Node3D) -> void:
 	if body is VehicleBody3D:
 		if body not in cars_entered:
 			cars_entered.append(body)
-			body.respawn = [position,rotation]
+			body.RESPAWN = [position,rotation]
 		if START_OR_FINISH_LINE:
 			var i = 0
 			for checkpoints in get_parent().get_children():

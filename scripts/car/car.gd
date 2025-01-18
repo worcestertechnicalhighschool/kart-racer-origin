@@ -14,7 +14,7 @@ extends VehicleBody3D
 @export var ENGINE_POWER = 500
 @export var DRIFT = 1
 @export var ZOOM_DURATION = 0
-@export var respawn = []
+@export var RESPAWN = []
 @export var SPEED_BOOST = false
 
 var drift
@@ -27,7 +27,7 @@ var debug_open = false
 var prior
 	
 func _ready() -> void:
-	respawn = [position, global_rotation_degrees]
+	RESPAWN = [position, global_rotation_degrees]
 	ui.visible = true
 	pause_menu.visible = false
 	debug_menu.visible = false
@@ -117,7 +117,7 @@ func open_debug():
 	
 	if debug_open:
 		debug_menu.show()
-		pause_menu.find_child("MapEdit").grab_focus()
+		debug_menu.find_child("MapEdit").grab_focus()
 		Engine.time_scale = 0
 		
 	else:
