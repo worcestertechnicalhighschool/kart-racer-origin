@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://dkuwcntbn4jl2"]
+[gd_scene load_steps=16 format=3 uid="uid://dkuwcntbn4jl2"]
 
 [ext_resource type="Script" path="res://scripts/car/car.gd" id="1_1bc64"]
 [ext_resource type="PackedScene" uid="uid://bmwh6n8gr4wvd" path="res://scenes/ui_scenes/car_ui/car_ui.tscn" id="2_1w8et"]
 [ext_resource type="Texture2D" uid="uid://w3jmg1bwfgof" path="res://assets/images/textures/wheeltexture.jpg" id="2_8sust"]
 [ext_resource type="PackedScene" uid="uid://cu6oq4whbnukt" path="res://scenes/ui_scenes/menus/pause_menu.tscn" id="3_8ffs4"]
+[ext_resource type="PackedScene" uid="uid://ckfukjwbf37mo" path="res://scenes/ui_scenes/menus/debug_menu.tscn" id="5_68m7y"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ibdse"]
 
@@ -115,6 +116,8 @@ transform = Transform3D(1, -2.26267e-08, 1.71867e-07, -2.26267e-08, 0.965926, 0.
 [node name="Ui" parent="." instance=ExtResource("2_1w8et")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_8ffs4")]
+
+[node name="DebugMenu" parent="." instance=ExtResource("5_68m7y")]
 
 [node name="ThrownObjects" type="Node3D" parent="."]
 
