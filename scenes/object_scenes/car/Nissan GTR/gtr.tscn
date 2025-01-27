@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=4 uid="uid://c1cjln4q60lw0"]
+[gd_scene load_steps=28 format=4 uid="uid://c1cjln4q60lw0"]
 
 [ext_resource type="Script" path="res://scripts/car/car.gd" id="1_shvxb"]
 [ext_resource type="PackedScene" uid="uid://bmwh6n8gr4wvd" path="res://scenes/ui_scenes/car_ui/car_ui.tscn" id="2_npukf"]
 [ext_resource type="PackedScene" uid="uid://cu6oq4whbnukt" path="res://scenes/ui_scenes/menus/pause_menu.tscn" id="3_p3y23"]
+[ext_resource type="PackedScene" uid="uid://ckfukjwbf37mo" path="res://scenes/ui_scenes/menus/debug_menu.tscn" id="4_ov0e1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_63ko6"]
 size = Vector3(2.25129, 1.82251, 6.08972)
@@ -474,8 +475,9 @@ material = SubResource("StandardMaterial3D_hdkdu")
 
 [node name="GTR" type="VehicleBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.848395, 0)
-mass = 90.0
-gravity_scale = 2.0
+mass = 100.0
+gravity_scale = 1.5
+center_of_mass_mode = 1
 script = ExtResource("1_shvxb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -489,8 +491,7 @@ skeleton = NodePath("")
 [node name="FrontLeftWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.980521, -0.377283, 1.9392)
 use_as_steering = true
-wheel_friction_slip = 1.4
-suspension_stiffness = 120.0
+suspension_stiffness = 20.0
 damping_compression = 3.0
 damping_relaxation = 5.0
 metadata/_edit_group_ = true
@@ -502,8 +503,7 @@ mesh = SubResource("ArrayMesh_iftqm")
 [node name="FrontRightWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01147, -0.377283, 1.9392)
 use_as_steering = true
-wheel_friction_slip = 1.4
-suspension_stiffness = 120.0
+suspension_stiffness = 20.0
 damping_compression = 3.0
 damping_relaxation = 5.0
 metadata/_edit_group_ = true
@@ -555,6 +555,8 @@ transform = Transform3D(1, -2.26267e-08, 1.71867e-07, -2.26267e-08, 0.965926, 0.
 [node name="Ui" parent="." instance=ExtResource("2_npukf")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_p3y23")]
+
+[node name="DebugMenu" parent="." instance=ExtResource("4_ov0e1")]
 
 [node name="ThrownObjects" type="Node3D" parent="."]
 

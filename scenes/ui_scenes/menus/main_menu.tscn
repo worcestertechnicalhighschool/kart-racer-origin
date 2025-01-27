@@ -27,15 +27,15 @@ color = Color(0.255341, 0.630284, 0.522835, 1)
 [node name="SinglePlayer" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.314
+anchor_right = 0.262
 anchor_bottom = 0.133
-offset_right = -294.92
+offset_right = -228.36
 offset_bottom = -64.76
 theme_override_font_sizes/font_size = 64
-text = "Single Player"
+text = "Grand Prix"
 script = ExtResource("2_s5xjw")
 
-[node name="Time Trials" type="Button" parent="."]
+[node name="TimeTrials" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.433
@@ -48,17 +48,17 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 64
 text = "Time Trials"
 
-[node name="placeholder" type="Button" parent="."]
+[node name="QuickRace" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.867
-anchor_right = 0.493
+anchor_right = 0.314
 anchor_bottom = 1.0
-offset_top = -0.240051
-offset_right = -229.04
+offset_top = -0.240112
+offset_right = 0.0799866
 grow_vertical = 0
 theme_override_font_sizes/font_size = 64
-text = "placeholder or smth
+text = "Quick Race
 "
 
 [node name="Go Back" type="Button" parent="."]
