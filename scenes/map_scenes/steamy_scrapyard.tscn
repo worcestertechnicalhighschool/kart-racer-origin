@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c6xla83fagkva"]
+[gd_scene load_steps=19 format=3 uid="uid://c4n6tar772y13"]
 
 [ext_resource type="Texture2D" uid="uid://cyi52yohdxveg" path="res://assets/images/skyboxes/scrapbrainbg.webp" id="1_kdil0"]
 [ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/track_features/checkpoint.tscn" id="2_mcx6r"]
