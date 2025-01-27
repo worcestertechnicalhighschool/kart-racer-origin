@@ -9,7 +9,7 @@ var cars_entered = []
 func _ready() -> void:
 	$Texture.queue_free()
 	if START_OR_FINISH_LINE:
-		get_parent().get_parent().get_node("GTR").get_node("Ui").get_node("Lap").text = "Lap 1/" + str(MAX_LAP)
+		get_parent().get_parent().get_node("Car").get_node("Ui").get_node("Lap").text = "Lap 1/" + str(MAX_LAP)
 	else:
 		for checkpoints in get_parent().get_children():
 			if checkpoints.START_OR_FINISH_LINE:
