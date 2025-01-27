@@ -7,12 +7,12 @@ func _ready() -> void:
 	#MusicPlayer.play_music_level()
 
 func _on_single_player_pressed() -> void:
-	button_pressed = "single_player"
+	button_pressed = "main_menu"
 	$SFX.play()
 	$UITransition._fade_out()
 
 func _on_settings_pressed() -> void:
-	button_pressed = "settings"
+	button_pressed = "settings_menu"
 	$SFX.play()
 	$UITransition._fade_out()
 
@@ -23,9 +23,5 @@ func _on_quit_pressed() -> void:
 func _on_ui_transition_animation_end(is_fade_out) -> void:
 	if is_fade_out:
 		
-		match button_pressed:
-			"single_player":
-				get_tree().change_scene_to_file("res://scenes/ui_scenes/menus/main_menu.tscn")
-			"settings":
-				get_tree().change_scene_to_file("res://scenes/ui_scenes/menus/settings_menu.tscn")
-	
+		get_tree().change_scene_to_file("res://scenes/ui_scenes/menus/"+ button_pressed + ".tscn")
+		

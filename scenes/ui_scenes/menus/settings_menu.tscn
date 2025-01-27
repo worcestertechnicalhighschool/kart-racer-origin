@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0h1gpcxum57s"]
+[gd_scene load_steps=5 format=3 uid="uid://b0h1gpcxum57s"]
 
 [ext_resource type="Script" path="res://scripts/ui/menus/settings_menu.gd" id="1_4p3hg"]
 [ext_resource type="AudioStream" uid="uid://cdsqyk0a6o6ka" path="res://assets/sounds/music/sng_menu.mp3" id="2_16dnu"]
+[ext_resource type="Script" path="res://scripts/ui/buttons/grab_focus.gd" id="2_eh8x4"]
 [ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/transitions/ui_transition.tscn" id="3_ly3hw"]
 
 [node name="SettingsMenu" type="Control"]
@@ -22,7 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.255341, 0.630284, 0.522835, 1)
 
-[node name="MusicVolume" type="HSlider" parent="."]
+[node name="MasterVolume" type="HSlider" parent="."]
 layout_mode = 2
 anchor_left = 0.0125
 anchor_top = 0.0986111
@@ -30,7 +31,33 @@ anchor_right = 0.457812
 anchor_bottom = 0.141667
 max_value = 22.0
 value = 11.0
+script = ExtResource("2_eh8x4")
 metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="MasterVolume"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00350877
+anchor_top = -1.54839
+anchor_right = 0.375439
+anchor_bottom = -0.0967742
+theme_override_font_sizes/font_size = 32
+text = "Master Volume"
+metadata/_edit_use_anchors_ = true
+
+[node name="MusicVolume" type="HSlider" parent="."]
+layout_mode = 2
+anchor_left = 0.0132813
+anchor_top = 0.213889
+anchor_right = 0.458593
+anchor_bottom = 0.256945
+offset_left = -1.0
+offset_right = -1.0
+max_value = 22.0
+value = 11.0
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="MusicVolume"]
 layout_mode = 1
@@ -41,6 +68,32 @@ anchor_right = 0.375439
 anchor_bottom = -0.0967742
 theme_override_font_sizes/font_size = 32
 text = "Music Volume"
+metadata/_edit_use_anchors_ = true
+
+[node name="SFXVolume" type="HSlider" parent="."]
+layout_mode = 2
+anchor_left = 0.0140625
+anchor_top = 0.306944
+anchor_right = 0.459375
+anchor_bottom = 0.35
+offset_left = -2.0
+offset_top = 16.0
+offset_right = -2.0
+offset_bottom = 16.0
+max_value = 22.0
+value = 11.0
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="SFXVolume"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00350877
+anchor_top = -1.54839
+anchor_right = 0.375439
+anchor_bottom = -0.0967742
+theme_override_font_sizes/font_size = 32
+text = "SFX Volume"
 metadata/_edit_use_anchors_ = true
 
 [node name="Go back" type="Button" parent="."]
@@ -63,6 +116,8 @@ bus = &"Music"
 
 [node name="UITransition" parent="." instance=ExtResource("3_ly3hw")]
 
+[connection signal="value_changed" from="MasterVolume" to="." method="_on_master_volume_value_changed"]
 [connection signal="value_changed" from="MusicVolume" to="." method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="SFXVolume" to="." method="_on_sfx_volume_value_changed"]
 [connection signal="pressed" from="Go back" to="." method="_on_go_back_pressed"]
 [connection signal="animation_end" from="UITransition" to="." method="_on_ui_transition_animation_end"]

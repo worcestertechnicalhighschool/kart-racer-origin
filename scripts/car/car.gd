@@ -7,13 +7,15 @@ extends VehicleBody3D
 @onready var camera = $Cameras/FrontCamera
 @onready var ui = $Ui
 @onready var pause_menu = $PauseMenu
+@onready var debug_menu = $DebugMenu
 
 @export var INVENTORY = ["", ""]
 @export var MAX_STEER = 0.9
 @export var ENGINE_POWER = 500
 @export var DRIFT = 1
 @export var ZOOM_DURATION = 0
-@export var respawn = []
+@export var RESPAWN = []
+@export var SPEED_BOOST = false
 
 var drift
 var old_rotation
@@ -21,14 +23,19 @@ var old_position
 var old_velocity
 var axis
 var paused = false
+var debug_open = false
 var prior
 	
 func _ready() -> void:
-	respawn = [position, global_rotation_degrees]
+	RESPAWN = [position, global_rotation_degrees]
 	ui.visible = true
 	pause_menu.visible = false
+	debug_menu.visible = false
 
 func _physics_process(delta: float) -> void:
+	
+	#print(ZOOM_DURATION)
+	
 	#var current = Vector2(linear_velocity.x, linear_velocity.z)
 	
 	#print(current)
@@ -60,8 +67,26 @@ func _physics_process(delta: float) -> void:
 		linear_velocity.z = old_velocity.z
 		
 	if !drift:
+		#bl_wheel.wheel_friction_slip = 20
+		#fl_wheel.wheel_friction_slip = 20
+		#br_wheel.wheel_friction_slip = 20
+		#fr_wheel.wheel_friction_slip = 20
+		#bl_wheel.wheel_roll_influence = 1
+		#fl_wheel.wheel_roll_influence = 1
+		#br_wheel.wheel_roll_influence = 1
+		#fr_wheel.wheel_roll_influence = 1
+		
+		if SPEED_BOOST:
+			ENGINE_POWER *= 2
+		
 		engine_force = Input.get_axis("backward","forward") * ENGINE_POWER
 		steering = Input.get_axis("right","left") ** 3 * MAX_STEER
+		
+		ENGINE_POWER = 500
+		
+		#if 
+			#engine_force += 500 * engine_force / ENGINE_POWER
+		
 	if drift:
 		engine_force = ENGINE_POWER
 		steering = move_toward(steering, axis * MAX_STEER, delta * 10)
@@ -70,6 +95,9 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("pause"):
 		open_pause()
+	elif Input.is_action_just_pressed("debug"):
+		open_debug()
+	
 
 func open_pause():
 	# unpauses if already paused
@@ -81,7 +109,22 @@ func open_pause():
 	# pauses if not paused
 	else:
 		pause_menu.show()
+		pause_menu.find_child("Resume").grab_focus()
+		
 		ui.hide()
 		Engine.time_scale = 0
 	
 	paused = not paused
+	
+func open_debug():
+	debug_open = not debug_open
+	
+	if debug_open:
+		debug_menu.show()
+		debug_menu.find_child("MapEdit").grab_focus()
+		Engine.time_scale = 0
+		
+	else:
+		debug_menu.hide()
+		Engine.time_scale = 1
+	
