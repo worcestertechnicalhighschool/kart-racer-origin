@@ -79,11 +79,14 @@ func _physics_process(delta: float) -> void:
 		if SPEED_BOOST:
 			ENGINE_POWER *= 2
 		
-		print(Input.get_action_strength("backward"))
+		#print(Input.get_action_strength("backward"))
 		
+		# checking for a negative value bacause, with a gamepade tester, 
+		# holding accel. pedal is a negative number.
 		if Input.get_action_strength("backward") < 1:
 			engine_force = (Input.get_action_strength("backward")) * -1 * ENGINE_POWER
-		else:
+		
+		if Input.get_action_strength("forward"):
 			engine_force = Input.get_action_strength("forward") * ENGINE_POWER
 		
 		steering = Input.get_axis("right","left") * MAX_STEER

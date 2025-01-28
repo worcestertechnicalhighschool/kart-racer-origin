@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvf65fbqyk78w"]
+
+[ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/transitions/ui_transition.tscn" id="1_2g6xr"]
+[ext_resource type="Script" path="res://scripts/ui/menus/grand_prix_select.gd" id="1_7rjwt"]
+[ext_resource type="Script" path="res://scripts/ui/buttons/grab_focus.gd" id="2_dolnp"]
+[ext_resource type="AudioStream" uid="uid://cdsqyk0a6o6ka" path="res://assets/sounds/music/sng_menu.mp3" id="2_p5fey"]
+[ext_resource type="AudioStream" uid="uid://d14nfwmrlpndm" path="res://assets/sounds/sfx/sfx_bloop.mp3" id="5_hu8wq"]
+
+[node name="GrandPrixSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7rjwt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.255341, 0.630284, 0.522835, 1)
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.375
+anchor_bottom = 0.997222
+
+[node name="AldenAcademyCup" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Alden Academy Cup"
+autowrap_mode = 3
+script = ExtResource("2_dolnp")
+
+[node name="HealthServicesCup" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Health Services Cup"
+autowrap_mode = 3
+
+[node name="CoughlinConstructionCup" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Coughlin Construction Cup"
+autowrap_mode = 3
+
+[node name="ITBusinessCup" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "IT & Business Cup"
+autowrap_mode = 3
+
+[node name="Go Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.896
+anchor_top = 0.926
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.119995
+offset_top = 0.280029
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Go Back"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -134.0
+offset_bottom = 66.0
+grow_horizontal = 0
+
+[node name="ToExtraTracks" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "To Extra Tracks"
+
+[node name="ToB-SideTracks" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "To B-Side Tracks"
+
+[node name="UITransition" parent="." instance=ExtResource("1_2g6xr")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_p5fey")
+autoplay = true
+bus = &"Music"
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hu8wq")
+bus = &"SFX"
+
+[connection signal="pressed" from="Go Back" to="." method="_on_go_back_pressed"]
+[connection signal="animation_end" from="UITransition" to="." method="_on_ui_transition_animation_end"]

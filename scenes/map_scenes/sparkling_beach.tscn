@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c7c5fn2n1ph36" path="res://assets/images/skyboxes/sky_and_clouds.png" id="1_c6a7v"]
 [ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/track_features/checkpoint.tscn" id="2_c8w8y"]
 [ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/track_features/death_box.tscn" id="3_m518d"]
-[ext_resource type="PackedScene" uid="uid://c1cjln4q60lw0" path="res://scenes/object_scenes/car/Nissan GTR/gtr.tscn" id="5_j5kqm"]
+[ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car/car.tscn" id="5_mtf68"]
 [ext_resource type="AudioStream" uid="uid://pushtnxtycwy" path="res://assets/sounds/music/health services/sng_enviornmental.mp3" id="5_w8mqi"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_c6or0"]
@@ -25,8 +25,8 @@ albedo_color = Color(0.462745, 0.333333, 0.168627, 1)
 
 [sub_resource type="Curve3D" id="Curve3D_0vy7v"]
 _data = {
-"points": PackedVector3Array(-0.56027, 0, -0.115611, 0.56027, 0, 0.115611, 2.20981, -0.132944, 0.907743, -0.160078, 0, 0.222329, 0.160078, 0, -0.222329, 2.79938, -0.206064, 0.207888, -1.28062, 0, -0.0355727, 1.28062, 0, 0.0355727, 3.34125, -0.227185, -0.768435, 0.551377, 0, -1.52073, -0.551377, 0, 1.52073, 2.69175, -0.254256, -2.14584, 0.506911, 0, 0.106718, -0.506911, 0, -0.106718, 1.32516, 0.0329798, -2.22476, -0.00889301, 0, -0.0266795, 0.00889301, 0, 0.0266795, 0.325729, -0.00521591, -2.28566, 0, 0, 0, 0, 0, 0, 0.143582, -0.0425804, -0.751387, 0, 0, 0, 0, 0, 0, 0.760608, -0.0620594, -0.126398, 0, 0, 0, 0, 0, 0, 1.87714, -0.224328, -0.45933, -0.56027, 0, -0.115611, 0.56027, 0, 0.115611, 2.20981, -0.132944, 0.907743),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0.0580362, -0.0077727, -0.0116326, -0.162013, 0, 0)
+"points": PackedVector3Array(-0.56027, 0, -0.115611, 0.56027, 0, 0.115611, 1.67779, -0.350143, 0.906754, -0.148853, -0.00731248, 0.20615, 0.148853, 0.00731248, -0.20615, 1.85395, -0.398207, -0.259068, -0.236244, -0.00697571, 0.326127, 0.236244, 0.00697571, -0.326127, 2.43267, -0.362318, -0.714956, 0.0702055, -0.0905873, -0.48274, -0.0702055, 0.0905873, 0.48274, 2.22138, -0.377458, -1.73392, 0.506911, 0, 0.106718, -0.506911, 0, -0.106718, 0.953415, -0.298341, -1.73274, 0.164433, 0.0501141, -0.194811, -0.164433, -0.0501141, 0.194811, 0.246166, -0.186063, -2.04213, 0, 0, 0, 0, 0, 0, 0.287904, -0.0645987, -1.11289, 0, 0, 0, 0, 0, 0, 0.760608, -0.0620594, -0.126398, -0.56027, 0, -0.115611, 0.56027, 0, 0.115611, 0.988361, -0.324899, 0.999281, -0.56027, 0, -0.115611, 0.56027, 0, 0.115611, 1.51462, -0.285431, 1.0433),
+"tilts": PackedFloat32Array(-0.0171998, -0.0850274, -0.0680921, -0.123716, 0.30111, 0.182826, 0.0694802, 0.238622, -0.0106857, 0)
 }
 point_count = 10
 
@@ -34,7 +34,7 @@ point_count = 10
 albedo_color = Color(0.133333, 0.545098, 0.133333, 1)
 
 [node name="SparklingBeach" type="Node3D"]
-transform = Transform3D(1, 5.4255e-09, -3.38017e-10, -5.4255e-09, 0.992267, -0.124121, -3.38017e-10, 0.124121, 0.992267, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.88258, 0, -30.9075)
 
 [node name="Envionrment" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 113.243, 0)
@@ -50,13 +50,16 @@ shadow_enabled = true
 transform = Transform3D(1, -3.7817e-16, 2.77556e-17, -1.35308e-16, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Floor" type="MeshInstance3D" parent="Set Pieces"]
-transform = Transform3D(350, 2.33147e-13, 7.10543e-15, -6.21725e-15, 347.006, 45.6842, 0, -45.6842, 347.006, 11.5659, -13.6099, -53.3545)
+transform = Transform3D(350, 0, 0, 0, 350, 0, 0, 0, 350, 11.5659, -13.6099, -53.3545)
 mesh = SubResource("PlaneMesh_p21v1")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_t1jku")
 
+[node name="Car" parent="." instance=ExtResource("5_mtf68")]
+transform = Transform3D(-0.276241, 0, 0.961089, 0, 1, 0, -0.961088, 0, -0.276241, 136.03, 36.4405, -77.9116)
+
 [node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(-6.36461e-06, 7.18346e-09, 100, -35.1466, 97.2162, -1.00118e-06, -145.824, -23.4311, -4.12327e-06, 104.239, 73.117, 233.467)
+transform = Transform3D(150, 0, 0, 0, 100, 0, 0, 0, 100, -175.86, 63.6843, -8.48911)
 curve = SubResource("Curve3D_0vy7v")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
@@ -75,34 +78,31 @@ path_joined = true
 material = SubResource("StandardMaterial3D_vxjap")
 
 [node name="Checkpoints" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 104.239, 0, 242.613)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 57.6921, 3.05176e-05, 182.153)
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
-transform = Transform3D(15.3321, 0.251071, 0, -1.61147, 2.38878, 0, 2.27374e-13, -1.9984e-15, 1, 30.2775, 51.5674, -144.879)
+transform = Transform3D(13.8886, -0.0977956, 0.432139, 0.691292, 2.39952, 0.00064259, -6.65579, 0.0451531, 0.901807, 269.204, 37.1724, 102.551)
 START_OR_FINISH_LINE = true
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
-transform = Transform3D(-4.82565, 0, 1.22411, -2.38419e-07, 2.42703, 5.96046e-08, -12.2031, -7.10543e-15, -0.484067, 85.8704, 44.8309, -39.8419)
+transform = Transform3D(-7.49592, -1.25613e-08, 1.49197, 2.43156, 2.22172, 0.0756818, -18.7991, 0.287369, -0.585116, 376.245, 33.4456, 135.651)
 
 [node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
-transform = Transform3D(1.06279, 0.334462, 1.29942, 0.124767, 2.40335, -0.182999, -13.079, 0.0501051, 0.103846, 329.962, 17.7193, -75.2823)
+transform = Transform3D(-12.7535, 0.272961, 0.272413, 1.06323, 2.38977, -0.203532, -2.90218, -0.324011, -1.27166, 381.413, 44.1532, 9.62144)
 
 [node name="Checkpoint4" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
-transform = Transform3D(5.34577, 0.465562, 1.17535, -0.122982, 2.3749, -0.271094, -11.9837, 0.183308, 0.52709, 422.737, 7.22895, 103.099)
+transform = Transform3D(-7.82734, 0.269717, -1.04636, 0.383521, 2.40936, 0.153822, 10.5255, 0.112786, -0.783731, 429.008, 55.46, -208.085)
 
 [node name="Checkpoint5" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
-transform = Transform3D(-12.6177, -5.96046e-08, -0.36162, 0, 2.42703, -1.11759e-07, 3.60498, -2.00752e-07, -1.2657, 778.801, -22.6322, -98.2962)
+transform = Transform3D(9.84237, -1.64719e-07, -1.22893, 0, 2.42703, -1.31589e-07, 12.8073, 1.29312e-07, 0.944428, 284.289, 68.2619, -169.215)
 
 [node name="Checkpoint6" parent="Checkpoints" instance=ExtResource("2_c8w8y")]
-transform = Transform3D(-8.45364, -1.49012e-07, -1.00681, 0, 2.42703, -1.19209e-07, 10.0369, -1.39785e-07, -0.847996, 399.348, -9.30808, -175.751)
+transform = Transform3D(13.0041, -3.81798e-08, -0.176511, 3.56582e-14, 2.42703, -1.19209e-07, 1.75961, 2.00716e-07, 1.30446, 114.79, 45.884, -30.281)
 
 [node name="DeathBox" parent="." instance=ExtResource("3_m518d")]
-transform = Transform3D(1, -1.27329e-15, 1.11022e-16, -1.42247e-16, 1, 0, -5.55112e-17, 0, 1, 6.67891e-08, -10.2085, -62.904)
+transform = Transform3D(1, -1.27329e-15, 1.11022e-16, -1.42247e-16, 1, 0, -5.55112e-17, 0, 1, 166.223, 15.8365, -62.904)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_w8mqi")
 autoplay = true
 bus = &"Music"
-
-[node name="GTR" parent="." instance=ExtResource("5_j5kqm")]
-transform = Transform3D(0.148644, 0.0506397, 0.987594, -0.112038, 0.993121, -0.03406, -0.982524, -0.105585, 0.153295, -49.4377, 48.2443, 213.746)
