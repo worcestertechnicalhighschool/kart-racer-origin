@@ -4,8 +4,13 @@ var button_pressed
 
 func _ready() -> void:
 	$UITransition._fade_in()
-
-func _on_single_player_pressed() -> void:
+	
+func _on_grand_prix_pressed() -> void:
+	$SFX.play()
+	button_pressed = "grand_prix_select"
+	$UITransition._fade_out()
+	
+func _on_quick_race_pressed() -> void:
 	$SFX.play()
 	button_pressed = "track_select"
 	$UITransition._fade_out()

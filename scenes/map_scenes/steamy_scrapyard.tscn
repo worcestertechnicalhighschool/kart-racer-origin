@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://c61rd3uostnyk" path="res://assets/sounds/music/alden/sng_manufacturing.mp3" id="5_e5psg"]
 [ext_resource type="Texture2D" uid="uid://b3kapuvtcm0ll" path="res://assets/images/textures/finishline.bmp" id="6_i5p3x"]
 [ext_resource type="PackedScene" uid="uid://bl7yp56hkp8e6" path="res://scenes/object_scenes/track_features/item_box.tscn" id="7_carag"]
-[ext_resource type="PackedScene" uid="uid://c1cjln4q60lw0" path="res://scenes/object_scenes/car/Nissan GTR/gtr.tscn" id="7_nnmta"]
+[ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car/car.tscn" id="7_v02t2"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p13po"]
 panorama = ExtResource("1_kdil0")
@@ -152,5 +152,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.02226, 36.6862, 230.148)
 
 [node name="Group2" type="Node3D" parent="ItemBoxes"]
 
-[node name="GTR" parent="." instance=ExtResource("7_nnmta")]
-transform = Transform3D(0.103331, 0, 0.994647, 0, 1, 0, -0.994647, 0, 0.103331, -161.543, 17.2725, 226.925)
+[node name="Car" parent="." instance=ExtResource("7_v02t2")]
+transform = Transform3D(0.0578079, 0, 0.998328, 0, 1, 0, -0.998328, 0, 0.0578079, -158.147, 15.7031, 225.822)
