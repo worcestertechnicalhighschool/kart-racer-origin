@@ -30,14 +30,16 @@ albedo_texture = ExtResource("2_8sust")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gtxc3"]
 albedo_texture = ExtResource("2_8sust")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5mxmk"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2e6x"]
 transparency = 1
 albedo_color = Color(0.741176, 0.792157, 0, 0.34902)
 
 [sub_resource type="SphereMesh" id="SphereMesh_hyrdu"]
-material = SubResource("StandardMaterial3D_5mxmk")
+material = SubResource("StandardMaterial3D_u2e6x")
 
 [node name="Car" type="VehicleBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_z = true
 mass = 100.0
 gravity_scale = 1.5
 center_of_mass_mode = 1

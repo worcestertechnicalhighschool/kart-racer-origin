@@ -33,12 +33,12 @@ func _ready() -> void:
 	debug_menu.visible = false
 
 func _physics_process(delta: float) -> void:
-	
+
 	#print(ZOOM_DURATION)
 	
 	#var current = Vector2(linear_velocity.x, linear_velocity.z)
 	
-	#print(current)
+	#print(InputEventJoypadMotion.new().axis_value)
 	
 	#apply_impulse(Vector3(0,0,10),Vector3(0,0,0))
 	#print(global_rotation_degrees)
@@ -79,8 +79,14 @@ func _physics_process(delta: float) -> void:
 		if SPEED_BOOST:
 			ENGINE_POWER *= 2
 		
-		engine_force = Input.get_axis("backward","forward") * ENGINE_POWER
-		steering = Input.get_axis("right","left") ** 3 * MAX_STEER
+		print(Input.get_action_strength("backward"))
+		
+		if Input.get_action_strength("backward") < 1:
+			engine_force = (Input.get_action_strength("backward")) * -1 * ENGINE_POWER
+		else:
+			engine_force = Input.get_action_strength("forward") * ENGINE_POWER
+		
+		steering = Input.get_axis("right","left") * MAX_STEER
 		
 		ENGINE_POWER = 500
 		

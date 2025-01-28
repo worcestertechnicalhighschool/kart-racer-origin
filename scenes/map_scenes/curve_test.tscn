@@ -1,6 +1,5 @@
 [gd_scene load_steps=19 format=3 uid="uid://reojy8we20ey"]
 
-[ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car/car.tscn" id="1_rflty"]
 [ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_tl23f"]
 [ext_resource type="Texture2D" uid="uid://bv8udm5cmjk8d" path="res://assets/images/textures/roadtexture.jpg" id="2_i1x80"]
 [ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/track_features/checkpoint.tscn" id="3_4kmce"]
@@ -9,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bl7yp56hkp8e6" path="res://scenes/object_scenes/track_features/item_box.tscn" id="6_ca5mw"]
 [ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/track_features/death_box.tscn" id="6_utm8d"]
 [ext_resource type="PackedScene" uid="uid://carm88pw5xfdy" path="res://scenes/object_scenes/track_features/boost_pad.tscn" id="7_xo5dg"]
+[ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car/car.tscn" id="9_vnf50"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tl4ks"]
 panorama = ExtResource("1_tl23f")
@@ -220,10 +220,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.9295, 20.1462, 382.308)
 [node name="ItemBox18" parent="ItemBoxes" instance=ExtResource("6_ca5mw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.6306, 19.8176, 378.508)
 
-[node name="Car" parent="." instance=ExtResource("1_rflty")]
-transform = Transform3D(-0.933799, 0, -0.357798, 0, 1, 0, 0.357798, 0, -0.933799, 353.664, 19.2852, 283.364)
-
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_y2xi4")
 autoplay = true
 bus = &"Music"
+
+[node name="Car" parent="." instance=ExtResource("9_vnf50")]
+transform = Transform3D(-0.970393, 0, -0.241532, 0, 1, 0, 0.241532, 0, -0.970393, 354.467, 18.9063, 291.27)
