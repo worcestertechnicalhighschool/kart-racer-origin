@@ -76,8 +76,8 @@ func _physics_process(delta: float) -> void:
 		#br_wheel.wheel_roll_influence = 1
 		#fr_wheel.wheel_roll_influence = 1
 		
-		rotation_degrees.x = clamp(rotation_degrees.x, -25, 25)
-		rotation_degrees.y = clamp(rotation_degrees.y, -25, 25)
+		rotation_degrees.x = clamp(rotation_degrees.x, -10, 10)
+		rotation_degrees.z = clamp(rotation_degrees.z, -10, 10)
 		
 		if SPEED_BOOST:
 			ENGINE_POWER *= 2
