@@ -38,6 +38,8 @@ albedo_color = Color(0.741176, 0.792157, 0, 0.34902)
 material = SubResource("StandardMaterial3D_u2e6x")
 
 [node name="Car" type="VehicleBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_z = true
 mass = 100.0
 gravity_scale = 1.5
 center_of_mass_mode = 1
