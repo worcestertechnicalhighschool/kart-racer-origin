@@ -17,6 +17,7 @@ extends VehicleBody3D
 @export var RESPAWN = []
 @export var SPEED_BOOST = false
 
+var MAX_SPEED = 45
 var drift
 var old_rotation
 var old_position
@@ -32,7 +33,7 @@ func _ready() -> void:
 	pause_menu.visible = false
 	debug_menu.visible = false
 
-func _physics_process(delta: float) -> void:
+func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	
 	ENGINE_POWER = 500
 
@@ -57,8 +58,28 @@ func _physics_process(delta: float) -> void:
 		
 	if !drift:
 		
+		# clamp rotation degrees so car doesn't radically flip over
 		rotation_degrees.x = clamp(rotation_degrees.x, -10, 10)
 		rotation_degrees.z = clamp(rotation_degrees.z, -10, 10)
+		
+		# overall purpose: limiting the total speed
+		# finding the magnitude of the vector
+		var speed = sqrt(linear_velocity.x**2 + linear_velocity.z**2)
+		# only limit if speed is greater than speed
+		if speed > MAX_SPEED:
+			# get the inverse of the ratio to scale down vector magnitudes
+			var ratio = MAX_SPEED / speed
+			linear_velocity.x *= ratio
+			linear_velocity.z *= ratio
+		
+		#var clamped_velocity = linear_velocity.clamp(linear_velocity.normalized() * -MAX_SPEED, linear_velocity.normalized() * MAX_SPEED)
+		
+		print(linear_velocity)
+		
+		#speed = clamp(speed, -MAX_SPEED, MAX_SPEED)
+		#linear_velocity.x = speed * cos(rotation_degrees.y)
+		#linear_velocity.z = speed * sin(rotation_degrees.y)
+		
 		
 		if SPEED_BOOST:
 			ENGINE_POWER *= 2
