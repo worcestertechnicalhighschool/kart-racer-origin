@@ -33,6 +33,8 @@ func _ready() -> void:
 	debug_menu.visible = false
 
 func _physics_process(delta: float) -> void:
+	
+	ENGINE_POWER = 500
 
 	#if Input.is_action_pressed("drift") and Input.get_axis("right","left") != 0 and !drift:
 		##Takes the all the cars positional and rotational data at the time of the drift along with the way that the car is turning
@@ -62,16 +64,15 @@ func _physics_process(delta: float) -> void:
 			ENGINE_POWER *= 2
 		
 		# checking for a negative value bacause holding accel. pedal gives a negative number.
-		if Input.get_action_strength("reverse") < 1:
-			engine_force = Input.get_action_strength("reverse") * -1 * ENGINE_POWER
-		
-		if Input.get_action_strength("accelerate"):
-			engine_force = Input.get_action_strength("accelerate") * ENGINE_POWER
+		if Input.get_action_strength("pedal_reverse") < 1 and Input.get_action_strength("pedal_reverse"):
+			engine_force = Input.get_action_strength("pedal_reverse") * -1 * ENGINE_POWER
+		elif Input.get_action_strength("pedal_accelerate"):
+			engine_force = Input.get_action_strength("pedal_accelerate") * ENGINE_POWER
+		else:
+			engine_force = Input.get_axis("non_pedal_reverse", "non_pedal_accelerate") * ENGINE_POWER
 		
 		steering = Input.get_axis("steer_right","steer_left") * MAX_STEER
-		
-		ENGINE_POWER = 500
-		
+
 	#if drift:
 		#engine_force = ENGINE_POWER
 		#steering = move_toward(steering, axis * MAX_STEER, delta * 10)
