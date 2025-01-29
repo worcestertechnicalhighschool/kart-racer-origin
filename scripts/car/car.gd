@@ -33,48 +33,29 @@ func _ready() -> void:
 	debug_menu.visible = false
 
 func _physics_process(delta: float) -> void:
+	
+	ENGINE_POWER = 500
 
-	#print(ZOOM_DURATION)
-	
-	#var current = Vector2(linear_velocity.x, linear_velocity.z)
-	
-	#print(InputEventJoypadMotion.new().axis_value)
-	
-	#apply_impulse(Vector3(0,0,10),Vector3(0,0,0))
-	#print(global_rotation_degrees)
-	#apply_central_impulse(Vector3(0,0,10))
-	
-	#print(linear_velocity)
-	#print(rotation_degrees,rotation)
-	#print(linear_velocity)
-	if Input.is_action_pressed("drift") and Input.get_axis("right","left") != 0 and !drift:
-		#Takes the all the cars positional and rotational data at the time of the drift along with the way that the car is turning
-		drift = true
-		axis = Input.get_axis("right","left")
-		steering = Input.get_axis("right","left")
-		old_rotation = global_rotation_degrees
-		old_position = position
-		old_velocity = linear_velocity
-	if Input.is_action_just_released("drift"):
-		bl_wheel.wheel_friction_slip = 10.5
-		br_wheel.wheel_friction_slip = 10.5
-		fl_wheel.wheel_friction_slip = 10.5
-		fr_wheel.wheel_friction_slip = 10.5
-		drift = false
-		angular_velocity.y = 0
-		global_rotation_degrees.y = 0
-	
-		linear_velocity.z = old_velocity.z
+	#if Input.is_action_pressed("drift") and Input.get_axis("right","left") != 0 and !drift:
+		##Takes the all the cars positional and rotational data at the time of the drift along with the way that the car is turning
+		#drift = true
+		#axis = Input.get_axis("right","left")
+		#steering = Input.get_axis("right","left")
+		#old_rotation = global_rotation_degrees
+		#old_position = position
+		#old_velocity = linear_velocity
+	#if Input.is_action_just_released("drift"):
+		#bl_wheel.wheel_friction_slip = 10.5
+		#br_wheel.wheel_friction_slip = 10.5
+		#fl_wheel.wheel_friction_slip = 10.5
+		#fr_wheel.wheel_friction_slip = 10.5
+		#drift = false
+		#angular_velocity.y = 0
+		#global_rotation_degrees.y = 0
+	#
+		#linear_velocity.z = old_velocity.z
 		
 	if !drift:
-		#bl_wheel.wheel_friction_slip = 20
-		#fl_wheel.wheel_friction_slip = 20
-		#br_wheel.wheel_friction_slip = 20
-		#fr_wheel.wheel_friction_slip = 20
-		#bl_wheel.wheel_roll_influence = 1
-		#fl_wheel.wheel_roll_influence = 1
-		#br_wheel.wheel_roll_influence = 1
-		#fr_wheel.wheel_roll_influence = 1
 		
 		rotation_degrees.x = clamp(rotation_degrees.x, -10, 10)
 		rotation_degrees.z = clamp(rotation_degrees.z, -10, 10)
@@ -82,28 +63,19 @@ func _physics_process(delta: float) -> void:
 		if SPEED_BOOST:
 			ENGINE_POWER *= 2
 		
-		#print(Input.get_action_strength("backward"))
+		# checking for a negative value bacause holding accel. pedal gives a negative number.
+		if Input.get_action_strength("pedal_reverse") < 1 and Input.get_action_strength("pedal_reverse"):
+			engine_force = Input.get_action_strength("pedal_reverse") * -1 * ENGINE_POWER
+		elif Input.get_action_strength("pedal_accelerate"):
+			engine_force = Input.get_action_strength("pedal_accelerate") * ENGINE_POWER
+		else:
+			engine_force = Input.get_axis("non_pedal_reverse", "non_pedal_accelerate") * ENGINE_POWER
 		
-		# checking for a negative value bacause, with a gamepade tester, 
-		# holding accel. pedal is a negative number.
-		if Input.get_action_strength("backward") < 1:
-			engine_force = (Input.get_action_strength("backward")) * -1 * ENGINE_POWER
-		
-		if Input.get_action_strength("forward"):
-			engine_force = Input.get_action_strength("forward") * ENGINE_POWER
-		
-		steering = Input.get_axis("right","left") * MAX_STEER
-		
-		ENGINE_POWER = 500
-		
-		#if 
-			#engine_force += 500 * engine_force / ENGINE_POWER
-		
-	if drift:
-		engine_force = ENGINE_POWER
-		steering = move_toward(steering, axis * MAX_STEER, delta * 10)
-	
-	# listens for pause button
+		steering = Input.get_axis("steer_right","steer_left") * MAX_STEER
+
+	#if drift:
+		#engine_force = ENGINE_POWER
+		#steering = move_toward(steering, axis * MAX_STEER, delta * 10)
 	
 	if Input.is_action_just_pressed("pause"):
 		open_pause()
