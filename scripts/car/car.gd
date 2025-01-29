@@ -36,6 +36,7 @@ func _ready() -> void:
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	
 	ENGINE_POWER = 500
+	MAX_SPEED = 50
 
 	#if Input.is_action_pressed("drift") and Input.get_axis("right","left") != 0 and !drift:
 		##Takes the all the cars positional and rotational data at the time of the drift along with the way that the car is turning
@@ -58,6 +59,20 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 		
 	if !drift:
 		
+		if SPEED_BOOST:
+			ENGINE_POWER *= 2
+			MAX_SPEED *= 1.5
+		
+		# checking for a negative value bacause holding accel. pedal gives a negative number.
+		if Input.get_action_strength("pedal_reverse") < 1 and Input.get_action_strength("pedal_reverse"):
+			engine_force = Input.get_action_strength("pedal_reverse") * -1 * ENGINE_POWER
+		elif Input.get_action_strength("pedal_accelerate"):
+			engine_force = Input.get_action_strength("pedal_accelerate") * ENGINE_POWER
+		else:
+			engine_force = Input.get_axis("non_pedal_reverse", "non_pedal_accelerate") * ENGINE_POWER
+		
+		steering = Input.get_axis("steer_right","steer_left") * MAX_STEER / 4
+		
 		# clamp rotation degrees so car doesn't radically flip over
 		rotation_degrees.x = clamp(rotation_degrees.x, -10, 10)
 		rotation_degrees.z = clamp(rotation_degrees.z, -10, 10)
@@ -71,28 +86,6 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 			var ratio = MAX_SPEED / speed
 			linear_velocity.x *= ratio
 			linear_velocity.z *= ratio
-		
-		#var clamped_velocity = linear_velocity.clamp(linear_velocity.normalized() * -MAX_SPEED, linear_velocity.normalized() * MAX_SPEED)
-		
-		print(linear_velocity)
-		
-		#speed = clamp(speed, -MAX_SPEED, MAX_SPEED)
-		#linear_velocity.x = speed * cos(rotation_degrees.y)
-		#linear_velocity.z = speed * sin(rotation_degrees.y)
-		
-		
-		if SPEED_BOOST:
-			ENGINE_POWER *= 2
-		
-		# checking for a negative value bacause holding accel. pedal gives a negative number.
-		if Input.get_action_strength("pedal_reverse") < 1 and Input.get_action_strength("pedal_reverse"):
-			engine_force = Input.get_action_strength("pedal_reverse") * -1 * ENGINE_POWER
-		elif Input.get_action_strength("pedal_accelerate"):
-			engine_force = Input.get_action_strength("pedal_accelerate") * ENGINE_POWER
-		else:
-			engine_force = Input.get_axis("non_pedal_reverse", "non_pedal_accelerate") * ENGINE_POWER
-		
-		steering = Input.get_axis("steer_right","steer_left") * MAX_STEER
 
 	#if drift:
 		#engine_force = ENGINE_POWER
