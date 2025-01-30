@@ -23,6 +23,15 @@ func _on_sparkling_beach_button_pressed() -> void:
 func _on_donut_test_button_pressed() -> void:
 	_trigger_animation("donut_test")
 
+func _on_bt_1_button_pressed() -> void:
+	_trigger_animation("blender_track_1")
+	
+func _on_bt_2_button_pressed() -> void:
+	_trigger_animation("blender_track_2")
+
+func _on_bt_3_button_pressed() -> void:
+	_trigger_animation("blender_track_3")
+
 func _on_go_back_pressed() -> void:
 	_trigger_animation("main_menu")
 
@@ -33,4 +42,3 @@ func _on_ui_transition_animation_end(is_fade_out: bool) -> void:
 			get_tree().change_scene_to_file("res://scenes/ui_scenes/menus/main_menu.tscn")
 		else:
 			get_tree().change_scene_to_file("res://scenes/map_scenes/" + button_pressed + ".tscn")
-		

@@ -33,7 +33,7 @@ anchor_bottom = 0.997222
 [node name="AldenAcademyCup" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 45
 text = "Alden Academy Cup"
 autowrap_mode = 3
 script = ExtResource("2_dolnp")
@@ -41,21 +41,21 @@ script = ExtResource("2_dolnp")
 [node name="HealthServicesCup" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 45
 text = "Health Services Cup"
 autowrap_mode = 3
 
 [node name="CoughlinConstructionCup" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 45
 text = "Coughlin Construction Cup"
 autowrap_mode = 3
 
 [node name="ITBusinessCup" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 45
 text = "IT & Business Cup"
 autowrap_mode = 3
 

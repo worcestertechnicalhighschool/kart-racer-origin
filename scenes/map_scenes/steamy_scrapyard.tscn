@@ -37,7 +37,7 @@ albedo_color = Color(0.197937, 0.197937, 0.197937, 1)
 metallic = 1.0
 metallic_specular = 1.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2p27u"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v06hy"]
 albedo_texture = ExtResource("6_i5p3x")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rg8qs"]
@@ -123,7 +123,7 @@ transform = Transform3D(0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, 0.173648, 
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StartLine"]
 transform = Transform3D(8, 0, -1.32455e-08, 0, 1, 0, 2.11928e-07, 0, 0.5, -15.561, 17.1795, -11.5886)
-material_override = SubResource("StandardMaterial3D_2p27u")
+material_override = SubResource("StandardMaterial3D_v06hy")
 mesh = SubResource("PlaneMesh_rg8qs")
 surface_material_override/0 = SubResource("StandardMaterial3D_0vljc")
 
