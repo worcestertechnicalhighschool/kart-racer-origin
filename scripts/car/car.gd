@@ -17,6 +17,7 @@ extends VehicleBody3D
 @export var RESPAWN = []
 @export var SPEED_BOOST = false
 
+var MAX_SPEED = 45
 var drift
 var old_rotation
 var old_position
@@ -32,9 +33,10 @@ func _ready() -> void:
 	pause_menu.visible = false
 	debug_menu.visible = false
 
-func _physics_process(delta: float) -> void:
+func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	
 	ENGINE_POWER = 500
+	MAX_SPEED = 50
 
 	#if Input.is_action_pressed("drift") and Input.get_axis("right","left") != 0 and !drift:
 		##Takes the all the cars positional and rotational data at the time of the drift along with the way that the car is turning
@@ -57,11 +59,9 @@ func _physics_process(delta: float) -> void:
 		
 	if !drift:
 		
-		rotation_degrees.x = clamp(rotation_degrees.x, -10, 10)
-		rotation_degrees.z = clamp(rotation_degrees.z, -10, 10)
-		
 		if SPEED_BOOST:
 			ENGINE_POWER *= 2
+			MAX_SPEED *= 1.5
 		
 		# checking for a negative value bacause holding accel. pedal gives a negative number.
 		if Input.get_action_strength("pedal_reverse") < 1 and Input.get_action_strength("pedal_reverse"):
@@ -71,7 +71,21 @@ func _physics_process(delta: float) -> void:
 		else:
 			engine_force = Input.get_axis("non_pedal_reverse", "non_pedal_accelerate") * ENGINE_POWER
 		
-		steering = Input.get_axis("steer_right","steer_left") * MAX_STEER
+		steering = Input.get_axis("steer_right","steer_left") * MAX_STEER / 4
+		
+		# clamp rotation degrees so car doesn't radically flip over
+		rotation_degrees.x = clamp(rotation_degrees.x, -10, 10)
+		rotation_degrees.z = clamp(rotation_degrees.z, -10, 10)
+		
+		# overall purpose: limiting the total speed
+		# finding the magnitude of the vector
+		var speed = sqrt(linear_velocity.x**2 + linear_velocity.z**2)
+		# only limit if speed is greater than speed
+		if speed > MAX_SPEED:
+			# get the inverse of the ratio to scale down vector magnitudes
+			var ratio = MAX_SPEED / speed
+			linear_velocity.x *= ratio
+			linear_velocity.z *= ratio
 
 	#if drift:
 		#engine_force = ENGINE_POWER

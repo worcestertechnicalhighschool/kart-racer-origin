@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ftfjb2juk3gv"]
 
 [ext_resource type="Script" path="res://scripts/ui/menus/title_screen.gd" id="1_wep01"]
-[ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/transitions/ui_transition.tscn" id="2_hrswe"]
+[ext_resource type="PackedScene" path="res://scenes/ui_scenes/transitions/ui_transition.tscn" id="2_hrswe"]
 [ext_resource type="Script" path="res://scripts/ui/buttons/grab_focus.gd" id="2_k4055"]
 [ext_resource type="Texture2D" uid="uid://pmrgd74p8b1e" path="res://assets/images/battle_cats/cat_kart.png" id="3_2d2xj"]
 [ext_resource type="Texture2D" uid="uid://wf1olbqmhl2a" path="res://assets/images/textures/racing_flags.png" id="4_tjyxy"]
@@ -40,10 +40,11 @@ metadata/_edit_use_anchors_ = true
 [node name="Title" type="Label" parent="TextAndButtons"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.894531
-anchor_bottom = 0.304167
-offset_right = -341.0
-offset_bottom = -3.05176e-05
+anchor_left = 0.0617188
+anchor_top = -0.0194444
+anchor_right = 0.95625
+anchor_bottom = 0.284723
+offset_bottom = -0.000213623
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 160
 text = "Skyline Drivers"
@@ -107,17 +108,6 @@ theme_override_font_sizes/font_size = 64
 text = "Quit"
 metadata/_edit_use_anchors_ = true
 
-[node name="CatKart" type="Sprite2D" parent="."]
-position = Vector2(1594, 866)
-texture = ExtResource("3_2d2xj")
-
-[node name="RacingFlags" type="Sprite2D" parent="."]
-light_mask = 2
-visibility_layer = 2
-position = Vector2(1383, 171)
-scale = Vector2(0.416222, 0.402555)
-texture = ExtResource("4_tjyxy")
-
 [node name="BuildDate" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -143,6 +133,26 @@ bus = &"Music"
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_t76wy")
 bus = &"SFX"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.442187
+anchor_top = 0.2875
+anchor_right = 0.632813
+anchor_bottom = 0.622222
+texture = ExtResource("4_tjyxy")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_left = 0.615625
+anchor_top = 0.405556
+anchor_right = 1.00625
+anchor_bottom = 1.1
+texture = ExtResource("3_2d2xj")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="TextAndButtons/SinglePlayer" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="TextAndButtons/Settings" to="." method="_on_settings_pressed"]

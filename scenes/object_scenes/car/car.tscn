@@ -41,7 +41,6 @@ material = SubResource("StandardMaterial3D_u2e6x")
 mass = 100.0
 gravity_scale = 1.5
 center_of_mass_mode = 1
-center_of_mass = Vector3(0, 0, 0.3)
 script = ExtResource("1_1bc64")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
