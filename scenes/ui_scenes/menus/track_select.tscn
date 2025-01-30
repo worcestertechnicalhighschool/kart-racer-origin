@@ -30,16 +30,15 @@ color = Color(0.255341, 0.630284, 0.522835, 1)
 visibility_layer = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.048
-anchor_top = 0.076
-anchor_right = 0.247
-anchor_bottom = 0.274
-offset_left = -0.440002
-offset_top = 0.279995
-offset_right = 1021.84
-offset_bottom = 569.72
+anchor_left = 0.0476562
+anchor_top = 0.0763889
+anchor_right = 0.247188
+anchor_bottom = 0.274167
+offset_right = 1021.6
+offset_bottom = 569.6
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_i2ugi")
+metadata/_edit_use_anchors_ = true
 
 [node name="CurveTestButton" type="Button" parent="CurveTest"]
 show_behind_parent = true
@@ -47,15 +46,42 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 2.084
-offset_right = -1094.55
-offset_bottom = -1271.81
+offset_top = 685.0
+offset_right = -1095.0
+offset_bottom = -684.808
 scale = Vector2(7, 7)
 theme_override_font_sizes/font_size = 32
-text = "
-
-Curve Test
+text = "Curve Test
 "
 script = ExtResource("3_47jlh")
+metadata/_edit_use_anchors_ = true
+
+[node name="DonutTest" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.282812
+anchor_top = 0.0763889
+anchor_right = 0.482656
+anchor_bottom = 0.275833
+offset_right = 1023.2
+offset_bottom = 574.4
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_nfp05")
+metadata/_edit_use_anchors_ = true
+
+[node name="DonutTestButton" type="Button" parent="DonutTest"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.002
+anchor_bottom = 2.047
+offset_top = 720.0
+offset_right = -1098.56
+offset_bottom = -642.746
+scale = Vector2(7, 7)
+theme_override_font_sizes/font_size = 32
+text = "Donut Test"
+metadata/_edit_use_anchors_ = true
 
 [node name="SteamyScrapyard" type="TextureRect" parent="."]
 visibility_layer = 2
@@ -63,7 +89,7 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.510937
 anchor_top = 0.0763889
-anchor_right = 0.710469
+anchor_right = 0.710468
 anchor_bottom = 0.274167
 offset_right = 1021.6
 offset_bottom = 569.6
@@ -75,15 +101,14 @@ metadata/_edit_use_anchors_ = true
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.00012
-anchor_bottom = 2.08425
+anchor_top = 1.00421
+anchor_right = 0.999764
+anchor_bottom = 2.94521
 offset_right = -1094.7
 offset_bottom = -1271.99
 scale = Vector2(7, 7)
 theme_override_font_sizes/font_size = 32
-text = "
-
-Steamy Scrapyard"
+text = "Steamy Scrapyard"
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
@@ -105,45 +130,112 @@ metadata/_edit_use_anchors_ = true
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.00012
-anchor_bottom = 2.08425
+anchor_top = 0.955056
+anchor_right = 0.999765
+anchor_bottom = 2.90307
 offset_right = -1094.7
 offset_bottom = -1271.99
 scale = Vector2(7, 7)
 theme_override_font_sizes/font_size = 32
-text = "
-
-Sparkling Beach"
+text = "Sparkling Beach"
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="DonutTest" type="TextureRect" parent="."]
+[node name="BlenderTrack1" type="TextureRect" parent="."]
+visibility_layer = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.283
-anchor_top = 0.076
-anchor_right = 0.483
-anchor_bottom = 0.276
-offset_left = -0.240021
-offset_top = 0.279995
-offset_right = 1020.76
-offset_bottom = 568.28
+anchor_left = 0.0476562
+anchor_top = 0.506944
+anchor_right = 0.247188
+anchor_bottom = 0.704722
+offset_top = 3.05176e-05
+offset_right = 1021.6
+offset_bottom = 569.6
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_nfp05")
+texture = ExtResource("2_i2ugi")
+metadata/_edit_use_anchors_ = true
 
-[node name="DonutTestButton" type="Button" parent="DonutTest"]
+[node name="BT1Button" type="Button" parent="BlenderTrack1"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.002
-anchor_bottom = 2.047
-offset_right = -1098.56
-offset_bottom = -1259.75
+anchor_top = 0.948034
+anchor_right = 0.999765
+anchor_bottom = 3.11236
+offset_right = -1094.7
+offset_bottom = -1398.0
 scale = Vector2(7, 7)
 theme_override_font_sizes/font_size = 32
-text = "
+text = "Blender Track
+1
+"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
-Donut Test"
+[node name="BlenderTrack2" type="TextureRect" parent="."]
+visibility_layer = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.285156
+anchor_top = 0.506944
+anchor_right = 0.484687
+anchor_bottom = 0.704722
+offset_top = 3.05176e-05
+offset_right = 1021.6
+offset_bottom = 569.6
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_i2ugi")
+metadata/_edit_use_anchors_ = true
+
+[node name="BT2Button" type="Button" parent="BlenderTrack2"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.948034
+anchor_right = 0.999765
+anchor_bottom = 3.11236
+offset_right = -1094.7
+offset_bottom = -1398.0
+scale = Vector2(7, 7)
+theme_override_font_sizes/font_size = 32
+text = "Blender Track
+2
+"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="BlenderTrack3" type="TextureRect" parent="."]
+visibility_layer = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.510938
+anchor_top = 0.506944
+anchor_right = 0.710469
+anchor_bottom = 0.704722
+offset_top = 3.05176e-05
+offset_right = 1021.6
+offset_bottom = 569.6
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_i2ugi")
+metadata/_edit_use_anchors_ = true
+
+[node name="BT3Button" type="Button" parent="BlenderTrack3"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.948034
+anchor_right = 0.999765
+anchor_bottom = 3.11236
+offset_right = -1094.7
+offset_bottom = -1398.0
+scale = Vector2(7, 7)
+theme_override_font_sizes/font_size = 32
+text = "Blender Track
+3
+"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="GoBack" type="Button" parent="."]
 layout_mode = 1
@@ -171,8 +263,11 @@ stream = ExtResource("7_mmyuh")
 bus = &"SFX"
 
 [connection signal="pressed" from="CurveTest/CurveTestButton" to="." method="_on_curve_test_button_pressed"]
+[connection signal="pressed" from="DonutTest/DonutTestButton" to="." method="_on_donut_test_button_pressed"]
 [connection signal="pressed" from="SteamyScrapyard/SteamyScrapyardButton" to="." method="_on_steamy_scrapyard_button_pressed"]
 [connection signal="pressed" from="SparklingBeach/SparklingBeachButton" to="." method="_on_sparkling_beach_button_pressed"]
-[connection signal="pressed" from="DonutTest/DonutTestButton" to="." method="_on_donut_test_button_pressed"]
+[connection signal="pressed" from="BlenderTrack1/BT1Button" to="." method="_on_bt_1_button_pressed"]
+[connection signal="pressed" from="BlenderTrack2/BT2Button" to="." method="_on_bt_2_button_pressed"]
+[connection signal="pressed" from="BlenderTrack3/BT3Button" to="." method="_on_bt_3_button_pressed"]
 [connection signal="pressed" from="GoBack" to="." method="_on_go_back_pressed"]
 [connection signal="animation_end" from="UITransition" to="." method="_on_ui_transition_animation_end"]

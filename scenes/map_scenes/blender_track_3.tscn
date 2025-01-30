@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=4 uid="uid://syu0poyobh46"]
 
-[ext_resource type="Texture2D" uid="uid://lv7emd754bib" path="res://icon.svg" id="1_xcs76"]
-[ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car/car.tscn" id="2_1pb2p"]
-[ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/track_features/death_box.tscn" id="3_4irq2"]
-[ext_resource type="AudioStream" uid="uid://clst1ap8vphja" path="res://assets/sounds/music/alden/sng_robotics.mp3" id="4_e3a0v"]
+[ext_resource type="Texture2D" uid="uid://lv7emd754bib" path="res://icon.svg" id="1_80446"]
+[ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car/car.tscn" id="2_t0akg"]
+[ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/track_features/death_box.tscn" id="3_k5ftu"]
+[ext_resource type="AudioStream" uid="uid://clst1ap8vphja" path="res://assets/sounds/music/alden/sng_robotics.mp3" id="4_p41pf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_shrsn"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -19,7 +19,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_llabl"]
-albedo_texture = ExtResource("1_xcs76")
+albedo_texture = ExtResource("1_80446")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2njdl"]
 resource_name = "Material"
@@ -81,13 +81,13 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Track"]
 shape = SubResource("ConcavePolygonShape3D_nr70l")
 
-[node name="Car" parent="." instance=ExtResource("2_1pb2p")]
+[node name="Car" parent="." instance=ExtResource("2_t0akg")]
 transform = Transform3D(0.127134, 0, -0.991886, 0, 1, 0, 0.991886, 0, 0.127134, 48.8514, -5.27139, 3.0539)
 
-[node name="DeathBox" parent="." instance=ExtResource("3_4irq2")]
+[node name="DeathBox" parent="." instance=ExtResource("3_k5ftu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.19407, -12.0167, 43.8893)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_e3a0v")
+stream = ExtResource("4_p41pf")
 autoplay = true
 bus = &"Music"
