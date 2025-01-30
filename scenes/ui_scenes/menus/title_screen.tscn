@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ftfjb2juk3gv"]
 
 [ext_resource type="Script" path="res://scripts/ui/menus/title_screen.gd" id="1_wep01"]
-[ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/transitions/ui_transition.tscn" id="2_hrswe"]
+[ext_resource type="PackedScene" path="res://scenes/ui_scenes/transitions/ui_transition.tscn" id="2_hrswe"]
 [ext_resource type="Script" path="res://scripts/ui/buttons/grab_focus.gd" id="2_k4055"]
 [ext_resource type="Texture2D" uid="uid://pmrgd74p8b1e" path="res://assets/images/battle_cats/cat_kart.png" id="3_2d2xj"]
 [ext_resource type="Texture2D" uid="uid://wf1olbqmhl2a" path="res://assets/images/textures/racing_flags.png" id="4_tjyxy"]
@@ -108,13 +108,13 @@ text = "Quit"
 metadata/_edit_use_anchors_ = true
 
 [node name="CatKart" type="Sprite2D" parent="."]
-position = Vector2(1594, 866)
+position = Vector2(1015, 461)
 texture = ExtResource("3_2d2xj")
 
 [node name="RacingFlags" type="Sprite2D" parent="."]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(1383, 171)
+position = Vector2(623, 287)
 scale = Vector2(0.416222, 0.402555)
 texture = ExtResource("4_tjyxy")
 
