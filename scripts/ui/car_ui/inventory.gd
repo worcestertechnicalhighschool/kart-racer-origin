@@ -1,30 +1,22 @@
 extends Control
 
-const BOMB = preload("res://scenes/object_scenes/obstacles/bomb.tscn")
-const SHELL = preload("res://scenes/object_scenes/obstacles/shell.tscn")
-const MUSHROOM = preload("res://scenes/object_scenes/obstacles/mushroom.tscn")
-
 func _process(_delta: float) -> void:
-	var Car = $"../.."
+	var car = $"../.."
 	
-	$"Slot2/Label".text = Car.INVENTORY[1]
-	$"Slot1/Label".text = Car.INVENTORY[0]
+	$"Slot2/Label".text = car.INVENTORY[1]
+	$"Slot1/Label".text = car.INVENTORY[0]
 	
 	if Input.is_action_just_pressed("throw_item"):
 		var instance
-	
-		if Car.INVENTORY[0] == "shell":
-			instance = SHELL.instantiate()
-		if Car.INVENTORY[0] == "bomb":
-			instance = BOMB.instantiate()
-		if Car.INVENTORY[0] == "mushroom":
-			instance = MUSHROOM.instantiate()
-	
+		
+		if car.INVENTORY[0]:
+			instance = load("res://scenes/object_scenes/obstacles/" + car.INVENTORY[0] + ".tscn").instantiate()
+		
 		if instance:
-			var thrown_objects = Car.find_child("ThrownObjects")
+			var thrown_objects = car.find_child("ThrownObjects")
 			
 			if not instance.CUSTOM_ANIMATION:
-				var car_lin_vel = Car.linear_velocity
+				var car_lin_vel = car.linear_velocity
 				var throw_direction
 				
 				if instance.THROWN_FORWARD:
@@ -37,5 +29,5 @@ func _process(_delta: float) -> void:
 			
 			thrown_objects.add_child(instance)
 		
-		Car.INVENTORY[0] = Car.INVENTORY[1]
-		Car.INVENTORY[1] = ""
+		car.INVENTORY[0] = car.INVENTORY[1]
+		car.INVENTORY[1] = ""

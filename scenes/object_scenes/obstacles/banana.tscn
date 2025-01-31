@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dob407hm53o7m"]
+
+[ext_resource type="Script" path="res://scripts/track_features/slip.gd" id="1_cytvf"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_flnwm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jqk8d"]
+
+[node name="Banana" type="Area3D"]
+script = ExtResource("1_cytvf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.7, 0, 0, 0, 0.8, 0, 0, 0)
+mesh = SubResource("PrismMesh_flnwm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_jqk8d")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
