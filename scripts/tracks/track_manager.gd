@@ -26,7 +26,7 @@ extends Node3D
 	},
 	
 	"ITBS": {
-		1: "",
+		1: "res://scenes/map_scenes/comet_kitchen.tscn",
 		2: "res://scenes/map_scenes/propaganda_avenue.tscn",
 		3: "res://scenes/map_scenes/horizon_hotel.tscn",
 		4: "res://scenes/map_scenes/IT_catacombs.tscn",
