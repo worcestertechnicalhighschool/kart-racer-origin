@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://c07v2b2pmb6fe"]
+
+[ext_resource type="Script" path="res://scripts/tracks/track_manager.gd" id="1_u2de7"]
+
+[node name="TrackManager" type="Node3D"]
+script = ExtResource("1_u2de7")
+
+[node name="AldenAcademy" type="Node3D" parent="."]
+
+[node name="SteamyScrapyard" type="Node3D" parent="AldenAcademy"]
+
+[node name="GarishGarage" type="Node3D" parent="AldenAcademy"]
+
+[node name="BlueprintBuilding" type="Node3D" parent="AldenAcademy"]
+
+[node name="TitanicWorkbench" type="Node3D" parent="AldenAcademy"]
+
+[node name="MoltenCastle" type="Node3D" parent="AldenAcademy"]
+
+[node name="HealthServices" type="Node3D" parent="."]
+
+[node name="HappyHealthHospital" type="Node3D" parent="HealthServices"]
+
+[node name="PetriPlatoon" type="Node3D" parent="HealthServices"]
+
+[node name="SparklingBeach" type="Node3D" parent="HealthServices"]
+
+[node name="AnimalSanctuary" type="Node3D" parent="HealthServices"]
+
+[node name="Daycare" type="Node3D" parent="HealthServices"]
+
+[node name="CoughlinConstruction" type="Node3D" parent="."]
+
+[node name="SawdustValley" type="Node3D" parent="CoughlinConstruction"]
+
+[node name="DischargeCircuit" type="Node3D" parent="CoughlinConstruction"]
+
+[node name="HotColdWasteland" type="Node3D" parent="CoughlinConstruction"]
+
+[node name="GraffitiSubway" type="Node3D" parent="CoughlinConstruction"]
+
+[node name="HydraulicDam" type="Node3D" parent="CoughlinConstruction"]
+
+[node name="IT&Business" type="Node3D" parent="."]
+
+[node name="CometKitchen" type="Node3D" parent="IT&Business"]
+
+[node name="PropagandaAvenue" type="Node3D" parent="IT&Business"]
+
+[node name="HorizonHotel" type="Node3D" parent="IT&Business"]
+
+[node name="ITCatacombs" type="Node3D" parent="IT&Business"]
+
+[node name="Graphics" type="Node3D" parent="IT&Business"]
