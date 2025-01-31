@@ -102,7 +102,7 @@ autoplay = true
 bus = &"Music"
 
 [node name="StartLine" type="RigidBody3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, -0.0470018, 0.998895, -2.05452e-09, -0.998895, -0.0470018, -4.36631e-08, 61, -17.842, -4.997)
+transform = Transform3D(-4.34724e-08, -7.42854e-18, 1, -0.0765418, 0.0443546, -3.36415e-09, -0.991583, -0.0034238, -4.35818e-08, 59.9547, 1.88178, -5.43843)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StartLine"]
 transform = Transform3D(8, 0, -1.32455e-08, 0, 1, 0, 2.11928e-07, 0, 0.5, -15.561, 17.1795, -11.5886)

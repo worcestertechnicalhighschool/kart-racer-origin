@@ -25,3 +25,13 @@ func _on_ui_transition_animation_end(is_fade_out) -> void:
 		
 		get_tree().change_scene_to_file("res://scenes/ui_scenes/menus/"+ button_pressed + ".tscn")
 		
+
+func get_active_device() -> String:
+	var joypads = Input.get_connected_joypads()
+	for id in joypads:
+		var name = Input.get_joy_name(id).to_lower()
+		if "wheel" in name or "logitech" in name or "g920" in name:
+			return "wheel"
+		elif "xbox" in name or "microsoft" in name:
+			return "xbox"
+	return "unknown"

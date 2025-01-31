@@ -1,0 +1,208 @@
+newmtl a_boad
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka a_boad.png
+map_Kd a_boad.png
+map_d a_boad.png
+newmtl b_glass
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka b_glass.png
+map_Kd b_glass.png
+map_d b_glass.png
+newmtl pin_DASHJ
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_DASHJ.png
+map_Kd pin_DASHJ.png
+map_d pin_DASHJ.png
+newmtl pin_WarpLine
+Ka 0 0 0
+Kd 0.7843137 0.7843137 0.7843137
+d 1
+Tr 1
+map_Ka pin_WarpLine.png
+map_Kd pin_WarpLine.png
+map_d pin_WarpLine.png
+newmtl pin_WarpMain
+Ka 0 0 0
+Kd 0.8470588 0.8470588 0.5960785
+d 1
+Tr 1
+map_Ka pin_WarpMain.png
+map_Kd pin_WarpMain.png
+map_d pin_WarpMain.png
+newmtl pin_ami1
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_ami1.png
+map_Kd pin_ami1.png
+map_d pin_ami1.png
+newmtl pin_arrow1
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_arrow1.png
+map_Kd pin_arrow1.png
+map_d pin_arrow1.png
+newmtl pin_cannon1
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_cannon1.png
+map_Kd pin_cannon1.png
+map_d pin_cannon1.png
+newmtl pin_center1
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_center1.png
+map_Kd pin_center1.png
+map_d pin_center1.png
+newmtl pin_cover1
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_cover1.png
+map_Kd pin_cover1.png
+map_d pin_cover1.png
+newmtl pin_flag1
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_flag1.png
+map_Kd pin_flag1.png
+map_d pin_flag1.png
+newmtl pin_jump1
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_jump1.png
+map_Kd pin_jump1.png
+map_d pin_jump1.png
+newmtl pin_kabe3
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_kabe3.png
+map_Kd pin_kabe3.png
+map_d pin_kabe3.png
+newmtl pin_kanban1
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_kanban1.png
+map_Kd pin_kanban1.png
+map_d pin_kanban1.png
+newmtl pin_kanban2
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_kanban2.png
+map_Kd pin_kanban2.png
+map_d pin_kanban2.png
+newmtl pin_okujo1
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_okujo1.png
+map_Kd pin_okujo1.png
+map_d pin_okujo1.png
+newmtl pin_rail1
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_rail1.png
+map_Kd pin_rail1.png
+map_d pin_rail1.png
+newmtl pin_road2
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_road2.png
+map_Kd pin_road2.png
+map_d pin_road2.png
+newmtl pin_road3
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_road3.png
+map_Kd pin_road3.png
+map_d pin_road3.png
+newmtl pin_road4
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_road4.png
+map_Kd pin_road4.png
+map_d pin_road4.png
+newmtl pin_search1
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_search1.png
+map_Kd pin_search1.png
+map_d pin_search1.png
+newmtl pin_tenjo1
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_tenjo1.png
+map_Kd pin_tenjo1.png
+map_d pin_tenjo1.png
+newmtl pin_tesuri1
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_tesuri1.png
+map_Kd pin_tesuri1.png
+map_d pin_tesuri1.png
+newmtl pin_tetsu1
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_tetsu1.png
+map_Kd pin_tetsu1.png
+map_d pin_tetsu1.png
+newmtl pin_yuka1
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_yuka1.png
+map_Kd pin_yuka1.png
+map_d pin_yuka1.png
+newmtl waluigi_pnl1
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka waluigi_pnl1.png
+map_Kd waluigi_pnl1.png
+map_d waluigi_pnl1.png

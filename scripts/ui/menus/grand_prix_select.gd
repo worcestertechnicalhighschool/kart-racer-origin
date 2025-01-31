@@ -11,6 +11,10 @@ func _trigger_animation(button):
 	$AudioStreamPlayer.stop()
 	$UITransition._fade_out()
 
+
+func _on_alden_academy_cup_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/map_scenes/blender_track_1.tscn")
+
 func _on_go_back_pressed() -> void:
 	_trigger_animation("main_menu")
 

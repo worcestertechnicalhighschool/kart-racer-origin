@@ -8,6 +8,7 @@ extends VehicleBody3D
 @onready var ui = $Ui
 @onready var pause_menu = $PauseMenu
 @onready var debug_menu = $DebugMenu
+@onready var transition_screen = $TrackTransition
 
 @export var INVENTORY = ["", ""]
 @export var MAX_STEER = 0.9
@@ -32,6 +33,7 @@ func _ready() -> void:
 	ui.visible = true
 	pause_menu.visible = false
 	debug_menu.visible = false
+	#transition_screen.visibile = false
 
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	

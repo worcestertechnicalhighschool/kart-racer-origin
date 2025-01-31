@@ -22,12 +22,13 @@ color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 54.0
-offset_top = 291.0
-offset_right = 1249.0
-offset_bottom = 379.0
+anchor_left = 0.0421875
+anchor_top = 0.404167
+anchor_right = 0.975781
+anchor_bottom = 0.526389
 theme_override_font_sizes/font_size = 64
 text = "TRACK TRANSITON SCREEN GOES HERE"
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

@@ -1,0 +1,8 @@
+newmtl pin_sky1
+Ka 0 0 0
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka pin_sky1.png
+map_Kd pin_sky1.png
+map_d pin_sky1.png
