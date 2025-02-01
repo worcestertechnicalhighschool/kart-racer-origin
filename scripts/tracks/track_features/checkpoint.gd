@@ -31,5 +31,5 @@ func _on_body_entered(body: Node3D) -> void:
 				cars_entered.append(body)
 			body.get_node("Ui").get_node("Lap").text = "Lap " + str(lap) + "/" + str(MAX_LAP)
 			if lap > MAX_LAP:
-				call_deferred("queue_free", get_tree().change_scene_to_file("res://scenes/ui_scenes/transitions/track_transition.tscn"))
+				get_tree().call_deferred("change_scene_to_file", "res://scenes/ui_scenes/transitions/track_transition.tscn")
 		
