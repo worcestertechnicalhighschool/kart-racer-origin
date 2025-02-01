@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dl2y7kvmb7gtc"
+path="res://.godot/imported/Waluigi_Pinball.obj-99e93045df80adf814b0d5f4e170099d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Waluigi_Pinball.obj-99e93045df80adf814b0d5f4e170099d.mesh"]
+
+source_file="res://scenes/map_scenes/Waluigi_Pinball/Waluigi_Pinball.obj"
+dest_files=["res://.godot/imported/Waluigi_Pinball.obj-99e93045df80adf814b0d5f4e170099d.mesh", "res://.godot/imported/Waluigi_Pinball.obj-99e93045df80adf814b0d5f4e170099d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
