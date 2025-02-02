@@ -1,8 +1,5 @@
 extends "res://scripts/items/trip.gd"
 
-func _process(_delta: float) -> void:
-	if $"Area3D".USES <= 0:
-		queue_free()
-		
-	if linear_velocity.y == 0:
+func _on_slip_body_entered(body: Node3D) -> void:
+	if body != self:
 		freeze = true

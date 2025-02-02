@@ -1,35 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://dob407hm53o7m"]
+[gd_scene load_steps=5 format=3 uid="uid://dob407hm53o7m"]
 
-[ext_resource type="Script" path="res://scripts/track_features/slip.gd" id="1_cytvf"]
 [ext_resource type="Script" path="res://scripts/items/banana.gd" id="1_tfepi"]
+[ext_resource type="PackedScene" uid="uid://crbasqb4b0pd1" path="res://scenes/object_scenes/track_features/slip.tscn" id="2_fpc6q"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_flnwm"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cvpn0"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tos2y"]
 points = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_jqk8d"]
 
 [node name="Banana" type="RigidBody3D"]
 script = ExtResource("1_tfepi")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.8, 0, 0, 0, 0.7, 0, 0, 0, 0.8, 0, 0, 0)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 mesh = SubResource("PrismMesh_flnwm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.8, 0, 0, 0, 0.7, 0, 0, 0, 0.8, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_cvpn0")
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_tos2y")
 
-[node name="Area3D" type="Area3D" parent="."]
-script = ExtResource("1_cytvf")
+[node name="Slip" parent="." instance=ExtResource("2_fpc6q")]
 
-[node name="Timer" type="Timer" parent="Area3D"]
-wait_time = 2.0
-one_shot = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("BoxShape3D_jqk8d")
-
-[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
-[connection signal="timeout" from="Area3D/Timer" to="Area3D" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Slip" to="." method="_on_slip_body_entered"]

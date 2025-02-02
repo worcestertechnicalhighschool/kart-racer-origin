@@ -35,7 +35,7 @@ func _ready() -> void:
 	debug_menu.visible = false
 	#transition_screen.visibile = false
 
-func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
+func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 	
 	ENGINE_POWER = 500
 	MAX_SPEED = 50
