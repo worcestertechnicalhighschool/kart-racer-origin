@@ -15,19 +15,9 @@ func _process(_delta: float) -> void:
 		if instance:
 			var thrown_objects = car.find_child("ThrownObjects")
 			
-			if not instance.CUSTOM_ANIMATION:
-				var car_lin_vel = car.linear_velocity
-				var throw_direction
-				
-				if instance.THROWN_FORWARD:
-					throw_direction = 2
-				else:
-					throw_direction = -2
-				
-				instance.position = Vector3(thrown_objects.position.x, thrown_objects.position.y + 1, thrown_objects.position.z)
-				instance.linear_velocity = Vector3(car_lin_vel.x * throw_direction, 3, car_lin_vel.z * throw_direction)
-			
 			thrown_objects.add_child(instance)
+			
+			instance.get_node("Properties").get_node("Animation")._play()
 		
 		car.INVENTORY[0] = car.INVENTORY[1]
 		car.INVENTORY[1] = ""
