@@ -32,9 +32,6 @@ func _process(_delta: float) -> void:
 	if not tween_playing:
 		tween_playing = true
 		
-		front_camera_parent = car.find_child("Cameras")
-		front_camera = front_camera_parent.find_child("FrontCamera")
-		
 		car.get_node("CameraComponent")._camera_out()
 		
 		$AnimationTimer.start()
