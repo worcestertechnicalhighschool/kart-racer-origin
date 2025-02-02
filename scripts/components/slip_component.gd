@@ -1,6 +1,7 @@
 extends Area3D
 
-@export var USES = 1
+@export var USES_COMPONENT: UsesComponent
+
 @onready var duration_timer = $DurationTimer
 
 var car
@@ -8,10 +9,6 @@ var original = []
 var original_rotation
 var original_position
 var car_parts
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	if USES == 0:
-		queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -31,7 +28,6 @@ func _process(_delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is VehicleBody3D and duration_timer.is_stopped():
-		USES -= 1
 		car = body
 		car_parts = body.get_children()
 		for node in car_parts:
@@ -47,6 +43,9 @@ func _on_body_entered(body: Node3D) -> void:
 		body.linear_velocity.x = body.linear_velocity.x/5
 		body.linear_velocity.z = body.linear_velocity.z/5
 		body.angular_velocity.y = 10
+		
+		$"../MeshInstance3D".queue_free()
+		
 		duration_timer.start()
 
 func _on_duration_timer_timeout() -> void:
@@ -63,6 +62,6 @@ func _on_duration_timer_timeout() -> void:
 			node.transparency = 0
 		if node is VehicleWheel3D:
 			node.get_child(0).transparency = 0
-	
-	if USES <= 0:
-		$"..".queue_free()
+			
+			
+	USES_COMPONENT._change_uses(-1)

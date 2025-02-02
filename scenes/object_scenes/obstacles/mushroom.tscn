@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dojfn07gt2s6o"]
+[gd_scene load_steps=9 format=3 uid="uid://dojfn07gt2s6o"]
 
 [ext_resource type="Script" path="res://scripts/items/mushroom.gd" id="1_i3eyu"]
+[ext_resource type="PackedScene" uid="uid://bn45qyoapv8hv" path="res://scenes/components/custom_animation_component.tscn" id="2_15osn"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_omqy3"]
 
@@ -59,8 +60,6 @@ transform = Transform3D(0.7, 0, 0, 0, 0.395979, 0, 0, 0, 0.7, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_omqy3")
 surface_material_override/0 = SubResource("StandardMaterial3D_be2xb")
 
-[node name="AnimationTimer" type="Timer" parent="."]
-
 [node name="MeshInstance3D2" type="CSGSphere3D" parent="."]
 transform = Transform3D(1.3, 0, 0, 0, 1.134, 0, 0, 0, 1.3, 0, 0.181191, 0)
 material = SubResource("StandardMaterial3D_qx1ah")
@@ -76,11 +75,4 @@ libraries = {
 }
 autoplay = "rotation"
 
-[node name="CameraTimer" type="Timer" parent="."]
-wait_time = 2.5
-
-[node name="DestroyTimer" type="Timer" parent="."]
-
-[connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]
-[connection signal="timeout" from="CameraTimer" to="." method="_on_camera_timer_timeout"]
-[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]
+[node name="AnimationComponent" parent="." instance=ExtResource("2_15osn")]

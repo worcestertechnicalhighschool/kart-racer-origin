@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://2ust0fyw1ss2"]
-
-[ext_resource type="Script" path="res://scripts/properties/basic_animation.gd" id="1_dpt0h"]
-
-[node name="Animation" type="Node3D"]
-script = ExtResource("1_dpt0h")

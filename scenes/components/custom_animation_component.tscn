@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bn45qyoapv8hv"]
+
+[ext_resource type="Script" path="res://scripts/components/custom_animation_component.gd" id="1_mgow4"]
+
+[node name="AnimationComponent" type="Node3D"]
+script = ExtResource("1_mgow4")
+
+[node name="AnimationTimer" type="Timer" parent="."]
+
+[node name="CameraTimer" type="Timer" parent="."]
+wait_time = 2.5
+
+[node name="DestroyTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]
+[connection signal="timeout" from="CameraTimer" to="." method="_on_camera_timer_timeout"]
+[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]

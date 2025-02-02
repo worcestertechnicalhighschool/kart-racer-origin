@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/items/trip.gd" id="1_ed5h2"]
 [ext_resource type="AudioStream" uid="uid://dq7qgvxb078ay" path="res://assets/sounds/sfx/sfx_shell.mp3" id="2_1ghyg"]
-[ext_resource type="PackedScene" uid="uid://2ust0fyw1ss2" path="res://scenes/properties/basic_animation.tscn" id="3_iqw1t"]
-[ext_resource type="PackedScene" uid="uid://c00v5wh6hm7qt" path="res://scenes/properties/uses.tscn" id="4_mke2n"]
+[ext_resource type="PackedScene" uid="uid://2ust0fyw1ss2" path="res://scenes/components/basic_animation_component.tscn" id="3_iqw1t"]
+[ext_resource type="PackedScene" uid="uid://c00v5wh6hm7qt" path="res://scenes/components/uses_component.tscn" id="4_mke2n"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_omqy3"]
 
@@ -44,10 +44,8 @@ shape = SubResource("CapsuleShape3D_4xkdj")
 stream = ExtResource("2_1ghyg")
 autoplay = true
 
-[node name="Properties" type="Node3D" parent="."]
+[node name="AnimationComponent" parent="." instance=ExtResource("3_iqw1t")]
 
-[node name="Animation" parent="Properties" instance=ExtResource("3_iqw1t")]
-
-[node name="Uses" parent="Properties" instance=ExtResource("4_mke2n")]
+[node name="UsesComponent" parent="." instance=ExtResource("4_mke2n")]
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

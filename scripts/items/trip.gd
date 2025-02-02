@@ -14,4 +14,4 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		body.linear_velocity.x = 0
 		body.linear_velocity.y += 10
 		
-		$"Properties/Uses".USES -= 1
+		$"UsesComponent"._change_uses(-1)

@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://crbasqb4b0pd1"]
 
-[ext_resource type="Script" path="res://scripts/tracks/track_features/slip.gd" id="1_1m1my"]
+[ext_resource type="Script" path="res://scripts/components/slip_component.gd" id="1_1m1my"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7po4x"]
 
-[node name="Slip" type="Area3D"]
+[node name="SlipComponent" type="Area3D"]
 script = ExtResource("1_1m1my")
 
 [node name="DurationTimer" type="Timer" parent="."]

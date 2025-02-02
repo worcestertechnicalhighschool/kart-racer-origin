@@ -2,7 +2,7 @@ extends Node3D
 
 @export var THROWN_FORWARD = true
 
-@onready var instance = get_parent().get_parent()
+@onready var instance = get_parent()
 @onready var thrown_objects = instance.get_parent()
 @onready var car = thrown_objects.get_parent()
 

@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dob407hm53o7m"]
+[gd_scene load_steps=7 format=3 uid="uid://dob407hm53o7m"]
 
 [ext_resource type="Script" path="res://scripts/items/banana.gd" id="1_tfepi"]
-[ext_resource type="PackedScene" uid="uid://crbasqb4b0pd1" path="res://scenes/object_scenes/track_features/slip.tscn" id="2_fpc6q"]
+[ext_resource type="PackedScene" uid="uid://crbasqb4b0pd1" path="res://scenes/components/slip_component.tscn" id="2_fpc6q"]
+[ext_resource type="PackedScene" uid="uid://c00v5wh6hm7qt" path="res://scenes/components/uses_component.tscn" id="3_2gsjf"]
+[ext_resource type="PackedScene" uid="uid://2ust0fyw1ss2" path="res://scenes/components/basic_animation_component.tscn" id="4_k4x24"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_flnwm"]
 
@@ -19,6 +21,11 @@ mesh = SubResource("PrismMesh_flnwm")
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_tos2y")
 
-[node name="Slip" parent="." instance=ExtResource("2_fpc6q")]
+[node name="SlipComponent" parent="." node_paths=PackedStringArray("USES_COMPONENT") instance=ExtResource("2_fpc6q")]
+USES_COMPONENT = NodePath("../UsesComponent")
 
-[connection signal="body_entered" from="Slip" to="." method="_on_slip_body_entered"]
+[node name="UsesComponent" parent="." instance=ExtResource("3_2gsjf")]
+
+[node name="AnimationComponent" parent="." instance=ExtResource("4_k4x24")]
+
+[connection signal="body_entered" from="SlipComponent" to="." method="_on_slip_body_entered"]

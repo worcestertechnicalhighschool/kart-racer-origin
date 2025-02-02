@@ -17,7 +17,7 @@ func _process(_delta: float) -> void:
 			
 			thrown_objects.add_child(instance)
 			
-			instance.get_node("Properties").get_node("Animation")._play()
+			instance.get_node("AnimationComponent")._play()
 		
 		car.INVENTORY[0] = car.INVENTORY[1]
 		car.INVENTORY[1] = ""

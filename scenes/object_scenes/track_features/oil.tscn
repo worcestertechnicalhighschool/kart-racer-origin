@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ch4lqpmxsj08h"]
+[gd_scene load_steps=5 format=3 uid="uid://ch4lqpmxsj08h"]
 
-[ext_resource type="PackedScene" uid="uid://crbasqb4b0pd1" path="res://scenes/object_scenes/track_features/slip.tscn" id="1_e47q5"]
+[ext_resource type="PackedScene" uid="uid://crbasqb4b0pd1" path="res://scenes/components/slip_component.tscn" id="1_e47q5"]
+[ext_resource type="PackedScene" uid="uid://c00v5wh6hm7qt" path="res://scenes/components/uses_component.tscn" id="2_ij65k"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_jv8wa"]
 
@@ -10,9 +11,12 @@ metallic = 1.0
 
 [node name="Oil" type="StaticBody3D"]
 
-[node name="Slip" parent="." instance=ExtResource("1_e47q5")]
+[node name="SlipComponent" parent="." node_paths=PackedStringArray("USES_COMPONENT") instance=ExtResource("1_e47q5")]
+USES_COMPONENT = NodePath("../UsesComponent")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.01, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_jv8wa")
 surface_material_override/0 = SubResource("StandardMaterial3D_h3jb0")
+
+[node name="UsesComponent" parent="." instance=ExtResource("2_ij65k")]
