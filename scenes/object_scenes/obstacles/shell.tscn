@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7a4gqd1y421i"]
+[gd_scene load_steps=10 format=3 uid="uid://c7a4gqd1y421i"]
 
 [ext_resource type="Script" path="res://scripts/items/trip.gd" id="1_ed5h2"]
 [ext_resource type="AudioStream" uid="uid://dq7qgvxb078ay" path="res://assets/sounds/sfx/sfx_shell.mp3" id="2_1ghyg"]
 [ext_resource type="PackedScene" uid="uid://2ust0fyw1ss2" path="res://scenes/components/basic_animation_component.tscn" id="3_iqw1t"]
 [ext_resource type="PackedScene" uid="uid://c00v5wh6hm7qt" path="res://scenes/components/uses_component.tscn" id="4_mke2n"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fkeo5"]
+friction = 0.0
+absorbent = true
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_omqy3"]
 
@@ -18,6 +22,7 @@ albedo_color = Color(0.112011, 0.455738, 0.0874185, 1)
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_fkeo5")
 script = ExtResource("1_ed5h2")
 metadata/_edit_group_ = true
 

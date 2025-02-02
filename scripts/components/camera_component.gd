@@ -16,7 +16,7 @@ func _camera_out() -> void:
 		center_of_mass_rotation_tween.tween_property(
 			C_O_M, "rotation_degrees", Vector3(10, 0, 0), 0.3
 		)
-		car.ZOOM_DURATION += 2.5
+	car.ZOOM_DURATION += 2.5
 
 func _camera_in() -> void:
 	car.ZOOM_DURATION -= 2.5
