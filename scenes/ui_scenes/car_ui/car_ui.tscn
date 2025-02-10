@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmwh6n8gr4wvd"]
+[gd_scene load_steps=9 format=3 uid="uid://bmwh6n8gr4wvd"]
 
 [ext_resource type="Script" path="res://scripts/ui/car_ui/car_ui.gd" id="1_bp4j0"]
 [ext_resource type="Script" path="res://scripts/ui/car_ui/fps.gd" id="2_adh1s"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://scripts/ui/car_ui/steering.gd" id="4_grrjn"]
 [ext_resource type="Script" path="res://scripts/ui/car_ui/velocity.gd" id="4_t7fv5"]
 [ext_resource type="PackedScene" uid="uid://46f5221jq06n" path="res://scenes/ui_scenes/car_ui/inventory.tscn" id="5_svgju"]
+[ext_resource type="Texture2D" uid="uid://bchrb3dcb0wh0" path="res://assets/images/minimaps/curve_test.png" id="6_ih1k4"]
+[ext_resource type="Script" path="res://scripts/ui/car_ui/map.gd" id="7_l4gqw"]
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -64,20 +66,6 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 32
 script = ExtResource("2_adh1s")
 
-[node name="Rotation" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0046875
-anchor_top = 0.776389
-anchor_right = 0.220313
-anchor_bottom = 0.838889
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 32
-text = "
-"
-script = ExtResource("3_nj7bc")
-metadata/_edit_use_anchors_ = true
-
 [node name="Steering" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -90,6 +78,20 @@ theme_override_font_sizes/font_size = 32
 text = "
 "
 script = ExtResource("4_grrjn")
+metadata/_edit_use_anchors_ = true
+
+[node name="Rotation" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0046875
+anchor_top = 0.776389
+anchor_right = 0.220313
+anchor_bottom = 0.838889
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "
+"
+script = ExtResource("3_nj7bc")
 metadata/_edit_use_anchors_ = true
 
 [node name="Velocity" type="Label" parent="."]
@@ -108,19 +110,13 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="Map" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -109.0
-offset_top = -45.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 32
-text = "Map"
+[node name="Map" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1076, 561)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("6_ih1k4")
+script = ExtResource("7_l4gqw")
+metadata/_edit_use_anchors_ = true
 
 [node name="Inventory" parent="." instance=ExtResource("5_svgju")]
 layout_mode = 0

@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csautmtkxgeb"
-path.s3tc="res://.godot/imported/pin_road3.png-d58bd0325103e6f8f0c597ebbf303337.s3tc.ctex"
+uid="uid://bchrb3dcb0wh0"
+path="res://.godot/imported/curve_test.png-5967bebbddd6e6e74c033227450d7dc6.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/map_scenes/Waluigi_Pinball/pin_road3.png"
-dest_files=["res://.godot/imported/pin_road3.png-d58bd0325103e6f8f0c597ebbf303337.s3tc.ctex"]
+source_file="res://assets/images/minimaps/curve_test.png"
+dest_files=["res://.godot/imported/curve_test.png-5967bebbddd6e6e74c033227450d7dc6.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

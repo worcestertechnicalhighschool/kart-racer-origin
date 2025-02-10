@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1msd562kpqvj"
-path.s3tc="res://.godot/imported/b_glass.png-1f92cbc087901ed22def3a8cd076fb3d.s3tc.ctex"
+uid="uid://o8otc2vy1kv2"
+path.s3tc="res://.godot/imported/boostpad.png-68d68d1e5df4a50dba2db52c378d63f3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/map_scenes/Waluigi_Pinball/b_glass.png"
-dest_files=["res://.godot/imported/b_glass.png-1f92cbc087901ed22def3a8cd076fb3d.s3tc.ctex"]
+source_file="res://assets/images/textures/boostpad.png"
+dest_files=["res://.godot/imported/boostpad.png-68d68d1e5df4a50dba2db52c378d63f3.s3tc.ctex"]
 
 [params]
 
