@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://ch4lqpmxsj08h"]
+
+[ext_resource type="Script" path="res://scripts/components/uses_component.gd" id="2_0jq8u"]
+[ext_resource type="Script" path="res://scripts/components/slip_component.gd" id="2_bglc7"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jv8wa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h3jb0"]
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wyleg"]
+
+[node name="Oil" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.01, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_jv8wa")
+surface_material_override/0 = SubResource("StandardMaterial3D_h3jb0")
+
+[node name="SlipComponent" type="Area3D" parent="." node_paths=PackedStringArray("USES_COMPONENT", "DURATION_TIMER")]
+script = ExtResource("2_bglc7")
+USES_COMPONENT = NodePath("../UsesComponent")
+DURATION_TIMER = NodePath("DurationTimer")
+
+[node name="DurationTimer" type="Timer" parent="SlipComponent"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SlipComponent"]
+shape = SubResource("BoxShape3D_wyleg")
+
+[node name="UsesComponent" type="Node3D" parent="."]
+script = ExtResource("2_0jq8u")
+
+[connection signal="body_entered" from="SlipComponent" to="SlipComponent" method="_on_body_entered"]
+[connection signal="timeout" from="SlipComponent/DurationTimer" to="SlipComponent" method="_on_duration_timer_timeout"]

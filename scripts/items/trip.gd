@@ -1,7 +1,4 @@
 extends RigidBody3D
-@export var ONE_USE = true
-@export var THROWN_FORWARD = true
-@export var CUSTOM_ANIMATION = false
 
 var hit = false
 var cars_collided = []
@@ -16,7 +13,5 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		body.linear_velocity.z = 0
 		body.linear_velocity.x = 0
 		body.linear_velocity.y += 10
-		if ONE_USE:
-			queue_free()
-		else:
-			pass
+		
+		$UsesComponent._change_uses(-1)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://crbasqb4b0pd1"]
+
+[ext_resource type="Script" path="res://scripts/components/slip_component.gd" id="1_1m1my"]
+
+[node name="SlipComponent" type="Area3D"]
+script = ExtResource("1_1m1my")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

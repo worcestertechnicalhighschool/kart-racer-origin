@@ -1,4 +1,5 @@
-extends "res://scripts/items/trip.gd"
+extends RigidBody3D
+
 @export var FUSE = 2
 @export var LINGER = 1
 

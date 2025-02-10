@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dojfn07gt2s6o"]
 
-[ext_resource type="Script" path="res://scripts/items/mushroom.gd" id="1_i3eyu"]
+[ext_resource type="Script" path="res://scripts/components/custom_animation_component.gd" id="1_yn3q6"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_omqy3"]
 
@@ -51,15 +51,12 @@ _data = {
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
-script = ExtResource("1_i3eyu")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.7, 0, 0, 0, 0.395979, 0, 0, 0, 0.7, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_omqy3")
 surface_material_override/0 = SubResource("StandardMaterial3D_be2xb")
-
-[node name="AnimationTimer" type="Timer" parent="."]
 
 [node name="MeshInstance3D2" type="CSGSphere3D" parent="."]
 transform = Transform3D(1.3, 0, 0, 0, 1.134, 0, 0, 0, 1.3, 0, 0.181191, 0)
@@ -76,11 +73,20 @@ libraries = {
 }
 autoplay = "rotation"
 
-[node name="CameraTimer" type="Timer" parent="."]
+[node name="AnimationComponent" type="Node3D" parent="." node_paths=PackedStringArray("PARENT", "ANIMATION_TIMER", "DESTROY_TIMER", "CAMERA_TIMER")]
+script = ExtResource("1_yn3q6")
+PARENT = NodePath("..")
+ANIMATION_TIMER = NodePath("AnimationTimer")
+DESTROY_TIMER = NodePath("DestroyTimer")
+CAMERA_TIMER = NodePath("CameraTimer")
+
+[node name="CameraTimer" type="Timer" parent="AnimationComponent"]
 wait_time = 2.5
 
-[node name="DestroyTimer" type="Timer" parent="."]
+[node name="DestroyTimer" type="Timer" parent="AnimationComponent"]
 
-[connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]
-[connection signal="timeout" from="CameraTimer" to="." method="_on_camera_timer_timeout"]
-[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]
+[node name="AnimationTimer" type="Timer" parent="AnimationComponent"]
+
+[connection signal="timeout" from="AnimationComponent/CameraTimer" to="AnimationComponent" method="_on_camera_timer_timeout"]
+[connection signal="timeout" from="AnimationComponent/DestroyTimer" to="AnimationComponent" method="_on_destroy_timer_timeout"]
+[connection signal="timeout" from="AnimationComponent/AnimationTimer" to="AnimationComponent" method="_on_animation_timer_timeout"]

@@ -1,7 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7a4gqd1y421i"]
+[gd_scene load_steps=10 format=3 uid="uid://c7a4gqd1y421i"]
 
 [ext_resource type="Script" path="res://scripts/items/trip.gd" id="1_ed5h2"]
 [ext_resource type="AudioStream" uid="uid://dq7qgvxb078ay" path="res://assets/sounds/sfx/sfx_shell.mp3" id="2_1ghyg"]
+[ext_resource type="Script" path="res://scripts/components/basic_animation_component.gd" id="3_ilb4b"]
+[ext_resource type="Script" path="res://scripts/components/uses_component.gd" id="4_rxusm"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fkeo5"]
+friction = 0.0
+absorbent = true
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_omqy3"]
 
@@ -12,10 +18,11 @@ albedo_color = Color(0.112011, 0.455738, 0.0874185, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4xkdj"]
 
-[node name="shell" type="RigidBody3D"]
+[node name="Shell" type="RigidBody3D"]
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_fkeo5")
 script = ExtResource("1_ed5h2")
 metadata/_edit_group_ = true
 
@@ -41,5 +48,11 @@ shape = SubResource("CapsuleShape3D_4xkdj")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_1ghyg")
 autoplay = true
+
+[node name="AnimationComponent" type="Node3D" parent="."]
+script = ExtResource("3_ilb4b")
+
+[node name="UsesComponent" type="Node3D" parent="."]
+script = ExtResource("4_rxusm")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
