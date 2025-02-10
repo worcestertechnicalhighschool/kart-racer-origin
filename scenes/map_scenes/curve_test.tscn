@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://reojy8we20ey"]
+[gd_scene load_steps=20 format=3 uid="uid://reojy8we20ey"]
 
 [ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_tl23f"]
 [ext_resource type="Texture2D" uid="uid://bv8udm5cmjk8d" path="res://assets/images/textures/roadtexture.jpg" id="2_i1x80"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bl7yp56hkp8e6" path="res://scenes/object_scenes/track_features/item_box.tscn" id="6_ca5mw"]
 [ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/track_features/death_box.tscn" id="6_utm8d"]
 [ext_resource type="PackedScene" uid="uid://carm88pw5xfdy" path="res://scenes/object_scenes/track_features/boost_pad.tscn" id="7_xo5dg"]
+[ext_resource type="PackedScene" uid="uid://bhpavrrckl1xp" path="res://scenes/mini_map.tscn" id="9_slcsj"]
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car/car.tscn" id="9_vnf50"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tl4ks"]
@@ -52,6 +53,7 @@ environment = SubResource("Environment_hb0ru")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
 transform = Transform3D(-0.623942, -0.257956, 0.737669, 0.510544, 0.5801, 0.634688, -0.591643, 0.772621, -0.230251, 82.7543, 107.965, 208.016)
 shadow_enabled = true
+shadow_opacity = 0.7
 
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
@@ -227,3 +229,9 @@ bus = &"Music"
 
 [node name="Car" parent="." instance=ExtResource("9_vnf50")]
 transform = Transform3D(-0.970393, 0, -0.241532, 0, 1, 0, 0.241532, 0, -0.970393, 354.467, 18.9063, 291.27)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MiniMap" parent="CanvasLayer" instance=ExtResource("9_slcsj")]
+target = NodePath("../../Car")
+camera_distance = 200.0
