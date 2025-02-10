@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://carm88pw5xfdy"]
 
 [ext_resource type="Script" path="res://scripts/tracks/track_features/boost_pad.gd" id="1_n66xy"]
-[ext_resource type="Texture2D" uid="uid://brmyh0s57mfgj" path="res://scenes/map_scenes/Waluigi_Pinball/pin_DASHJ.png" id="2_axxl4"]
+[ext_resource type="Texture2D" uid="uid://o8otc2vy1kv2" path="res://assets/images/textures/boostpad.png" id="2_r7ie1"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kk1cd"]
-albedo_texture = ExtResource("2_axxl4")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wrqmb"]
+albedo_texture = ExtResource("2_r7ie1")
 
 [sub_resource type="BoxMesh" id="BoxMesh_qa0bn"]
 
@@ -16,7 +16,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="CSGMesh3D" parent="."]
 transform = Transform3D(22.4, 0, 0, 0, 0.141, 0, 0, 0, 12, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_kk1cd")
+material_override = SubResource("StandardMaterial3D_wrqmb")
 mesh = SubResource("BoxMesh_qa0bn")
 
 [node name="Area3D" type="Area3D" parent="."]

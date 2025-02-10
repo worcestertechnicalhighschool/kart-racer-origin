@@ -84,6 +84,7 @@ text = "Donut Test"
 metadata/_edit_use_anchors_ = true
 
 [node name="SteamyScrapyard" type="TextureRect" parent="."]
+visible = false
 visibility_layer = 2
 layout_mode = 1
 anchors_preset = -1
@@ -113,6 +114,7 @@ autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="SparklingBeach" type="TextureRect" parent="."]
+visible = false
 visibility_layer = 2
 layout_mode = 1
 anchors_preset = -1
