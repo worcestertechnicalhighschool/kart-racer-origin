@@ -1,4 +1,5 @@
 extends Node3D
+class_name CameraComponent
 
 @export var CAMERA: Camera3D
 @export var C_O_M: Node3D

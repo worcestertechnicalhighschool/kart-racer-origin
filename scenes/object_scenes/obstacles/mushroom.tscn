@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://dojfn07gt2s6o"]
+[gd_scene load_steps=8 format=3 uid="uid://dojfn07gt2s6o"]
 
-[ext_resource type="Script" path="res://scripts/items/mushroom.gd" id="1_i3eyu"]
 [ext_resource type="PackedScene" uid="uid://bn45qyoapv8hv" path="res://scenes/components/custom_animation_component.tscn" id="2_15osn"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_omqy3"]
@@ -52,7 +51,6 @@ _data = {
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
-script = ExtResource("1_i3eyu")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -75,4 +73,5 @@ libraries = {
 }
 autoplay = "rotation"
 
-[node name="AnimationComponent" parent="." instance=ExtResource("2_15osn")]
+[node name="AnimationComponent" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("2_15osn")]
+parent = NodePath("..")

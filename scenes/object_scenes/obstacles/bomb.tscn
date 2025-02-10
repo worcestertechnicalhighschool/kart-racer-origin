@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/items/bomb.gd" id="1_f6s3l"]
 [ext_resource type="AudioStream" uid="uid://c1bqc86ug6idl" path="res://assets/sounds/sfx/sfx_bombexplode.mp3" id="2_vqx86"]
-[ext_resource type="PackedScene" uid="uid://2ust0fyw1ss2" path="res://scenes/components/basic_animation_component.tscn" id="3_2kdog"]
+[ext_resource type="Script" path="res://scripts/components/basic_animation_component.gd" id="3_wf4gu"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_so8qk"]
 
@@ -61,7 +61,8 @@ shape = SubResource("SphereShape3D_j1jhg")
 stream = ExtResource("2_vqx86")
 bus = &"SFX"
 
-[node name="AnimationComponent" parent="." instance=ExtResource("3_2kdog")]
+[node name="AnimationComponent" type="Node3D" parent="."]
+script = ExtResource("3_wf4gu")
 THROWN_FORWARD = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,8 +1,9 @@
 extends Area3D
+class_name SlipComponent
 
 @export var USES_COMPONENT: UsesComponent
 
-@onready var duration_timer = $DurationTimer
+@export var DURATION_TIMER: Timer
 
 var car
 var original = []
@@ -12,22 +13,22 @@ var car_parts
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if duration_timer.time_left > 0:
+	if DURATION_TIMER.time_left > 0:
 		for node in car_parts:
 			if node is MeshInstance3D:
-				if int(fmod(duration_timer.time_left*10,2)) == 1:
+				if int(fmod(DURATION_TIMER.time_left*10,2)) == 1:
 					node.transparency = 0
-				if int(fmod(duration_timer.time_left*10,2)) == 0:
+				if int(fmod(DURATION_TIMER.time_left*10,2)) == 0:
 					node.transparency = 1
 			if node is VehicleWheel3D:
-				if int(fmod(duration_timer.time_left*10,2)) == 1:
+				if int(fmod(DURATION_TIMER.time_left*10,2)) == 1:
 					node.get_child(0).transparency = 0
-				if int(fmod(duration_timer.time_left*10,2)) == 0:
+				if int(fmod(DURATION_TIMER.time_left*10,2)) == 0:
 					node.get_child(0).transparency = 1
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if body is VehicleBody3D and duration_timer.is_stopped():
+	if body is VehicleBody3D and DURATION_TIMER.is_stopped():
 		car = body
 		car_parts = body.get_children()
 		for node in car_parts:
@@ -46,10 +47,10 @@ func _on_body_entered(body: Node3D) -> void:
 		
 		$"../MeshInstance3D".queue_free()
 		
-		duration_timer.start()
+		DURATION_TIMER.start()
 
 func _on_duration_timer_timeout() -> void:
-	duration_timer.stop()
+	DURATION_TIMER.stop()
 	var i = 0
 	for node in car_parts:
 		if node is VehicleWheel3D:

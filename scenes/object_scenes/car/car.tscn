@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://w3jmg1bwfgof" path="res://assets/images/textures/wheeltexture.jpg" id="2_8sust"]
 [ext_resource type="PackedScene" uid="uid://cu6oq4whbnukt" path="res://scenes/ui_scenes/menus/pause_menu.tscn" id="3_8ffs4"]
 [ext_resource type="PackedScene" uid="uid://ckfukjwbf37mo" path="res://scenes/ui_scenes/menus/debug_menu.tscn" id="5_68m7y"]
-[ext_resource type="PackedScene" uid="uid://c14pwwo7shctp" path="res://scenes/components/camera_component.tscn" id="6_q5vug"]
+[ext_resource type="Script" path="res://scripts/components/camera_component.gd" id="6_ydi5l"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ibdse"]
 
@@ -130,6 +130,7 @@ transform = Transform3D(3.4, 0, 0, 0, 2.1, 0, 0, 0, 4.92, 0, 0, 0)
 visible = false
 mesh = SubResource("SphereMesh_hyrdu")
 
-[node name="CameraComponent" parent="." node_paths=PackedStringArray("CAMERA", "C_O_M") instance=ExtResource("6_q5vug")]
+[node name="CameraComponent" type="Node3D" parent="." node_paths=PackedStringArray("CAMERA", "C_O_M")]
+script = ExtResource("6_ydi5l")
 CAMERA = NodePath("../CenterOfMass/FrontCamera")
 C_O_M = NodePath("../CenterOfMass")

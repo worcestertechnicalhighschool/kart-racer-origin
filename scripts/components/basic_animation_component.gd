@@ -1,4 +1,5 @@
 extends Node3D
+class_name BasicAnimationComponent
 
 @export var THROWN_FORWARD = true
 
