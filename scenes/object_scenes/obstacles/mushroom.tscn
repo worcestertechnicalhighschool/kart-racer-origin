@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dojfn07gt2s6o"]
 
-[ext_resource type="PackedScene" uid="uid://bn45qyoapv8hv" path="res://scenes/components/custom_animation_component.tscn" id="2_15osn"]
+[ext_resource type="Script" path="res://scripts/components/custom_animation_component.gd" id="1_yn3q6"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_omqy3"]
 
@@ -73,5 +73,20 @@ libraries = {
 }
 autoplay = "rotation"
 
-[node name="AnimationComponent" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("2_15osn")]
-parent = NodePath("..")
+[node name="AnimationComponent" type="Node3D" parent="." node_paths=PackedStringArray("PARENT", "ANIMATION_TIMER", "DESTROY_TIMER", "CAMERA_TIMER")]
+script = ExtResource("1_yn3q6")
+PARENT = NodePath("..")
+ANIMATION_TIMER = NodePath("AnimationTimer")
+DESTROY_TIMER = NodePath("DestroyTimer")
+CAMERA_TIMER = NodePath("CameraTimer")
+
+[node name="CameraTimer" type="Timer" parent="AnimationComponent"]
+wait_time = 2.5
+
+[node name="DestroyTimer" type="Timer" parent="AnimationComponent"]
+
+[node name="AnimationTimer" type="Timer" parent="AnimationComponent"]
+
+[connection signal="timeout" from="AnimationComponent/CameraTimer" to="AnimationComponent" method="_on_camera_timer_timeout"]
+[connection signal="timeout" from="AnimationComponent/DestroyTimer" to="AnimationComponent" method="_on_destroy_timer_timeout"]
+[connection signal="timeout" from="AnimationComponent/AnimationTimer" to="AnimationComponent" method="_on_animation_timer_timeout"]

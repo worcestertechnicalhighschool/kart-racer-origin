@@ -6,7 +6,10 @@ class_name CustomAnimationComponent
 @onready var forcefield = $"../../../Forcefield"
 @onready var original_color = forcefield.mesh.material.albedo_color
 
-@export var parent : RigidBody3D
+@export var PARENT : RigidBody3D
+@export var ANIMATION_TIMER: Timer
+@export var DESTROY_TIMER: Timer
+@export var CAMERA_TIMER: Timer
 
 var tween_playing = false
 var front_camera_parent
@@ -24,22 +27,22 @@ func _play() -> void:
 	position_tween_up.set_trans(Tween.TRANS_QUAD)
 	position_tween_up.set_ease(Tween.EASE_IN)
 	position_tween_up.parallel().tween_property(
-		parent, "position", Vector3(thrown_objects.position.x, thrown_objects.position.y + 1.25, thrown_objects.position.z), 0.1
+		PARENT, "position", Vector3(thrown_objects.position.x, thrown_objects.position.y + 1.25, thrown_objects.position.z), 0.1
 	)
 
 func _process(_delta: float) -> void:
-	parent.position = Vector3(thrown_objects.position.x, thrown_objects.position.y + 1.25, thrown_objects.position.z)
+	PARENT.position = Vector3(thrown_objects.position.x, thrown_objects.position.y + 1.25, thrown_objects.position.z)
 	
 	if not tween_playing:
 		tween_playing = true
 		
 		car.get_node("CameraComponent")._camera_out()
 		
-		$AnimationTimer.start()
-		$CameraTimer.start()
+		ANIMATION_TIMER.start()
+		CAMERA_TIMER.start()
 
 func _visibility():
-	parent.visible = false
+	PARENT.visible = false
 	
 func _reset():
 	forcefield.mesh.material.albedo_color = original_color
@@ -50,7 +53,7 @@ func _on_animation_timer_timeout() -> void:
 	position_tween_down.set_trans(Tween.TRANS_QUAD)
 	position_tween_down.set_ease(Tween.EASE_IN)
 	position_tween_down.parallel().tween_property(
-		parent, "position", Vector3(thrown_objects.position.x, thrown_objects.position.y, thrown_objects.position.z), 0.1
+		PARENT, "position", Vector3(thrown_objects.position.x, thrown_objects.position.y, thrown_objects.position.z), 0.1
 	)
 	
 	position_tween_down.tween_callback(_visibility)
@@ -65,7 +68,7 @@ func _on_camera_timer_timeout() -> void:
 
 	forcefield_visibility_tween.tween_callback(_reset)
 	
-	$DestroyTimer.start()
+	DESTROY_TIMER.start()
 
 func _on_destroy_timer_timeout() -> void:
-	parent.queue_free()
+	PARENT.queue_free()
