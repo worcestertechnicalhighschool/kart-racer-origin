@@ -73,6 +73,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Track" type="StaticBody3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="Cube" type="MeshInstance3D" parent="Track"]
 material_override = SubResource("StandardMaterial3D_llabl")
@@ -83,10 +84,10 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_nr70l")
 
 [node name="Car" parent="." instance=ExtResource("2_t0akg")]
-transform = Transform3D(0.127134, 0, -0.991886, 0, 1, 0, 0.991886, 0, 0.127134, 48.8514, -5.27139, 3.0539)
+transform = Transform3D(0.127134, 0, -0.991886, 0, 1, 0, 0.991886, 0, 0.127134, 77.414, -7.91132, 3.70801)
 
 [node name="DeathBox" parent="." instance=ExtResource("3_k5ftu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.19407, -12.0167, 43.8893)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.19407, -15.708, 43.8893)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_p41pf")
