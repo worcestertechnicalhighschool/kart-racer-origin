@@ -1,15 +1,13 @@
 extends VehicleBody3D
 
-@onready var bl_wheel = $BackLeftWheel
-@onready var br_wheel = $BackRightWheel
-@onready var fl_wheel = $FrontLeftWheel
-@onready var fr_wheel = $FrontRightWheel
-@onready var camera = $Cameras/FrontCamera
-@onready var ui = $Ui
-@onready var pause_menu = $PauseMenu
-@onready var debug_menu = $DebugMenu
-@onready var transition_screen = $TrackTransition
+@export_group("Nodes")
+@export var BL_WHEEL: VehicleWheel3D
+@export var BR_WHEEL: VehicleWheel3D
+@export var FL_WHEEL: VehicleWheel3D
+@export var FR_WHEEL: VehicleWheel3D
+@export var CAMERA: Camera3D
 
+@export_group("Customs")
 @export var INVENTORY = ["", ""]
 @export var MAX_STEER = 0.9
 @export var ENGINE_POWER = 500
@@ -17,6 +15,10 @@ extends VehicleBody3D
 @export var ZOOM_DURATION = 0
 @export var RESPAWN = []
 @export var SPEED_BOOST = false
+
+@onready var ui = $"Ui"
+@onready var pause_menu = $"PauseMenu"
+@onready var debug_menu = $"DebugMenu"
 
 var MAX_SPEED = 45
 var drift

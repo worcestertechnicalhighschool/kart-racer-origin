@@ -38,11 +38,16 @@ albedo_color = Color(0.741176, 0.792157, 0, 0.34902)
 [sub_resource type="SphereMesh" id="SphereMesh_hyrdu"]
 material = SubResource("StandardMaterial3D_u2e6x")
 
-[node name="Car" type="VehicleBody3D"]
+[node name="Car" type="VehicleBody3D" node_paths=PackedStringArray("BL_WHEEL", "BR_WHEEL", "FL_WHEEL", "FR_WHEEL", "CAMERA")]
 mass = 100.0
 gravity_scale = 1.5
 center_of_mass_mode = 1
 script = ExtResource("1_1bc64")
+BL_WHEEL = NodePath("BackLeftWheel")
+BR_WHEEL = NodePath("BackRightWheel")
+FL_WHEEL = NodePath("FrontLeftWheel")
+FR_WHEEL = NodePath("FrontRightWheel")
+CAMERA = NodePath("CenterOfMass/FrontCamera")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 0.5, 0, 0, 0, 3.9, 0, 0, 0)
