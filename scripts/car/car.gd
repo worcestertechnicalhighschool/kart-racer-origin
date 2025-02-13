@@ -21,7 +21,7 @@ extends VehicleBody3D
 @onready var debug_menu = $"DebugMenu"
 
 var MAX_SPEED = 45
-var drift
+var drifting
 var old_rotation
 var old_position
 var old_velocity
@@ -38,8 +38,6 @@ func _ready() -> void:
 	#transition_screen.visibile = false
 
 func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
-	
-	var original_angle = rotation_degrees.y
 	
 	ENGINE_POWER = 500
 	MAX_SPEED = 50
@@ -71,10 +69,14 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 		var ratio = MAX_SPEED / speed
 		linear_velocity.x *= ratio
 		linear_velocity.z *= ratio
-
-	if drift:
-		position.dot(linear_velocity) / sqrt(position.x**2 + position.y**2 + position.z**2) * sqrt(linear_velocity.x**2 + linear_velocity.y**2 + linear_velocity.z**2)
+	
+	if drifting:
+		var rear_wheel = transform.origin + transform.basis.z * 2.38 / 2.0
+		var front_wheel = transform.origin - transform.basis.z * 2.38 / 2.0
+		var new_heading = rear_wheel.direction_to(front_wheel)
 		
+		engine_force = lerp(linear_velocity.normalized(), new_heading, 1).length() * engine_force
+	
 
 	if Input.is_action_just_pressed("pause"):
 		open_pause()
@@ -82,9 +84,9 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 		open_debug()
 		
 	if Input.is_action_pressed("drift"):
-		drift = true
+		drifting = true
 	else:
-		drift = false
+		drifting = false
 		
 	
 
