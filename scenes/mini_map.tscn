@@ -14,8 +14,9 @@ offset_right = -11.0
 offset_bottom = -13.0
 grow_horizontal = 0
 grow_vertical = 0
-color = Color(0.0196078, 0.0196078, 0.0196078, 0.376471)
+color = Color(0, 0, 0, 0.290196)
 script = ExtResource("1_vxc4k")
+camera_distance = 40.0
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 1
