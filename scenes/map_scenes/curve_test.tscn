@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://reojy8we20ey"]
+[gd_scene load_steps=21 format=3 uid="uid://reojy8we20ey"]
 
 [ext_resource type="Texture2D" uid="uid://b3jjiel6oe0xy" path="res://assets/images/skyboxes/skybox_finance.jpg" id="1_tl23f"]
 [ext_resource type="Texture2D" uid="uid://bv8udm5cmjk8d" path="res://assets/images/textures/roadtexture.jpg" id="2_i1x80"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bhpavrrckl1xp" path="res://scenes/mini_map.tscn" id="9_slcsj"]
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car/car.tscn" id="9_vnf50"]
 [ext_resource type="PackedScene" uid="uid://ch4lqpmxsj08h" path="res://scenes/object_scenes/track_features/oil.tscn" id="10_33dg6"]
+[ext_resource type="PackedScene" uid="uid://2ixehq0r0gck" path="res://scenes/ui_scenes/transitions/track_transition.tscn" id="11_2vyan"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tl4ks"]
 panorama = ExtResource("1_tl23f")
@@ -233,3 +234,5 @@ bus = &"Music"
 
 [node name="Car" parent="." instance=ExtResource("9_vnf50")]
 transform = Transform3D(-0.966102, 0, -0.258161, 0, 1, 0, 0.258161, 0, -0.966102, 354.139, 17.8936, 289.351)
+
+[node name="TrackTransition" parent="." instance=ExtResource("11_2vyan")]

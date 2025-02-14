@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://h3ui8rjtt0sn"]
+[gd_scene load_steps=17 format=4 uid="uid://h3ui8rjtt0sn"]
 
 [ext_resource type="Texture2D" uid="uid://lv7emd754bib" path="res://icon.svg" id="1_2gtkn"]
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car/car.tscn" id="2_64i1r"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/track_features/death_box.tscn" id="5_kwxro"]
 [ext_resource type="PackedScene" uid="uid://bl7yp56hkp8e6" path="res://scenes/object_scenes/track_features/item_box.tscn" id="6_32ad7"]
 [ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/track_features/checkpoint.tscn" id="7_7jdtg"]
+[ext_resource type="PackedScene" uid="uid://2ixehq0r0gck" path="res://scenes/ui_scenes/transitions/track_transition.tscn" id="8_7ii1t"]
 [ext_resource type="PackedScene" uid="uid://bhpavrrckl1xp" path="res://scenes/mini_map.tscn" id="8_rnl8l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_np70d"]
@@ -82,9 +83,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Track"]
 shape = SubResource("ConcavePolygonShape3D_q8lrn")
 
-[node name="Car" parent="." instance=ExtResource("2_64i1r")]
-transform = Transform3D(-0.0793986, 0, -0.996843, 0, 1, 0, 0.996843, 0, -0.0793986, 87.0813, 0.40929, 16.6515)
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_t2u4t")
 autoplay = true
@@ -125,7 +123,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1028, 1.79946, 70.9399)
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("7_7jdtg")]
 transform = Transform3D(-0.671305, 4.48542e-10, -0.788785, 1.30685, 1.92429, -0.000917169, 27.437, -0.0916561, -0.0192557, 78.1711, 1.05681, 15.9807)
 START_OR_FINISH_LINE = true
-MAX_LAP = 5
+MAX_LAP = 2
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("7_7jdtg")]
 transform = Transform3D(17.7197, -0.0314257, -0.58802, 2.70546, 1.93641, 0.0471937, 20.9428, -0.223563, 0.491429, -60.9653, 1.18335, -2.14909)
@@ -144,3 +142,8 @@ transform = Transform3D(-25.995, 0.104626, -0.184873, 1.39303, 1.94423, 0.010879
 [node name="MiniMap" parent="CanvasLayer" instance=ExtResource("8_rnl8l")]
 target = NodePath("../../Car")
 camera_distance = 200.0
+
+[node name="Car" parent="." instance=ExtResource("2_64i1r")]
+transform = Transform3D(-0.0793986, 0, -0.996843, 0, 1, 0, 0.996843, 0, -0.0793986, 87.0813, 0.40929, 16.6515)
+
+[node name="TrackTransition" parent="." instance=ExtResource("8_7ii1t")]
