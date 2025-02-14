@@ -227,11 +227,10 @@ stream = ExtResource("3_y2xi4")
 autoplay = true
 bus = &"Music"
 
-[node name="Car" parent="." instance=ExtResource("9_vnf50")]
-transform = Transform3D(-0.970393, 0, -0.241532, 0, 1, 0, 0.241532, 0, -0.970393, 354.467, 18.9063, 291.27)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MiniMap" parent="CanvasLayer" instance=ExtResource("9_slcsj")]
-target = NodePath("../../Car")
 camera_distance = 200.0
+
+[node name="Car" parent="." instance=ExtResource("9_vnf50")]
+transform = Transform3D(-0.966102, 0, -0.258161, 0, 1, 0, 0.258161, 0, -0.966102, 354.139, 17.8936, 289.351)

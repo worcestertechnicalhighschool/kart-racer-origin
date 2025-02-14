@@ -6,6 +6,7 @@ func _process(_delta: float) -> void:
 	$"Slot2/Label".text = car.INVENTORY[1]
 	$"Slot1/Label".text = car.INVENTORY[0]
 	
+	
 	if Input.is_action_just_pressed("throw_item"):
 		var instance
 		
