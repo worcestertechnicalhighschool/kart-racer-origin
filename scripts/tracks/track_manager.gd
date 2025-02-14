@@ -1,5 +1,7 @@
 extends Node3D
 
+@export var gamemode := ""
+
 @export var order = {
 	"alden": {
 		1: "res://scenes/map_scenes/steamy_scrapyard.tscn",
@@ -25,7 +27,7 @@ extends Node3D
 		5: "res://scenes/map_scenes/hydraulic_dam.tscn",
 	},
 	
-	"ITBS": {
+	"itbs": {
 		1: "res://scenes/map_scenes/comet_kitchen.tscn",
 		2: "res://scenes/map_scenes/propaganda_avenue.tscn",
 		3: "res://scenes/map_scenes/horizon_hotel.tscn",

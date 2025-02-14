@@ -82,6 +82,15 @@ bus = &"Music"
 stream = ExtResource("5_pnvet")
 bus = &"SFX"
 
+[node name="PreviewTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
 [connection signal="pressed" from="VBoxContainer/GrandPrix" to="." method="_on_grand_prix_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuickRace" to="." method="_on_quick_race_pressed"]
 [connection signal="pressed" from="Go Back" to="." method="_on_go_back_pressed"]

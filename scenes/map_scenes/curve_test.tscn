@@ -230,7 +230,6 @@ bus = &"Music"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MiniMap" parent="CanvasLayer" instance=ExtResource("9_slcsj")]
-camera_distance = 200.0
 
 [node name="Car" parent="." instance=ExtResource("9_vnf50")]
 transform = Transform3D(-0.966102, 0, -0.258161, 0, 1, 0, 0.258161, 0, -0.966102, 354.139, 17.8936, 289.351)
