@@ -29,6 +29,7 @@ var axis
 var paused = false
 var debug_open = false
 var prior
+var prev_angle = 0
 	
 func _ready() -> void:
 	RESPAWN = [position, global_rotation_degrees]
@@ -71,12 +72,18 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 		linear_velocity.z *= ratio
 	
 	if drifting:
-		var rear_wheel = transform.origin + transform.basis.z * 2.38 / 2.0
-		var front_wheel = transform.origin - transform.basis.z * 2.38 / 2.0
-		var new_heading = rear_wheel.direction_to(front_wheel)
+		FR_WHEEL.wheel_friction_slip = 4.5
+		FL_WHEEL.wheel_friction_slip = 4.5
+		BR_WHEEL.wheel_friction_slip = 2.25
+		BL_WHEEL.wheel_friction_slip = 2.25
 		
-		engine_force = lerp(linear_velocity.normalized(), new_heading, 1).length() * engine_force
-	
+		if prev_angle is Vector3:
+			rotation_degrees.y = clamp(rotation_degrees.y, prev_angle.y - 2, prev_angle.y + 2)
+	else:
+		FR_WHEEL.wheel_friction_slip = 20
+		FL_WHEEL.wheel_friction_slip = 20
+		BR_WHEEL.wheel_friction_slip = 20
+		BL_WHEEL.wheel_friction_slip = 20
 
 	if Input.is_action_just_pressed("pause"):
 		open_pause()
@@ -88,6 +95,7 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 	else:
 		drifting = false
 		
+	prev_angle = rotation_degrees
 	
 
 func open_pause():
