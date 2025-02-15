@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bl7yp56hkp8e6" path="res://scenes/object_scenes/track_features/item_box.tscn" id="6_ca5mw"]
 [ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/track_features/death_box.tscn" id="6_utm8d"]
 [ext_resource type="PackedScene" uid="uid://carm88pw5xfdy" path="res://scenes/object_scenes/track_features/boost_pad.tscn" id="7_xo5dg"]
-[ext_resource type="PackedScene" path="res://scenes/mini_map.tscn" id="9_slcsj"]
+[ext_resource type="PackedScene" uid="uid://t240sdvue3s" path="res://scenes/mini_map.tscn" id="9_slcsj"]
 [ext_resource type="PackedScene" uid="uid://dkuwcntbn4jl2" path="res://scenes/object_scenes/car/car.tscn" id="9_vnf50"]
 [ext_resource type="PackedScene" uid="uid://ch4lqpmxsj08h" path="res://scenes/object_scenes/track_features/oil.tscn" id="10_33dg6"]
 [ext_resource type="PackedScene" uid="uid://2ixehq0r0gck" path="res://scenes/ui_scenes/transitions/track_transition.tscn" id="11_2vyan"]
@@ -230,7 +230,8 @@ bus = &"Music"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="MiniMap" parent="CanvasLayer" instance=ExtResource("9_slcsj")]
+[node name="MiniMap" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("9_slcsj")]
+player = NodePath("../../Car")
 
 [node name="Car" parent="." instance=ExtResource("9_vnf50")]
 transform = Transform3D(-0.966102, 0, -0.258161, 0, 1, 0, 0.258161, 0, -0.966102, 354.139, 17.8936, 289.351)
