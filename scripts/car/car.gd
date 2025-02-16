@@ -108,7 +108,6 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 
 	if abs(angular_velocity.y) > 5:
 		angular_velocity.y = sign(angular_velocity.y) * 5
-	print(angular_velocity.y)
 
 	if Input.is_action_just_pressed("pause"):
 		open_pause()
