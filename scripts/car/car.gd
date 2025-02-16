@@ -68,11 +68,18 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 		linear_velocity.x = original_velocity.x / 4
 		linear_velocity.z = original_velocity.z / 4
 		
-	# clamp rotation degrees so car doesn't radically flip over
-	rotation_degrees.x = clamp(rotation_degrees.x, -10, 10)
-	rotation_degrees.z = clamp(rotation_degrees.z, -10, 10)
+	var xform : Transform3D = global_transform
+	var floor_normal = $RayCast3D.get_collision_normal()
 	
-	#var xform : Transform3D
+	xform.basis.y = floor_normal
+	xform.basis.x = -xform.basis.z.cross(floor_normal)
+	xform.basis = xform.basis.orthonormalized()
+	
+	global_transform = global_transform.interpolate_with(xform, 0.1)
+	
+	if $RayCast3D.is_colliding():
+		if position.y - $RayCast3D.get_collision_point().y > BR_WHEEL.wheel_radius:
+			position.y = $RayCast3D.get_collision_point().y + BR_WHEEL.wheel_radius
 	
 	# overall purpose: limiting the total speed
 	# finding the magnitude of the vector
@@ -98,6 +105,10 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 		FL_WHEEL.wheel_friction_slip = 20
 		BR_WHEEL.wheel_friction_slip = 20
 		BL_WHEEL.wheel_friction_slip = 20
+
+	if abs(angular_velocity.y) > 5:
+		angular_velocity.y = sign(angular_velocity.y) * 5
+	print(angular_velocity.y)
 
 	if Input.is_action_just_pressed("pause"):
 		open_pause()
