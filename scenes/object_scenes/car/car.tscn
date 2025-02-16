@@ -139,3 +139,5 @@ mesh = SubResource("SphereMesh_hyrdu")
 script = ExtResource("6_ydi5l")
 CAMERA = NodePath("../CenterOfMass/FrontCamera")
 C_O_M = NodePath("../CenterOfMass")
+
+[connection signal="slip" from="." to="." method="_on_slip"]

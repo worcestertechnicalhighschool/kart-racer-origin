@@ -40,10 +40,7 @@ func _on_body_entered(body: Node3D) -> void:
 				original_position = node.position
 				node.top_level = true
 				
-		
-		body.linear_velocity.x = body.linear_velocity.x/5
-		body.linear_velocity.z = body.linear_velocity.z/5
-		body.angular_velocity.y = 10
+		body.emit_signal("slip", true)
 		
 		$"../MeshInstance3D".queue_free()
 		
@@ -55,14 +52,13 @@ func _on_duration_timer_timeout() -> void:
 	for node in car_parts:
 		if node is VehicleWheel3D:
 			node.wheel_friction_slip = original[i]
+			node.get_node("MeshInstance3D").transparency = 0
 		if node.name == "CenterOfMass":
 			node.top_level = false
 			node.rotation_degrees = original_rotation
 			node.position = original_position
 		if node is MeshInstance3D:
 			node.transparency = 0
-		if node is VehicleWheel3D:
-			node.get_child(0).transparency = 0
 			
-			
+	car.emit_signal("slip", false)
 	USES_COMPONENT._change_uses(-1)

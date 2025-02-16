@@ -5,6 +5,7 @@ extends RigidBody3D
 
 var exploded = false
 func _ready() -> void:
+	$TripComponent/CollisionShape3D.disabled = true
 	$Timer.start(FUSE)
 
 func _on_timer_timeout() -> void:
@@ -12,7 +13,7 @@ func _on_timer_timeout() -> void:
 		$BombMesh.visible = false
 		$CollisionShape3D.disabled = true
 		$Explosion.visible = true
-		$Area3D/CollisionShape3D.disabled = false
+		$TripComponent/CollisionShape3D.disabled = false
 		exploded = true
 		$AudioStreamPlayer3D.play()
 		$Timer.start(LINGER)

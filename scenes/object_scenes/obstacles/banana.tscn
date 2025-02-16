@@ -29,6 +29,7 @@ USES_COMPONENT = NodePath("../UsesComponent")
 DURATION_TIMER = NodePath("DurationTimer")
 
 [node name="DurationTimer" type="Timer" parent="SlipComponent"]
+wait_time = 2.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SlipComponent"]
 shape = SubResource("BoxShape3D_l8fjd")

@@ -1,5 +1,7 @@
 extends VehicleBody3D
 
+signal slip
+
 @export_group("Nodes")
 @export var BL_WHEEL: VehicleWheel3D
 @export var BR_WHEEL: VehicleWheel3D
@@ -30,7 +32,10 @@ var paused = false
 var debug_open = false
 var prior
 var prev_angle = 0
-	
+var slipping = false
+var original_velocity
+var original_rotation
+
 func _ready() -> void:
 	RESPAWN = [position, global_rotation_degrees]
 	ui.visible = true
@@ -57,6 +62,13 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 	
 	steering = Input.get_axis("steer_right","steer_left") * MAX_STEER / 4
 	
+	if slipping:
+		angular_velocity.y = 10
+		
+		linear_velocity.y = 0
+		linear_velocity.x = original_velocity.x / 4
+		linear_velocity.z = original_velocity.z / 4
+		
 	# clamp rotation degrees so car doesn't radically flip over
 	rotation_degrees.x = clamp(rotation_degrees.x, -10, 10)
 	rotation_degrees.z = clamp(rotation_degrees.z, -10, 10)
@@ -126,4 +138,13 @@ func open_debug():
 	else:
 		debug_menu.hide()
 		Engine.time_scale = 1
+
+func _on_slip(start) -> void:
 	
+	slipping = start
+	
+	if start:
+		original_velocity = linear_velocity
+		original_rotation = rotation_degrees
+	else:
+		rotation_degrees = original_rotation

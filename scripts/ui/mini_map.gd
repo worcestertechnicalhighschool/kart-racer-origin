@@ -5,7 +5,7 @@ extends ColorRect
 
 @onready var camera := $SubViewportContainer/SubViewport/Camera3D
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player:
 		camera.size = camera_distance
 		camera.position = Vector3(player.position.x, camera_distance, player.position.z)
