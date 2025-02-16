@@ -140,4 +140,7 @@ script = ExtResource("6_ydi5l")
 CAMERA = NodePath("../CenterOfMass/FrontCamera")
 C_O_M = NodePath("../CenterOfMass")
 
+[node name="RayCast3D" type="RayCast3D" parent="."]
+debug_shape_custom_color = Color(0.921739, 0.191891, 0, 1)
+
 [connection signal="slip" from="." to="." method="_on_slip"]

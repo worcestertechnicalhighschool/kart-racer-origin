@@ -65,13 +65,14 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 	if slipping:
 		angular_velocity.y = 10
 		
-		linear_velocity.y = 0
 		linear_velocity.x = original_velocity.x / 4
 		linear_velocity.z = original_velocity.z / 4
 		
 	# clamp rotation degrees so car doesn't radically flip over
 	rotation_degrees.x = clamp(rotation_degrees.x, -10, 10)
 	rotation_degrees.z = clamp(rotation_degrees.z, -10, 10)
+	
+	#var xform : Transform3D
 	
 	# overall purpose: limiting the total speed
 	# finding the magnitude of the vector
@@ -84,13 +85,14 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 		linear_velocity.z *= ratio
 	
 	if drifting:
+		 
 		FR_WHEEL.wheel_friction_slip = 4.5
 		FL_WHEEL.wheel_friction_slip = 4.5
 		BR_WHEEL.wheel_friction_slip = 2.25
 		BL_WHEEL.wheel_friction_slip = 2.25
 		
 		if prev_angle is Vector3:
-			rotation_degrees.y = clamp(rotation_degrees.y, prev_angle.y - 2, prev_angle.y + 2)
+			rotation_degrees.y = clamp(rotation_degrees.y, prev_angle.y - 1.5, prev_angle.y + 1.5)
 	else:
 		FR_WHEEL.wheel_friction_slip = 20
 		FL_WHEEL.wheel_friction_slip = 20

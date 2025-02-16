@@ -234,6 +234,6 @@ bus = &"Music"
 player = NodePath("../../Car")
 
 [node name="Car" parent="." instance=ExtResource("9_vnf50")]
-transform = Transform3D(-0.966102, 0, -0.258161, 0, 1, 0, 0.258161, 0, -0.966102, 354.139, 17.8936, 289.351)
+transform = Transform3D(-0.965926, 1.68888e-07, -0.258819, 1.74846e-07, 1, 0, 0.258819, -4.52534e-08, -0.965926, 354.139, 17.8936, 289.351)
 
 [node name="TrackTransition" parent="." instance=ExtResource("11_2vyan")]
