@@ -143,6 +143,8 @@ CAMERA = NodePath("../CenterOfMass/FrontCamera")
 C_O_M = NodePath("../CenterOfMass")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00517511, 0.0155458, 1.55136)
+target_position = Vector3(0, -2, 0)
 debug_shape_custom_color = Color(0.921739, 0.191891, 0, 1)
 
 [connection signal="slip" from="." to="." method="_on_slip"]

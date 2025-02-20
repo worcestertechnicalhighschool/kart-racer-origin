@@ -31,7 +31,7 @@ var axis
 var paused = false
 var debug_open = false
 var prior
-var prev_angle = 0
+var prev_angle = Vector3.ZERO
 var slipping = false
 var original_velocity
 var original_rotation
@@ -67,19 +67,24 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 		
 		linear_velocity.x = original_velocity.x / 4
 		linear_velocity.z = original_velocity.z / 4
-		
-	var xform : Transform3D = global_transform
-	var floor_normal = $RayCast3D.get_collision_normal()
-	
-	xform.basis.y = floor_normal
-	xform.basis.x = -xform.basis.z.cross(floor_normal)
-	xform.basis = xform.basis.orthonormalized()
-	
-	global_transform = global_transform.interpolate_with(xform, 0.1)
 	
 	if $RayCast3D.is_colliding():
+		print("x")
+		
+		var xform : Transform3D = global_transform
+		var floor_normal = $RayCast3D.get_collision_normal()
+		
+		xform.basis.y = floor_normal
+		xform.basis.x = -xform.basis.z.cross(floor_normal)
+		xform.basis = xform.basis.orthonormalized()
+		global_transform = global_transform.interpolate_with(xform, 0.1)
+
 		if position.y - $RayCast3D.get_collision_point().y > BR_WHEEL.wheel_radius:
 			position.y = $RayCast3D.get_collision_point().y + BR_WHEEL.wheel_radius
+	else:
+		global_transform.basis.x = lerp(global_transform.basis.x, Vector3(1,0,0), 0.05)
+		global_transform.basis.y = lerp(global_transform.basis.y, Vector3(0,1,0), 0.05)
+		global_transform.basis.z = lerp(global_transform.basis.z, Vector3(0,0,1), 0.05)
 	
 	# overall purpose: limiting the total speed
 	# finding the magnitude of the vector
@@ -98,15 +103,14 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 		BR_WHEEL.wheel_friction_slip = 2.25
 		BL_WHEEL.wheel_friction_slip = 2.25
 		
-		if prev_angle is Vector3:
-			rotation_degrees.y = clamp(rotation_degrees.y, prev_angle.y - 1.5, prev_angle.y + 1.5)
+		rotation_degrees.y = clamp(rotation_degrees.y, prev_angle.y - 1.5, prev_angle.y + 1.5)
 	else:
 		FR_WHEEL.wheel_friction_slip = 20
 		FL_WHEEL.wheel_friction_slip = 20
 		BR_WHEEL.wheel_friction_slip = 20
 		BL_WHEEL.wheel_friction_slip = 20
 
-	if abs(angular_velocity.y) > 5:
+	if abs(angular_velocity.y) > 5 and not slipping:
 		angular_velocity.y = sign(angular_velocity.y) * 5
 
 	if Input.is_action_just_pressed("pause"):
