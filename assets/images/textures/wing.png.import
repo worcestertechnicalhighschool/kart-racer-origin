@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wf1olbqmhl2a"
-path="res://.godot/imported/racing_flags.png-16f85394bc0f6c15061d0fbb47ab6844.ctex"
+uid="uid://bhvbdbhtkids0"
+path="res://.godot/imported/wing.png-fccf7a7ae863c96ab58f6d0f9ff6f886.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/textures/racing_flags.png"
-dest_files=["res://.godot/imported/racing_flags.png-16f85394bc0f6c15061d0fbb47ab6844.ctex"]
+source_file="res://assets/images/textures/wing.png"
+dest_files=["res://.godot/imported/wing.png-fccf7a7ae863c96ab58f6d0f9ff6f886.ctex"]
 
 [params]
 

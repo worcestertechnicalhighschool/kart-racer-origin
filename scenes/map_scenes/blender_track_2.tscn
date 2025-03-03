@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://b2j4c6syjiyob" path="res://assets/sounds/music/alden/sng_cadd.mp3" id="3_de84v"]
 [ext_resource type="PackedScene" uid="uid://xr1wvceq4fjd" path="res://scenes/object_scenes/track_features/death_box.tscn" id="5_fjesv"]
 [ext_resource type="PackedScene" uid="uid://2ixehq0r0gck" path="res://scenes/ui_scenes/transitions/track_transition.tscn" id="6_nl0ld"]
-[ext_resource type="PackedScene" uid="uid://bhpavrrckl1xp" path="res://scenes/mini_map.tscn" id="6_otyw2"]
+[ext_resource type="PackedScene" uid="uid://t240sdvue3s" path="res://scenes/mini_map.tscn" id="6_otyw2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vslq2"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -94,7 +94,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85835, -4.32324, 43.8893)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MiniMap" parent="CanvasLayer" instance=ExtResource("6_otyw2")]
-target = NodePath("../../Car")
 camera_distance = 200.0
 
 [node name="Car" parent="." instance=ExtResource("2_ottav")]

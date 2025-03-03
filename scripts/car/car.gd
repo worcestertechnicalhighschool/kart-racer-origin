@@ -19,7 +19,7 @@ signal slip
 @export var SPEED_BOOST = false
 
 @onready var ui = $"Ui"
-@onready var pause_menu = $"PauseMenu"
+#@onready var pause_menu = $"PauseMenu"
 @onready var debug_menu = $"DebugMenu"
 
 var MAX_SPEED = 45
@@ -28,7 +28,7 @@ var old_rotation
 var old_position
 var old_velocity
 var axis
-var paused = false
+#var paused = false
 var debug_open = false
 var prior
 var prev_angle = Vector3.ZERO
@@ -39,7 +39,7 @@ var original_rotation
 func _ready() -> void:
 	RESPAWN = [position, global_rotation_degrees]
 	ui.visible = true
-	pause_menu.visible = false
+	#pause_menu.visible = false
 	debug_menu.visible = false
 	#transition_screen.visibile = false
 
@@ -113,8 +113,8 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 	if abs(angular_velocity.y) > 5 and not slipping:
 		angular_velocity.y = sign(angular_velocity.y) * 5
 
-	if Input.is_action_just_pressed("pause"):
-		open_pause()
+	#if Input.is_action_just_pressed("pause"):
+		#open_pause()
 	elif Input.is_action_just_pressed("debug"):
 		open_debug()
 		
@@ -126,23 +126,23 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 	prev_angle = rotation_degrees
 	
 
-func open_pause():
-	# unpauses if already paused
-	if paused:
-		pause_menu.hide()
-		ui.show()
-		Engine.time_scale = 1
-		
-	# pauses if not paused
-	else:
-		pause_menu.show()
-		pause_menu.find_child("Resume").grab_focus()
-		
-		ui.hide()
-		Engine.time_scale = 0
-	
-	paused = not paused
-	
+#func open_pause():
+	## unpauses if already paused
+	#if paused:
+		#pause_menu.hide()
+		#ui.show()
+		#Engine.time_scale = 1
+		#
+	## pauses if not paused
+	#else:
+		#pause_menu.show()
+		#pause_menu.find_child("Resume").grab_focus()
+		#
+		#ui.hide()
+		#Engine.time_scale = 0
+	#
+	#paused = not paused
+	#
 func open_debug():
 	debug_open = not debug_open
 	
