@@ -1,15 +1,15 @@
 extends VehicleBody3D
 
-@onready var bl_wheel = $BackLeftWheel
-@onready var br_wheel = $BackRightWheel
-@onready var fl_wheel = $FrontLeftWheel
-@onready var fr_wheel = $FrontRightWheel
-@onready var camera = $Cameras/FrontCamera
-@onready var ui = $Ui
-@onready var pause_menu = $PauseMenu
-@onready var debug_menu = $DebugMenu
-@onready var transition_screen = $TrackTransition
+signal slip
 
+@export_group("Nodes")
+@export var BL_WHEEL: VehicleWheel3D
+@export var BR_WHEEL: VehicleWheel3D
+@export var FL_WHEEL: VehicleWheel3D
+@export var FR_WHEEL: VehicleWheel3D
+@export var CAMERA: Camera3D
+
+@export_group("Customs")
 @export var INVENTORY = ["", ""]
 @export var MAX_STEER = 0.9
 @export var ENGINE_POWER = 500
@@ -18,8 +18,12 @@ extends VehicleBody3D
 @export var RESPAWN = []
 @export var SPEED_BOOST = false
 
+@onready var ui = $"Ui"
+@onready var pause_menu = $"PauseMenu"
+@onready var debug_menu = $"DebugMenu"
+
 var MAX_SPEED = 45
-var drift
+var drifting
 var old_rotation
 var old_position
 var old_velocity
@@ -27,7 +31,11 @@ var axis
 var paused = false
 var debug_open = false
 var prior
-	
+var prev_angle = Vector3.ZERO
+var slipping = false
+var original_velocity
+var original_rotation
+
 func _ready() -> void:
 	RESPAWN = [position, global_rotation_degrees]
 	ui.visible = true
@@ -39,64 +47,83 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 	
 	ENGINE_POWER = 500
 	MAX_SPEED = 50
-
-	#if Input.is_action_pressed("drift") and Input.get_axis("right","left") != 0 and !drift:
-		##Takes the all the cars positional and rotational data at the time of the drift along with the way that the car is turning
-		#drift = true
-		#axis = Input.get_axis("right","left")
-		#steering = Input.get_axis("right","left")
-		#old_rotation = global_rotation_degrees
-		#old_position = position
-		#old_velocity = linear_velocity
-	#if Input.is_action_just_released("drift"):
-		#bl_wheel.wheel_friction_slip = 10.5
-		#br_wheel.wheel_friction_slip = 10.5
-		#fl_wheel.wheel_friction_slip = 10.5
-		#fr_wheel.wheel_friction_slip = 10.5
-		#drift = false
-		#angular_velocity.y = 0
-		#global_rotation_degrees.y = 0
-	#
-		#linear_velocity.z = old_velocity.z
-		
-	if !drift:
-		
-		if SPEED_BOOST:
-			ENGINE_POWER *= 2
-			MAX_SPEED *= 1.5
-		
-		# checking for a negative value bacause holding accel. pedal gives a negative number.
-		if Input.get_action_strength("pedal_reverse") < 1 and Input.get_action_strength("pedal_reverse"):
-			engine_force = Input.get_action_strength("pedal_reverse") * -1 * ENGINE_POWER
-		elif Input.get_action_strength("pedal_accelerate"):
-			engine_force = Input.get_action_strength("pedal_accelerate") * ENGINE_POWER
-		else:
-			engine_force = Input.get_axis("non_pedal_reverse", "non_pedal_accelerate") * ENGINE_POWER
-		
-		steering = Input.get_axis("steer_right","steer_left") * MAX_STEER / 4
-		
-		# clamp rotation degrees so car doesn't radically flip over
-		rotation_degrees.x = clamp(rotation_degrees.x, -10, 10)
-		rotation_degrees.z = clamp(rotation_degrees.z, -10, 10)
-		
-		# overall purpose: limiting the total speed
-		# finding the magnitude of the vector
-		var speed = sqrt(linear_velocity.x**2 + linear_velocity.z**2)
-		# only limit if speed is greater than speed
-		if speed > MAX_SPEED:
-			# get the inverse of the ratio to scale down vector magnitudes
-			var ratio = MAX_SPEED / speed
-			linear_velocity.x *= ratio
-			linear_velocity.z *= ratio
-
-	#if drift:
-		#engine_force = ENGINE_POWER
-		#steering = move_toward(steering, axis * MAX_STEER, delta * 10)
 	
+	if SPEED_BOOST:
+		ENGINE_POWER *= 2
+		MAX_SPEED *= 1.5
+	
+	# checking for a negative value bacause holding accel. pedal gives a negative number.
+	if Input.get_action_strength("pedal_reverse") < 1 and Input.get_action_strength("pedal_reverse"):
+		engine_force = Input.get_action_strength("pedal_reverse") * -1 * ENGINE_POWER
+	elif Input.get_action_strength("pedal_accelerate"):
+		engine_force = Input.get_action_strength("pedal_accelerate") * ENGINE_POWER
+	else:
+		engine_force = Input.get_axis("non_pedal_reverse", "non_pedal_accelerate") * ENGINE_POWER
+	
+	steering = Input.get_axis("steer_right","steer_left") * MAX_STEER / 4
+	
+	if slipping:
+		angular_velocity.y = 10
+		
+		linear_velocity.x = original_velocity.x / 4
+		linear_velocity.z = original_velocity.z / 4
+	
+	if $RayCast3D.is_colliding():
+		print("x")
+		
+		var xform : Transform3D = global_transform
+		var floor_normal = $RayCast3D.get_collision_normal()
+		
+		xform.basis.y = floor_normal
+		xform.basis.x = -xform.basis.z.cross(floor_normal)
+		xform.basis = xform.basis.orthonormalized()
+		global_transform = global_transform.interpolate_with(xform, 0.1)
+
+		if position.y - $RayCast3D.get_collision_point().y > BR_WHEEL.wheel_radius:
+			position.y = $RayCast3D.get_collision_point().y + BR_WHEEL.wheel_radius
+	else:
+		global_transform.basis.x = lerp(global_transform.basis.x, Vector3(1,0,0), 0.05)
+		global_transform.basis.y = lerp(global_transform.basis.y, Vector3(0,1,0), 0.05)
+		global_transform.basis.z = lerp(global_transform.basis.z, Vector3(0,0,1), 0.05)
+	
+	# overall purpose: limiting the total speed
+	# finding the magnitude of the vector
+	var speed = sqrt(linear_velocity.x**2 + linear_velocity.z**2)
+	# only limit if speed is greater than speed
+	if speed > MAX_SPEED:
+		# get the inverse of the ratio to scale down vector magnitudes
+		var ratio = MAX_SPEED / speed
+		linear_velocity.x *= ratio
+		linear_velocity.z *= ratio
+	
+	if drifting:
+		 
+		FR_WHEEL.wheel_friction_slip = 4.5
+		FL_WHEEL.wheel_friction_slip = 4.5
+		BR_WHEEL.wheel_friction_slip = 2.25
+		BL_WHEEL.wheel_friction_slip = 2.25
+		
+		rotation_degrees.y = clamp(rotation_degrees.y, prev_angle.y - 1.5, prev_angle.y + 1.5)
+	else:
+		FR_WHEEL.wheel_friction_slip = 20
+		FL_WHEEL.wheel_friction_slip = 20
+		BR_WHEEL.wheel_friction_slip = 20
+		BL_WHEEL.wheel_friction_slip = 20
+
+	if abs(angular_velocity.y) > 5 and not slipping:
+		angular_velocity.y = sign(angular_velocity.y) * 5
+
 	if Input.is_action_just_pressed("pause"):
 		open_pause()
 	elif Input.is_action_just_pressed("debug"):
 		open_debug()
+		
+	if Input.is_action_pressed("drift"):
+		drifting = true
+	else:
+		drifting = false
+		
+	prev_angle = rotation_degrees
 	
 
 func open_pause():
@@ -127,4 +154,13 @@ func open_debug():
 	else:
 		debug_menu.hide()
 		Engine.time_scale = 1
+
+func _on_slip(start) -> void:
 	
+	slipping = start
+	
+	if start:
+		original_velocity = linear_velocity
+		original_rotation = rotation_degrees
+	else:
+		rotation_degrees = original_rotation

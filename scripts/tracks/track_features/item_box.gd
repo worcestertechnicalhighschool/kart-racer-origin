@@ -1,7 +1,5 @@
 extends Node3D
 
-@export var ONE_USE = true
-
 @onready var original_position = position
 var list_of_throwables = ["shell", "mushroom", "banana", "bomb"] 
 var rng = RandomNumberGenerator.new()
@@ -18,8 +16,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		else:
 			body.INVENTORY[0] = list_of_throwables[random_number]
 		
-		if ONE_USE:
-			queue_free()
+		$UsesComponent.USES -= 1
 
 func _process(_delta: float) -> void:
 	if not tween_playing:
