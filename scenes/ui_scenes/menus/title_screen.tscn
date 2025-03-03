@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ftfjb2juk3gv"]
+[gd_scene load_steps=9 format=3 uid="uid://ftfjb2juk3gv"]
 
 [ext_resource type="Script" path="res://scripts/ui/menus/title_screen.gd" id="1_wep01"]
 [ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/transitions/ui_transition.tscn" id="2_hrswe"]
 [ext_resource type="Script" path="res://scripts/ui/buttons/grab_focus.gd" id="2_k4055"]
+[ext_resource type="FontFile" uid="uid://dfq1xhuv5m6yj" path="res://assets/fonts/TradeWinds-Regular.ttf" id="2_nqntb"]
 [ext_resource type="Texture2D" uid="uid://pmrgd74p8b1e" path="res://assets/images/battle_cats/cat_kart.png" id="3_2d2xj"]
-[ext_resource type="Texture2D" uid="uid://wf1olbqmhl2a" path="res://assets/images/textures/racing_flags.png" id="4_tjyxy"]
+[ext_resource type="Texture2D" uid="uid://bhvbdbhtkids0" path="res://assets/images/textures/wing.png" id="4_cw0pp"]
 [ext_resource type="AudioStream" uid="uid://cdsqyk0a6o6ka" path="res://assets/sounds/music/sng_menu.mp3" id="6_rp7fr"]
 [ext_resource type="AudioStream" uid="uid://d14nfwmrlpndm" path="res://assets/sounds/sfx/sfx_bloop.mp3" id="7_t76wy"]
 
@@ -40,47 +41,54 @@ metadata/_edit_use_anchors_ = true
 [node name="Title" type="Label" parent="TextAndButtons"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0617188
-anchor_top = -0.0194444
-anchor_right = 0.95625
-anchor_bottom = 0.284723
-offset_bottom = -0.000213623
+anchor_left = 0.108594
+anchor_top = 0.0513889
+anchor_right = 0.953906
+anchor_bottom = 0.325
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 160
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(2.88785e-07, 0.562478, 0.518247, 1)
+theme_override_fonts/font = ExtResource("2_nqntb")
+theme_override_font_sizes/font_size = 135
 text = "Skyline Drivers"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="SinglePlayer" type="Button" parent="TextAndButtons"]
 layout_mode = 2
-anchor_left = 0.053
-anchor_top = 0.287
-anchor_right = 0.367
-anchor_bottom = 0.421
+anchor_left = 0.031125
+anchor_top = 0.416167
+anchor_right = 0.345125
+anchor_bottom = 0.550167
 offset_left = 0.159996
 offset_top = 0.360001
 offset_right = 0.23999
 offset_bottom = -0.120026
+scale = Vector2(1.28482, 1.28482)
+theme_override_fonts/font = ExtResource("2_nqntb")
 theme_override_font_sizes/font_size = 64
 text = "Single Player"
 script = ExtResource("2_k4055")
 metadata/_edit_use_anchors_ = true
 
-[node name="Multiplayer" type="Button" parent="TextAndButtons"]
+[node name="HeadToHead" type="Button" parent="TextAndButtons"]
 layout_mode = 2
-anchor_left = 0.073
-anchor_top = 0.464
-anchor_right = 0.355
-anchor_bottom = 0.597
-offset_left = -0.44001
-offset_top = 0.01297
-offset_right = 0.599976
-offset_bottom = 0.252991
+anchor_left = 0.0273438
+anchor_top = 0.656944
+anchor_right = 0.377344
+anchor_bottom = 0.790278
+offset_left = 5.0
+offset_top = -3.0
+offset_right = 4.99997
+offset_bottom = -3.0
+scale = Vector2(1.26099, 1.26099)
+theme_override_fonts/font = ExtResource("2_nqntb")
 theme_override_font_sizes/font_size = 64
-text = "Multiplayer"
+text = "Head-To-Head"
 metadata/_edit_use_anchors_ = true
 
 [node name="Settings" type="Button" parent="TextAndButtons"]
+visible = false
 layout_mode = 2
 anchor_left = 0.101
 anchor_top = 0.641
@@ -96,17 +104,22 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Quit" type="Button" parent="TextAndButtons"]
 layout_mode = 2
-anchor_left = 0.12
-anchor_top = 0.817
-anchor_right = 0.297
-anchor_bottom = 0.95
-offset_left = -0.600006
-offset_top = 0.0379639
-offset_right = -0.160034
-offset_bottom = 0.277954
+anchor_top = 0.952778
+anchor_right = 0.0604557
+anchor_bottom = 1.00107
+offset_right = 149.617
+offset_bottom = 67.2286
+scale = Vector2(0.340895, 0.340895)
+theme_override_fonts/font = ExtResource("2_nqntb")
 theme_override_font_sizes/font_size = 64
 text = "Quit"
 metadata/_edit_use_anchors_ = true
+
+[node name="Wing" type="Sprite2D" parent="TextAndButtons"]
+position = Vector2(62, 107)
+rotation = 0.41564
+scale = Vector2(0.915784, 0.915784)
+texture = ExtResource("4_cw0pp")
 
 [node name="BuildDate" type="Label" parent="."]
 layout_mode = 1
@@ -115,13 +128,13 @@ anchor_left = 0.359
 anchor_top = 0.926
 anchor_right = 0.602
 anchor_bottom = 0.989
-offset_left = -0.52002
-offset_top = 0.279968
-offset_right = -0.560059
-offset_bottom = -0.0800171
+offset_left = 501.48
+offset_top = -662.72
+offset_right = 501.44
+offset_bottom = -663.08
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "Build date 2/14/25"
+text = "Build date 3/7/25"
 
 [node name="UITransition" parent="." instance=ExtResource("2_hrswe")]
 
@@ -133,17 +146,6 @@ bus = &"Music"
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_t76wy")
 bus = &"SFX"
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.442187
-anchor_top = 0.2875
-anchor_right = 0.632813
-anchor_bottom = 0.622222
-texture = ExtResource("4_tjyxy")
-expand_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0

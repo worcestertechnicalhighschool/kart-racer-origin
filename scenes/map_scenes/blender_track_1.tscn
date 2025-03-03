@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bl7yp56hkp8e6" path="res://scenes/object_scenes/track_features/item_box.tscn" id="6_32ad7"]
 [ext_resource type="PackedScene" uid="uid://cwatj2d6r6oql" path="res://scenes/object_scenes/track_features/checkpoint.tscn" id="7_7jdtg"]
 [ext_resource type="PackedScene" uid="uid://2ixehq0r0gck" path="res://scenes/ui_scenes/transitions/track_transition.tscn" id="8_7ii1t"]
-[ext_resource type="PackedScene" uid="uid://bhpavrrckl1xp" path="res://scenes/mini_map.tscn" id="8_rnl8l"]
+[ext_resource type="PackedScene" uid="uid://t240sdvue3s" path="res://scenes/mini_map.tscn" id="8_rnl8l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_np70d"]
 
@@ -140,7 +140,6 @@ transform = Transform3D(-25.995, 0.104626, -0.184873, 1.39303, 1.94423, 0.010879
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MiniMap" parent="CanvasLayer" instance=ExtResource("8_rnl8l")]
-target = NodePath("../../Car")
 camera_distance = 200.0
 
 [node name="Car" parent="." instance=ExtResource("2_64i1r")]
