@@ -69,8 +69,6 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 		linear_velocity.z = original_velocity.z / 4
 	
 	if $RayCast3D.is_colliding():
-		print("x")
-		
 		var xform : Transform3D = global_transform
 		var floor_normal = $RayCast3D.get_collision_normal()
 		

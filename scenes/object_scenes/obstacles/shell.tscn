@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://c7a4gqd1y421i"]
 
-[ext_resource type="Script" path="res://scripts/components/trip_component.gd" id="1_8uknb"]
+[ext_resource type="Script" uid="uid://c6vk2sunyguf3" path="res://scripts/components/trip_component.gd" id="1_8uknb"]
 [ext_resource type="AudioStream" uid="uid://dq7qgvxb078ay" path="res://assets/sounds/sfx/sfx_shell.mp3" id="2_1ghyg"]
-[ext_resource type="Script" path="res://scripts/components/basic_animation_component.gd" id="3_ilb4b"]
+[ext_resource type="Script" uid="uid://c5kt54b5ifjks" path="res://scripts/components/basic_animation_component.gd" id="3_ilb4b"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fkeo5"]
 friction = 0.0

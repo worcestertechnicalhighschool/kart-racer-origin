@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dvf65fbqyk78w"]
 
 [ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/transitions/ui_transition.tscn" id="1_2g6xr"]
-[ext_resource type="Script" path="res://scripts/ui/menus/grand_prix_select.gd" id="1_7rjwt"]
-[ext_resource type="Script" path="res://scripts/ui/buttons/grab_focus.gd" id="2_dolnp"]
+[ext_resource type="Script" uid="uid://bo6e8bynnrf1" path="res://scripts/ui/menus/grand_prix_select.gd" id="1_7rjwt"]
+[ext_resource type="Script" uid="uid://cmb0mnqih0r8l" path="res://scripts/ui/buttons/grab_focus.gd" id="2_dolnp"]
 [ext_resource type="AudioStream" uid="uid://cdsqyk0a6o6ka" path="res://assets/sounds/music/sng_menu.mp3" id="2_p5fey"]
 [ext_resource type="AudioStream" uid="uid://d14nfwmrlpndm" path="res://assets/sounds/sfx/sfx_bloop.mp3" id="5_hu8wq"]
 
