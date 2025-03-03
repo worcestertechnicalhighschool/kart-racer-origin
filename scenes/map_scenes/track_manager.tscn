@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c07v2b2pmb6fe"]
 
-[ext_resource type="Script" path="res://scripts/tracks/track_manager.gd" id="1_u2de7"]
+[ext_resource type="Script" uid="uid://dxuyme144itki" path="res://scripts/tracks/track_manager.gd" id="1_u2de7"]
 
 [node name="TrackManager" type="Node3D"]
 script = ExtResource("1_u2de7")

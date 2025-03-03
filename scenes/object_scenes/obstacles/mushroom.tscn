@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dojfn07gt2s6o"]
 
-[ext_resource type="Script" path="res://scripts/components/custom_animation_component.gd" id="1_yn3q6"]
+[ext_resource type="Script" uid="uid://ccp7fs10p57fd" path="res://scripts/components/custom_animation_component.gd" id="1_yn3q6"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_omqy3"]
 
@@ -43,8 +43,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2kwq0"]
 _data = {
-"RESET": SubResource("Animation_mcu5r"),
-"rotation": SubResource("Animation_24hgy")
+&"RESET": SubResource("Animation_mcu5r"),
+&"rotation": SubResource("Animation_24hgy")
 }
 
 [node name="Mushroom" type="RigidBody3D"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cmwn78o1aco74"]
 
-[ext_resource type="Script" path="res://scripts/ui/transitions/ui_transition.gd" id="1_hfmha"]
+[ext_resource type="Script" uid="uid://br1j5rsb1x61k" path="res://scripts/ui/transitions/ui_transition.gd" id="1_hfmha"]
 
 [sub_resource type="Animation" id="Animation_bf85i"]
 length = 0.001
@@ -82,11 +82,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qh2hj"]
 _data = {
-"RESET": SubResource("Animation_bf85i"),
-"black": SubResource("Animation_q61qs"),
-"fade_in": SubResource("Animation_bmjbg"),
-"fade_in_title_screen": SubResource("Animation_5w0wh"),
-"fade_out": SubResource("Animation_l810y")
+&"RESET": SubResource("Animation_bf85i"),
+&"black": SubResource("Animation_q61qs"),
+&"fade_in": SubResource("Animation_bmjbg"),
+&"fade_in_title_screen": SubResource("Animation_5w0wh"),
+&"fade_out": SubResource("Animation_l810y")
 }
 
 [node name="UITransition" type="CanvasLayer"]

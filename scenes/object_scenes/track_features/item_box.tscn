@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://bl7yp56hkp8e6"]
 
-[ext_resource type="Script" path="res://scripts/tracks/track_features/item_box.gd" id="1_a8dgl"]
+[ext_resource type="Script" uid="uid://duvyiq137slt1" path="res://scripts/tracks/track_features/item_box.gd" id="1_a8dgl"]
 [ext_resource type="Texture2D" uid="uid://dqud4svtuhpo3" path="res://assets/images/textures/itembox_placeholder.png" id="1_ikstd"]
-[ext_resource type="Script" path="res://scripts/components/uses_component.gd" id="3_wmck0"]
+[ext_resource type="Script" uid="uid://bwbbdjrfel1y0" path="res://scripts/components/uses_component.gd" id="3_wmck0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcbnn"]
 albedo_texture = ExtResource("1_ikstd")
@@ -44,8 +44,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qejuv"]
 _data = {
-"RESET": SubResource("Animation_je3f3"),
-"item_box_animation": SubResource("Animation_ebcok")
+&"RESET": SubResource("Animation_je3f3"),
+&"item_box_animation": SubResource("Animation_ebcok")
 }
 
 [node name="ItemBox" type="StaticBody3D"]

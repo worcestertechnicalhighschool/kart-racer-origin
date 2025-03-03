@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0h1gpcxum57s"]
 
-[ext_resource type="Script" path="res://scripts/ui/menus/settings_menu.gd" id="1_4p3hg"]
+[ext_resource type="Script" uid="uid://bhnaq4lgtmxsm" path="res://scripts/ui/menus/settings_menu.gd" id="1_4p3hg"]
 [ext_resource type="AudioStream" uid="uid://cdsqyk0a6o6ka" path="res://assets/sounds/music/sng_menu.mp3" id="2_16dnu"]
-[ext_resource type="Script" path="res://scripts/ui/buttons/grab_focus.gd" id="2_eh8x4"]
+[ext_resource type="Script" uid="uid://cmb0mnqih0r8l" path="res://scripts/ui/buttons/grab_focus.gd" id="2_eh8x4"]
 [ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/transitions/ui_transition.tscn" id="3_ly3hw"]
 
 [node name="SettingsMenu" type="Control"]

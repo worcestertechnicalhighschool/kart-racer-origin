@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=3 uid="uid://cpyib23l6r8wp"]
 
-[ext_resource type="Script" path="res://scripts/items/bomb.gd" id="1_f6s3l"]
+[ext_resource type="Script" uid="uid://ckmk2fo0wjo0l" path="res://scripts/items/bomb.gd" id="1_f6s3l"]
 [ext_resource type="AudioStream" uid="uid://c1bqc86ug6idl" path="res://assets/sounds/sfx/sfx_bombexplode.mp3" id="2_vqx86"]
-[ext_resource type="Script" path="res://scripts/components/basic_animation_component.gd" id="3_wf4gu"]
-[ext_resource type="Script" path="res://scripts/components/trip_component.gd" id="4_8lipt"]
+[ext_resource type="Script" uid="uid://c5kt54b5ifjks" path="res://scripts/components/basic_animation_component.gd" id="3_wf4gu"]
+[ext_resource type="Script" uid="uid://c6vk2sunyguf3" path="res://scripts/components/trip_component.gd" id="4_8lipt"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_so8qk"]
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=16 format=3 uid="uid://dkuwcntbn4jl2"]
 
-[ext_resource type="Script" path="res://scripts/car/car.gd" id="1_1bc64"]
+[ext_resource type="Script" uid="uid://der8vb7ibk87c" path="res://scripts/car/car.gd" id="1_1bc64"]
 [ext_resource type="PackedScene" uid="uid://bmwh6n8gr4wvd" path="res://scenes/ui_scenes/car_ui/car_ui.tscn" id="2_1w8et"]
 [ext_resource type="Texture2D" uid="uid://w3jmg1bwfgof" path="res://assets/images/textures/wheeltexture.jpg" id="2_8sust"]
 [ext_resource type="PackedScene" uid="uid://ckfukjwbf37mo" path="res://scenes/ui_scenes/menus/debug_menu.tscn" id="5_68m7y"]
-[ext_resource type="Script" path="res://scripts/components/camera_component.gd" id="6_ydi5l"]
+[ext_resource type="Script" uid="uid://csg54wjey73ns" path="res://scripts/components/camera_component.gd" id="6_ydi5l"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ibdse"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://t240sdvue3s"]
 
-[ext_resource type="Script" path="res://scripts/ui/mini_map.gd" id="1_vxc4k"]
+[ext_resource type="Script" uid="uid://canyrq81ckawl" path="res://scripts/ui/mini_map.gd" id="1_vxc4k"]
 
 [node name="MiniMap" type="ColorRect"]
 anchors_preset = 3
