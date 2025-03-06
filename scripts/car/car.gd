@@ -39,10 +39,6 @@ func _ready() -> void:
 
 func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 	
-	$LinearVelocityCast.transform = transform
-	
-	print(transform)
-	
 	ENGINE_POWER = 500
 	MAX_SPEED = 50
 	
@@ -98,6 +94,9 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 		FL_WHEEL.wheel_friction_slip = 4.5
 		BR_WHEEL.wheel_friction_slip = 2.25
 		BL_WHEEL.wheel_friction_slip = 2.25
+		
+		apply_central_impulse(($Right.global_transform.origin - global_transform.origin) * 60)
+		apply_central_impulse(-($Forward.global_transform.origin - global_transform.origin) * 60)
 		
 		rotation_degrees.y = clamp(rotation_degrees.y, prev_angle.y - 1.5, prev_angle.y + 1.5)
 	else:

@@ -145,6 +145,7 @@ target_position = Vector3(0, -2, 0)
 debug_shape_custom_color = Color(0.921739, 0.191891, 0, 1)
 
 [node name="Right" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 target_position = Vector3(-2, 0, 0)
 debug_shape_custom_color = Color(0.921739, 0.191891, 0, 1)
 
@@ -152,7 +153,12 @@ debug_shape_custom_color = Color(0.921739, 0.191891, 0, 1)
 target_position = Vector3(0, 0, 4)
 debug_shape_custom_color = Color(0.921739, 0.191891, 0, 1)
 
+[node name="Forward" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, 4)
+debug_shape_custom_color = Color(0.921739, 0.191891, 0, 1)
+
 [node name="Left" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 target_position = Vector3(2, 0, 0)
 debug_shape_custom_color = Color(0.921739, 0.191891, 0, 1)
 
