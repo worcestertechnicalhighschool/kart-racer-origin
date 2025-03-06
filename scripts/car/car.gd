@@ -24,13 +24,7 @@ signal slip
 
 var MAX_SPEED = 45
 var drifting
-var old_rotation
-var old_position
-var old_velocity
-var axis
-#var paused = false
 var debug_open = false
-var prior
 var prev_angle = Vector3.ZERO
 var slipping = false
 var original_velocity
@@ -44,6 +38,10 @@ func _ready() -> void:
 	#transition_screen.visibile = false
 
 func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
+	
+	$LinearVelocityCast.transform = transform
+	
+	print(transform)
 	
 	ENGINE_POWER = 500
 	MAX_SPEED = 50

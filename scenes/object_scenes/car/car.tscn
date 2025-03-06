@@ -144,4 +144,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00517511, 0.0155458, 1.551
 target_position = Vector3(0, -2, 0)
 debug_shape_custom_color = Color(0.921739, 0.191891, 0, 1)
 
+[node name="Right" type="RayCast3D" parent="."]
+target_position = Vector3(-2, 0, 0)
+debug_shape_custom_color = Color(0.921739, 0.191891, 0, 1)
+
+[node name="LinearVelocityCast" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, 4)
+debug_shape_custom_color = Color(0.921739, 0.191891, 0, 1)
+
+[node name="Left" type="RayCast3D" parent="."]
+target_position = Vector3(2, 0, 0)
+debug_shape_custom_color = Color(0.921739, 0.191891, 0, 1)
+
 [connection signal="slip" from="." to="." method="_on_slip"]
