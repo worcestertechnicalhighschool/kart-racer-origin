@@ -65,7 +65,7 @@ shape = SubResource("BoxShape3D_4oaxx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_qejuv")
+&"": SubResource("AnimationLibrary_qejuv")
 }
 autoplay = "item_box_animation"
 

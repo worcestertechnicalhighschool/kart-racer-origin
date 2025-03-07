@@ -102,14 +102,14 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 		if Input.get_action_strength("steer_left"):
 			if abs(abs(rotation_degrees.y) - abs(drift_start_rotation_y)) > 60:
 				temp = true
-				apply_central_impulse(($Right.global_transform.origin - global_transform.origin) * 90)
+				apply_central_impulse(($Right.global_transform.origin - global_transform.origin) * 60)
 			else:
 				temp = false
 				apply_central_impulse(($Right.global_transform.origin - global_transform.origin) * 30)
 		elif Input.get_action_strength("steer_right"):
 			if abs(abs(rotation_degrees.y) - abs(drift_start_rotation_y)) > 60:
 				temp = true
-				apply_central_impulse(($Right.global_transform.origin - global_transform.origin) * 90)
+				apply_central_impulse(($Right.global_transform.origin - global_transform.origin) * 60)
 			else:
 				temp = false
 				apply_central_impulse(($Right.global_transform.origin - global_transform.origin) * 30)
