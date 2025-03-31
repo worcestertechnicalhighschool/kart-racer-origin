@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvf65fbqyk78w"]
+[gd_scene load_steps=7 format=3 uid="uid://dvf65fbqyk78w"]
 
 [ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/transitions/ui_transition.tscn" id="1_2g6xr"]
-[ext_resource type="Script" uid="uid://bo6e8bynnrf1" path="res://scripts/ui/menus/grand_prix_select.gd" id="1_7rjwt"]
-[ext_resource type="Script" uid="uid://cmb0mnqih0r8l" path="res://scripts/ui/buttons/grab_focus.gd" id="2_dolnp"]
+[ext_resource type="Script" uid="uid://cxn08cfmlp1h7" path="res://scripts/ui/menus/grand_prix_select.gd" id="1_7rjwt"]
+[ext_resource type="Script" uid="uid://bq3x73c4mp2rt" path="res://scripts/ui/buttons/grab_focus.gd" id="2_dolnp"]
+[ext_resource type="FontFile" uid="uid://blts7r5ts34b5" path="res://assets/fonts/Kanit-ExtraLight.ttf" id="2_nx3tc"]
 [ext_resource type="AudioStream" uid="uid://cdsqyk0a6o6ka" path="res://assets/sounds/music/sng_menu.mp3" id="2_p5fey"]
 [ext_resource type="AudioStream" uid="uid://d14nfwmrlpndm" path="res://assets/sounds/sfx/sfx_bloop.mp3" id="5_hu8wq"]
 
@@ -24,41 +25,58 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.255341, 0.630284, 0.522835, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.375
-anchor_bottom = 1.0
-offset_right = -3.05176e-05
-
-[node name="AldenAcademyCup" type="Button" parent="VBoxContainer"]
+[node name="AldenAcademyCup" type="Button" parent="."]
 layout_mode = 2
+anchor_left = 0.0125
+anchor_top = 0.158333
+anchor_right = 0.246875
+anchor_bottom = 0.473611
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_nx3tc")
 theme_override_font_sizes/font_size = 45
 text = "Alden Academy Cup"
 autowrap_mode = 3
 script = ExtResource("2_dolnp")
+metadata/_edit_use_anchors_ = true
 
-[node name="HealthServicesCup" type="Button" parent="VBoxContainer"]
+[node name="HealthServicesCup" type="Button" parent="."]
 layout_mode = 2
+anchor_left = 0.257813
+anchor_top = 0.161111
+anchor_right = 0.492188
+anchor_bottom = 0.476389
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_nx3tc")
 theme_override_font_sizes/font_size = 45
 text = "Health Services Cup"
 autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
 
-[node name="CoughlinConstructionCup" type="Button" parent="VBoxContainer"]
+[node name="CoughlinConstructionCup" type="Button" parent="."]
 layout_mode = 2
+anchor_left = 0.505469
+anchor_top = 0.161111
+anchor_right = 0.739844
+anchor_bottom = 0.476389
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_nx3tc")
 theme_override_font_sizes/font_size = 45
 text = "Coughlin Construction Cup"
 autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
 
-[node name="ITBusinessCup" type="Button" parent="VBoxContainer"]
+[node name="ITBusinessCup" type="Button" parent="."]
 layout_mode = 2
+anchor_left = 0.753125
+anchor_top = 0.163889
+anchor_right = 0.9875
+anchor_bottom = 0.479167
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_nx3tc")
 theme_override_font_sizes/font_size = 45
 text = "IT & Business Cup"
 autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="Go Back" type="Button" parent="."]
 layout_mode = 1
@@ -79,16 +97,21 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -134.0
-offset_bottom = 66.0
+offset_left = -180.0
+offset_top = 1.0
+offset_right = -46.0
+offset_bottom = 71.0
 grow_horizontal = 0
+scale = Vector2(1.34169, 1.34169)
 
 [node name="ToExtraTracks" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nx3tc")
 text = "To Extra Tracks"
 
 [node name="ToB-SideTracks" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nx3tc")
 text = "To B-Side Tracks"
 
 [node name="UITransition" parent="." instance=ExtResource("1_2g6xr")]
@@ -102,6 +125,6 @@ bus = &"Music"
 stream = ExtResource("5_hu8wq")
 bus = &"SFX"
 
-[connection signal="pressed" from="VBoxContainer/AldenAcademyCup" to="." method="_on_alden_academy_cup_pressed"]
+[connection signal="pressed" from="AldenAcademyCup" to="." method="_on_alden_academy_cup_pressed"]
 [connection signal="pressed" from="Go Back" to="." method="_on_go_back_pressed"]
 [connection signal="animation_end" from="UITransition" to="." method="_on_ui_transition_animation_end"]

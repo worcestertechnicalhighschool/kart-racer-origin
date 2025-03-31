@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmdbm048xrpmm"]
+[gd_scene load_steps=7 format=3 uid="uid://bmdbm048xrpmm"]
 
 [ext_resource type="Script" uid="uid://cuvgedgl33ur4" path="res://scripts/ui/menus/main_menu.gd" id="1_ub0t8"]
 [ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/transitions/ui_transition.tscn" id="2_ief3h"]
-[ext_resource type="Script" uid="uid://cmb0mnqih0r8l" path="res://scripts/ui/buttons/grab_focus.gd" id="2_s5xjw"]
+[ext_resource type="Script" uid="uid://bq3x73c4mp2rt" path="res://scripts/ui/buttons/grab_focus.gd" id="2_s5xjw"]
+[ext_resource type="FontFile" uid="uid://blts7r5ts34b5" path="res://assets/fonts/Kanit-ExtraLight.ttf" id="2_wfpa3"]
 [ext_resource type="AudioStream" uid="uid://cdsqyk0a6o6ka" path="res://assets/sounds/music/sng_menu.mp3" id="4_rt2x3"]
 [ext_resource type="AudioStream" uid="uid://d14nfwmrlpndm" path="res://assets/sounds/sfx/sfx_bloop.mp3" id="5_pnvet"]
 
@@ -24,16 +25,18 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.255341, 0.630284, 0.522835, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.454688
-anchor_bottom = 1.00139
+anchor_top = 0.151389
+anchor_right = 0.795313
+anchor_bottom = 0.863889
 metadata/_edit_use_anchors_ = true
 
 [node name="GrandPrix" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_wfpa3")
 theme_override_font_sizes/font_size = 64
 text = "Grand Prix"
 script = ExtResource("2_s5xjw")
@@ -41,21 +44,10 @@ script = ExtResource("2_s5xjw")
 [node name="QuickRace" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_wfpa3")
 theme_override_font_sizes/font_size = 64
 text = "Quick Race
 "
-
-[node name="TimeTrials" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 64
-text = "Time Trials"
-
-[node name="BattleMode" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 64
-text = "Battle Mode"
 
 [node name="Go Back" type="Button" parent="."]
 layout_mode = 1
@@ -68,6 +60,7 @@ offset_left = 62.12
 offset_top = 22.28
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_wfpa3")
 theme_override_font_sizes/font_size = 32
 text = "Go Back"
 

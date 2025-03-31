@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ftfjb2juk3gv"]
+[gd_scene load_steps=10 format=3 uid="uid://ftfjb2juk3gv"]
 
-[ext_resource type="Script" uid="uid://bk4vrytdwft86" path="res://scripts/ui/menus/title_screen.gd" id="1_wep01"]
+[ext_resource type="Script" uid="uid://5ff48y8shi7w" path="res://scripts/ui/menus/title_screen.gd" id="1_wep01"]
 [ext_resource type="PackedScene" uid="uid://cmwn78o1aco74" path="res://scenes/ui_scenes/transitions/ui_transition.tscn" id="2_hrswe"]
-[ext_resource type="Script" uid="uid://cmb0mnqih0r8l" path="res://scripts/ui/buttons/grab_focus.gd" id="2_k4055"]
+[ext_resource type="Script" uid="uid://bq3x73c4mp2rt" path="res://scripts/ui/buttons/grab_focus.gd" id="2_k4055"]
 [ext_resource type="FontFile" uid="uid://dfq1xhuv5m6yj" path="res://assets/fonts/TradeWinds-Regular.ttf" id="2_nqntb"]
 [ext_resource type="Texture2D" uid="uid://pmrgd74p8b1e" path="res://assets/images/battle_cats/cat_kart.png" id="3_2d2xj"]
+[ext_resource type="FontFile" uid="uid://blts7r5ts34b5" path="res://assets/fonts/Kanit-ExtraLight.ttf" id="3_sru4r"]
 [ext_resource type="Texture2D" uid="uid://bhvbdbhtkids0" path="res://assets/images/textures/wing.png" id="4_cw0pp"]
 [ext_resource type="AudioStream" uid="uid://cdsqyk0a6o6ka" path="res://assets/sounds/music/sng_menu.mp3" id="6_rp7fr"]
 [ext_resource type="AudioStream" uid="uid://d14nfwmrlpndm" path="res://assets/sounds/sfx/sfx_bloop.mp3" id="7_t76wy"]
@@ -65,7 +66,7 @@ offset_top = 0.360001
 offset_right = 0.23999
 offset_bottom = -0.120026
 scale = Vector2(1.28482, 1.28482)
-theme_override_fonts/font = ExtResource("2_nqntb")
+theme_override_fonts/font = ExtResource("3_sru4r")
 theme_override_font_sizes/font_size = 64
 text = "Single Player"
 script = ExtResource("2_k4055")
@@ -82,7 +83,7 @@ offset_top = -3.0
 offset_right = 4.99997
 offset_bottom = -3.0
 scale = Vector2(1.26099, 1.26099)
-theme_override_fonts/font = ExtResource("2_nqntb")
+theme_override_fonts/font = ExtResource("3_sru4r")
 theme_override_font_sizes/font_size = 64
 text = "Head-To-Head"
 metadata/_edit_use_anchors_ = true
@@ -110,7 +111,7 @@ anchor_bottom = 1.00107
 offset_right = 149.617
 offset_bottom = 67.2286
 scale = Vector2(0.340895, 0.340895)
-theme_override_fonts/font = ExtResource("2_nqntb")
+theme_override_fonts/font = ExtResource("3_sru4r")
 theme_override_font_sizes/font_size = 64
 text = "Quit"
 metadata/_edit_use_anchors_ = true
