@@ -30,11 +30,11 @@ var old_velocity
 var axis
 #var paused = false
 var debug_open = false
-var prior
 var prev_angle = Vector3.ZERO
 var slipping = false
 var original_velocity
 var original_rotation
+var drift_start_rotation_y
 
 func _ready() -> void:
 	RESPAWN = [position, global_rotation_degrees]
