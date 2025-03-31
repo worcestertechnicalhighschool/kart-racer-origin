@@ -24,17 +24,12 @@ signal slip
 
 var MAX_SPEED = 45
 var drifting
-var old_rotation
-var old_position
-var old_velocity
-var axis
-#var paused = false
 var debug_open = false
-var prior
 var prev_angle = Vector3.ZERO
 var slipping = false
 var original_velocity
 var original_rotation
+var drift_start_rotation_y
 
 func _ready() -> void:
 	RESPAWN = [position, global_rotation_degrees]
@@ -101,8 +96,33 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 		BR_WHEEL.wheel_friction_slip = 2.25
 		BL_WHEEL.wheel_friction_slip = 2.25
 		
-		rotation_degrees.y = clamp(rotation_degrees.y, prev_angle.y - 1.5, prev_angle.y + 1.5)
+		var temp = false
+		
+		print(abs(rotation_degrees.y) - abs(drift_start_rotation_y))
+		if Input.get_action_strength("steer_left"):
+			if abs(abs(rotation_degrees.y) - abs(drift_start_rotation_y)) > 60:
+				temp = true
+				apply_central_impulse(($Right.global_transform.origin - global_transform.origin) * 60)
+			else:
+				temp = false
+				apply_central_impulse(($Right.global_transform.origin - global_transform.origin) * 30)
+		elif Input.get_action_strength("steer_right"):
+			if abs(abs(rotation_degrees.y) - abs(drift_start_rotation_y)) > 60:
+				temp = true
+				apply_central_impulse(($Right.global_transform.origin - global_transform.origin) * 60)
+			else:
+				temp = false
+				apply_central_impulse(($Right.global_transform.origin - global_transform.origin) * 30)
+			
+		apply_central_impulse(($Forward.global_transform.origin - global_transform.origin) * 20)
+		
+			
+		rotation_degrees.y = clamp(rotation_degrees.y, prev_angle.y - 1.75, prev_angle.y + 1.75)
+		
+		rotation_degrees.y = clamp(rotation_degrees.y, drift_start_rotation_y - 150, drift_start_rotation_y + 150)
 	else:
+		drift_start_rotation_y = rotation_degrees.y
+		
 		FR_WHEEL.wheel_friction_slip = 20
 		FL_WHEEL.wheel_friction_slip = 20
 		BR_WHEEL.wheel_friction_slip = 20

@@ -62,7 +62,7 @@ material_override = SubResource("StandardMaterial3D_qct31")
 mesh = SubResource("BoxMesh_dm5w4")
 
 [node name="Car" parent="." instance=ExtResource("1_wxd4t")]
-transform = Transform3D(-0.933799, 0, -0.357798, 0, 1, 0, 0.357798, 0, -0.933799, 37.1989, 12.5409, 16.1528)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.1989, 12.5409, 16.1528)
 gravity_scale = 1.0
 
 [node name="DeathBox" parent="." instance=ExtResource("1_8rhty")]
