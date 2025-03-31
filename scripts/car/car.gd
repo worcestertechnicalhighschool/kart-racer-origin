@@ -13,7 +13,7 @@ signal slip
 @export var INVENTORY = ["", ""]
 @export var MAX_STEER = 0.9
 @export var ENGINE_POWER = 500
-@export var DRIFT = 1
+#@export var DRIFT = 1
 @export var ZOOM_DURATION = 0
 @export var RESPAWN = []
 @export var SPEED_BOOST = false
@@ -23,7 +23,12 @@ signal slip
 @onready var debug_menu = $"DebugMenu"
 
 var MAX_SPEED = 45
-var drifting
+#var drifting
+var old_rotation
+var old_position
+var old_velocity
+var axis
+#var paused = false
 var debug_open = false
 var prev_angle = Vector3.ZERO
 var slipping = false
@@ -63,21 +68,27 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 		linear_velocity.x = original_velocity.x / 4
 		linear_velocity.z = original_velocity.z / 4
 	
-	if $RayCast3D.is_colliding():
-		var xform : Transform3D = global_transform
-		var floor_normal = $RayCast3D.get_collision_normal()
-		
-		xform.basis.y = floor_normal
-		xform.basis.x = -xform.basis.z.cross(floor_normal)
-		xform.basis = xform.basis.orthonormalized()
-		global_transform = global_transform.interpolate_with(xform, 0.1)
-
-		if position.y - $RayCast3D.get_collision_point().y > BR_WHEEL.wheel_radius:
-			position.y = $RayCast3D.get_collision_point().y + BR_WHEEL.wheel_radius
-	else:
-		global_transform.basis.x = lerp(global_transform.basis.x, Vector3(1,0,0), 0.05)
-		global_transform.basis.y = lerp(global_transform.basis.y, Vector3(0,1,0), 0.05)
-		global_transform.basis.z = lerp(global_transform.basis.z, Vector3(0,0,1), 0.05)
+	
+	# This section is the track alignment that Ruchir made, anybody new working
+	# on this project at some point in the future
+	#
+	# good luck.
+	
+	#if $RayCast3D.is_colliding():
+		#var xform : Transform3D = global_transform
+		#var floor_normal = $RayCast3D.get_collision_normal()
+		#
+		#xform.basis.y = floor_normal
+		#xform.basis.x = -xform.basis.z.cross(floor_normal)
+		#xform.basis = xform.basis.orthonormalized()
+		#global_transform = global_transform.interpolate_with(xform, 0.1)
+#
+		#if position.y - $RayCast3D.get_collision_point().y > BR_WHEEL.wheel_radius:
+			#position.y = $RayCast3D.get_collision_point().y + BR_WHEEL.wheel_radius
+	#else:
+		#global_transform.basis.x = lerp(global_transform.basis.x, Vector3(1,0,0), 0.05)
+		#global_transform.basis.y = lerp(global_transform.basis.y, Vector3(0,1,0), 0.05)
+		#global_transform.basis.z = lerp(global_transform.basis.z, Vector3(0,0,1), 0.05)
 	
 	# overall purpose: limiting the total speed
 	# finding the magnitude of the vector
@@ -89,44 +100,19 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 		linear_velocity.x *= ratio
 		linear_velocity.z *= ratio
 	
-	if drifting:
-		 
-		FR_WHEEL.wheel_friction_slip = 4.5
-		FL_WHEEL.wheel_friction_slip = 4.5
-		BR_WHEEL.wheel_friction_slip = 2.25
-		BL_WHEEL.wheel_friction_slip = 2.25
-		
-		var temp = false
-		
-		print(abs(rotation_degrees.y) - abs(drift_start_rotation_y))
-		if Input.get_action_strength("steer_left"):
-			if abs(abs(rotation_degrees.y) - abs(drift_start_rotation_y)) > 60:
-				temp = true
-				apply_central_impulse(($Right.global_transform.origin - global_transform.origin) * 60)
-			else:
-				temp = false
-				apply_central_impulse(($Right.global_transform.origin - global_transform.origin) * 30)
-		elif Input.get_action_strength("steer_right"):
-			if abs(abs(rotation_degrees.y) - abs(drift_start_rotation_y)) > 60:
-				temp = true
-				apply_central_impulse(($Right.global_transform.origin - global_transform.origin) * 60)
-			else:
-				temp = false
-				apply_central_impulse(($Right.global_transform.origin - global_transform.origin) * 30)
-			
-		apply_central_impulse(($Forward.global_transform.origin - global_transform.origin) * 20)
-		
-			
-		rotation_degrees.y = clamp(rotation_degrees.y, prev_angle.y - 1.75, prev_angle.y + 1.75)
-		
-		rotation_degrees.y = clamp(rotation_degrees.y, drift_start_rotation_y - 150, drift_start_rotation_y + 150)
-	else:
-		drift_start_rotation_y = rotation_degrees.y
-		
-		FR_WHEEL.wheel_friction_slip = 20
-		FL_WHEEL.wheel_friction_slip = 20
-		BR_WHEEL.wheel_friction_slip = 20
-		BL_WHEEL.wheel_friction_slip = 20
+	#if drifting:
+		 #
+		#FR_WHEEL.wheel_friction_slip = 4.5
+		#FL_WHEEL.wheel_friction_slip = 4.5
+		#BR_WHEEL.wheel_friction_slip = 2.25
+		#BL_WHEEL.wheel_friction_slip = 2.25
+		#
+		#rotation_degrees.y = clamp(rotation_degrees.y, prev_angle.y - 1.5, prev_angle.y + 1.5)
+	#else:
+		#FR_WHEEL.wheel_friction_slip = 20
+		#FL_WHEEL.wheel_friction_slip = 20
+		#BR_WHEEL.wheel_friction_slip = 20
+		#BL_WHEEL.wheel_friction_slip = 20
 
 	if abs(angular_velocity.y) > 5 and not slipping:
 		angular_velocity.y = sign(angular_velocity.y) * 5
@@ -136,10 +122,10 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 	elif Input.is_action_just_pressed("debug"):
 		open_debug()
 		
-	if Input.is_action_pressed("drift"):
-		drifting = true
-	else:
-		drifting = false
+	#if Input.is_action_pressed("drift"):
+		#drifting = true
+	#else:
+		#drifting = false
 		
 	prev_angle = rotation_degrees
 	
@@ -172,6 +158,10 @@ func open_debug():
 	else:
 		debug_menu.hide()
 		Engine.time_scale = 1
+		
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("quit"):
+		get_tree().quit()
 
 func _on_slip(start) -> void:
 	

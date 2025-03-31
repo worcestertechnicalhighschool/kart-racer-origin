@@ -10,7 +10,6 @@ func _ready() -> void:
 	$PreviewTexture.visible = false
 	all_textures[$VBoxContainer/GrandPrix] = preload("res://assets/images/menu_previews/grand_prix_preview.png")
 	all_textures[$VBoxContainer/QuickRace] = preload("res://assets/images/menu_previews/vs_race_preview.png")
-	all_textures[$VBoxContainer/TimeTrials] = preload("res://assets/images/menu_previews/time_trials_preview.png")
 	
 	for button in all_textures.keys():
 		button.connect("focus_entered", Callable(self, "_on_button_focus").bind(button))
